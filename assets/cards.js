@@ -464,7 +464,7 @@ const cards = [
 //-----------------------
 //       SHOPPING
 //-----------------------
-		    {
+	{
         title: "Amazon",
         url: "https://amazon.fr/",
         icon: "./assets/img/Amazon.svg",
@@ -473,8 +473,7 @@ const cards = [
 		category: "shopping"
     },
 	
-	
-			    {
+	{
         title: "LeBonCoin",
         url: "https://leboncoin.fr/",
         icon: "./assets/img/lbc.svg",
@@ -482,6 +481,17 @@ const cards = [
 		label:"LeBonCoin",
 		category: "shopping"
     },
+	
+	{
+        title: "Cigarette-Elec",
+        url: "https://www.cigaretteelec.fr/",
+        icon: "./assets/img/cigelec.svg",
+		text: "Cigarette-Elec",
+		label:"Cigarette-Elec",
+		category: "shopping"
+    },
+
+
 	
 //-----------------------
 //       PRO

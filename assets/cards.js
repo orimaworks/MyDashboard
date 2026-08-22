@@ -466,7 +466,7 @@ const cards = [
 //-----------------------
 		    {
         title: "Amazon",
-        url: "https://amazon.com/",
+        url: "https://amazon.fr/",
         icon: "./assets/img/Amazon.svg",
 		text: "Amazon",
 		label: "Amazon",

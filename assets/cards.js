@@ -166,6 +166,14 @@ const cards = [
 		category: "Administratif"
     },
 
+	{
+        title: "Le CRAT",
+        url: "https://www.lecrat.fr/",
+        icon: null,
+		label:"Le CRAT / Santé",
+		category: "Administratif"
+    },
+
 
 //-----------------------
 //       GEEK
@@ -375,6 +383,26 @@ const cards = [
 		label: "Humble Bundle",
 		category: "Gaming"
     },
+
+	{
+        title: "Dino",
+        url: "brave://dino/",
+        icon: "./assets/img/dino.png",
+		text: "Dino",
+		label: "Dino",
+		category: "Gaming"
+    },
+
+	
+	{
+        title: "La Guerre des Gangs",
+        url: "https://www.guerredesgangs.net/beta/index.html#home",
+        icon: "https://www.guerredesgangs.net/images_game/v5/bg/logo.png",
+		text: "Guerre des Gangs",
+		label: "GDG",
+		category: "Gaming"
+    },
+	
 //-----------------------
 //       DETENTE
 //-----------------------
@@ -491,8 +519,23 @@ const cards = [
 		category: "shopping"
     },
 
+	{
+        title: "Seido Shop",
+        url: "https://www.seidoshop.fr/",
+        icon: null,
+		text: "Seido",
+		label:"Seido Shop",
+		category: "shopping"
+    },
 
-	
+	{
+        title: "Bullrot Wear",
+        url: "https://www.bullrotwearofficiel.fr/boutiquebullrotwear/",
+        icon: "https://6802c95ea3.clvaw-cdnwnd.com/0015b2864b9b18ec3ca6bde016b7993e/200000001-c62cac62cc/450/Bullrot%20Wear%20Noir%20et%20rouge.webp?ph=6802c95ea3",
+		text: "Bullrot",
+		label:"Bullrot Wear",
+		category: "shopping"
+    },
 //-----------------------
 //       PRO
 //-----------------------
@@ -590,7 +633,7 @@ const cards = [
         url: "https://member.moka.care/users/sign_in",
         icon: "https://member.moka.care/assets/moka-care-logo-166x40-65ba8d927c11c971dc412931bf18266c7afb45d88df85abef12a6f43768f564c.svg",
         color: "#ffffff",
-		label:"Syndic"
+		label:"Moka Care"
     },
 
     {

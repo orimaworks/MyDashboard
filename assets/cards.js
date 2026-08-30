@@ -166,6 +166,16 @@ const cards = [
 		category: "Administratif"
     },
 
+    {
+        title: "VEOLIA",
+        url: "https://www.eau.veolia.fr/",
+        icon: "https://prd-ref-marque-logo.istefr.fr/VEOLIAWATERP/Veolia/logo_home.svg",
+		label:"VEOLIA",
+		category: "Administratif"
+    },
+
+
+	
 	{
         title: "Le CRAT",
         url: "https://www.lecrat.fr/",

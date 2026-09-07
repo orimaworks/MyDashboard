@@ -590,7 +590,21 @@ const cards = [
 //-----------------------
 //       PRO
 //-----------------------
-	 {
+	{
+        title: "VALENCE ROMANS AGGLO",
+        url: "https://intragglo.valenceromansagglo.fr/fr/index.html",
+        icon: "https://intragglo.valenceromansagglo.fr/skins/IntranetAgglo/resources/templates/common/img/logo-colorful.svg",
+		label:"V.R.A"
+    }, 
+
+	{
+        title: "ChronoTime",
+        url: "https://chronotime.valenceromansagglo.fr/chronotime/login/login.html",
+        icon: "https://chronotime.valenceromansagglo.fr/chronotime/assets/images/Chronotime_UX.png",
+		label:"ChronoTime"
+    },
+	
+	{
         title: "ASTECH",
         url: "https://astech.valenceromansagglo.fr/#/",
         text: "ASTech",
@@ -598,13 +612,14 @@ const cards = [
 		icon: "https://astech.valenceromansagglo.fr/assets/images/logo-symphonie1.png"
     },
 
-    {
-        title: "VALENCE ROMANS AGGLO",
-        url: "https://intragglo.valenceromansagglo.fr/fr/index.html",
-        icon: "https://intragglo.valenceromansagglo.fr/skins/IntranetAgglo/resources/templates/common/img/logo-colorful.svg",
-		label:"V.R.A"
-    }
 
-   
+	 {
+        title: "ASTECH-Solutions",
+        url: "https://support.astech-solutions.com/",
+        text: "ASTech-Solutions",
+		label:"ASTech-Solutions",
+		icon: "https://support.astech-solutions.com/images/main-logo.svg?v=2"
+    }    
+	
 
 ];

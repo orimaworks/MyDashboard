@@ -184,10 +184,40 @@ const cards = [
 		category: "Administratif"
     },
 
+	
+    {
+        title: "EPSENS",
+        url: "https://www.epsens.com/",
+        icon: "https://www.epsens.com/themes/custom/epargne_salariale/img/logo.svg",
+		label:"EPSENS",
+		category: "Administratif"
+    },
+
+  
+
+    {
+        title: "Cadastre",
+        url: "https://cadastre.data.gouv.fr/",
+        icon: "./assets/img/cadastre.png",
+		label:"Cadastre",
+		category: "Administratif"
+    },
+
 
 //-----------------------
 //       GEEK
 //-----------------------
+
+
+	 {
+        title: "Logiciels Libres",
+        url: "https://code.gouv.fr/sill/",
+        icon: "https://code.gouv.fr/sill/assets/illustration_sill-B0NPUQ_V.svg",
+        text: "Logiciels Libres",
+		label:"Logiciels Libres",
+		category: "Geek"
+    },
+	
     {
         title: "Cheats Sheet",
         url: "cheats_sheet.html",
@@ -412,6 +442,17 @@ const cards = [
 		label: "GDG",
 		category: "Gaming"
     },
+
+		{
+        title: "Galaxy.click",
+        url: "https://galaxy.click",
+        icon: null,
+		text: "Galaxy.click",
+		label: "Galaxy.click",
+		category: "Gaming"
+    },
+
+
 	
 //-----------------------
 //       DETENTE
@@ -559,133 +600,11 @@ const cards = [
 
     {
         title: "VALENCE ROMANS AGGLO",
-        url: "https://www.sdh.fr/accueil",
-        icon: null,
+        url: "https://intragglo.valenceromansagglo.fr/fr/index.html",
+        icon: "https://intragglo.valenceromansagglo.fr/skins/IntranetAgglo/resources/templates/common/img/logo-colorful.svg",
 		label:"V.R.A"
-    },
-
-    {
-        title: "Utiles",
-        url: "https://utiles-intranet.actionlogement.fr/jcms/j_6/accueil-action-logement",
-        icon: "https://utiles-intranet.actionlogement.fr/plugins/ActionLogementPlugin/images/svg/AL-Logo_Utiles.svg",
-        color: "#ffffff",
-		label:"Utiles"
-    },
-
-    {
-        title: "Plateforme Travaux",
-        url: "http://globalsdh/intranet/index.php?option=com_user&view=login&return=aHR0cDovL2dsb2JhbHNkaC9pbnRyYW5ldC9pbmRleC5waHA/b3B0aW9uPWNvbV90YWNoZSZ2aWV3PXRhY2hlJkl0ZW1pZD0x",
-        icon: "./assets/img/plateforme.png",
-        color: "#FFBC01",
-		label:"Travaux"
-    },
-
-    {
-        title: "Sharepoint",
-        url: "https://sdh38.sharepoint.com/",
-        icon: "./assets/img/sharepoint.png",
-		label:"SharePoint"
-    },
-
-    {
-        title: "e-Temptation",
-        url: "https://etemptation.sdh.fr/webquartz/ux/login",
-        icon: "./assets/img/etemptation.png",
-        color: "#D8EEAB",
-		label:"e-Temptation"
-    },
-
-    {
-        title: "Global",
-        url: "https://sdh38.sharepoint.com/:x:/r/sites/contrats/_layouts/15/Doc.aspx?sourcedoc=%7B509EFE42-FEB6-487E-A85F-B5C6C9107D9E%7D&file=GLOBAL.xlsx&action=default&mobileredirect=true",
-        text: "Global",
-		label:"Global"
-    },
-
-    {
-        title: "Réserver véhicule",
-        url: "https://sdh38.sharepoint.com/sites/resa-auto/SitePages/Home.aspx",
-        icon: "./assets/img/voiture sdh.png",
-		label:"Résa. véhicules"
-    },
-
-    {
-        title: "N'Lead",
-        url: "https://lead.novamap.fr/Logon.html",
-        icon: "./assets/img/nlead.png",
-        color: "#ffffff",
-		label:"N'Lead"
-    },
-
-    {
-        title: "Novamap +",
-        url: "https://plus.novamap.fr/",
-        icon: "./assets/img/novamap.png",
-        color: "#ffffff",
-		label:"Novamap+"
-    },
-
-    {
-        title: "BPU",
-        url: "https://sdh38.sharepoint.com/sites/coordination/Contrats%20cadres/Forms/AllItems.aspx?id=%2Fsites%2Fcoordination%2FContrats%20cadres%2FContrats%20Cadres%20Documents%20utilisateurs%2001%2004%202024%2FBPU%20CCTP%20UTILISATEURS%20SDH&viewid=c0a34562%2Da42f%2D4c1d%2Db7f9%2D2b9f43f0b4b4",
-        text: "BPU",
-		label:"B.P.U"
-    },
-
-    {
-        title: "Syndics",
-        url: "https://sdh38.sharepoint.com/",
-        text: "Syndics"
-    },
-
-    {
-        title: "Moka Care",
-        url: "https://member.moka.care/users/sign_in",
-        icon: "https://member.moka.care/assets/moka-care-logo-166x40-65ba8d927c11c971dc412931bf18266c7afb45d88df85abef12a6f43768f564c.svg",
-        color: "#ffffff",
-		label:"Moka Care"
-    },
-
-    {
-        title: "EPSENS",
-        url: "https://www.epsens.com/",
-        icon: "https://www.epsens.com/themes/custom/epargne_salariale/img/logo.svg",
-		label:"EPSENS"
-    },
-
-    {
-        title: "BPU Insectes",
-        url: "https://sdh38.sharepoint.com/sites/collab/Dossiers%20collaboratifs/",
-        icon: "./assets/img/frelon.png",
-        color: "#ffffff",
-		label:"BPU Insectes"
-    },
-
-    {
-        title: "Cadastre",
-        url: "https://cadastre.data.gouv.fr/",
-        icon: "./assets/img/cadastre.png",
-		label:"Cadastre"
-    },
-
-    {
-        title: "Iserba",
-        url: "https://extranet.iserba.fr/login",
-        icon: "./assets/img/iserba.png"
-    },
-
-    {
-        title: "FIFA",
-        url: "https://sdh38.scorecastbusiness.com/auth/login",
-        icon: "./assets/img/football.png",
-		label:"Fifa Cup'"
-    },
-
-    {
-        title: "Melchior",
-        url: "https://compte.melchior.pro/",
-        icon: "./assets/img/melchior.png",
-		label:"Melchior"
     }
+
+   
 
 ];

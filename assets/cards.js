@@ -550,18 +550,18 @@ const cards = [
 //       PRO
 //-----------------------
 	 {
-        title: "Ulis",
-        url: "https://ulis.sdh.fr/ULISNGE/index.do",
-        text: "Ulis",
-		label:"ULIS",
-        color: "#8FA7C8"
+        title: "ASTECH",
+        url: "https://astech.valenceromansagglo.fr/#/",
+        text: "ASTech",
+		label:"ASTech",
+		icon: "https://astech.valenceromansagglo.fr/assets/images/logo-symphonie1.png"
     },
 
     {
-        title: "SDH",
+        title: "VALENCE ROMANS AGGLO",
         url: "https://www.sdh.fr/accueil",
-        icon: "./assets/img/sdh.png",
-		label:"SDH"
+        icon: null,
+		label:"V.R.A"
     },
 
     {

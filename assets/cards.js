@@ -594,9 +594,16 @@ const cards = [
         title: "VALENCE ROMANS AGGLO",
         url: "https://intragglo.valenceromansagglo.fr/fr/index.html",
         icon: "https://intragglo.valenceromansagglo.fr/skins/IntranetAgglo/resources/templates/common/img/logo-colorful.svg",
-		label:"V.R.A"
+		label:"IntrAgglo"
     }, 
 
+	{
+        title: "VALENCE VILLE",
+        url: "https://intraval.valence.fr/fr/index.html",
+        icon: "https://intraval.valence.fr/skins/IntranetVille/resources/templates/common/img/logo-colorful.svg",
+		label:"IntraVille"
+    }, 
+	
 	{
         title: "ChronoTime",
         url: "https://chronotime.valenceromansagglo.fr/chronotime/login/login.html",

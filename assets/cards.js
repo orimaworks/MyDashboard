@@ -16,7 +16,7 @@ const cards = [
 //-----------------------
 	{
 		title: "Carte de visite numérique",
-		url: "https://orimaworks.github.io/carte_visite/",
+		url: "https://orimaworks.github.io/carte_de_visite/",
 		icon: null,
 		text: "⭐️ Carte de Visite ",
 		label: " ",

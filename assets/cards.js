@@ -626,7 +626,14 @@ const cards = [
         text: "ASTech-Solutions",
 		label:"ASTech-Solutions",
 		icon: "https://support.astech-solutions.com/images/main-logo.svg?v=2"
+    },    
+
+		 {
+        title: "wever - mobilité participative",
+        url: "https://yeswever.com/",
+        text: "Wever",
+		label:"Wever",
+		icon: "./assets/img/logo-wever.png"
     }    
-	
 
 ];

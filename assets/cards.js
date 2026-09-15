@@ -594,21 +594,24 @@ const cards = [
         title: "VALENCE ROMANS AGGLO",
         url: "https://intragglo.valenceromansagglo.fr/fr/index.html",
         icon: "https://intragglo.valenceromansagglo.fr/skins/IntranetAgglo/resources/templates/common/img/logo-colorful.svg",
-		label:"IntrAgglo"
+		label:"IntrAgglo",
+		category: "pro"
     }, 
 
 	{
         title: "VALENCE VILLE",
         url: "https://intraval.valence.fr/fr/index.html",
         icon: "https://intraval.valence.fr/skins/IntranetVille/resources/templates/common/img/logo-colorful.svg",
-		label:"IntraVille"
+		label:"IntraVille",
+		category: "pro"
     }, 
 	
 	{
         title: "ChronoTime",
         url: "https://chronotime.valenceromansagglo.fr/chronotime/login/login.html",
         icon: "https://chronotime.valenceromansagglo.fr/chronotime/assets/images/Chronotime_UX.png",
-		label:"ChronoTime"
+		label:"ChronoTime",
+		category: "pro"
     },
 	
 	{
@@ -616,7 +619,8 @@ const cards = [
         url: "https://astech.valenceromansagglo.fr/#/",
         text: "ASTech",
 		label:"ASTech",
-		icon: "https://astech.valenceromansagglo.fr/assets/images/logo-symphonie1.png"
+		icon: "https://astech.valenceromansagglo.fr/assets/images/logo-symphonie1.png",
+		category: "pro"
     },
 
 
@@ -625,7 +629,8 @@ const cards = [
         url: "https://support.astech-solutions.com/",
         text: "ASTech-Solutions",
 		label:"ASTech-Solutions",
-		icon: "https://support.astech-solutions.com/images/main-logo.svg?v=2"
+		icon: "https://support.astech-solutions.com/images/main-logo.svg?v=2",
+		category: "pro"
     },    
 
 		 {
@@ -633,7 +638,18 @@ const cards = [
         url: "https://yeswever.com/",
         text: "Wever",
 		label:"Wever",
-		icon: "./assets/img/logo-wever.png"
-    }    
+		icon: "./assets/img/logo-wever.png",
+		category: "pro"
+    },
+
+			 {
+        title: "Class'Croûte",
+        url: "https://www.classcroute.com",
+        text: "Class'Croûte",
+		label:"Class'Croûte",
+		icon: "./assets/img/logo-classcroute.png",
+		category: "pro"
+    }
+	
 
 ];

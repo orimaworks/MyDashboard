@@ -513,7 +513,15 @@ const cards = [
 		label: "DTC"
 		
     },
+
+	    {
+        title: "NewsBlur",
+        url: "https://www.newsblur.com/",
+        icon: "./assets/img/logo-newsblur.png",
+		label: "NewsBlur"
 		
+    },
+	
 	    {
         title: "Linked In",
         url: "https://linkedin.com/feed/",

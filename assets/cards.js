@@ -656,7 +656,7 @@ const cards = [
         text: "Wever",
 		label:"Wever",
 		icon: "./assets/img/logo-wever.png",
-		color: #e5004e,
+		color: "#e5004e",
 		category: "pro"
     },
 

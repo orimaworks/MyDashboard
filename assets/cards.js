@@ -642,11 +642,21 @@ const cards = [
     },    
 
 		 {
+        title: "GEO",
+        url: "https://geo.valenceromansagglo.fr/adws/app/5f1019b5-9dfd-11ec-a909-8bd6ac5949ab/index.html",
+        text: "GEO",
+		label:"GEO Portail",
+		icon: "./assets/img/logo-geo.png",
+		category: "pro"
+    },    
+	
+		 {
         title: "wever - mobilité participative",
         url: "https://yeswever.com/",
         text: "Wever",
 		label:"Wever",
 		icon: "./assets/img/logo-wever.png",
+		color: #e5004e,
 		category: "pro"
     },
 

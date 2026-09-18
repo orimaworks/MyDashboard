@@ -647,6 +647,7 @@ const cards = [
         text: "GEO",
 		label:"GEO Portail",
 		icon: "./assets/img/logo-geo.png",
+		color: "#e5004e",
 		category: "pro"
     },    
 	
@@ -656,7 +657,6 @@ const cards = [
         text: "Wever",
 		label:"Wever",
 		icon: "./assets/img/logo-wever.png",
-		color: "#e5004e",
 		category: "pro"
     },
 

@@ -340,6 +340,8 @@ C:\Windows
 C:\Program Files\Git\cmd
 C:\Users\Mario\AppData\Local\Microsoft\WindowsApps</pre>
 
+
+	  
     <h3>🔎 Lister les programmes exécutables</h3>
 
     <code>Get-Command -CommandType Application</code>
@@ -349,13 +351,22 @@ C:\Users\Mario\AppData\Local\Microsoft\WindowsApps</pre>
       peut trouver directement.
     </p>
 
-    <h3>📍 Savoir quel programme sera exécuté</h3>
+	  <p> Pour afficher la description de chaque programme : </p>
+
+	  <pre>
+	  	Get-Command -CommandType Application | Select-Object Name, @{Name='Description'; Expression={ 
+		(Get-Item $_.Source).VersionInfo.FileDescription
+    	}}
+	  </pre>
+	  
+	  <h3>📍 Savoir quel programme sera exécuté</h3>
 
     <pre>Get-Command git
 Get-Command python
 Get-Command notepad
 Get-Command winget</pre>
 
+	  
     <p>
       Cette commande indique notamment le chemin du programme trouvé.
     </p>

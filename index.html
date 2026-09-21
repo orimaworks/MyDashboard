@@ -304,7 +304,7 @@ Entrée</pre>
       Depuis PowerShell :
     </p>
 
-    <pre><code>explorer .</code></pre>
+    <pre>explorer .</pre>
 
     <p>
       L'Explorateur s'ouvre dans le dossier courant.
@@ -323,26 +323,26 @@ Entrée</pre>
       Afficher le PATH :
     </p>
 
-    <pre><code>$env:Path</code></pre>
+    <pre>$env:Path</pre>
 
     <p>
       Afficher chaque dossier sur une ligne :
     </p>
 
-    <pre><code>$env:Path -split ';'</code></pre>
+    <code>$env:Path -split ';'</code>
 
     <p>
       Exemple :
     </p>
 
-    <pre><code>C:\Windows\System32
+    <code>C:\Windows\System32
 C:\Windows
 C:\Program Files\Git\cmd
-C:\Users\Mario\AppData\Local\Microsoft\WindowsApps</code></pre>
+C:\Users\Mario\AppData\Local\Microsoft\WindowsApps</code>
 
     <h3>🔎 Lister les programmes exécutables</h3>
 
-    <pre><code>Get-Command -CommandType Application</code></pre>
+    <pre>Get-Command -CommandType Application</pre>
 
     <p>
       Cela permet de rechercher les applications exécutables que PowerShell
@@ -351,10 +351,10 @@ C:\Users\Mario\AppData\Local\Microsoft\WindowsApps</code></pre>
 
     <h3>📍 Savoir quel programme sera exécuté</h3>
 
-    <pre><code>Get-Command git
+    <code>Get-Command git
 Get-Command python
 Get-Command notepad
-Get-Command winget</code></pre>
+Get-Command winget</code>
 
     <p>
       Cette commande indique notamment le chemin du programme trouvé.
@@ -364,11 +364,11 @@ Get-Command winget</code></pre>
       Pour utiliser l'utilitaire Windows <code>where.exe</code> :
     </p>
 
-    <pre><code>where.exe git</code></pre>
+    <code>where.exe git</code>
 
     <p>
-      Attention : <code>where</code> est également un alias PowerShell.
-      Utiliser <code>where.exe</code> permet donc d'appeler explicitement
+      Attention : <pre>where</pre> est également un alias PowerShell.
+      Utiliser <pre>where.exe</pre> permet donc d'appeler explicitement
       l'utilitaire Windows.
     </p>
 

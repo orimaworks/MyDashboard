@@ -135,7 +135,7 @@
     </ul>
 
     <h3>💡 Le trio à retenir</h3>
-<ul>
+
 <pre>Get-Command
 Get-Help
 Get-Member</pre>
@@ -147,7 +147,7 @@ Get-Member</pre>
     </p>
 
     <hr>
-</ul>
+
     <h3>⌨️ Travailler sans souris</h3>
 
     <ul>
@@ -304,7 +304,7 @@ Entrée</pre>
       Depuis PowerShell :
     </p>
 
-    <pre>explorer .</pre>
+    <code>explorer .</code>
 
     <p>
       L'Explorateur s'ouvre dans le dossier courant.
@@ -323,7 +323,7 @@ Entrée</pre>
       Afficher le PATH :
     </p>
 
-    <pre>$env:Path</pre>
+    <code>$env:Path</code>
 
     <p>
       Afficher chaque dossier sur une ligne :
@@ -342,7 +342,7 @@ C:\Users\Mario\AppData\Local\Microsoft\WindowsApps</pre>
 
     <h3>🔎 Lister les programmes exécutables</h3>
 
-    <pre>Get-Command -CommandType Application</pre>
+    <code>Get-Command -CommandType Application</code>
 
     <p>
       Cela permet de rechercher les applications exécutables que PowerShell
@@ -351,10 +351,10 @@ C:\Users\Mario\AppData\Local\Microsoft\WindowsApps</pre>
 
     <h3>📍 Savoir quel programme sera exécuté</h3>
 
-    <code>Get-Command git
+    <pre>Get-Command git
 Get-Command python
 Get-Command notepad
-Get-Command winget</code>
+Get-Command winget</pre>
 
     <p>
       Cette commande indique notamment le chemin du programme trouvé.
@@ -367,8 +367,8 @@ Get-Command winget</code>
     <code>where.exe git</code>
 
     <p>
-      Attention : <pre>where</pre> est également un alias PowerShell.
-      Utiliser <pre>where.exe</pre> permet donc d'appeler explicitement
+      Attention : <code>where</code> est également un alias PowerShell.
+      Utiliser <code>where.exe</code> permet donc d'appeler explicitement
       l'utilitaire Windows.
     </p>
 
@@ -473,42 +473,42 @@ Get-Command winget</code>
       PowerShell transmet principalement des <strong>objets</strong>, et non simplement du texte.
     </p>
 
-    <pre><code>Get-Process | Where-Object CPU -gt 100
+    <pre>Get-Process | Where-Object CPU -gt 100
 Get-Process | Sort-Object CPU -Descending
 Get-Process | Select-Object Name, CPU
-Get-Service | Where-Object Status -eq "Running"</code></pre>
+Get-Service | Where-Object Status -eq "Running"</pre>
 
     <h3>🔍 Filtrer</h3>
 
-    <pre><code>Get-Process | Where-Object CPU -gt 100</code></pre>
+    <code>Get-Process | Where-Object CPU -gt 100</code>
 
     <p>
       Version avec la variable automatique <code>$_</code> :
     </p>
 
-    <pre><code>Get-Process | Where-Object { $_.CPU -gt 100 }</code></pre>
+    <code>Get-Process | Where-Object { $_.CPU -gt 100 }</code>
 
     <h3>📋 Sélectionner des propriétés</h3>
 
-    <pre><code>Get-Process | Select-Object Name, CPU, Id</code></pre>
+    <code>Get-Process | Select-Object Name, CPU, Id</code>
 
     <h3>↕️ Trier</h3>
 
-    <pre><code>Get-Process | Sort-Object CPU -Descending</code></pre>
+    <code>Get-Process | Sort-Object CPU -Descending</code>
 
     <h3>📊 Regrouper</h3>
 
-    <pre><code>Get-Process | Group-Object Company</code></pre>
+	<code>Get-Process | Group-Object Company</code>
 
     <h3>🔢 Compter / mesurer</h3>
 
-    <pre><code>Get-ChildItem | Measure-Object</code></pre>
+    <code>Get-ChildItem | Measure-Object</code>
 
     <hr>
 
     <h3>🧮 Opérateurs</h3>
 
-    <pre><code>-eq       égal
+    <pre>-eq       égal
 -ne       différent
 -gt       supérieur
 -ge       supérieur ou égal
@@ -520,11 +520,11 @@ Get-Service | Where-Object Status -eq "Running"</code></pre>
 -contains contient une valeur
 -and      ET logique
 -or       OU logique
--not      négation</code></pre>
+-not      négation</pre>
 
     <p>Exemples :</p>
 
-    <pre><code>$age -ge 18
+    <pre>$age -ge 18
 
 $name -eq "Mario"
 
@@ -532,45 +532,45 @@ $file.Name -like "*.pdf"
 
 $extension -in ".jpg", ".png", ".gif"
 
-($age -ge 18) -and ($country -eq "France")</code></pre>
+($age -ge 18) -and ($country -eq "France")</pre>
 
     <hr>
 
     <h3>📦 Variables</h3>
 
-    <pre><code>$nom = "Mario"
+    <pre>$nom = "Mario"
 $age = 35
 $chemin = "C:\Temp"
 
 $nom
 $age
-$chemin</code></pre>
+$chemin</pre>
 
     <h3>📚 Tableaux</h3>
 
-    <pre><code>$fruits = "Pomme", "Poire", "Banane"
+    <pre>$fruits = "Pomme", "Poire", "Banane"
 
 $fruits[0]
-$fruits.Count</code></pre>
+$fruits.Count</pre>
 
     <h3>🗂️ Hashtable</h3>
 
-    <pre><code>$ordinateur = @{
+    <pre>$ordinateur = @{
     Nom = "PC-MARIO"
     RAM = "16 Go"
     OS  = "Windows 11"
 }
 
 $ordinateur.Nom
-$ordinateur.OS</code></pre>
+$ordinateur.OS</pre>
 
     <h3>🔤 Chaînes de caractères</h3>
 
-    <pre><code>$nom = "Mario"
+    <pre>$nom = "Mario"
 
 "Bonjour $nom"
 
-"Nom : $($ordinateur.Nom)"</code></pre>
+"Nom : $($ordinateur.Nom)"</pre>
 
     <p>
       Les guillemets doubles permettent l'expansion des variables.
@@ -779,17 +779,17 @@ Get-Process | Format-List Name, CPU, Id</code></pre>
 
     <h3>🗜️ Archives ZIP</h3>
 
-    <pre><code>Compress-Archive -Path C:\Projet\* -DestinationPath C:\Backup\Projet.zip
+    <pre>Compress-Archive -Path C:\Projet\* -DestinationPath C:\Backup\Projet.zip
 
-Expand-Archive -Path C:\Backup\Projet.zip -DestinationPath C:\Projet</code></pre>
+Expand-Archive -Path C:\Backup\Projet.zip -DestinationPath C:\Projet</pre>
 
     <hr>
 
     <h3>🔐 Hash et fichiers</h3>
 
-    <pre><code>Get-FileHash fichier.iso
+    <pre>Get-FileHash fichier.iso
 
-Get-FileHash fichier.iso -Algorithm SHA256</code></pre>
+Get-FileHash fichier.iso -Algorithm SHA256</pre>
 
     <p>
       Utile pour vérifier qu'un fichier possède bien l'empreinte attendue.
@@ -848,22 +848,22 @@ Get-FileHash fichier.iso -Algorithm SHA256</code></pre>
 
     <h3>🧰 Applications Windows</h3>
 
-    <pre><code>Start-Process notepad
+    <pre>Start-Process notepad
 Start-Process calc
 Start-Process explorer .
 Start-Process ms-settings:
-Start-Process powershell</code></pre>
+Start-Process powershell</pre>
 
     <p>
       PowerShell peut également lancer des exécutables classiques présents
       dans le PATH.
     </p>
 
-    <pre><code>notepad.exe
+    <pre>notepad.exe
 cmd.exe
 winget.exe
 git.exe
-python.exe</code></pre>
+python.exe</pre>
 
     <hr>
 
@@ -873,22 +873,22 @@ python.exe</code></pre>
       Le registre est accessible comme un lecteur PowerShell.
     </p>
 
-    <pre><code>Get-PSDrive
+    <pre>Get-PSDrive
 
 Get-ChildItem HKCU:\
 
 Get-ChildItem HKLM:\
 
-Get-ItemProperty HKCU:\Software\Microsoft\Windows\CurrentVersion\Run</code></pre>
+Get-ItemProperty HKCU:\Software\Microsoft\Windows\CurrentVersion\Run</pre>
 
     <p>
       Exemple de modification :
     </p>
 
-    <pre><code>Set-ItemProperty `
+    <pre>Set-ItemProperty `
   -Path "HKCU:\Software\Exemple" `
   -Name "Valeur" `
-  -Value "Test"</code></pre>
+  -Value "Test"</pre>
 
     <p>
       ⚠️ Modifier le registre peut affecter le fonctionnement de Windows.
@@ -899,9 +899,9 @@ Get-ItemProperty HKCU:\Software\Microsoft\Windows\CurrentVersion\Run</code></pre
 
     <h3>📋 Presse-papiers</h3>
 
-    <pre><code>"Bonjour" | Set-Clipboard
+    <pre>"Bonjour" | Set-Clipboard
 
-Get-Clipboard</code></pre>
+Get-Clipboard</pre>
 
     <p>
       Pratique pour automatiser des copier-coller sans utiliser la souris.
@@ -911,12 +911,12 @@ Get-Clipboard</code></pre>
 
     <h3>🔍 Variables système utiles</h3>
 
-    <pre><code>$env:USERNAME
+    <pre>$env:USERNAME
 $env:USERPROFILE
 $env:COMPUTERNAME
 $env:USERDOMAIN
 $env:TEMP
-$env:PATH</code></pre>
+$env:PATH</pre>
 
     <p>
       Les variables commençant par <code>$env:</code> correspondent aux
@@ -931,13 +931,13 @@ $env:PATH</code></pre>
       Les scripts PowerShell utilisent l'extension <code>.ps1</code>.
     </p>
 
-    <pre><code>mon-script.ps1</code></pre>
+    <pre>mon-script.ps1</pre>
 
     <p>
       Une fonction simple :
     </p>
 
-    <pre><code>function Bonjour {
+    <pre>function Bonjour {
     param(
         [string]$Nom
     )
@@ -945,23 +945,23 @@ $env:PATH</code></pre>
     Write-Host "Bonjour $Nom"
 }
 
-Bonjour -Nom "Mario"</code></pre>
+Bonjour -Nom "Mario"</pre>
 
     <h3>📥 Paramètres de script</h3>
 
-    <pre><code>param(
+    <pre>param(
     [string]$Nom,
     [int]$Age
 )
 
 Write-Host "Nom : $Nom"
-Write-Host "Age : $Age"</code></pre>
+Write-Host "Age : $Age"</pre>
 
     <hr>
 
     <h3>🚨 Gestion des erreurs</h3>
 
-    <pre><code>try {
+    <pre>try {
     Get-Item C:\FichierInexistant.txt -ErrorAction Stop
 }
 catch {
@@ -969,52 +969,51 @@ catch {
 }
 finally {
     Write-Host "Fin du traitement."
-}</code></pre>
+}</pre>
 
     <p>
       Pour forcer une commande à générer une erreur interceptable par
       <code>catch</code> :
     </p>
 
-    <pre><code>-ErrorAction Stop</code></pre>
+    <pre>-ErrorAction Stop</pre>
 
     <p>
       Informations utiles :
     </p>
 
-    <pre><code>$?
+    <pre>$?
 $LASTEXITCODE
-$Error</code></pre>
+$Error</pre>
 
     <hr>
 
     <h3>🔑 Exécuter PowerShell en administrateur</h3>
 
-    <pre><code>Start-Process powershell -Verb RunAs</code></pre>
+    <pre>Start-Process powershell -Verb RunAs</pre>
 
     <p>
       Pour PowerShell 7 :
     </p>
 
-    <pre><code>Start-Process pwsh -Verb RunAs</code></pre>
+    <code>Start-Process pwsh -Verb RunAs</code>
 
     <p>
       Un script peut également exiger les droits administrateur :
     </p>
 
-    <pre><code>#Requires -RunAsAdministrator</code></pre>
-
+   <code>#Requires -RunAsAdministrator</code></pre>
     <hr>
 
     <h3>🔒 Politique d'exécution des scripts</h3>
 
-    <pre><code>Get-ExecutionPolicy</code></pre>
+    <code>Get-ExecutionPolicy</code>
 
     <p>
       Pour voir les politiques appliquées à différents niveaux :
     </p>
 
-    <pre><code>Get-ExecutionPolicy -List</code></pre>
+    <pre>Get-ExecutionPolicy -List</pre>
 
     <p>
       ⚠️ Ne modifie pas la politique d'exécution sans comprendre pourquoi.
@@ -1030,25 +1029,25 @@ $Error</code></pre>
       raccourcis, fonctions ou réglages.
     </p>
 
-    <pre><code>$PROFILE</code></pre>
+    <code>$PROFILE</code>
 
     <p>
       Vérifier s'il existe :
     </p>
 
-    <pre><code>Test-Path $PROFILE</code></pre>
+    <pre>Test-Path $PROFILE</code>
 
     <p>
       Créer le profil :
     </p>
 
-    <pre><code>New-Item -ItemType File -Path $PROFILE -Force</code></pre>
+    <pre>New-Item -ItemType File -Path $PROFILE -Force</pre>
 
     <p>
       L'ouvrir avec le Bloc-notes :
     </p>
 
-    <pre><code>notepad $PROFILE</code></pre>
+    <pre>notepad $PROFILE</pre>
 
     <hr>
 

@@ -52,6 +52,7 @@
  </header>  
 <!-- <head> -->
  <nav class="navbar">
+	 <button data-modal="PowerSHell"><img src="./assets/img/powershell.png">Powershell</button>
 	 <button data-modal="numTiers"><img src="./assets/img/numtiers.png">n°tiers</button>
 	 <button data-modal="git"><img src="./assets/img/github.png">Git</button>
 	 <button data-modal="googleDorks"><img src="./assets/img/G.png"> Dorks</button>
@@ -78,8 +79,1221 @@
 </dialog>
   -->
 
+<!--------------------------------
+          Powershell
+--------------------------------->
 
+<dialog id="cheatSheets">
 
+  <div class="display_column center">
+
+    <h2>PowerShell</h2>
+    <p>
+      PowerShell est le shell et langage de scripting de Microsoft.
+      Il permet d'administrer Windows, manipuler des fichiers, gérer les processus,
+      services, réseau, logiciels, registre, etc., principalement au clavier.
+    </p>
+
+    <hr>
+
+    <h3>🧭 Les commandes fondamentales à connaître</h3>
+
+    <ul>
+      <li>
+        <strong>Découvrir les commandes</strong><br>
+        <code>Get-Command</code>
+        — Liste les commandes connues de PowerShell.
+      </li>
+
+      <li>
+        <strong>Rechercher une commande</strong><br>
+        <code>Get-Command *process*</code>
+        — Recherche les commandes dont le nom contient "process".
+      </li>
+
+      <li>
+        <strong>Voir l'aide</strong><br>
+        <code>Get-Help Get-Process</code>
+        — Affiche l'aide d'une commande.
+      </li>
+
+      <li>
+        <strong>Voir des exemples</strong><br>
+        <code>Get-Help Get-Process -Examples</code>
+        — Affiche des exemples d'utilisation.
+      </li>
+
+      <li>
+        <strong>Afficher les propriétés d'un objet</strong><br>
+        <code>Get-Process | Get-Member</code>
+        — Permet de découvrir les propriétés et méthodes disponibles.
+      </li>
+
+      <li>
+        <strong>Connaître le type d'une commande</strong><br>
+        <code>Get-Command Get-Process</code>
+        — Indique notamment s'il s'agit d'un Alias, Function, Cmdlet, Application, etc.
+      </li>
+
+      <li>
+        <strong>Voir les verbes PowerShell</strong><br>
+        <code>Get-Verb</code>
+        — Liste les verbes utilisés pour nommer les cmdlets.
+      </li>
+    </ul>
+
+    <h3>💡 Le trio à retenir</h3>
+
+    <pre><code>Get-Command
+Get-Help
+Get-Member</code></pre>
+
+    <p>
+      <strong>Get-Command</strong> → Quelles commandes existent ?<br>
+      <strong>Get-Help</strong> → Comment les utiliser ?<br>
+      <strong>Get-Member</strong> → Qu'est-ce que contient l'objet retourné ?
+    </p>
+
+    <hr>
+
+    <h3>⌨️ Travailler sans souris</h3>
+
+    <ul>
+      <li>
+        <strong>Complétion automatique</strong><br>
+        <code>Tab</code>
+        — Complète automatiquement les commandes, paramètres et chemins.
+      </li>
+
+      <li>
+        <strong>Historique précédent</strong><br>
+        <code>↑</code>
+        — Rappelle la commande précédente.
+      </li>
+
+      <li>
+        <strong>Historique suivant</strong><br>
+        <code>↓</code>
+        — Parcourt l'historique dans l'autre sens.
+      </li>
+
+      <li>
+        <strong>Recherche dans l'historique</strong><br>
+        <code>Ctrl + R</code>
+        — Recherche une commande déjà utilisée.
+      </li>
+
+      <li>
+        <strong>Interrompre une commande</strong><br>
+        <code>Ctrl + C</code>
+        — Arrête la commande en cours.
+      </li>
+
+      <li>
+        <strong>Effacer l'écran</strong><br>
+        <code>Clear-Host</code>
+        ou
+        <code>cls</code>
+        — Nettoie l'affichage.
+      </li>
+
+      <li>
+        <strong>Historique</strong><br>
+        <code>Get-History</code>
+        — Affiche les commandes précédemment exécutées.
+      </li>
+
+      <li>
+        <strong>Réexécuter une commande de l'historique</strong><br>
+        <code>Invoke-History 5</code>
+        — Réexécute l'entrée numéro 5.
+      </li>
+    </ul>
+
+    <hr>
+
+    <h3>📂 Navigation dans les dossiers</h3>
+
+    <ul>
+      <li>
+        <strong>Dossier courant</strong><br>
+        <code>Get-Location</code>
+        — Affiche le répertoire courant.
+      </li>
+
+      <li>
+        <strong>Changer de dossier</strong><br>
+        <code>Set-Location C:\Users\Mario\Documents</code>
+      </li>
+
+      <li>
+        <strong>Raccourci de Set-Location</strong><br>
+        <code>cd C:\Users\Mario\Documents</code>
+      </li>
+
+      <li>
+        <strong>Retour au dossier précédent</strong><br>
+        <code>Pop-Location</code>
+      </li>
+
+      <li>
+        <strong>Mémoriser le dossier courant</strong><br>
+        <code>Push-Location C:\Temp</code>
+        — Change de dossier tout en mémorisant l'ancien.
+      </li>
+
+      <li>
+        <strong>Afficher le contenu</strong><br>
+        <code>Get-ChildItem</code>
+        — Liste fichiers et dossiers.
+      </li>
+
+      <li>
+        <strong>Alias classique</strong><br>
+        <code>dir</code>
+        ou
+        <code>ls</code>
+        — Alias de <code>Get-ChildItem</code>.
+      </li>
+
+      <li>
+        <strong>Afficher les fichiers cachés</strong><br>
+        <code>Get-ChildItem -Force</code>
+      </li>
+
+      <li>
+        <strong>Rechercher récursivement</strong><br>
+        <code>Get-ChildItem -Recurse</code>
+      </li>
+
+      <li>
+        <strong>Rechercher un type de fichier</strong><br>
+        <code>Get-ChildItem -Recurse -Filter *.pdf</code>
+      </li>
+    </ul>
+
+    <h3>📁 Ouvrir l'Explorateur Windows depuis PowerShell</h3>
+
+    <ul>
+      <li>
+        <strong>Ouvrir le dossier courant</strong><br>
+        <code>explorer .</code>
+      </li>
+
+      <li>
+        <strong>Ouvrir un dossier précis</strong><br>
+        <code>explorer C:\Users\Mario\Documents</code>
+      </li>
+
+      <li>
+        <strong>Version PowerShell</strong><br>
+        <code>ii .</code>
+        — <code>ii</code> est l'alias de <code>Invoke-Item</code>.
+      </li>
+    </ul>
+
+    <hr>
+
+    <h3>🔄 Naviguer dans les deux sens</h3>
+
+    <p>
+      Depuis l'Explorateur Windows :
+    </p>
+
+    <pre><code>Alt + D
+powershell
+Entrée</code></pre>
+
+    <p>
+      PowerShell s'ouvre alors dans le dossier actuellement affiché.
+    </p>
+
+    <p>
+      Depuis PowerShell :
+    </p>
+
+    <pre><code>explorer .</code></pre>
+
+    <p>
+      L'Explorateur s'ouvre dans le dossier courant.
+    </p>
+
+    <hr>
+
+    <h3>🧩 Les commandes accessibles via le PATH</h3>
+
+    <p>
+      Le <strong>PATH</strong> contient une liste de dossiers dans lesquels Windows
+      recherche les programmes lorsqu'on tape leur nom sans fournir leur chemin complet.
+    </p>
+
+    <p>
+      Afficher le PATH :
+    </p>
+
+    <pre><code>$env:Path</code></pre>
+
+    <p>
+      Afficher chaque dossier sur une ligne :
+    </p>
+
+    <pre><code>$env:Path -split ';'</code></pre>
+
+    <p>
+      Exemple :
+    </p>
+
+    <pre><code>C:\Windows\System32
+C:\Windows
+C:\Program Files\Git\cmd
+C:\Users\Mario\AppData\Local\Microsoft\WindowsApps</code></pre>
+
+    <h3>🔎 Lister les programmes exécutables</h3>
+
+    <pre><code>Get-Command -CommandType Application</code></pre>
+
+    <p>
+      Cela permet de rechercher les applications exécutables que PowerShell
+      peut trouver directement.
+    </p>
+
+    <h3>📍 Savoir quel programme sera exécuté</h3>
+
+    <pre><code>Get-Command git
+Get-Command python
+Get-Command notepad
+Get-Command winget</code></pre>
+
+    <p>
+      Cette commande indique notamment le chemin du programme trouvé.
+    </p>
+
+    <p>
+      Pour utiliser l'utilitaire Windows <code>where.exe</code> :
+    </p>
+
+    <pre><code>where.exe git</code></pre>
+
+    <p>
+      Attention : <code>where</code> est également un alias PowerShell.
+      Utiliser <code>where.exe</code> permet donc d'appeler explicitement
+      l'utilitaire Windows.
+    </p>
+
+    <hr>
+
+    <h3>📄 Créer et manipuler des fichiers</h3>
+
+    <ul>
+      <li>
+        <strong>Créer un fichier</strong><br>
+        <code>New-Item fichier.txt -ItemType File</code>
+      </li>
+
+      <li>
+        <strong>Créer un dossier</strong><br>
+        <code>New-Item MonDossier -ItemType Directory</code>
+      </li>
+
+      <li>
+        <strong>Copier</strong><br>
+        <code>Copy-Item fichier.txt copie.txt</code>
+      </li>
+
+      <li>
+        <strong>Déplacer</strong><br>
+        <code>Move-Item fichier.txt C:\Temp</code>
+      </li>
+
+      <li>
+        <strong>Renommer</strong><br>
+        <code>Rename-Item ancien.txt nouveau.txt</code>
+      </li>
+
+      <li>
+        <strong>Supprimer</strong><br>
+        <code>Remove-Item fichier.txt</code>
+      </li>
+
+      <li>
+        <strong>Supprimer un dossier et son contenu</strong><br>
+        <code>Remove-Item dossier -Recurse</code>
+      </li>
+
+      <li>
+        <strong>Tester l'existence</strong><br>
+        <code>Test-Path C:\Temp\fichier.txt</code>
+      </li>
+    </ul>
+
+    <p>
+      ⚠️ <code>Remove-Item -Recurse -Force</code> peut supprimer beaucoup de données.
+      Toujours vérifier le chemin avant de l'utiliser.
+    </p>
+
+    <hr>
+
+    <h3>📖 Lire et écrire du texte</h3>
+
+    <ul>
+      <li>
+        <strong>Lire un fichier</strong><br>
+        <code>Get-Content fichier.txt</code>
+      </li>
+
+      <li>
+        <strong>Lire uniquement les premières lignes</strong><br>
+        <code>Get-Content fichier.txt -Head 10</code>
+      </li>
+
+      <li>
+        <strong>Lire les dernières lignes</strong><br>
+        <code>Get-Content fichier.txt -Tail 10</code>
+      </li>
+
+      <li>
+        <strong>Écrire dans un fichier</strong><br>
+        <code>"Bonjour" | Set-Content fichier.txt</code>
+      </li>
+
+      <li>
+        <strong>Ajouter du contenu</strong><br>
+        <code>"Nouvelle ligne" | Add-Content fichier.txt</code>
+      </li>
+
+      <li>
+        <strong>Rechercher du texte</strong><br>
+        <code>Select-String "erreur" fichier.log</code>
+      </li>
+
+      <li>
+        <strong>Rechercher récursivement</strong><br>
+        <code>Get-ChildItem -Recurse | Select-String "erreur"</code>
+      </li>
+    </ul>
+
+    <hr>
+
+    <h3>🔗 Le pipeline <code>|</code></h3>
+
+    <p>
+      Le pipeline permet d'envoyer le résultat d'une commande vers une autre.
+      PowerShell transmet principalement des <strong>objets</strong>, et non simplement du texte.
+    </p>
+
+    <pre><code>Get-Process | Where-Object CPU -gt 100
+Get-Process | Sort-Object CPU -Descending
+Get-Process | Select-Object Name, CPU
+Get-Service | Where-Object Status -eq "Running"</code></pre>
+
+    <h3>🔍 Filtrer</h3>
+
+    <pre><code>Get-Process | Where-Object CPU -gt 100</code></pre>
+
+    <p>
+      Version avec la variable automatique <code>$_</code> :
+    </p>
+
+    <pre><code>Get-Process | Where-Object { $_.CPU -gt 100 }</code></pre>
+
+    <h3>📋 Sélectionner des propriétés</h3>
+
+    <pre><code>Get-Process | Select-Object Name, CPU, Id</code></pre>
+
+    <h3>↕️ Trier</h3>
+
+    <pre><code>Get-Process | Sort-Object CPU -Descending</code></pre>
+
+    <h3>📊 Regrouper</h3>
+
+    <pre><code>Get-Process | Group-Object Company</code></pre>
+
+    <h3>🔢 Compter / mesurer</h3>
+
+    <pre><code>Get-ChildItem | Measure-Object</code></pre>
+
+    <hr>
+
+    <h3>🧮 Opérateurs</h3>
+
+    <pre><code>-eq       égal
+-ne       différent
+-gt       supérieur
+-ge       supérieur ou égal
+-lt       inférieur
+-le       inférieur ou égal
+-like     correspondance avec *
+-match    expression régulière
+-in       appartient à une liste
+-contains contient une valeur
+-and      ET logique
+-or       OU logique
+-not      négation</code></pre>
+
+    <p>Exemples :</p>
+
+    <pre><code>$age -ge 18
+
+$name -eq "Mario"
+
+$file.Name -like "*.pdf"
+
+$extension -in ".jpg", ".png", ".gif"
+
+($age -ge 18) -and ($country -eq "France")</code></pre>
+
+    <hr>
+
+    <h3>📦 Variables</h3>
+
+    <pre><code>$nom = "Mario"
+$age = 35
+$chemin = "C:\Temp"
+
+$nom
+$age
+$chemin</code></pre>
+
+    <h3>📚 Tableaux</h3>
+
+    <pre><code>$fruits = "Pomme", "Poire", "Banane"
+
+$fruits[0]
+$fruits.Count</code></pre>
+
+    <h3>🗂️ Hashtable</h3>
+
+    <pre><code>$ordinateur = @{
+    Nom = "PC-MARIO"
+    RAM = "16 Go"
+    OS  = "Windows 11"
+}
+
+$ordinateur.Nom
+$ordinateur.OS</code></pre>
+
+    <h3>🔤 Chaînes de caractères</h3>
+
+    <pre><code>$nom = "Mario"
+
+"Bonjour $nom"
+
+"Nom : $($ordinateur.Nom)"</code></pre>
+
+    <p>
+      Les guillemets doubles permettent l'expansion des variables.
+      Les guillemets simples conservent le texte littéralement.
+    </p>
+
+    <hr>
+
+    <h3>⚙️ Processus</h3>
+
+    <ul>
+      <li><code>Get-Process</code> — Liste les processus.</li>
+      <li><code>Get-Process chrome</code> — Recherche un processus précis.</li>
+      <li><code>Get-Process | Sort-Object CPU -Descending</code> — Trie par CPU.</li>
+      <li><code>Stop-Process -Name notepad</code> — Arrête un processus.</li>
+      <li><code>Stop-Process -Id 1234</code> — Arrête un processus par PID.</li>
+      <li><code>Start-Process notepad</code> — Lance une application.</li>
+    </ul>
+
+    <p>
+      ⚠️ <code>Stop-Process -Force</code> force l'arrêt du processus.
+    </p>
+
+    <hr>
+
+    <h3>🔧 Services Windows</h3>
+
+    <ul>
+      <li><code>Get-Service</code> — Liste les services.</li>
+      <li><code>Get-Service | Where-Object Status -eq "Running"</code> — Services actifs.</li>
+      <li><code>Get-Service -Name Spooler</code> — Service précis.</li>
+      <li><code>Start-Service Spooler</code> — Démarre un service.</li>
+      <li><code>Stop-Service Spooler</code> — Arrête un service.</li>
+      <li><code>Restart-Service Spooler</code> — Redémarre un service.</li>
+      <li><code>Set-Service Spooler -StartupType Automatic</code> — Configure le démarrage.</li>
+    </ul>
+
+    <hr>
+
+    <h3>💻 Informations système</h3>
+
+    <ul>
+      <li>
+        <code>$PSVersionTable</code>
+        — Version de PowerShell et informations associées.
+      </li>
+
+      <li>
+        <code>Get-ComputerInfo</code>
+        — Informations détaillées sur Windows et le PC.
+      </li>
+
+      <li>
+        <code>Get-CimInstance Win32_OperatingSystem</code>
+        — Informations sur le système d'exploitation.
+      </li>
+
+      <li>
+        <code>Get-CimInstance Win32_Processor</code>
+        — Informations sur le processeur.
+      </li>
+
+      <li>
+        <code>Get-CimInstance Win32_LogicalDisk</code>
+        — Informations sur les disques logiques.
+      </li>
+    </ul>
+
+    <hr>
+
+    <h3>💾 Disques et volumes</h3>
+
+    <ul>
+      <li><code>Get-PSDrive</code> — Liste les lecteurs PowerShell.</li>
+      <li><code>Get-Volume</code> — Liste les volumes.</li>
+      <li><code>Get-Disk</code> — Liste les disques physiques.</li>
+      <li><code>Get-Partition</code> — Liste les partitions.</li>
+    </ul>
+
+    <p>
+      ⚠️ Les commandes de modification de partitions ou de disques peuvent
+      entraîner une perte de données. Les utiliser uniquement en comprenant
+      précisément leur effet.
+    </p>
+
+    <hr>
+
+    <h3>🌐 Réseau</h3>
+
+    <ul>
+      <li>
+        <code>Get-NetIPConfiguration</code>
+        — Configuration IP.
+      </li>
+
+      <li>
+        <code>Get-NetAdapter</code>
+        — Cartes réseau.
+      </li>
+
+      <li>
+        <code>Test-Connection 192.168.1.1</code>
+        — Test de connectivité, similaire au ping.
+      </li>
+
+      <li>
+        <code>Test-NetConnection google.com</code>
+        — Test réseau.
+      </li>
+
+      <li>
+        <code>Test-NetConnection google.com -Port 443</code>
+        — Teste un port TCP.
+      </li>
+
+      <li>
+        <code>Resolve-DnsName google.com</code>
+        — Résolution DNS.
+      </li>
+
+      <li>
+        <code>Get-NetTCPConnection</code>
+        — Connexions TCP.
+      </li>
+
+      <li>
+        <code>Get-DnsClientServerAddress</code>
+        — Serveurs DNS configurés.
+      </li>
+    </ul>
+
+    <hr>
+
+    <h3>🌍 HTTP / API</h3>
+
+    <ul>
+      <li>
+        <code>Invoke-WebRequest https://example.com</code>
+        — Effectue une requête HTTP et récupère notamment le contenu de la réponse.
+      </li>
+
+      <li>
+        <code>Invoke-RestMethod https://api.example.com</code>
+        — Pratique pour interroger des API REST.
+      </li>
+    </ul>
+
+    <p>
+      Pour une API JSON, <code>Invoke-RestMethod</code> convertit généralement
+      automatiquement la réponse JSON en objets PowerShell.
+    </p>
+
+    <hr>
+
+    <h3>📦 JSON</h3>
+
+    <ul>
+      <li>
+        <code>$objet | ConvertTo-Json</code>
+        — Convertit un objet PowerShell en JSON.
+      </li>
+
+      <li>
+        <code>Get-Content data.json | ConvertFrom-Json</code>
+        — Convertit du JSON en objet PowerShell.
+      </li>
+    </ul>
+
+    <hr>
+
+    <h3>📊 Exporter des données</h3>
+
+    <pre><code>Get-Process | Export-Csv processus.csv -NoTypeInformation
+
+Get-Service | Out-File services.txt
+
+Get-Process | ConvertTo-Json | Out-File processus.json</code></pre>
+
+    <p>
+      <strong>Attention :</strong> <code>Format-Table</code> et
+      <code>Format-List</code> servent principalement à l'affichage.
+      Évite de les placer avant une commande qui doit continuer à manipuler
+      les objets.
+    </p>
+
+    <pre><code>Get-Process |
+    Where-Object CPU -gt 100 |
+    Select-Object Name, CPU |
+    Export-Csv processus.csv -NoTypeInformation</code></pre>
+
+    <hr>
+
+    <h3>🎨 Affichage</h3>
+
+    <ul>
+      <li><code>Format-Table</code> — Affichage sous forme de tableau.</li>
+      <li><code>Format-List</code> — Affichage détaillé propriété par propriété.</li>
+      <li><code>Out-GridView</code> — Affichage graphique sous forme de tableau filtrable lorsque disponible.</li>
+    </ul>
+
+    <pre><code>Get-Process | Format-Table Name, CPU, Id
+
+Get-Process | Format-List Name, CPU, Id</code></pre>
+
+    <hr>
+
+    <h3>🗜️ Archives ZIP</h3>
+
+    <pre><code>Compress-Archive -Path C:\Projet\* -DestinationPath C:\Backup\Projet.zip
+
+Expand-Archive -Path C:\Backup\Projet.zip -DestinationPath C:\Projet</code></pre>
+
+    <hr>
+
+    <h3>🔐 Hash et fichiers</h3>
+
+    <pre><code>Get-FileHash fichier.iso
+
+Get-FileHash fichier.iso -Algorithm SHA256</code></pre>
+
+    <p>
+      Utile pour vérifier qu'un fichier possède bien l'empreinte attendue.
+    </p>
+
+    <hr>
+
+    <h3>🛠️ Logiciels avec WinGet</h3>
+
+    <p>
+      <code>winget</code> est le gestionnaire de paquets Windows.
+      Il peut être utilisé directement depuis PowerShell.
+    </p>
+
+    <ul>
+      <li><code>winget search firefox</code> — Recherche un logiciel.</li>
+
+      <li>
+        <code>winget install Mozilla.Firefox --exact</code>
+        — Installe un logiciel identifié précisément.
+      </li>
+
+      <li>
+        <code>winget list</code>
+        — Liste les logiciels détectés par WinGet.
+      </li>
+
+      <li>
+        <code>winget upgrade</code>
+        — Recherche les mises à jour disponibles.
+      </li>
+
+      <li>
+        <code>winget upgrade --all</code>
+        — Met à jour les paquets pris en charge.
+      </li>
+
+      <li>
+        <code>winget uninstall Mozilla.Firefox</code>
+        — Désinstalle un logiciel identifié.
+      </li>
+
+      <li>
+        <code>winget show Mozilla.Firefox</code>
+        — Affiche les informations d'un paquet.
+      </li>
+    </ul>
+
+    <p>
+      ⚠️ WinGet ne garantit pas la gestion de tous les logiciels installés.
+      Pour certains programmes, il faudra utiliser leur propre programme
+      de désinstallation ou leur installeur.
+    </p>
+
+    <hr>
+
+    <h3>🧰 Applications Windows</h3>
+
+    <pre><code>Start-Process notepad
+Start-Process calc
+Start-Process explorer .
+Start-Process ms-settings:
+Start-Process powershell</code></pre>
+
+    <p>
+      PowerShell peut également lancer des exécutables classiques présents
+      dans le PATH.
+    </p>
+
+    <pre><code>notepad.exe
+cmd.exe
+winget.exe
+git.exe
+python.exe</code></pre>
+
+    <hr>
+
+    <h3>🗃️ Registre Windows</h3>
+
+    <p>
+      Le registre est accessible comme un lecteur PowerShell.
+    </p>
+
+    <pre><code>Get-PSDrive
+
+Get-ChildItem HKCU:\
+
+Get-ChildItem HKLM:\
+
+Get-ItemProperty HKCU:\Software\Microsoft\Windows\CurrentVersion\Run</code></pre>
+
+    <p>
+      Exemple de modification :
+    </p>
+
+    <pre><code>Set-ItemProperty `
+  -Path "HKCU:\Software\Exemple" `
+  -Name "Valeur" `
+  -Value "Test"</code></pre>
+
+    <p>
+      ⚠️ Modifier le registre peut affecter le fonctionnement de Windows.
+      Toujours vérifier le chemin et la valeur avant modification.
+    </p>
+
+    <hr>
+
+    <h3>📋 Presse-papiers</h3>
+
+    <pre><code>"Bonjour" | Set-Clipboard
+
+Get-Clipboard</code></pre>
+
+    <p>
+      Pratique pour automatiser des copier-coller sans utiliser la souris.
+    </p>
+
+    <hr>
+
+    <h3>🔍 Variables système utiles</h3>
+
+    <pre><code>$env:USERNAME
+$env:USERPROFILE
+$env:COMPUTERNAME
+$env:USERDOMAIN
+$env:TEMP
+$env:PATH</code></pre>
+
+    <p>
+      Les variables commençant par <code>$env:</code> correspondent aux
+      variables d'environnement Windows.
+    </p>
+
+    <hr>
+
+    <h3>📜 Scripts PowerShell</h3>
+
+    <p>
+      Les scripts PowerShell utilisent l'extension <code>.ps1</code>.
+    </p>
+
+    <pre><code>mon-script.ps1</code></pre>
+
+    <p>
+      Une fonction simple :
+    </p>
+
+    <pre><code>function Bonjour {
+    param(
+        [string]$Nom
+    )
+
+    Write-Host "Bonjour $Nom"
+}
+
+Bonjour -Nom "Mario"</code></pre>
+
+    <h3>📥 Paramètres de script</h3>
+
+    <pre><code>param(
+    [string]$Nom,
+    [int]$Age
+)
+
+Write-Host "Nom : $Nom"
+Write-Host "Age : $Age"</code></pre>
+
+    <hr>
+
+    <h3>🚨 Gestion des erreurs</h3>
+
+    <pre><code>try {
+    Get-Item C:\FichierInexistant.txt -ErrorAction Stop
+}
+catch {
+    Write-Host "Une erreur est survenue."
+}
+finally {
+    Write-Host "Fin du traitement."
+}</code></pre>
+
+    <p>
+      Pour forcer une commande à générer une erreur interceptable par
+      <code>catch</code> :
+    </p>
+
+    <pre><code>-ErrorAction Stop</code></pre>
+
+    <p>
+      Informations utiles :
+    </p>
+
+    <pre><code>$?
+$LASTEXITCODE
+$Error</code></pre>
+
+    <hr>
+
+    <h3>🔑 Exécuter PowerShell en administrateur</h3>
+
+    <pre><code>Start-Process powershell -Verb RunAs</code></pre>
+
+    <p>
+      Pour PowerShell 7 :
+    </p>
+
+    <pre><code>Start-Process pwsh -Verb RunAs</code></pre>
+
+    <p>
+      Un script peut également exiger les droits administrateur :
+    </p>
+
+    <pre><code>#Requires -RunAsAdministrator</code></pre>
+
+    <hr>
+
+    <h3>🔒 Politique d'exécution des scripts</h3>
+
+    <pre><code>Get-ExecutionPolicy</code></pre>
+
+    <p>
+      Pour voir les politiques appliquées à différents niveaux :
+    </p>
+
+    <pre><code>Get-ExecutionPolicy -List</code></pre>
+
+    <p>
+      ⚠️ Ne modifie pas la politique d'exécution sans comprendre pourquoi.
+      Elle participe aux mécanismes de sécurité de PowerShell.
+    </p>
+
+    <hr>
+
+    <h3>👤 Profil PowerShell</h3>
+
+    <p>
+      Le profil permet de personnaliser PowerShell et de créer ses propres
+      raccourcis, fonctions ou réglages.
+    </p>
+
+    <pre><code>$PROFILE</code></pre>
+
+    <p>
+      Vérifier s'il existe :
+    </p>
+
+    <pre><code>Test-Path $PROFILE</code></pre>
+
+    <p>
+      Créer le profil :
+    </p>
+
+    <pre><code>New-Item -ItemType File -Path $PROFILE -Force</code></pre>
+
+    <p>
+      L'ouvrir avec le Bloc-notes :
+    </p>
+
+    <pre><code>notepad $PROFILE</code></pre>
+
+    <hr>
+
+    <h3>🖥️ PowerShell 5.1 ou PowerShell 7 ?</h3>
+
+    <ul>
+      <li>
+        <code>powershell</code>
+        — Windows PowerShell, généralement version 5.1 sous Windows 11.
+      </li>
+
+      <li>
+        <code>pwsh</code>
+        — PowerShell moderne, version 7+ lorsqu'il est installé.
+      </li>
+
+      <li>
+        <code>$PSVersionTable</code>
+        — Permet de connaître précisément la version utilisée.
+      </li>
+    </ul>
+
+    <hr>
+
+    <h3>🌐 Sessions PowerShell à distance</h3>
+
+    <pre><code>Enter-PSSession PC-REMOTE
+
+Exit-PSSession</code></pre>
+
+    <p>
+      Exécuter une commande sur une machine distante :
+    </p>
+
+    <pre><code>Invoke-Command -ComputerName PC-REMOTE -ScriptBlock {
+    Get-Process
+}</code></pre>
+
+    <p>
+      Le fonctionnement du remoting dépend de la configuration réseau,
+      des droits et des mécanismes d'administration à distance de Windows.
+    </p>
+
+    <hr>
+
+    <h3>⏰ Tâches planifiées</h3>
+
+    <ul>
+      <li><code>Get-ScheduledTask</code> — Liste les tâches planifiées.</li>
+      <li><code>Get-ScheduledTaskInfo -TaskName "Nom"</code> — Informations d'exécution.</li>
+      <li><code>Start-ScheduledTask -TaskName "Nom"</code> — Lance une tâche.</li>
+      <li><code>Disable-ScheduledTask -TaskName "Nom"</code> — Désactive une tâche.</li>
+      <li><code>Enable-ScheduledTask -TaskName "Nom"</code> — Réactive une tâche.</li>
+    </ul>
+
+    <hr>
+
+    <h3>🔀 Redirections</h3>
+
+    <pre><code>commande > fichier.txt</code></pre>
+
+    <p>
+      Écrit la sortie dans un fichier en remplaçant son contenu.
+    </p>
+
+    <pre><code>commande >> fichier.txt</code></pre>
+
+    <p>
+      Ajoute la sortie à la fin du fichier.
+    </p>
+
+    <pre><code>commande 2> erreurs.txt</code></pre>
+
+    <p>
+      Redirige les erreurs.
+    </p>
+
+    <pre><code>commande *> sortie.txt</code></pre>
+
+    <p>
+      Redirige les différents flux vers le fichier.
+    </p>
+
+    <hr>
+
+    <h3>🔄 Boucle ForEach</h3>
+
+    <pre><code>Get-ChildItem *.txt | ForEach-Object {
+    Write-Host $_.Name
+}</code></pre>
+
+    <p>
+      <code>$_</code> représente l'objet actuellement traité dans le pipeline.
+    </p>
+
+    <hr>
+
+    <h3>🧠 Comprendre les objets PowerShell</h3>
+
+    <p>
+      C'est l'un des concepts les plus importants de PowerShell.
+      Une commande ne renvoie généralement pas simplement du texte :
+      elle renvoie des <strong>objets</strong>.
+    </p>
+
+    <pre><code>$processus = Get-Process
+
+$processus[0].Name
+$processus[0].Id
+$processus[0].CPU</code></pre>
+
+    <p>
+      Pour découvrir ce qu'un objet contient :
+    </p>
+
+    <pre><code>Get-Process | Get-Member</code></pre>
+
+    <p>
+      On peut ensuite enchaîner les opérations :
+    </p>
+
+    <pre><code>Get-Process |
+    Where-Object CPU -gt 100 |
+    Sort-Object CPU -Descending |
+    Select-Object -First 10 Name, CPU, Id</code></pre>
+
+    <hr>
+
+    <h3>🧪 Exemple de workflow PowerShell</h3>
+
+    <p>
+      Rechercher les gros fichiers PDF d'un dossier :
+    </p>
+
+    <pre><code>Get-ChildItem C:\Documents -Recurse -Filter *.pdf |
+    Where-Object Length -gt 10MB |
+    Sort-Object Length -Descending |
+    Select-Object FullName, Length</code></pre>
+
+    <p>
+      Exporter le résultat :
+    </p>
+
+    <pre><code>Get-ChildItem C:\Documents -Recurse -Filter *.pdf |
+    Where-Object Length -gt 10MB |
+    Sort-Object Length -Descending |
+    Select-Object FullName, Length |
+    Export-Csv gros-pdf.csv -NoTypeInformation</code></pre>
+
+    <hr>
+
+    <h3>📌 Alias courants</h3>
+
+    <p>
+      PowerShell possède de nombreux alias. Ils sont pratiques pour travailler
+      rapidement, mais il est préférable d'apprendre les noms complets des
+      cmdlets.
+    </p>
+
+    <pre><code>cd      → Set-Location
+pwd     → Get-Location
+dir     → Get-ChildItem
+ls      → Get-ChildItem
+cp      → Copy-Item
+mv      → Move-Item
+rm      → Remove-Item
+cat     → Get-Content
+cls     → Clear-Host
+echo    → Write-Output</code></pre>
+
+    <p>
+      Pour connaître les alias :
+    </p>
+
+    <pre><code>Get-Alias</code></pre>
+
+    <p>
+      Et pour connaître l'origine d'un alias :
+    </p>
+
+    <pre><code>Get-Alias cd
+Get-Alias ls
+Get-Alias dir</code></pre>
+
+    <hr>
+
+    <h3>🎯 La logique à retenir</h3>
+
+    <p>
+      Pour apprendre PowerShell efficacement, pense toujours dans cet ordre :
+    </p>
+
+    <pre><code>1. Je cherche une commande
+   ↓
+Get-Command
+
+2. Je regarde comment elle fonctionne
+   ↓
+Get-Help
+
+3. J'examine ce qu'elle retourne
+   ↓
+Get-Member
+
+4. Je filtre
+   ↓
+Where-Object
+
+5. Je sélectionne
+   ↓
+Select-Object
+
+6. Je trie
+   ↓
+Sort-Object
+
+7. J'enchaîne
+   ↓
+|</code></pre>
+
+    <p>
+      Exemple :
+    </p>
+
+    <pre><code>Get-Process |
+    Where-Object CPU -gt 50 |
+    Sort-Object CPU -Descending |
+    Select-Object -First 10 Name, CPU</code></pre>
+
+  </div>
+
+  <div class="center">
+    <button data-close>Fermer</button>
+  </div>
+
+</dialog>
+	 
 <!--------------------------------
            n°Tiers 
 --------------------------------->

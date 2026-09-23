@@ -650,6 +650,16 @@ const cards = [
 		color: "#e5004e",
 		category: "pro"
     },    
+
+		 {
+        title: "PATRI-DATA",
+        url: "https://orimaworks.github.io/patri-data",
+        text: "PATRI-DATA",
+		label:"PATRI-DATA",
+		icon: null,
+		color: "#e5004e",
+		category: "pro"
+    },    
 	
 		 {
         title: "wever - mobilité participative",

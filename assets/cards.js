@@ -656,8 +656,7 @@ const cards = [
         url: "https://orimaworks.github.io/patri-data",
         text: "PATRI-DATA",
 		label:"PATRI-DATA",
-		icon: null,
-		color: "#e5004e",
+		icon: "./assets/img/logo-patridata.png",
 		category: "pro"
     },    
 	

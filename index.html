@@ -2227,6 +2227,16 @@ SELECT
     TO_CHAR(date_creation, 'DD/MM/YYYY') AS date_formatee,
     ADD_MONTHS(date_creation, 1) AS mois_suivant
 FROM demandes;
+
+	/*
+		YYYY → année
+		MM → mois
+		DD → jour
+		HH24 → heure sur 24 h
+		MI → minutes
+		SS → secondes
+		(Pour remplacer ":" par "h" par exemple, concaténer avec des guillemets doubles : 'HH24"h"MI "et" SS"s"')
+	*/
 </pre>
 
 

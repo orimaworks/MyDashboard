@@ -334,6 +334,12 @@ kbd {
 	animation:
 	hologram 8s infinite;
 }
+
+.logo > img {
+	max-width : 80px;
+	height: auto;
+}
+	
 /*
 .chevron {
 	-webkit-text-stroke: 0.2px white;
@@ -342,6 +348,8 @@ kbd {
 	font-size: 3rem;
 }
 */
+
+	
 .orima {
 	color: var(--background-color);
 	margin-left: 0.3em;
@@ -725,6 +733,10 @@ input:checked + .slider:before {
 	.navbar button {
 		display: flex;
 		justify-content: space-evenly;
+	}
+
+	.logo > img {
+		max-width : 40px;
 	}
 	
 	dialog {

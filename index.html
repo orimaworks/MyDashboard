@@ -2060,12 +2060,12 @@ WHERE nom LIKE '%DUPONT%'
 
 <h3>📊 TRI & LIMITES</h3>
 <ul>
-    <li><code>ORDER BY colonne ASC</code></li>
-    <li><code>ORDER BY colonne DESC</code></li>
-    <li><code>FETCH FIRST n ROWS ONLY</code></li>
-    <li><code>OFFSET n ROWS FETCH NEXT n ROWS ONLY</code></li>
+    <li><code>ORDER BY colonne ASC</code> → tri croissant</li>
+    <li><code>ORDER BY colonne DESC</code> → tri décroissant</li>
+    <li><code>FETCH FIRST n ROWS ONLY</code> → limite le nombre de lignes retournées</li>
+    <li><code>OFFSET n ROWS FETCH NEXT n ROWS ONLY</code> → ignore n lignes puis récupère les suivantes</li>
 </ul>
-
+	
 <pre>
 SELECT *
 FROM users
@@ -2076,12 +2076,12 @@ FETCH FIRST 10 ROWS ONLY;
 
 <h3>📦 GROUP BY</h3>
 <ul>
-    <li><code>GROUP BY colonne</code></li>
-    <li><code>HAVING</code></li>
-    <li><code>COUNT()</code></li>
-    <li><code>SUM()</code></li>
-    <li><code>AVG()</code></li>
-    <li><code>MIN()</code> / <code>MAX()</code></li>
+    <li><code>GROUP BY colonne</code> → regroupe les lignes selon une ou plusieurs colonnes</li>
+    <li><code>HAVING</code> → filtre les groupes après agrégation</li>
+    <li><code>COUNT()</code> → compte le nombre de lignes ou de valeurs</li>
+    <li><code>SUM()</code> → calcule la somme des valeurs</li>
+    <li><code>AVG()</code> → calcule la moyenne des valeurs</li>
+    <li><code>MIN()</code> / <code>MAX()</code> → retourne la valeur minimale / maximale</li>
 </ul>
 
 <pre>
@@ -2097,11 +2097,11 @@ ORDER BY nombre_users DESC;
 
 <h3>🔗 JOINTURES</h3>
 <ul>
-    <li><code>INNER JOIN</code> → uniquement les correspondances</li>
-    <li><code>LEFT JOIN</code> → conserve toutes les lignes de gauche</li>
-    <li><code>RIGHT JOIN</code></li>
-    <li><code>FULL OUTER JOIN</code></li>
-    <li><code>LEFT JOIN ... IS NULL</code> → rechercher les éléments non liés</li>
+    <li><code>INNER JOIN</code> → retourne uniquement les lignes ayant une correspondance dans les deux tables</li>
+    <li><code>LEFT JOIN</code> → conserve toutes les lignes de la table de gauche, même sans correspondance</li>
+    <li><code>RIGHT JOIN</code> → conserve toutes les lignes de la table de droite, même sans correspondance</li>
+    <li><code>FULL OUTER JOIN</code> → conserve toutes les lignes des deux tables, avec ou sans correspondance</li>
+    <li><code>LEFT JOIN ... IS NULL</code> → recherche les lignes de gauche qui n'ont aucune correspondance à droite</li>
 </ul>
 
 <pre>
@@ -2155,7 +2155,7 @@ WHERE NOT EXISTS (
     <li><code>INSERT INTO ... VALUES (...)</code></li>
     <li><code>UPDATE ... SET ... WHERE ...</code></li>
     <li><code>DELETE FROM ... WHERE ...</code></li>
-    <li>⚠ Toujours tester le <code>WHERE</code> avec un <code>SELECT</code></li>
+    <li> ⚠️ Toujours tester le <code>WHERE</code> avec un <code>SELECT</code></li>
 </ul>
 
 <pre>
@@ -2196,14 +2196,14 @@ COMMIT;
 
 <h3>⚡ SPÉCIFIQUE ORACLE</h3>
 <ul>
-    <li><code>DUAL</code></li>
-    <li><code>SYSDATE</code></li>
-    <li><code>SYSTIMESTAMP</code></li>
-    <li><code>USER</code></li>
-    <li><code>ROWNUM</code></li>
-    <li><code>FETCH FIRST n ROWS ONLY</code></li>
+    <li><code>DUAL</code> → table système virtuelle utilisée pour exécuter une expression sans table source</li>
+    <li><code>SYSDATE</code> → retourne la date et l'heure actuelles du serveur Oracle</li>
+    <li><code>SYSTIMESTAMP</code> → retourne la date et l'heure actuelles avec précision et fuseau horaire</li>
+    <li><code>USER</code> → retourne le nom de l'utilisateur Oracle actuellement connecté</li>
+    <li><code>ROWNUM</code> → attribue un numéro aux lignes retournées par une requête</li>
+    <li><code>FETCH FIRST n ROWS ONLY</code> → limite le nombre de lignes retournées par la requête</li>
 </ul>
-
+	
 <pre>
 SELECT
     USER AS schema_connecte,
@@ -2215,11 +2215,11 @@ FROM DUAL;
 
 <h3>📅 DATES</h3>
 <ul>
-    <li><code>TO_DATE()</code></li>
-    <li><code>TO_CHAR()</code></li>
-    <li><code>TRUNC()</code></li>
-    <li><code>ADD_MONTHS()</code></li>
-    <li><code>MONTHS_BETWEEN()</code></li>
+    <li><code>TO_DATE()</code> → convertit une chaîne de caractères en valeur de type date</li>
+    <li><code>TO_CHAR()</code> → convertit une date ou une valeur en chaîne formatée</li>
+    <li><code>TRUNC()</code> → supprime l'heure d'une date ou tronque une date selon une unité donnée</li>
+    <li><code>ADD_MONTHS()</code> → ajoute ou soustrait un nombre de mois à une date</li>
+    <li><code>MONTHS_BETWEEN()</code> → calcule le nombre de mois entre deux dates</li>
 </ul>
 
 <pre>
@@ -2233,16 +2233,16 @@ FROM demandes;
 
 <h3>🔤 FONCTIONS TEXTE</h3>
 <ul>
-    <li><code>UPPER()</code></li>
-    <li><code>LOWER()</code></li>
-    <li><code>INITCAP()</code></li>
-    <li><code>TRIM()</code></li>
-    <li><code>SUBSTR()</code></li>
-    <li><code>INSTR()</code></li>
-    <li><code>REPLACE()</code></li>
-    <li><code>LENGTH()</code></li>
+    <li><code>UPPER()</code> → convertit le texte en majuscules</li>
+    <li><code>LOWER()</code> → convertit le texte en minuscules</li>
+    <li><code>INITCAP()</code> → met la première lettre de chaque mot en majuscule</li>
+    <li><code>TRIM()</code> → supprime les espaces au début et à la fin du texte</li>
+    <li><code>SUBSTR()</code> → extrait une portion d'une chaîne de caractères</li>
+    <li><code>INSTR()</code> → recherche la position d'un texte dans une chaîne</li>
+    <li><code>REPLACE()</code> → remplace une chaîne de caractères par une autre</li>
+    <li><code>LENGTH()</code> → retourne le nombre de caractères d'une chaîne</li>
 </ul>
-
+	
 <pre>
 SELECT
     UPPER(nom) AS nom_majuscule,
@@ -2254,10 +2254,10 @@ FROM users;
 
 <h3>🧮 CONVERSIONS</h3>
 <ul>
-    <li><code>TO_CHAR()</code></li>
-    <li><code>TO_NUMBER()</code></li>
-    <li><code>TO_DATE()</code></li>
-    <li><code>CAST()</code></li>
+    <li><code>TO_CHAR()</code> → convertit une valeur en chaîne de caractères, avec possibilité de la formater</li>
+    <li><code>TO_NUMBER()</code> → convertit une chaîne de caractères en nombre</li>
+    <li><code>TO_DATE()</code> → convertit une chaîne de caractères en date selon un format donné</li>
+    <li><code>CAST()</code> → convertit une valeur d'un type de données vers un autre type</li>
 </ul>
 
 <pre>
@@ -2270,12 +2270,12 @@ FROM users;
 
 <h3>🧩 VALEURS NULL</h3>
 <ul>
-    <li><code>NVL()</code></li>
-    <li><code>NVL2()</code></li>
-    <li><code>COALESCE()</code></li>
-    <li><code>NULLIF()</code></li>
+    <li><code>NVL()</code> → remplace une valeur <code>NULL</code> par une valeur de remplacement</li>
+    <li><code>NVL2()</code> → retourne une valeur si l'expression n'est pas <code>NULL</code>, et une autre si elle l'est</li>
+    <li><code>COALESCE()</code> → retourne la première valeur non <code>NULL</code> parmi plusieurs expressions</li>
+    <li><code>NULLIF()</code> → retourne <code>NULL</code> si deux expressions sont égales, sinon retourne la première</li>
 </ul>
-
+	
 <pre>
 SELECT
     nom,
@@ -2304,11 +2304,11 @@ FROM users;
 
 <h3>📈 FONCTIONS ANALYTIQUES</h3>
 <ul>
-    <li><code>ROW_NUMBER()</code></li>
-    <li><code>RANK()</code></li>
-    <li><code>DENSE_RANK()</code></li>
-    <li><code>OVER()</code></li>
-    <li><code>PARTITION BY</code></li>
+    <li><code>ROW_NUMBER()</code> → attribue un numéro unique à chaque ligne selon un ordre défini</li>
+    <li><code>RANK()</code> → attribue un rang aux lignes, en laissant des rangs vides en cas d'égalité</li>
+    <li><code>DENSE_RANK()</code> → attribue un rang aux lignes, sans laisser de rang vide en cas d'égalité</li>
+    <li><code>OVER()</code> → définit la fenêtre de lignes sur laquelle s'applique la fonction analytique</li>
+    <li><code>PARTITION BY</code> → divise les lignes en groupes indépendants pour appliquer la fonction analytique à chacun</li>
 </ul>
 
 <pre>
@@ -2530,13 +2530,13 @@ ORDER BY d.id;
 
 <h3>📚 VOCABULAIRE SQL</h3>
 <ul>
-    <li>DDL → <code>CREATE</code>, <code>ALTER</code>, <code>DROP</code></li>
-    <li>DML → <code>SELECT</code>, <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code></li>
-    <li>DCL → <code>GRANT</code>, <code>REVOKE</code></li>
-    <li>TCL → <code>COMMIT</code>, <code>ROLLBACK</code>, <code>SAVEPOINT</code></li>
-    <li>CTE → <code>WITH</code></li>
-    <li>PK → Primary Key</li>
-    <li>FK → Foreign Key</li>
+    <li><pre>DDL</pre> → <code>CREATE</code>, <code>ALTER</code>, <code>DROP</code></li>
+    <li><pre>DML</pre> → <code>SELECT</code>, <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code></li>
+    <li><pre>DCL</pre> → <code>GRANT</code>, <code>REVOKE</code></li>
+    <li><pre>TCL</pre> → <code>COMMIT</code>, <code>ROLLBACK</code>, <code>SAVEPOINT</code></li>
+    <li><pre>CTE</pre> → <code>WITH</code></li>
+    <li><pre>PK</pre> → Primary Key</li>
+    <li><pre>FK</pre> → Foreign Key</li>
 </ul>
 
 <pre>
@@ -2547,69 +2547,126 @@ CREATE TABLE users (
 </pre>
 	
 <h3>🧩 RECETTES SQL</h3> 
-	<ul> 
-		<li>🔎 Rechercher les doublons</li> 
-		<li>🔗 Trouver les lignes non liées</li> 
-		<li>👤 Trouver les utilisateurs sans demande</li> 
-		<li>📋 Trouver les demandes sans utilisateur</li> 
-		<li>🔍 Rechercher une colonne dans le schéma</li> 
-		<li>🔎 Rechercher une valeur dans une table</li> 
-		<li>🗂️ Trouver les tables contenant une colonne</li> 
-		<li>🔑 Identifier les clés étrangères</li>
-	</ul>
-
 <h4>🔎 Rechercher les doublons</h4> 
-	<pre> SELECT nom, COUNT(*) AS nombre FROM users GROUP BY nom HAVING COUNT(*) > 1; </pre>
+	<pre> 
+		SELECT nom, 
+				COUNT(*) AS nombre 
+		FROM users 
+		GROUP BY nom 
+		HAVING COUNT(*) > 1; 
+	</pre>
 
 <h4>🔗 Trouver les lignes non liées</h4> 
-	<pre> SELECT d.* FROM demandes d LEFT JOIN users u ON u.id = d.user_id WHERE u.id IS NULL; </pre>
+	<pre> 
+		SELECT d.* 
+		FROM demandes d 
+		LEFT JOIN users u ON u.id = d.user_id 
+		WHERE u.id IS NULL; 
+	</pre>
 
 <h4>👤 Utilisateurs sans demande</h4> 
-	<pre> SELECT u.* FROM users u LEFT JOIN demandes d ON d.user_id = u.id WHERE d.id IS NULL; </pre>
+	<pre> 
+		SELECT u.* 
+		FROM users u 
+		LEFT JOIN demandes d ON d.user_id = u.id 
+		WHERE d.id IS NULL;
+	</pre>
 
 <h4>📋 Demandes sans utilisateur</h4> 
-	<pre> SELECT d.* FROM demandes d LEFT JOIN users u ON u.id = d.user_id WHERE u.id IS NULL; </pre>
+	<pre>
+		SELECT d.* 
+		FROM demandes d 
+		LEFT JOIN users u ON u.id = d.user_id 
+		WHERE u.id IS NULL; </pre>
 
 <h4>🔍 Rechercher une colonne dans le schéma</h4> 
-	<pre> SELECT table_name, column_name, data_type FROM USER_TAB_COLUMNS WHERE UPPER(column_name) LIKE '%NOM%' ORDER BY table_name, column_id; </pre>
+	<pre> 
+		SELECT 
+			table_name, 
+			column_name, 
+			data_type 
+		FROM USER_TAB_COLUMNS 
+		WHERE UPPER(column_name) LIKE '%NOM%' 
+		ORDER BY table_name, column_id; 
+	</pre>
 
 <h4>🗂️ Trouver les tables contenant une colonne</h4>
-	<pre> SELECT table_name, column_name FROM USER_TAB_COLUMNS WHERE UPPER(column_name) = 'ID' ORDER BY table_name; </pre>
+	<pre> 
+		SELECT 
+			table_name, 
+			column_name 
+		FROM USER_TAB_COLUMNS 
+		WHERE UPPER(column_name) = 'ID' 
+		ORDER BY table_name; 
+	</pre>
 
 <h4>🔑 Identifier les clés étrangères</h4>
-	<pre> SELECT constraint_name, table_name, r_constraint_name FROM USER_CONSTRAINTS WHERE constraint_type = 'R' ORDER BY table_name; </pre>
+	<pre> 
+		SELECT 
+			constraint_name, 
+			table_name, 
+			r_constraint_name 
+		FROM USER_CONSTRAINTS 
+		WHERE constraint_type = 'R' 
+		ORDER BY table_name; 
+	</pre>
 
 <h4>🔎 Rechercher une valeur dans une table</h4>
-	<pre> SELECT * FROM users WHERE UPPER(nom) LIKE '%DUPONT%'; </pre>
+	<pre>
+		SELECT * 
+		FROM users 
+		WHERE UPPER(nom) LIKE '%DUPONT%'; </pre>
 
 <h4>📊 Compter les lignes de plusieurs groupes</h4> 
-	<pre> SELECT statut, COUNT(*) AS nombre FROM demandes GROUP BY statut ORDER BY nombre DESC; </pre>
+	<pre> 
+		SELECT 
+			statut, 
+			COUNT(*) AS nombre 
+		FROM demandes 
+		GROUP BY statut 
+		ORDER BY nombre DESC; </pre>
 
 <h4>🏆 Trouver la valeur la plus fréquente</h4>
-	<pre> SELECT nom, COUNT(*) AS nombre FROM users GROUP BY nom ORDER BY nombre DESC FETCH FIRST 1 ROW ONLY; </pre>
+	<pre> 
+		SELECT nom, 
+			COUNT(*) AS nombre 
+		FROM users 
+		GROUP BY nom 
+		ORDER BY nombre DESC FETCH FIRST 1 ROW ONLY; </pre>
 
 <h4>📅 Rechercher les données du jour</h4>
-	<pre> SELECT * FROM demandes WHERE date_creation &gt;= TRUNC(SYSDATE) AND date_creation &lt; TRUNC(SYSDATE) + 1; </pre>
+	<pre> 
+		SELECT * 
+		FROM demandes 
+		WHERE date_creation &gt;= TRUNC(SYSDATE) AND date_creation &lt; TRUNC(SYSDATE) + 1; </pre>
 
 <h4>🧮 Comparer deux ensembles</h4> 
-	<pre> 	SELECT id FROM table_a
+	<pre> 	SELECT id 
+			FROM table_a
 				MINUS
+					SELECT id
+					FROM table_b;
+</pre>
+
+<h4>🔄 Trouver les valeurs communes</h4> 
+	<pre> 
+		SELECT id FROM table_a
+		INTERSECT
 			SELECT id
 			FROM table_b;
 </pre>
 
-<h4>🔄 Trouver les valeurs communes</h4> 
-	<pre> SELECT id FROM table_a
-INTERSECT
-SELECT id
-FROM table_b;
-</pre>
-
 <h4>📈 Compter les lignes d'une table</h4>
-	<pre> SELECT COUNT(*) AS nombre_lignes FROM demandes; </pre>
+	<pre> 
+		SELECT COUNT(*) AS nombre_lignes 
+		FROM demandes; 
+	</pre>
 
 <h4>🧱 Identifier les colonnes NULL</h4>
-	<pre> SELECT * FROM users WHERE email IS NULL; </pre>
+	<pre> 
+		SELECT * 
+		FROM users
+		WHERE email IS NULL; </pre>
 
 <div class="center">
     <button data-close>Fermer</button>

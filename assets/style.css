@@ -13,8 +13,8 @@
 
 
 :root {
-	--couleur-primaire : #141D38; 
-	--couleur-secondaire : #FCDB32;
+	--couleur-primaire : #001a33; 
+	--couleur-secondaire : #F28CBA;
 	--couleur-accent: #7ab3eb;
 	--couleur-hover: #EC5197;
 	--background-color: snow;
@@ -332,16 +332,16 @@ kbd {
 	letter-spacing: 5%;
 	font-size: 2.5em;
 	animation:
-	hologram 5s infinite;
+	hologram 8s infinite;
 }
-
+/*
 .chevron {
 	-webkit-text-stroke: 0.2px white;
 	color: var(--couleur-secondaire);
 	font-weight: 700;
 	font-size: 3rem;
 }
-
+*/
 .orima {
 	color: var(--background-color);
 	margin-left: 0.3em;

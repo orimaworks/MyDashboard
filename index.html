@@ -1683,153 +1683,608 @@ Créer des alias pour des commandes courantes avec <code>alias</code> pour gagne
               SQL
 --------------------------------->
 <dialog id="sqlCheats">
-<!-- <div class="display_column center"> -->
-<h2>🗄️ SQL / Oracle </h2>
 
-<h3>🔍 Sélection</h3>
+<h2>🗄️ SQL / Oracle Cheat Sheet</h2>
+
+
+<h3>🔍 SELECT</h3>
 <ul>
     <li><code>SELECT * FROM table;</code></li>
     <li><code>SELECT col1, col2 FROM table;</code></li>
     <li><code>SELECT DISTINCT colonne FROM table;</code></li>
     <li><code>SELECT COUNT(*) FROM table;</code></li>
     <li><code>SELECT COUNT(DISTINCT colonne) FROM table;</code></li>
+    <li><code>SELECT colonne AS alias</code></li>
 </ul>
 
-<h3>🎯 Filtrer</h3>
+<pre>
+SELECT
+    nom,
+    prenom,
+    email AS adresse_email
+FROM users;
+</pre>
+
+
+<h3>🎯 WHERE</h3>
 <ul>
     <li><code>WHERE</code></li>
     <li><code>AND / OR / NOT</code></li>
-    <li><code>LIKE '%texte%'</code></li>
+    <li><code>LIKE 'ABC%'</code> → commence par</li>
+    <li><code>LIKE '%ABC'</code> → termine par</li>
+    <li><code>LIKE '%ABC%'</code> → contient</li>
     <li><code>IN (...)</code></li>
+    <li><code>NOT IN (...)</code></li>
     <li><code>BETWEEN ... AND ...</code></li>
     <li><code>IS NULL / IS NOT NULL</code></li>
 </ul>
 
-<h3>📊 Trier</h3>
+<pre>
+SELECT *
+FROM users
+WHERE nom LIKE '%DUPONT%'
+  AND actif = 1;
+</pre>
+
+
+<h3>📊 TRI & LIMITES</h3>
 <ul>
     <li><code>ORDER BY colonne ASC</code></li>
     <li><code>ORDER BY colonne DESC</code></li>
+    <li><code>FETCH FIRST n ROWS ONLY</code></li>
+    <li><code>OFFSET n ROWS FETCH NEXT n ROWS ONLY</code></li>
 </ul>
 
-<h3>📦 Groupement</h3>
+<pre>
+SELECT *
+FROM users
+ORDER BY nom ASC
+FETCH FIRST 10 ROWS ONLY;
+</pre>
+
+
+<h3>📦 GROUP BY</h3>
 <ul>
-    <li><code>GROUP BY</code></li>
-    <li><code>HAVING COUNT(*) > 1</code></li>
+    <li><code>GROUP BY colonne</code></li>
+    <li><code>HAVING</code></li>
+    <li><code>COUNT()</code></li>
+    <li><code>SUM()</code></li>
+    <li><code>AVG()</code></li>
+    <li><code>MIN()</code> / <code>MAX()</code></li>
 </ul>
 
-<h3>🔗 Jointures</h3>
+<pre>
+SELECT
+    ville,
+    COUNT(*) AS nombre_users
+FROM users
+GROUP BY ville
+HAVING COUNT(*) > 1
+ORDER BY nombre_users DESC;
+</pre>
+
+
+<h3>🔗 JOINTURES</h3>
 <ul>
-    <li><code>INNER JOIN</code></li>
-    <li><code>LEFT JOIN</code></li>
+    <li><code>INNER JOIN</code> → uniquement les correspondances</li>
+    <li><code>LEFT JOIN</code> → conserve toutes les lignes de gauche</li>
     <li><code>RIGHT JOIN</code></li>
     <li><code>FULL OUTER JOIN</code></li>
+    <li><code>LEFT JOIN ... IS NULL</code> → rechercher les éléments non liés</li>
 </ul>
 
-<h3>📝 Modification</h3>
+<pre>
+SELECT
+    d.id,
+    d.nom
+FROM demandeurs d
+LEFT JOIN users u
+    ON u.nom = d.nom
+WHERE u.id IS NULL;
+</pre>
+
+
+<h3>🧠 SOUS-REQUÊTES</h3>
 <ul>
-    <li><code>INSERT INTO ...</code></li>
+    <li><code>IN (SELECT ...)</code></li>
+    <li><code>EXISTS</code></li>
+    <li><code>NOT EXISTS</code></li>
+    <li><code>WITH nom AS (...)</code> → CTE</li>
+</ul>
+
+<pre>
+SELECT *
+FROM users u
+WHERE u.id IN (
+    SELECT demandeur_id
+    FROM demandes
+);
+</pre>
+
+
+<h3>🔎 EXISTS / NOT EXISTS</h3>
+<ul>
+    <li><code>EXISTS</code> → vérifier qu'une correspondance existe</li>
+    <li><code>NOT EXISTS</code> → vérifier qu'aucune correspondance n'existe</li>
+</ul>
+
+<pre>
+SELECT *
+FROM users u
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM demandes d
+    WHERE d.user_id = u.id
+);
+</pre>
+
+
+<h3>📝 INSERT / UPDATE / DELETE</h3>
+<ul>
+    <li><code>INSERT INTO ... VALUES (...)</code></li>
     <li><code>UPDATE ... SET ... WHERE ...</code></li>
     <li><code>DELETE FROM ... WHERE ...</code></li>
-    <li><strong>Toujours vérifier le WHERE avant UPDATE ou DELETE.</strong></li>
+    <li>⚠ Toujours tester le <code>WHERE</code> avec un <code>SELECT</code></li>
 </ul>
 
-<h3>💾 Transactions</h3>
+<pre>
+-- Tester avant modification
+SELECT *
+FROM users
+WHERE id = 42;
+
+-- Modifier
+UPDATE users
+SET actif = 0
+WHERE id = 42;
+</pre>
+
+
+<h3>💾 TRANSACTIONS</h3>
 <ul>
     <li><code>COMMIT;</code></li>
     <li><code>ROLLBACK;</code></li>
     <li><code>SAVEPOINT nom;</code></li>
+    <li><code>ROLLBACK TO nom;</code></li>
 </ul>
 
-<h3>⚡ Oracle</h3>
+<pre>
+UPDATE users
+SET actif = 0
+WHERE id = 42;
+
+SAVEPOINT modification;
+
+-- Annuler la modification
+ROLLBACK TO modification;
+
+-- Valider définitivement
+COMMIT;
+</pre>
+
+
+<h3>⚡ SPÉCIFIQUE ORACLE</h3>
 <ul>
     <li><code>DUAL</code></li>
     <li><code>SYSDATE</code></li>
     <li><code>SYSTIMESTAMP</code></li>
+    <li><code>USER</code></li>
     <li><code>ROWNUM</code></li>
     <li><code>FETCH FIRST n ROWS ONLY</code></li>
 </ul>
 
-<h3>📅 Dates</h3>
+<pre>
+SELECT
+    USER AS schema_connecte,
+    SYSDATE AS date_actuelle,
+    SYSTIMESTAMP AS timestamp_actuel
+FROM DUAL;
+</pre>
+
+
+<h3>📅 DATES</h3>
 <ul>
     <li><code>TO_DATE()</code></li>
     <li><code>TO_CHAR()</code></li>
+    <li><code>TRUNC()</code></li>
     <li><code>ADD_MONTHS()</code></li>
     <li><code>MONTHS_BETWEEN()</code></li>
-    <li><code>TRUNC(date)</code></li>
 </ul>
 
-<h3>🔤 Fonctions utiles</h3>
+<pre>
+SELECT
+    date_creation,
+    TO_CHAR(date_creation, 'DD/MM/YYYY') AS date_formatee,
+    ADD_MONTHS(date_creation, 1) AS mois_suivant
+FROM demandes;
+</pre>
+
+
+<h3>🔤 FONCTIONS TEXTE</h3>
 <ul>
-    <li><code>NVL()</code></li>
-    <li><code>COALESCE()</code></li>
-    <li><code>CASE WHEN ... THEN ... END</code></li>
+    <li><code>UPPER()</code></li>
+    <li><code>LOWER()</code></li>
+    <li><code>INITCAP()</code></li>
+    <li><code>TRIM()</code></li>
     <li><code>SUBSTR()</code></li>
     <li><code>INSTR()</code></li>
     <li><code>REPLACE()</code></li>
-    <li><code>TRIM()</code></li>
-    <li><code>UPPER()</code></li>
-    <li><code>LOWER()</code></li>
+    <li><code>LENGTH()</code></li>
 </ul>
 
-<h3>📈 Agrégats</h3>
+<pre>
+SELECT
+    UPPER(nom) AS nom_majuscule,
+    LOWER(email) AS email_minuscule,
+    LENGTH(nom) AS longueur_nom
+FROM users;
+</pre>
+
+
+<h3>🧮 CONVERSIONS</h3>
 <ul>
-    <li><code>COUNT()</code></li>
-    <li><code>SUM()</code></li>
-    <li><code>AVG()</code></li>
-    <li><code>MIN()</code></li>
-    <li><code>MAX()</code></li>
+    <li><code>TO_CHAR()</code></li>
+    <li><code>TO_NUMBER()</code></li>
+    <li><code>TO_DATE()</code></li>
+    <li><code>CAST()</code></li>
 </ul>
 
-<h3>🧠 Sous-requêtes</h3>
+<pre>
+SELECT
+    TO_CHAR(id) AS id_texte,
+    CAST(id AS VARCHAR2(20)) AS id_converti
+FROM users;
+</pre>
+
+
+<h3>🧩 VALEURS NULL</h3>
 <ul>
-    <li><code>EXISTS</code></li>
-    <li><code>NOT EXISTS</code></li>
-    <li><code>IN (SELECT ...)</code></li>
+    <li><code>NVL()</code></li>
+    <li><code>NVL2()</code></li>
+    <li><code>COALESCE()</code></li>
+    <li><code>NULLIF()</code></li>
 </ul>
 
-<h3>📑 Métadonnées Oracle</h3>
+<pre>
+SELECT
+    nom,
+    NVL(email, 'Non renseigné') AS email
+FROM users;
+</pre>
+
+
+<h3>🎨 CONDITIONS</h3>
 <ul>
-    <li><code>USER_TABLES</code></li>
-    <li><code>USER_TAB_COLUMNS</code></li>
-    <li><code>ALL_TABLES</code></li>
-    <li><code>ALL_TAB_COLUMNS</code></li>
-    <li><code>USER_OBJECTS</code></li>
+    <li><code>CASE WHEN ... THEN ... END</code></li>
+    <li><code>DECODE()</code> → spécifique Oracle</li>
 </ul>
 
-<h3>🚀 Performance</h3>
+<pre>
+SELECT
+    nom,
+    CASE
+        WHEN actif = 1 THEN 'Actif'
+        WHEN actif = 0 THEN 'Inactif'
+        ELSE 'Inconnu'
+    END AS statut
+FROM users;
+</pre>
+
+
+<h3>📈 FONCTIONS ANALYTIQUES</h3>
 <ul>
-    <li>Limiter le <code>SELECT *</code>.</li>
-    <li>Indexer les colonnes filtrées fréquemment.</li>
-    <li>Toujours filtrer avant de joindre.</li>
-    <li>Éviter les fonctions sur les colonnes indexées.</li>
-    <li>Utiliser <code>EXPLAIN PLAN</code>.</li>
+    <li><code>ROW_NUMBER()</code></li>
+    <li><code>RANK()</code></li>
+    <li><code>DENSE_RANK()</code></li>
+    <li><code>OVER()</code></li>
+    <li><code>PARTITION BY</code></li>
 </ul>
 
-<h3>⚠️ Bonnes pratiques</h3>
+<pre>
+SELECT
+    nom,
+    ville,
+    ROW_NUMBER() OVER (
+        PARTITION BY ville
+        ORDER BY nom
+    ) AS numero
+FROM users;
+</pre>
+
+
+<h3>📑 CTE — WITH</h3>
 <ul>
-    <li>Tester les UPDATE avec un SELECT.</li>
-    <li>Toujours prévoir un ROLLBACK possible.</li>
-    <li>Utiliser des alias explicites.</li>
-    <li>Commenter les requêtes complexes.</li>
-    <li>Sauvegarder avant les traitements massifs.</li>
+    <li>Créer un résultat temporaire utilisable par la requête</li>
+    <li>Améliore la lisibilité des requêtes complexes</li>
+    <li>Peut remplacer certaines sous-requêtes imbriquées</li>
 </ul>
 
-<h3>📚 Vocabulaire</h3>
+<pre>
+WITH users_actifs AS (
+    SELECT *
+    FROM users
+    WHERE actif = 1
+)
+SELECT *
+FROM users_actifs
+ORDER BY nom;
+</pre>
+
+
+<h3>🔢 DOUBLONS</h3>
 <ul>
-    <li>DDL : CREATE, ALTER, DROP</li>
-    <li>DML : SELECT, INSERT, UPDATE, DELETE</li>
-    <li>DCL : GRANT, REVOKE</li>
-    <li>TCL : COMMIT, ROLLBACK</li>
+    <li><code>COUNT(*)</code> → nombre de lignes</li>
+    <li><code>COUNT(DISTINCT colonne)</code> → valeurs différentes</li>
+    <li><code>GROUP BY ... HAVING COUNT(*) > 1</code> → rechercher les doublons</li>
 </ul>
 
-<!-- </div> -->
+<pre>
+SELECT
+    nom,
+    COUNT(*) AS nombre
+FROM users
+GROUP BY nom
+HAVING COUNT(*) > 1;
+</pre>
+
+
+<h3>🔍 DÉCOUVRIR LA BASE</h3>
+<ul>
+    <li><code>USER_TABLES</code> → tables du schéma</li>
+    <li><code>USER_TAB_COLUMNS</code> → colonnes</li>
+    <li><code>USER_CONSTRAINTS</code> → contraintes</li>
+    <li><code>USER_CONS_COLUMNS</code> → colonnes des contraintes</li>
+    <li><code>USER_INDEXES</code> → index</li>
+    <li><code>USER_IND_COLUMNS</code> → colonnes des index</li>
+    <li><code>USER_OBJECTS</code> → objets Oracle</li>
+    <li><code>ALL_TABLES</code> → tables accessibles</li>
+    <li><code>ALL_TAB_COLUMNS</code> → colonnes accessibles</li>
+</ul>
+
+<pre>
+SELECT
+    table_name,
+    column_id,
+    column_name,
+    data_type
+FROM USER_TAB_COLUMNS
+ORDER BY table_name, column_id;
+</pre>
+
+
+<h3>🔢 COMPTER LES TABLES</h3>
+<ul>
+    <li>Nombre de tables dans le schéma courant</li>
+</ul>
+
+<pre>
+SELECT COUNT(*) AS nombre_tables
+FROM USER_TABLES;
+</pre>
+
+
+<h3>📐 TROUVER LES TABLES LES PLUS LARGES</h3>
+<ul>
+    <li>Compter le nombre de colonnes par table</li>
+    <li>Utile pour explorer rapidement une base inconnue</li>
+</ul>
+
+<pre>
+SELECT
+    table_name,
+    COUNT(*) AS nombre_colonnes
+FROM USER_TAB_COLUMNS
+GROUP BY table_name
+ORDER BY nombre_colonnes DESC;
+</pre>
+
+
+<h3>🔑 CLÉS & CONTRAINTES</h3>
+<ul>
+    <li><code>PRIMARY KEY</code></li>
+    <li><code>FOREIGN KEY</code></li>
+    <li><code>UNIQUE</code></li>
+    <li><code>CHECK</code></li>
+    <li><code>NOT NULL</code></li>
+</ul>
+
+<pre>
+SELECT
+    constraint_name,
+    constraint_type,
+    table_name
+FROM USER_CONSTRAINTS
+ORDER BY table_name;
+</pre>
+
+
+<h3>📌 COLONNES DES INDEX</h3>
+<ul>
+    <li><code>USER_INDEXES</code> → informations sur les index</li>
+    <li><code>USER_IND_COLUMNS</code> → colonnes concernées</li>
+</ul>
+
+<pre>
+SELECT
+    index_name,
+    table_name,
+    column_name,
+    column_position
+FROM USER_IND_COLUMNS
+ORDER BY table_name, index_name, column_position;
+</pre>
+
+
+<h3>🔗 RELATIONS ENTRE TABLES</h3>
+<ul>
+    <li>Identifier les clés étrangères</li>
+    <li>Identifier la table et la colonne référencées</li>
+</ul>
+
+<pre>
+SELECT
+    constraint_name,
+    table_name,
+    r_constraint_name
+FROM USER_CONSTRAINTS
+WHERE constraint_type = 'R'
+ORDER BY table_name;
+</pre>
+
+
+<h3>🚀 PERFORMANCE</h3>
+<ul>
+    <li>Éviter <code>SELECT *</code> lorsque seules quelques colonnes sont nécessaires</li>
+    <li>Vérifier les index disponibles</li>
+    <li>Éviter les fonctions inutiles sur les colonnes filtrées</li>
+    <li>Analyser le plan d'exécution</li>
+</ul>
+
+<pre>
+EXPLAIN PLAN FOR
+SELECT *
+FROM users
+WHERE nom = 'DUPONT';
+
+SELECT *
+FROM TABLE(DBMS_XPLAN.DISPLAY);
+</pre>
+
+
+<h3>🧪 TESTER UNE MODIFICATION</h3>
+<ul>
+    <li>Commencer par un <code>SELECT</code></li>
+    <li>Vérifier le nombre de lignes concernées</li>
+    <li>Passer ensuite au <code>UPDATE</code> ou <code>DELETE</code></li>
+</ul>
+
+<pre>
+-- Étape 1
+SELECT *
+FROM users
+WHERE ville = 'GRENOBLE';
+
+-- Étape 2
+UPDATE users
+SET actif = 0
+WHERE ville = 'GRENOBLE';
+
+-- Étape 3
+ROLLBACK;
+</pre>
+
+
+<h3>⚠️ BONNES PRATIQUES</h3>
+<ul>
+    <li>Toujours vérifier le <code>WHERE</code> avant <code>UPDATE</code> / <code>DELETE</code></li>
+    <li>Utiliser des alias explicites</li>
+    <li>Préfixer les colonnes avec leur alias dans les JOIN</li>
+    <li>Indenter les requêtes complexes</li>
+    <li>Commenter les traitements non évidents</li>
+    <li>Tester une requête complexe progressivement</li>
+</ul>
+
+<pre>
+SELECT
+    d.id,
+    d.nom,
+    u.email
+FROM demandes d
+LEFT JOIN users u
+    ON u.id = d.user_id
+WHERE d.statut = 'OUVERTE'
+ORDER BY d.id;
+</pre>
+
+
+<h3>📚 VOCABULAIRE SQL</h3>
+<ul>
+    <li>DDL → <code>CREATE</code>, <code>ALTER</code>, <code>DROP</code></li>
+    <li>DML → <code>SELECT</code>, <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code></li>
+    <li>DCL → <code>GRANT</code>, <code>REVOKE</code></li>
+    <li>TCL → <code>COMMIT</code>, <code>ROLLBACK</code>, <code>SAVEPOINT</code></li>
+    <li>CTE → <code>WITH</code></li>
+    <li>PK → Primary Key</li>
+    <li>FK → Foreign Key</li>
+</ul>
+
+<pre>
+CREATE TABLE users (
+    id NUMBER PRIMARY KEY,
+    nom VARCHAR2(100)
+);
+</pre>
+	
+<h3>🧩 RECETTES SQL</h3> 
+	<ul> 
+		<li>🔎 Rechercher les doublons</li> 
+		<li>🔗 Trouver les lignes non liées</li> 
+		<li>👤 Trouver les utilisateurs sans demande</li> 
+		<li>📋 Trouver les demandes sans utilisateur</li> 
+		<li>🔍 Rechercher une colonne dans le schéma</li> 
+		<li>🔎 Rechercher une valeur dans une table</li> 
+		<li>🗂️ Trouver les tables contenant une colonne</li> 
+		<li>🔑 Identifier les clés étrangères</li>
+	</ul>
+
+<h4>🔎 Rechercher les doublons</h4> 
+	<pre> SELECT nom, COUNT(*) AS nombre FROM users GROUP BY nom HAVING COUNT(*) > 1; </pre>
+
+<h4>🔗 Trouver les lignes non liées</h4> 
+	<pre> SELECT d.* FROM demandes d LEFT JOIN users u ON u.id = d.user_id WHERE u.id IS NULL; </pre>
+
+<h4>👤 Utilisateurs sans demande</h4> 
+	<pre> SELECT u.* FROM users u LEFT JOIN demandes d ON d.user_id = u.id WHERE d.id IS NULL; </pre>
+
+<h4>📋 Demandes sans utilisateur</h4> 
+	<pre> SELECT d.* FROM demandes d LEFT JOIN users u ON u.id = d.user_id WHERE u.id IS NULL; </pre>
+
+<h4>🔍 Rechercher une colonne dans le schéma</h4> 
+	<pre> SELECT table_name, column_name, data_type FROM USER_TAB_COLUMNS WHERE UPPER(column_name) LIKE '%NOM%' ORDER BY table_name, column_id; </pre>
+
+<h4>🗂️ Trouver les tables contenant une colonne</h4>
+	<pre> SELECT table_name, column_name FROM USER_TAB_COLUMNS WHERE UPPER(column_name) = 'ID' ORDER BY table_name; </pre>
+
+<h4>🔑 Identifier les clés étrangères</h4>
+	<pre> SELECT constraint_name, table_name, r_constraint_name FROM USER_CONSTRAINTS WHERE constraint_type = 'R' ORDER BY table_name; </pre>
+
+<h4>🔎 Rechercher une valeur dans une table</h4>
+	<pre> SELECT * FROM users WHERE UPPER(nom) LIKE '%DUPONT%'; </pre>
+
+<h4>📊 Compter les lignes de plusieurs groupes</h4> 
+	<pre> SELECT statut, COUNT(*) AS nombre FROM demandes GROUP BY statut ORDER BY nombre DESC; </pre>
+
+<h4>🏆 Trouver la valeur la plus fréquente</h4>
+	<pre> SELECT nom, COUNT(*) AS nombre FROM users GROUP BY nom ORDER BY nombre DESC FETCH FIRST 1 ROW ONLY; </pre>
+
+<h4>📅 Rechercher les données du jour</h4>
+	<pre> SELECT * FROM demandes WHERE date_creation &gt;= TRUNC(SYSDATE) AND date_creation &lt; TRUNC(SYSDATE) + 1; </pre>
+
+<h4>🧮 Comparer deux ensembles</h4> 
+	<pre> 	SELECT id FROM table_a
+				MINUS
+			SELECT id
+			FROM table_b;
+</pre>
+
+<h4>🔄 Trouver les valeurs communes</h4> 
+	<pre> SELECT id FROM table_a
+INTERSECT
+SELECT id
+FROM table_b;
+</pre>
+
+<h4>📈 Compter les lignes d'une table</h4>
+	<pre> SELECT COUNT(*) AS nombre_lignes FROM demandes; </pre>
+
+<h4>🧱 Identifier les colonnes NULL</h4>
+	<pre> SELECT * FROM users WHERE email IS NULL; </pre>
 
 <div class="center">
-    <button data-close>X</button>
+    <button data-close>Fermer</button>
 </div>
 
 </dialog>
-
 
 
 <!--------------------------------
@@ -3115,7 +3570,6 @@ hsl(210, 50%, 75%)
           <div class="color-label" style="background-color : #065A82 ; color: white"> #065A82 </div>
         </div>
         
-        <div class="color-label" style="background-color : darkgreen ;">darkgreen</div>
         
         <div class="color-label" style="background-color : darkgreen ;">darkgreen</div>
         <div class="color-label" style="background-color : #009c00 ;">#009c00</div>

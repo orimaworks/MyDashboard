@@ -62,7 +62,8 @@
    <button data-modal="htmlCheats"><img src="./assets/img/css.svg">HTML</button>
    <button data-modal="cssCheats"><img src="./assets/img/css.svg">CSS</button>
    <button data-modal="cheatSheets"><img src="./assets/img/powershell.png"> Cheat</button>
-	 <button data-modal="colors"><img src="./assets/img/colors.png">Colors</button>
+	 <button data-modal="colors"><img src="./assets/img/colors.png">Colors</button
+	<button data-modal="ANSI-colors">ANSI Colors</button>																		  
 	
 	
   <!-- 
@@ -79,6 +80,336 @@
 </dialog>
   -->
 
+ <!--------------------------------
+          ANSI Colors
+--------------------------------->
+
+<dialog id="ANSI-colors">
+
+<h2>🎨 ANSI Escape Codes</h2>
+
+<p>
+    Les séquences ANSI permettent de modifier l'apparence du texte dans un terminal :
+    couleur, style, arrière-plan, curseur, effacement, etc.
+</p>
+
+<h3>🧩 Structure</h3>
+
+<pre>
+\033[CODE;CODEmTexte\033[0m
+</pre>
+
+<ul>
+    <li><code>\033[</code> → début de la séquence ANSI</li>
+    <li><code>;</code> → sépare plusieurs codes</li>
+    <li><code>m</code> → applique les codes de couleur/style</li>
+    <li><code>\033[0m</code> → réinitialise la mise en forme</li>
+</ul>
+
+<p><strong>⚠️ Attention :</strong> ce n'est pas <code>1033[</code> et les codes sont séparés par <code>;</code>, pas par des virgules.</p>
+
+<h3>🎨 Couleurs du texte</h3>
+
+<ul>
+    <li><code>30</code> → Noir</li>
+    <li><code>31</code> → Rouge</li>
+    <li><code>32</code> → Vert</li>
+    <li><code>33</code> → Jaune</li>
+    <li><code>34</code> → Bleu</li>
+    <li><code>35</code> → Magenta</li>
+    <li><code>36</code> → Cyan</li>
+    <li><code>37</code> → Blanc</li>
+    <li><code>39</code> → Couleur par défaut</li>
+</ul>
+
+<pre>
+print("\033[31mRouge\033[0m")
+print("\033[32mVert\033[0m")
+print("\033[33mJaune\033[0m")
+print("\033[34mBleu\033[0m")
+print("\033[35mMagenta\033[0m")
+print("\033[36mCyan\033[0m")
+</pre>
+
+<h3>💡 Styles</h3>
+
+<ul>
+    <li><code>0</code> → Reset</li>
+    <li><code>1</code> → Gras</li>
+    <li><code>2</code> → Faible / atténué</li>
+    <li><code>3</code> → Italique</li>
+    <li><code>4</code> → Souligné</li>
+    <li><code>5</code> → Clignotant</li>
+    <li><code>7</code> → Inversion avant/arrière-plan</li>
+    <li><code>9</code> → Barré</li>
+    <li><code>22</code> → Désactive le gras/atténué</li>
+    <li><code>23</code> → Désactive l'italique</li>
+    <li><code>24</code> → Désactive le soulignement</li>
+    <li><code>25</code> → Désactive le clignotement</li>
+    <li><code>27</code> → Désactive l'inversion</li>
+    <li><code>29</code> → Désactive le barré</li>
+</ul>
+
+<pre>
+print("\033[1mGras\033[0m")
+print("\033[3mItalique\033[0m")
+print("\033[4mSouligné\033[0m")
+print("\033[5mClignotant\033[0m")
+print("\033[7mInversé\033[0m")
+</pre>
+
+<h3>🎯 Combiner plusieurs effets</h3>
+
+<p>
+    Plusieurs codes peuvent être combinés dans une même séquence en les séparant par <code>;</code>.
+</p>
+
+<pre>
+print("\033[1;31mERREUR\033[0m")
+print("\033[1;33mAVERTISSEMENT\033[0m")
+print("\033[1;32mSUCCÈS\033[0m")
+</pre>
+
+<p>
+    Ici :
+</p>
+
+<ul>
+    <li><code>1</code> → gras</li>
+    <li><code>31</code> → rouge</li>
+    <li><code>33</code> → jaune</li>
+    <li><code>32</code> → vert</li>
+</ul>
+
+<h3>🖥️ Messages CLI</h3>
+
+<pre>
+print("\033[1;31mERROR:\033[0m Variable 'x' is undefined.")
+print("\033[1;33mWARNING:\033[0m Using a deprecated function.")
+print("\033[1;32mSUCCESS:\033[0m Process completed.")
+print("\033[1;36mINFO:\033[0m Process started successfully.")
+</pre>
+
+<p>Résultat logique :</p>
+
+<pre>
+ERROR: Variable 'x' is undefined.
+WARNING: Using a deprecated function.
+SUCCESS: Process completed.
+INFO: Process started successfully.
+</pre>
+
+<h3>🧱 Couleurs d'arrière-plan</h3>
+
+<ul>
+    <li><code>40</code> → Noir</li>
+    <li><code>41</code> → Rouge</li>
+    <li><code>42</code> → Vert</li>
+    <li><code>43</code> → Jaune</li>
+    <li><code>44</code> → Bleu</li>
+    <li><code>45</code> → Magenta</li>
+    <li><code>46</code> → Cyan</li>
+    <li><code>47</code> → Blanc</li>
+    <li><code>49</code> → Arrière-plan par défaut</li>
+</ul>
+
+<pre>
+print("\033[41;37m ERREUR \033[0m")
+print("\033[42;30m OK \033[0m")
+print("\033[43;30m WARNING \033[0m")
+</pre>
+
+<h3>✨ Couleurs claires</h3>
+
+<ul>
+    <li><code>90</code> → Gris clair</li>
+    <li><code>91</code> → Rouge clair</li>
+    <li><code>92</code> → Vert clair</li>
+    <li><code>93</code> → Jaune clair</li>
+    <li><code>94</code> → Bleu clair</li>
+    <li><code>95</code> → Magenta clair</li>
+    <li><code>96</code> → Cyan clair</li>
+    <li><code>97</code> → Blanc clair</li>
+</ul>
+
+<pre>
+print("\033[91mRouge clair\033[0m")
+print("\033[92mVert clair\033[0m")
+print("\033[93mJaune clair\033[0m")
+print("\033[96mCyan clair\033[0m")
+</pre>
+
+<h3>🌈 Arrière-plans clairs</h3>
+
+<ul>
+    <li><code>100</code> → Gris</li>
+    <li><code>101</code> → Rouge clair</li>
+    <li><code>102</code> → Vert clair</li>
+    <li><code>103</code> → Jaune clair</li>
+    <li><code>104</code> → Bleu clair</li>
+    <li><code>105</code> → Magenta clair</li>
+    <li><code>106</code> → Cyan clair</li>
+    <li><code>107</code> → Blanc clair</li>
+</ul>
+
+<pre>
+print("\033[101;97m ERROR \033[0m")
+print("\033[102;30m SUCCESS \033[0m")
+</pre>
+
+<h3>🧰 Modèles de messages</h3>
+
+<pre>
+ERROR = "\033[1;31mERROR:\033[0m"
+WARNING = "\033[1;33mWARNING:\033[0m"
+SUCCESS = "\033[1;32mSUCCESS:\033[0m"
+INFO = "\033[1;36mINFO:\033[0m"
+
+print(f"{ERROR} File not found.")
+print(f"{WARNING} Configuration is incomplete.")
+print(f"{SUCCESS} Installation completed.")
+print(f"{INFO} Starting application...")
+</pre>
+
+<h3>📋 Format CLI recommandé</h3>
+
+<pre>
+print("\033[1;31m[ERROR]\033[0m Unable to connect to database.")
+print("\033[1;33m[WARN]\033[0m Configuration file not found.")
+print("\033[1;32m[ OK ]\033[0m Database connected.")
+print("\033[1;36m[INFO]\033[0m Loading configuration...")
+</pre>
+
+<h3>🔢 Couleurs 256</h3>
+
+<p>
+    Certains terminaux supportent une palette de 256 couleurs.
+</p>
+
+<pre>
+print("\033[38;5;208mOrange\033[0m")
+print("\033[38;5;202mOrange foncé\033[0m")
+print("\033[38;5;39mBleu\033[0m")
+</pre>
+
+<ul>
+    <li><code>38;5;n</code> → couleur du texte</li>
+    <li><code>48;5;n</code> → couleur d'arrière-plan</li>
+    <li><code>n</code> → valeur comprise entre <code>0</code> et <code>255</code></li>
+</ul>
+
+<h3>🎨 RGB — True Color</h3>
+
+<p>
+    Les terminaux compatibles True Color permettent d'utiliser environ 16 millions de couleurs.
+</p>
+
+<pre>
+print("\033[38;2;255;100;50mOrange personnalisé\033[0m")
+print("\033[48;2;30;30;30mFond personnalisé\033[0m")
+</pre>
+
+<ul>
+    <li><code>38;2;R;G;B</code> → couleur du texte</li>
+    <li><code>48;2;R;G;B</code> → couleur du fond</li>
+    <li><code>R</code>, <code>G</code>, <code>B</code> → valeurs de <code>0</code> à <code>255</code></li>
+</ul>
+
+<h3>🧹 Contrôle du terminal</h3>
+
+<ul>
+    <li><code>\033[2J</code> → efface l'écran</li>
+    <li><code>\033[H</code> → place le curseur en haut à gauche</li>
+    <li><code>\033[K</code> → efface jusqu'à la fin de la ligne</li>
+</ul>
+
+<pre>
+print("\033[2J\033[H")
+print("Écran nettoyé")
+</pre>
+
+<h3>⬆️ Curseur</h3>
+
+<ul>
+    <li><code>\033[nA</code> → déplacer le curseur de n lignes vers le haut</li>
+    <li><code>\033[nB</code> → vers le bas</li>
+    <li><code>\033[nC</code> → vers la droite</li>
+    <li><code>\033[nD</code> → vers la gauche</li>
+</ul>
+
+<pre>
+print("Ligne 1")
+print("Ligne 2")
+print("\033[1A")
+print("\033[2K")
+print("Ligne remplacée")
+</pre>
+
+<h3>💡 Astuce Python</h3>
+
+<p>
+    Pour éviter de répéter les séquences ANSI partout dans le code, crée des constantes.
+</p>
+
+<pre>
+RESET = "\033[0m"
+
+RED = "\033[31m"
+GREEN = "\033[32m"
+YELLOW = "\033[33m"
+CYAN = "\033[36m"
+
+BOLD = "\033[1m"
+
+print(f"{BOLD}{RED}ERROR{RESET}: fichier introuvable.")
+print(f"{BOLD}{GREEN}SUCCESS{RESET}: opération terminée.")
+</pre>
+
+<h3>⚠️ Attention</h3>
+
+<ul>
+    <li><code>\033[0m</code> doit généralement être placé après le texte pour éviter de colorer les messages suivants.</li>
+    <li>Le support des séquences ANSI dépend du terminal utilisé.</li>
+    <li>Le clignotement (<code>5</code>) peut être ignoré par certains terminaux.</li>
+    <li>Les couleurs 256 et RGB nécessitent un terminal compatible.</li>
+    <li>Les codes ANSI servent à l'affichage : ils ne modifient pas le contenu de la chaîne.</li>
+</ul>
+
+<h3>📌 Mémo rapide</h3>
+
+<pre>
+\033[       Début
+;           Séparateur
+m           Appliquer
+\033[0m      Reset
+
+1           Gras
+3           Italique
+4           Souligné
+5           Clignotant
+7           Inversé
+
+30–37       Texte
+40–47       Fond
+90–97       Texte clair
+100–107     Fond clair
+
+38;5;n      Couleur 256
+48;5;n      Fond 256
+
+38;2;R;G;B  RGB texte
+48;2;R;G;B  RGB fond
+</pre>
+
+<div class="center">
+    <button data-close>Fermer</button>
+</div>
+
+</dialog>
+
+
+
+	 
 <!--------------------------------
           Powershell
 --------------------------------->

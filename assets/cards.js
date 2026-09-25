@@ -123,7 +123,13 @@ const cards = [
 		category: "Administratif"
     },
 
-
+	{
+        title: "Harmonie Mutuelle",
+        url: "https://espace-personnel.harmonie-mutuelle.fr/identification",
+        icon: "./assets/img/logo-harmonie.png",
+		label:"Harmonie Mutuelle",
+		category: "Administratif"
+    },
 	
 	{
         title: "Laposte",
@@ -499,7 +505,7 @@ const cards = [
 
 	    {
         title: "Discord",
-        url: "https://discord.com/",
+        url: "https://discord.com/login",
         icon: "./assets/img/discord.svg",
 		text: "Discord",
 		label: "Discord"

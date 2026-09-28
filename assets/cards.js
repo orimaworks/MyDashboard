@@ -223,6 +223,15 @@ const cards = [
 		label:"Logiciels Libres",
 		category: "Geek"
     },
+
+    {
+        title: "Perfect Buttons",
+        url: "perfect-buttons.html",
+        icon: null,
+        text: "Perfect Buttons",
+		label:"Perfect Buttons",
+		category: "Geek"
+    },
 	
     {
         title: "Cheats Sheet",

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> </title>
+
+<style>
+
+:root {
+	--primary-color: #E67E22; /*orange foncé*/
+	--secondary-color: #FFF3E6;/* orange clair */
+	--tertiary-color: var(--background-color);
+	--background-color: whitesmoke;
+	--text-color:#001a33;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--background-color);
+	font-family: "Nunito", sans-serif;
+	align-items: center ; 
+	height: 100vh;
+	overflow: auto; 
+	overflow-x: hidden;
+	min-width: 250px;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+button {
+	display: flex;
+	flex-direction: row;
+    align-items: center; 
+	justify-content: space-evenly; 
+	align-self: center;  
+    width: 150px;
+    min-width: 150px;
+	max-width: 150px;
+	height: 40px;
+	min-height: 40px;
+	padding : 0 15px 0 15px ;
+    font-size: .9rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+	border-radius: 25px;
+    transition: transform .15s ease,
+                background .2s ease,
+                box-shadow .2s ease;
+	box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3), /* = offset-x, offset-y, blur, spread, color; */
+				inset 1px 1px 1px 0 rgba(255, 255, 255, 0.8); /* = offset-x, offset-y, blur, spread, color; */
+	text-decoration: none;
+}
+
+button:hover {
+	/*background-color:*/
+	cursor: pointer;
+	text-decoration: none;
+	transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,.25);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.column {
+	display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.row {
+	display: flex;		
+    flex-direction: row;
+ 	gap: 10px;
+}
+
+
+
+.primary-button {
+	background-color: var(--primary-color);
+	color: var(--secondary-color);
+	border: 0px;
+}
+
+.secondary-button {
+	background-color: var(--background-color);
+	color: var(--primary-color);
+	border: solid 1px var(--primary-color);
+}
+
+.tertiary-button {
+	color: var(--primary-color);
+	background-color: var(--background-color);
+	border: 0px;
+	box-shadow : none;
+	font-weight: 550;
+}
+
+
+
+</style>
+
+
+<meta name="description" content="Conception de boutons.">
+<meta name="author" content="ORIMAWORKS">
+  </head>
+  <body>
+  <header>
+    <nav>
+    </nav>
+  </header>
+  <main>
+    <section>
+    	<div class="center row">
+	    	<button class="primary-button">primary button</button>
+	    	<button class="secondary-button">secondary button</button>
+	    	<button class="tertiary-button">tertiary button</button>
+		</div>
+    </section>
+  </main>
+  <footer>
+    <address>	
+    </address>
+  </footer>
+  </body>
+

@@ -238,7 +238,9 @@ code {
 }
 
 
-
+.fermeture {
+	position: fixed;
+}
 footer {
 	display: flex;
 	position: sticky;

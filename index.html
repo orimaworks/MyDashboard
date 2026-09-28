@@ -4137,33 +4137,436 @@ enctype="multipart/form-data"&gt;
 <!--------------------------------
               GIT
 --------------------------------->
- <dialog id="git">
-   <div class="display_column center">
-    <h2>Git</h2>
-   <h3>Commandes :</h3>
-<ul><h4>Cloner un repo git :</h4>
+<!--------------------------------
+            GIT
+--------------------------------->
 
+<dialog id="git">
 
-<li> Ouvrir l'IDE </li>
-<li> Onglet Git, puis "clone"</li>
-<li> Saisir l'url de repository distant</li>
-<li> Valider </li>
-<li> Se rendre sur GitHub, créer un nouveau repo depuis son compte perso
-copier le lien.</li>
+<h2>🌿 Git — Guide complet</h2>
 
-<li> Revenir sur l'ide</li>
+<p>
+    Git est un système de gestion de versions distribué permettant de suivre les modifications,
+    travailler en branches, collaborer et revenir facilement à un état antérieur d'un projet.
+</p>
 
-<li> Ouvrir la console</li>
-	<pre>
-		git remote -v
-		git remote set-url origin https://github.com/DEVMJ00/NOM_NOUVEAU_DEPOT.git  
-		git push -u origin main
-	</pre>
+<h3>🎯 Objectif</h3>
+
+<ul>
+    <li>Maîtriser les bases de Git</li>
+    <li>Gérer proprement les branches</li>
+    <li>Corriger les erreurs avant et après un push</li>
+    <li>Réécrire l'historique lorsque c'est pertinent</li>
+    <li>Adopter les bonnes pratiques d'un développeur expérimenté</li>
+</ul>
+
+<hr>
+
+<h2>1️⃣ Initialisation & configuration</h2>
+
+<h3>Vérifier la version</h3>
+
+<pre>git --version</pre>
+
+<h3>Configurer son identité (globale)</h3>
+
+<pre>git config --global user.name "Nom Prénom"
+git config --global user.email "email@exemple.com"</pre>
+
+<h3>Afficher la configuration</h3>
+
+<pre>git config --list</pre>
+
+<h3>Créer un dépôt Git</h3>
+
+<pre>git init</pre>
+
+<h3>Cloner un dépôt existant</h3>
+
+<pre>git clone URL_DU_REPO</pre>
+
+<hr>
+
+<h2>2️⃣ État & inspection</h2>
+
+<h3>Voir l'état du dépôt</h3>
+
+<pre>git status</pre>
+
+<h3>Différences non indexées</h3>
+
+<pre>git diff</pre>
+
+<h3>Différences prêtes à être commit</h3>
+
+<pre>git diff --staged</pre>
+
+<h3>Historique lisible</h3>
+
+<pre>git log --oneline --graph --decorate --all</pre>
+
+<h3>Afficher un commit</h3>
+
+<pre>git show HASH</pre>
+
+<h3>Identifier l'auteur d'une ligne</h3>
+
+<pre>git blame fichier</pre>
+
+<p><strong>💡 Réflexe :</strong> toujours consulter <code>status</code> puis <code>diff</code> avant un commit.</p>
+
+<hr>
+
+<h2>3️⃣ Ajouter & commit</h2>
+
+<h3>Ajouter un fichier</h3>
+
+<pre>git add fichier</pre>
+
+<h3>Ajouter toutes les modifications</h3>
+
+<pre>git add .</pre>
+
+<h3>Créer un commit</h3>
+
+<pre>git commit -m "Message clair et précis"</pre>
+
+<h3>Modifier le dernier commit</h3>
+
+<pre>git commit --amend</pre>
+
+<h3>Modifier uniquement son message</h3>
+
+<pre>git commit --amend -m "Nouveau message"</pre>
+
+<p><strong>✔ Bon message :</strong></p>
+
+<pre>feat: ajout du tableau de bord
+fix: correction du tri des utilisateurs
+docs: mise à jour de la documentation</pre>
+
+<hr>
+
+<h2>4️⃣ Modifier ou supprimer des fichiers</h2>
+
+<table>
+    <tr><th>Action</th><th>Commande</th></tr>
+    <tr><td>Supprimer du dépôt</td><td><code>git rm fichier</code></td></tr>
+    <tr><td>Retirer du suivi uniquement</td><td><code>git rm --cached fichier</code></td></tr>
+    <tr><td>Renommer</td><td><code>git mv ancien nouveau</code></td></tr>
+    <tr><td>Annuler les modifications</td><td><code>git restore fichier</code></td></tr>
+    <tr><td>Restaurer depuis un commit</td><td><code>git restore --source=HASH fichier</code></td></tr>
+</table>
+
+<hr>
+
+<h2>5️⃣ Gestion des branches</h2>
+
+<h3>Voir les branches</h3>
+
+<pre>git branch</pre>
+
+<h3>Créer une branche</h3>
+
+<pre>git branch feature-login</pre>
+
+<h3>Créer + basculer</h3>
+
+<pre>git switch -c feature-login</pre>
+
+<p>Ancienne syntaxe :</p>
+
+<pre>git checkout -b feature-login</pre>
+
+<h3>Changer de branche</h3>
+
+<pre>git switch main</pre>
+
+<h3>Supprimer une branche locale</h3>
+
+<pre>git branch -d feature-login</pre>
+
+<h3>Supprimer une branche distante</h3>
+
+<pre>git push origin --delete feature-login</pre>
+
+<p><strong>📌 Règle :</strong> une branche = une fonctionnalité ou un correctif.</p>
+
+<hr>
+
+<h2>6️⃣ Merge & Rebase</h2>
+
+<h3>Fusion classique</h3>
+
+<pre>git merge feature-login</pre>
+
+<p>Conserve l'historique tel quel.</p>
+
+<h3>Rebase</h3>
+
+<pre>git rebase main</pre>
+
+<p>Replace les commits de la branche au-dessus de <code>main</code> pour obtenir un historique linéaire.</p>
+
+<h3>Rebase interactif</h3>
+
+<pre>git rebase -i HEAD~3</pre>
+
+<p>Permet de :</p>
+
+<ul>
+    <li>squash plusieurs commits</li>
+    <li>réorganiser l'ordre</li>
+    <li>modifier un message</li>
+    <li>supprimer un commit</li>
+</ul>
+
+<hr>
+
+<h2>7️⃣ Corriger une erreur avant le push</h2>
+
+<h3>Retirer un fichier ajouté par erreur</h3>
+
+<pre>git restore --staged fichier</pre>
+
+<p>Le fichier reste modifié localement mais ne fera plus partie du prochain commit.</p>
+
+<h3>Corriger le dernier commit</h3>
+
+<pre>git reset --soft HEAD~1
+git add .
+git commit -m "Commit corrigé"</pre>
+
+<p>Le commit disparaît, mais toutes les modifications sont conservées.</p>
+
+<h3>Annuler complètement le dernier commit</h3>
+
+<p>Conserver les fichiers :</p>
+
+<pre>git reset --soft HEAD~1</pre>
+
+<p>Supprimer également les modifications :</p>
+
+<pre>git reset --hard HEAD~1</pre>
+
+<p><strong>⚠️ Attention :</strong> <code>--hard</code> détruit définitivement les modifications non sauvegardées.</p>
+
+<hr>
+
+<h2>8️⃣ Après un push (cas sensible)</h2>
+
+<p>
+    Réécrire l'historique ne doit être fait que sur une branche personnelle ou après accord de l'équipe.
+</p>
+
+<h3>Force push</h3>
+
+<pre>git push --force</pre>
+
+<h3>Version recommandée</h3>
+
+<pre>git push --force-with-lease</pre>
+
+<ul>
+    <li>Vérifie que personne n'a poussé entre-temps</li>
+    <li>Beaucoup plus sûre que <code>--force</code></li>
+</ul>
+
+<p><strong>🚫 Ne jamais forcer sur <code>main</code> en équipe.</strong></p>
+
+<hr>
+
+<h2>9️⃣ Annuler un commit proprement</h2>
+
+<p>Créer un nouveau commit qui inverse les modifications :</p>
+
+<pre>git revert HASH</pre>
+
+<p>
+    Contrairement à <code>reset</code>, cette méthode conserve l'historique et est adaptée aux branches partagées.
+</p>
+
+<hr>
+
+<h2>🔟 Gestion du dépôt distant</h2>
+
+<h3>Voir les remotes</h3>
+
+<pre>git remote -v</pre>
+
+<h3>Ajouter un remote</h3>
+
+<pre>git remote add origin URL</pre>
+
+<h3>Modifier son URL</h3>
+
+<pre>git remote set-url origin NOUVELLE_URL</pre>
+
+<h3>Premier push</h3>
+
+<pre>git push -u origin main</pre>
+
+<hh3>Push suivant</h3>
+
+<pre>git push</pre>
+
+<h3>Récupérer les modifications</h3>
+
+<pre>git pull --rebase</pre>
+
+<p><strong>✔ Préférer toujours <code>pull --rebase</code> afin d'éviter les commits de merge inutiles.</strong></p>
+
+<hr>
+
+<h2>1️⃣1️⃣ Stash</h2>
+
+<p>Mettre son travail temporairement de côté.</p>
+
+<h3>Sauvegarder</h3>
+
+<pre>git stash</pre>
+
+<h3>Lister</h3>
+
+<pre>git stash list</pre>
+
+<h3>Récupérer et supprimer</h3>
+
+<pre>git stash pop</pre>
+
+<h3>Appliquer sans supprimer</h3>
+
+<pre>git stash apply</pre>
+
+<p>Idéal avant de changer de branche rapidement.</p>
+
+<hr>
+
+<h2>1️⃣2️⃣ Nettoyage</h2>
+
+<h3>Prévisualiser</h3>
+
+<pre>git clean -n</pre>
+
+<h3>Supprimer les fichiers non suivis</h3>
+
+<pre>git clean -f</pre>
+
+<h3>Inclure les dossiers</h3>
+
+<pre>git clean -fd</pre>
+
+<p><strong>⚠️ Toujours utiliser <code>-n</code> avant un <code>clean</code>.</strong></p>
+
+<hr>
+
+<h2>1️⃣3️⃣ Niveau avancé</h2>
+
+<h3>Reflog — Sauvetage ultime</h3>
+
+<pre>git reflog</pre>
+
+<p>Permet de retrouver des commits perdus, même après un reset.</p>
+
+<h3>Cherry-pick</h3>
+
+<pre>git cherry-pick HASH</pre>
+
+<p>Copie un commit précis dans une autre branche.</p>
+
+<h3>Bisect</h3>
+
+<pre>git bisect start</pre>
+
+<p>Recherche automatiquement le commit ayant introduit un bug grâce à une recherche dichotomique.</p>
+
+<hr>
+
+<h2>🌐 Cloner un projet puis le rattacher à son GitHub</h2>
+
+<h3>Étapes</h3>
+
+<ol>
+    <li>Ouvrir l'IDE</li>
+    <li>Onglet <strong>Git → Clone</strong></li>
+    <li>Saisir l'URL du dépôt source</li>
+    <li>Cloner le projet</li>
+    <li>Créer un nouveau dépôt vide sur GitHub</li>
+    <li>Ouvrir le terminal dans le projet</li>
+</ol>
+
+<h3>Remplacer le dépôt distant</h3>
+
+<pre>git remote -v
+
+git remote set-url origin \
+https://github.com/DEVMJ00/NOM_NOUVEAU_DEPOT.git
+
+git push -u origin main</pre>
+
+<p>Cette opération conserve l'historique Git tout en publiant le projet dans ton dépôt personnel.</p>
+
+<hr>
+
+<h2>🧠 Workflow recommandé</h2>
+
+<pre>git switch main
+git pull --rebase
+
+git switch -c feature-ma-fonction
+
+# Développement...
+
+git status
+git diff
+git add .
+git commit -m "feat: nouvelle fonctionnalité"
+
+git switch main
+git pull --rebase
+git merge feature-ma-fonction
+git push</pre>
+
+<hr>
+
+<h2>✅ Bonnes pratiques</h2>
+
+<ul>
+    <li>✔ Commits petits et atomiques</li>
+    <li>✔ Messages explicites (feat, fix, docs, refactor...)</li>
+    <li>✔ Une branche par fonctionnalité</li>
+    <li>✔ Éviter de travailler directement sur <code>main</code></li>
+    <li>✔ Toujours vérifier <code>git status</code> avant un commit</li>
+    <li>✔ Lire <code>git diff</code> avant de valider les modifications</li>
+    <li>✔ Utiliser un <code>.gitignore</code> dès le début du projet</li>
+    <li>✔ Préférer <code>git pull --rebase</code> à <code>git pull</code></li>
+    <li>✔ Réserver <code>--force</code> aux branches personnelles</li>
+    <li>✔ Un historique propre vaut mieux qu'un historique rapide</li>
+</ul>
+
+<hr>
+
+<h2>📋 Mémo rapide</h2>
+
+<pre>
+git status              État du dépôt
+git diff                Modifications
+git add .               Indexer
+git commit -m           Commit
+git switch -c           Nouvelle branche
+git merge               Fusion
+git rebase              Historique linéaire
+git stash               Mettre de côté
+git revert              Annuler proprement
+git reflog              Sauver un historique perdu
+git push                Envoyer
+git pull --rebase       Synchroniser
+</pre>
+
+<div class="center">
+    <button data-close>Fermer</button>
 </div>
-    <div class="center">
-    <button data-close>X</button>
-  </div>
- </dialog>
+
 
 
 

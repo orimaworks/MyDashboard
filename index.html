@@ -59,6 +59,7 @@
    <button data-modal="cheatSheets"><img src="./assets/img/powershell.png"> Cheat</button>
 	<button data-modal="colors"><img src="./assets/img/colors.png">Colors</button>
 	<button data-modal="ANSI-colors">🎨\ANSI [Colors]</button>
+	 <button data-modal="HTTP-errors">HTTP Errors</button>
 	
   <!-- 
   <button data-modal="colors">xxxxx</button>
@@ -74,6 +75,280 @@
 </dialog>
   -->
 
+
+<!--------------------------------
+        HTTP Status Codes
+--------------------------------->
+<dialog id="HTTP-errors">
+<h2>🌐 HTTP Status Codes</h2>
+<p>
+    Les codes HTTP sont des réponses envoyées par un serveur après une requête.
+    Ils indiquent si la requête a réussi, a été redirigée ou a échoué.
+</p>
+<h3>🧩 Structure</h3>
+<pre>
+HTTP/1.1 404 Not Found
+│        │
+│        └── Message associé
+└────────── Code de statut
+</pre>
+
+<ul>
+    <li><strong>1xx</strong> → Information</li>
+    <li><strong>2xx</strong> → Succès</li>
+    <li><strong>3xx</strong> → Redirection</li>
+    <li><strong>4xx</strong> → Erreur côté client</li>
+    <li><strong>5xx</strong> → Erreur côté serveur</li>
+</ul>
+
+<h3>🟢 2xx — Succès</h3>
+
+<table>
+    <tr>
+        <th>Code</th>
+        <th>Signification</th>
+    </tr>
+    <tr>
+        <td><code>200</code></td>
+        <td>OK — La requête a réussi.</td>
+    </tr>
+    <tr>
+        <td><code>201</code></td>
+        <td>Created — Une ressource a été créée.</td>
+    </tr>
+    <tr>
+        <td><code>204</code></td>
+        <td>No Content — Succès sans contenu à retourner.</td>
+    </tr>
+</table>
+
+<pre>
+GET /api/users
+
+→ 200 OK
+</pre>
+
+<h3>🟡 3xx — Redirections</h3>
+
+<p>
+    Ces codes ne sont pas des erreurs : ils demandent simplement au client de consulter une autre URL.
+</p>
+
+<table>
+    <tr>
+        <th>Code</th>
+        <th>Usage</th>
+    </tr>
+    <tr>
+        <td><code>301</code></td>
+        <td>Moved Permanently — Redirection définitive.</td>
+    </tr>
+    <tr>
+        <td><code>302</code></td>
+        <td>Found — Redirection temporaire (connexion, session...).</td>
+    </tr>
+    <tr>
+        <td><code>304</code></td>
+        <td>Not Modified — Le navigateur utilise sa copie en cache.</td>
+    </tr>
+    <tr>
+        <td><code>307</code></td>
+        <td>Temporary Redirect — Redirection temporaire en conservant la méthode HTTP.</td>
+    </tr>
+    <tr>
+        <td><code>308</code></td>
+        <td>Permanent Redirect — Redirection permanente en conservant la méthode.</td>
+    </tr>
+</table>
+
+<pre>
+GET /dashboard
+
+302 Found
+Location: /login
+</pre>
+
+<p>
+    Ici, le navigateur est automatiquement redirigé vers la page de connexion.
+</p>
+
+<h3>🔴 4xx — Erreurs du client</h3>
+
+<p>
+    La requête est comprise par le serveur, mais elle est invalide ou ne peut pas être exécutée.
+</p>
+
+<table>
+    <tr>
+        <th>Code</th>
+        <th>Cause la plus fréquente</th>
+    </tr>
+    <tr>
+        <td><code>400</code></td>
+        <td>Bad Request — Paramètres ou syntaxe incorrects.</td>
+    </tr>
+    <tr>
+        <td><code>401</code></td>
+        <td>Unauthorized — Authentification requise.</td>
+    </tr>
+    <tr>
+        <td><code>403</code></td>
+        <td>Forbidden — Authentifié mais sans autorisation.</td>
+    </tr>
+    <tr>
+        <td><code>404</code></td>
+        <td>Not Found — Ressource inexistante.</td>
+    </tr>
+    <tr>
+        <td><code>405</code></td>
+        <td>Method Not Allowed — Mauvaise méthode (GET, POST...).</td>
+    </tr>
+    <tr>
+        <td><code>408</code></td>
+        <td>Request Timeout — Le client a mis trop de temps à répondre.</td>
+    </tr>
+    <tr>
+        <td><code>409</code></td>
+        <td>Conflict — Conflit avec l'état actuel de la ressource.</td>
+    </tr>
+    <tr>
+        <td><code>429</code></td>
+        <td>Too Many Requests — Limite de requêtes atteinte.</td>
+    </tr>
+</table>
+
+<h3>Exemple 404</h3>
+
+<pre>
+GET /images/logo.png
+
+404 Not Found
+</pre>
+
+<p>
+    Le serveur fonctionne correctement, mais le fichier demandé n'existe pas.
+</p>
+
+<h3>Exemple 403</h3>
+
+<pre>
+GET /admin
+
+403 Forbidden
+</pre>
+
+<p>
+    La ressource existe, mais l'utilisateur n'a pas les droits nécessaires.
+</p>
+
+<h3>⚫ 5xx — Erreurs du serveur</h3>
+
+<p>
+    Le client n'est généralement pas responsable : le problème provient du serveur ou d'une application.
+</p>
+
+<table>
+    <tr>
+        <th>Code</th>
+        <th>Signification</th>
+    </tr>
+    <tr>
+        <td><code>500</code></td>
+        <td>Internal Server Error — Erreur interne de l'application.</td>
+    </tr>
+    <tr>
+        <td><code>501</code></td>
+        <td>Not Implemented — Fonction non prise en charge.</td>
+    </tr>
+    <tr>
+        <td><code>502</code></td>
+        <td>Bad Gateway — Mauvaise réponse d'un serveur intermédiaire.</td>
+    </tr>
+    <tr>
+        <td><code>503</code></td>
+        <td>Service Unavailable — Service indisponible (maintenance, surcharge).</td>
+    </tr>
+    <tr>
+        <td><code>504</code></td>
+        <td>Gateway Timeout — Temps d'attente dépassé entre serveurs.</td>
+    </tr>
+</table>
+
+<pre>
+POST /api/login
+
+500 Internal Server Error
+</pre>
+
+<p>
+    La requête est valide, mais l'application a rencontré une erreur inattendue.
+</p>
+
+<h3>🧠 Comment interpréter rapidement un code ?</h3>
+
+<table>
+    <tr>
+        <th>Famille</th>
+        <th>Question à se poser</th>
+    </tr>
+    <tr>
+        <td><strong>2xx</strong></td>
+        <td>La requête a-t-elle réussi ?</td>
+    </tr>
+    <tr>
+        <td><strong>3xx</strong></td>
+        <td>Vers quelle URL suis-je redirigé ?</td>
+    </tr>
+    <tr>
+        <td><strong>4xx</strong></td>
+        <td>Ai-je demandé la bonne ressource avec les bons droits ?</td>
+    </tr>
+    <tr>
+        <td><strong>5xx</strong></td>
+        <td>Le problème vient-il du serveur ou de l'application ?</td>
+    </tr>
+</table>
+
+<h3>📋 Mémo des codes indispensables</h3>
+
+<pre>
+200  OK
+201  Created
+204  No Content
+
+301  Redirection permanente
+302  Redirection temporaire
+304  Cache valide
+
+400  Mauvaise requête
+401  Non authentifié
+403  Accès interdit
+404  Ressource introuvable
+405  Méthode interdite
+409  Conflit
+429  Trop de requêtes
+
+500  Erreur interne
+502  Mauvaise passerelle
+503  Service indisponible
+504  Timeout entre serveurs
+</pre>
+
+<h3>⚠️ À retenir</h3>
+
+<ul>
+    <li>Un code <strong>3xx</strong> n'est généralement pas une erreur mais une redirection.</li>
+    <li>Les <strong>4xx</strong> indiquent le plus souvent un problème de requête, d'URL ou de permissions.</li>
+    <li>Les <strong>5xx</strong> proviennent du serveur : le client ne peut généralement pas les corriger.</li>
+    <li>Le premier chiffre suffit souvent à orienter immédiatement le diagnostic.</li>
+</ul>
+
+<div class="center">
+    <button data-close>Fermer</button>
+</div>
+
+</dialog>
+	 
  <!--------------------------------
           ANSI Colors
 --------------------------------->

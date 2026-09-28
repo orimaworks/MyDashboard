@@ -240,7 +240,7 @@ code {
 
 .fermeture {
 	position: sticky;
-    top: 1rem;
+    top: 0;
     margin-left: auto;
     display: block;
     z-index: 10;

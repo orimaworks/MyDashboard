@@ -63,7 +63,7 @@
         <button data-modal="linux"><img src="./assets/img/linux.png">Linux</button>
         <button data-modal="cheatSheets"><img src="./assets/img/powershell.png"> Cheat</button>
         <button data-modal="googleDorks"><img src="./assets/img/G.png">Dorks</button>
-
+  <!--<li><kbd> </kbd> + <kbd> </kbd> : __________ </li>-->
 <!--------------------------------
                VSCode
 --------------------------------->
@@ -72,13 +72,54 @@
                 <h2>VSCode</h2>
             </div>
             <h3> Raccourcis clavier </h3>
-            <ul>
-                <li><kbd>Ctrl</kbd> + <kbd>K</kbd> + <kbd>Ctrl</kbd> + <kbd>S</kbd> : ouvrir le panneau des raccourcis clavier</li>
-                <li><kbd>Ctrl</kbd> + <kbd>K</kbd> + <kbd>Ctrl</kbd> + <kbd>F</kbd> : Reformater automatiquement le texte sélectionné</li>
-                <li><kbd>Ctrl</kbd> + <kbd>D</kbd> : Permet une sélection multiple pour modifier plusieurs items/balises en même temps </li>
-                <li><kbd>Alt</kbd> + <kbd>Shift</kbd> : Permet une dupliquer une ligne de code ou un morceau complet </li>
+             <ul>
+        <!-- Général -->
+        <li><kbd>Ctrl</kbd> + <kbd>K</kbd>, puis <kbd>Ctrl</kbd> + <kbd>S</kbd> : ouvrir le panneau des raccourcis clavier</li>
+        <li><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> : ouvrir la palette de commandes</li>
+        <li><kbd>Ctrl</kbd> + <kbd>P</kbd> : rechercher et ouvrir rapidement un fichier</li>
+        <li><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd> : rechercher du texte dans tous les fichiers du projet</li>
+        <li><kbd>Ctrl</kbd> + <kbd>F</kbd> : rechercher du texte dans le fichier courant</li>
+        <li><kbd>Ctrl</kbd> + <kbd>H</kbd> : rechercher et remplacer du texte dans le fichier courant</li>
+
+        <!-- Édition -->
+        <li><kbd>Ctrl</kbd> + <kbd>S</kbd> : enregistrer le fichier</li>
+        <li><kbd>Ctrl</kbd> + <kbd>Z</kbd> : annuler la dernière action</li>
+        <li><kbd>Ctrl</kbd> + <kbd>Y</kbd> : rétablir la dernière action annulée</li>
+        <li><kbd>Ctrl</kbd> + <kbd>X</kbd> : couper la ligne courante si aucune sélection n'est effectuée</li>
+        <li><kbd>Ctrl</kbd> + <kbd>C</kbd> : copier la ligne courante si aucune sélection n'est effectuée</li>
+        <li><kbd>Alt</kbd> + <kbd>↑</kbd> / <kbd>↓</kbd> : déplacer la ligne courante vers le haut ou le bas</li>
+        <li><kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>↑</kbd> / <kbd>↓</kbd> : dupliquer la ligne vers le haut ou le bas</li>
+        <li><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd> : supprimer la ligne courante</li>
+        <li><kbd>Fn</kbd> / <kbd>End</kbd> : aller au début ou à la fin de la ligne</li>
+        <li><kbd>Ctrl</kbd> + <kbd>Home</kbd> / <kbd>End</kbd> : aller au début ou à la fin du fichier</li>
+        <li><kbd>Ctrl</kbd> + <kbd>Entrée</kbd> : insérer une ligne en dessous de la ligne courante</li>
+        <li><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Entrée</kbd> : insérer une ligne au-dessus de la ligne courante</li>
+
+        <!-- Sélection multiple -->
+        <li><kbd>Ctrl</kbd> + <kbd>D</kbd> : sélectionner la prochaine occurrence du texte sélectionné</li>
+        <li><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd> : sélectionner toutes les occurrences du texte sélectionné</li>
+        <li><kbd>Alt</kbd> + clic : ajouter un curseur à l'emplacement du clic</li>
+        <li><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>↑</kbd> / <kbd>↓</kbd> : ajouter un curseur sur la ligne supérieure ou inférieure</li>
+        <li><kbd>Esc</kbd> : quitter le mode de sélection multiple</li>
+
+        <!-- Formatage et navigation -->
+        <li><kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>F</kbd> : formater automatiquement le document entier</li>
+        <li><kbd>Ctrl</kbd> + <kbd>K</kbd>, puis <kbd>Ctrl</kbd> + <kbd>F</kbd> : formater la sélection</li>
+        <li><kbd>F12</kbd> : accéder à la définition d'une fonction, variable ou méthode</li>
+        <li><kbd>Alt</kbd> + <kbd>←</kbd> / <kbd>→</kbd> : revenir à l'emplacement précédent ou suivant</li>
+        <li><kbd>Ctrl</kbd> + <kbd>G</kbd> : accéder à une ligne précise</li>
+        <li><kbd>Ctrl</kbd> + <kbd>/</kbd> : commenter ou décommenter une ligne</li>
+        <li><kbd>Ctrl</kbd> + <kbd>K</kbd> puis  <kbd>Ctrl</kbd> + <kbd>C</kbd> : commenter un bloc</li>
+        <li><kbd>Ctrl</kbd> + <kbd>K</kbd> puis  <kbd>Ctrl</kbd> + <kbd>U</kbd> : décommenter un bloc</li>
+        <li><kbd>Ctrl</kbd> + <kbd>Espace</kbd> : afficher les suggestions de code disponibles</li>
+
+        <!-- Affichage -->
+        <li><kbd>Ctrl</kbd> + <kbd>B</kbd> : afficher ou masquer la barre latérale</li>
+        <li><kbd>Ctrl</kbd> + <kbd>J</kbd> : afficher ou masquer le panneau inférieur</li>
+        <li><kbd>Ctrl</kbd> + <kbd>+</kbd> / <kbd>-</kbd> : agrandir ou réduire le zoom de l'interface, selon les raccourcis configurés</li>
+    </ul>
                 
-                <!--<li><kbd> </kbd> + <kbd> </kbd> : __________ </li>-->
+              
             </ul>
             <div>
                 <button id="btn_fermeture" data-close>Fermer</button>

@@ -282,6 +282,21 @@ const cards = [
 		label:"GitHub Dév.",
 		category: "Geek"
     },
+    {
+        title: "VSCode",
+        url: "https://vscode.dev",
+        icon: "./assets/img/vscode.png",
+		label:"VSCode.",
+		category: "Geek"
+    },
+
+    {
+        title: "fontAwesome",
+        url: "https://fontawesome.com",
+        icon: null,
+		label:"fontAwesome",
+		category: "Geek"
+    },
 
     {
         title: "Thiings",

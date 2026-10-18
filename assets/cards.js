@@ -598,6 +598,15 @@ const cards = [
 		label: "Amazon",
 		category: "shopping"
     },
+
+	{
+        title: "Kubii",
+        url: "https://www.kubii.com/fr/",
+        icon: "./assets/img/kubii.png",
+		text: "Kubii",
+		label:"Kubii",
+		category: "shopping"
+    },
 	
 	{
         title: "LeBonCoin",

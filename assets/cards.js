@@ -252,13 +252,22 @@ const cards = [
     },
 
     {
-        title: "Raspberry Pi Connect",
+        title: "Raspberry",
         url: "https://id.raspberrypi.com/sign-in",
         icon: "./assets/img/raspberry.png",
 		label:"Raspberry Pi",
 		category: "Geek"
     },
 
+    {
+        title: "Raspberry Pi Connect",
+        url: "https://connect.raspberrypi.com/sign-in",
+        icon: "./assets/img/raspberry.png",
+		color: "black",
+		label:"RaspberryPi Connect",
+		category: "Geek"
+    },
+	
     {
         title: "Freebox OS",
         url: "http://mafreebox.freebox.fr/",
@@ -325,11 +334,11 @@ const cards = [
     },
 
 	{
-        title: "ColorHexa",
-		url: "https://www.colorhexa.com/",
-		text: "ColorHexa",
-		icon: "./assets/img/color.jpg",
-		label:"ColorHexa",
+        title: "Hexa",
+		url: "https://www.hexa.com/",
+		text: "Hexa",
+		icon: "./assets/img/.jpg",
+		label:"Hexa",
 		category: "Geek"	
 	},
 	

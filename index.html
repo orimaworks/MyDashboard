@@ -66,10 +66,16 @@
 
 
 <!--------------------------------
-               PATTERN
+        PATTERN
 ----------------------------------
-        <dialog id="xxxx">
-           <div class="display_row"><img style="max-width:60px; height: auto;" src="xxxx"><h2>TITRE</h2></div> 
+'''
+Définit le pattern à utiliser pour la conception de chaque modale
+- un seul H2 par modale.
+- suivre la structure ci-dessous :        
+
+<dialog id="xxxx">
+           <div class="display_column center">
+             <div class="display_column center"><img style="max-width:60px; height: auto;" src="xxxx"><h2>TITRE</h2></div> 
             <p>
                Courte introduction
             </p>
@@ -79,27 +85,32 @@
             </ul>
             <hr>
             <h3>Sous-Titre</h3>
-            <pre>commande cli ou code sur une seule ligne</pre>
+            <code>commande cli ou code sur une seule ligne</code>
             <kbd>Touche</kdb><kbd>Clavier</kbd>
-            <code>Extrait de code 
+            <pre>Extrait de code 
                     indenté
                     Sur plusieurs lignes 
-            </code>
+            </pre>
             <h3>Sous-Titre</h3>
             <p>etc etc</p>
+
             <div>
                 <button id="btn_fermeture" data-close>Fermer</button>
             </div>
+            </div>
         </dialog> 
     -->
-
+'''
 
 <!--------------------------------
                VSCode
 --------------------------------->
         <dialog id="VSCODE">
             <div class="display_column center">
-               <div class="display_row"><img style="max-width:60px; height: auto;" src="./assets/img/vscode.png"><h2>VSCode</h2></div>
+                <div class="display_column center"><img style="max-width:60px; height: auto;"
+                        src="./assets/img/vscode.png">
+                    <h2>VSCode</h2>
+                </div>
             </div>
             <ul>
                 <h3> Général </h3>
@@ -167,12 +178,16 @@
                 <button id="btn_fermeture" data-close>Fermer</button>
             </div>
         </dialog>
-        <!--------------------------------
+
+<!--------------------------------
                Excel
 --------------------------------->
         <dialog id="excel">
             <div class="display_column center">
-                <h2>MS.EXCEL</h2>
+                <div class="display_column center"><img style="max-width:60px; height: auto;"
+                        src="./assets/img/logo-excel.png">
+                    <h2>MS.EXCEL</h2>
+                </div>
             </div>
             <h3> Raccourcis clavier </h3>
             <ul>
@@ -194,7 +209,7 @@
             </div>
         </dialog>
 
-        <!--------------------------------
+<!--------------------------------
               COLORS
 --------------------------------->
         <dialog id="colors">
@@ -213,7 +228,7 @@
     H = 210
     S = 80%
     L = 50%
-</pre>
+            </pre>
             <p>
                 On conserve la teinte (H) car on veut rester dans la même famille.
                 Ensuite on crée une variante :
@@ -352,7 +367,7 @@
                 </div>
         </dialog>
 
-        <!--------------------------------
+<!--------------------------------
         HTTP Status Codes
 --------------------------------->
         <dialog id="HTTP-errors">
@@ -368,7 +383,6 @@
         │        └── Message associé
         └────────── Code de statut
     </pre>
-
             <ul>
                 <li><strong>1xx</strong> → Information</li>
                 <li><strong>2xx</strong> → Succès</li>
@@ -376,9 +390,7 @@
                 <li><strong>4xx</strong> → Erreur côté client</li>
                 <li><strong>5xx</strong> → Erreur côté serveur</li>
             </ul>
-
             <h3>🟢 2xx — Succès</h3>
-
             <table>
                 <tr>
                     <th>Code</th>
@@ -397,19 +409,14 @@
                     <td>No Content — Succès sans contenu à retourner.</td>
                 </tr>
             </table>
-
             <pre>
         GET /api/users
-
         → 200 OK
     </pre>
-
             <h3>🟡 3xx — Redirections</h3>
-
             <p>
                 Ces codes ne sont pas des erreurs : ils demandent simplement au client de consulter une autre URL.
             </p>
-
             <table>
                 <tr>
                     <th>Code</th>
@@ -436,24 +443,18 @@
                     <td>Permanent Redirect — Redirection permanente en conservant la méthode.</td>
                 </tr>
             </table>
-
             <pre>
         GET /dashboard
-
         302 Found
         Location: /login
     </pre>
-
             <p>
                 Ici, le navigateur est automatiquement redirigé vers la page de connexion.
             </p>
-
             <h3>🔴 4xx — Erreurs du client</h3>
-
             <p>
                 La requête est comprise par le serveur, mais elle est invalide ou ne peut pas être exécutée.
             </p>
-
             <table>
                 <tr>
                     <th>Code</th>
@@ -495,34 +496,25 @@
 
             <h3>Exemple 404</h3>
 
-            <pre>
+           <pre>
         GET /images/logo.png
-
         404 Not Found
-    </pre>
-
+        </pre>
             <p>
                 Le serveur fonctionne correctement, mais le fichier demandé n'existe pas.
             </p>
-
             <h3>Exemple 403</h3>
-
             <pre>
         GET /admin
-
         403 Forbidden
     </pre>
-
             <p>
                 La ressource existe, mais l'utilisateur n'a pas les droits nécessaires.
             </p>
-
             <h3>⚫ 5xx — Erreurs du serveur</h3>
-
             <p>
                 Le client n'est généralement pas responsable : le problème provient du serveur ou d'une application.
             </p>
-
             <table>
                 <tr>
                     <th>Code</th>
@@ -549,19 +541,14 @@
                     <td>Gateway Timeout — Temps d'attente dépassé entre serveurs.</td>
                 </tr>
             </table>
-
             <pre>
         POST /api/login
-
         500 Internal Server Error
     </pre>
-
             <p>
                 La requête est valide, mais l'application a rencontré une erreur inattendue.
             </p>
-
             <h3>🧠 Comment interpréter rapidement un code ?</h3>
-
             <table>
                 <tr>
                     <th>Famille</th>
@@ -586,7 +573,6 @@
             </table>
 
             <h3>📋 Mémo des codes indispensables</h3>
-
             <pre>
         200  OK
         201  Created
@@ -609,9 +595,7 @@
         503  Service indisponible
         504  Timeout entre serveurs
     </pre>
-
             <h3>⚠️ À retenir</h3>
-
             <ul>
                 <li>Un code <strong>3xx</strong> n'est généralement pas une erreur mais une redirection.</li>
                 <li>Les <strong>4xx</strong> indiquent le plus souvent un problème de requête, d'URL ou de permissions.
@@ -620,23 +604,17 @@
                 </li>
                 <li>Le premier chiffre suffit souvent à orienter immédiatement le diagnostic.</li>
             </ul>
-
             <div>
                 <button id="btn_fermeture" data-close>Fermer</button>
             </div>
-
-
         </dialog>
 
-
-
-        <!--------------------------------
+ <!--------------------------------
                HTML
 --------------------------------->
         <dialog id="htmlCheats">
             <div class="display_column center">
-                <h2>HTML</h2>
-            </div>
+                <div class="display_column center"><img style="max-width:60px; height: auto;" src="./assets/img/html.svg"><h2>HTML</h2></div>
             <h3> Balise HEAD </h3>
             <pre>
     &lt;!DOCTYPE html&gt;
@@ -1465,11 +1443,12 @@
 
         </dialog>
 
-        <!--------------------------------
+<!--------------------------------
                CSS
 --------------------------------->
         <dialog id="cssCheats">
-            <h2>🎨 CSS - Cheat Sheet</h2>
+                <div class="display_column center"><img style="max-width:60px; height: auto;" src="./assets/img/css.svg"><h2>🎨 CSS - Cheat Sheet</h2></div>
+            
             <h3>🌱 Variables CSS (:root)</h3>
             <ul>
                 <li>Déclare des variables réutilisables dans tout le projet.</li>

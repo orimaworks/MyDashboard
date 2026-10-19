@@ -46,10 +46,10 @@ header:
     count: 1
     required: true
   image:
-    required: false
+    required: true
     attributes:
       style: "max-width:60px; height: auto;"
-      src: "Path to the relevant project asset"
+      src: "./assets/img/"
 
 introduction:
   element: "p"

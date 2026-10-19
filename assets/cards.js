@@ -219,7 +219,7 @@ const cards = [
         url: "https://learn.microsoft.com/fr-fr/",
         icon: "./assets/img/microsoft.svg",
         text: "Microsoft Learn",
-		label:"Microsoft Learn",
+		label:"Se connecter avec hotmail perso - pas devmj",
 		category: "Geek"
     },
 	 {

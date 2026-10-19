@@ -214,7 +214,14 @@ const cards = [
 //       GEEK
 //-----------------------
 
-
+	 {
+        title: "Microsoft Learn",
+        url: "https://learn.microsoft.com/fr-fr/",
+        icon: "./assets/img/microsoft.svg",
+        text: "Microsoft Learn",
+		label:"Microsoft Learn",
+		category: "Geek"
+    },
 	 {
         title: "Logiciels Libres",
         url: "https://code.gouv.fr/sill/",

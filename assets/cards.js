@@ -513,7 +513,7 @@ const cards = [
 
     {
         title: "Whatsapp",
-        url: "https://www.whatsapp.com/",
+        url: "https://web.whatsapp.com/",
         icon: "./assets/img/whatsapp.svg",
 		label: "Whatsapp"
     },

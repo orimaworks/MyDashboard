@@ -1,0 +1,664 @@
+ <dialog id="htmlCheats">
+            <div class="display_column center"><img style="max-width:60px; height: auto;" src="./assets/img/html.svg">
+                <h2>HTML</h2>
+            </div>
+            <h3> Balise HEAD </h3>
+            <pre>
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="fr"&gt;
+    &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt; &lt;/title&gt;
+    &lt;meta name="description" content="Description courte du site ou de la page."&gt;
+    &lt;meta name="author" content="Votre Nom"&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+    &lt;link rel="icon" href="favicon.ico" type="image/x-icon"&gt;
+    &lt;script src="script.js" defer&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;header&gt;
+    &lt;nav&gt;
+    &lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+    &lt;section&gt;
+    &lt;/section&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;
+    &lt;address&gt;
+    &lt;/address&gt;
+    &lt;/footer&gt;
+    &lt;/body&gt;
+</pre>
+            <h3> Fonctions utiles </h3>
+            <table>
+                <tr>
+                    <th>Balise</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td><code>amp</code> </td>
+                    <td> Permet d'échapper l'entité <code>&</code>. Pour faire appraitre en clair :
+                        <code>&amplt;</code>, il faut écrire <strong><code>&amp;amp;lt;</code></strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td> <code>&amp;lt;</code> </td>
+                    <td>
+                        < </td>
+                </tr>
+                <tr>
+                    <td> <code>&amp;gt;</code> </td>
+                    <td> > </td>
+                </tr>
+                <tr>
+                    <td><code>&lt;em&gt; &lt;/em&gt;</code></td>
+                    <td>Met le texte en emphase (italique).</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;strong&gt; &lt;/strong&gt;</code></td>
+                    <td>Met le texte en gras avec importance sémantique.</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;code&gt; &lt;/code&gt;</code></td>
+                    <td>Affiche du code avec police monospace.</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;pre&gt; &lt;/pre&gt;</code></td>
+                    <td>Conserve le formatage du texte (retours à la ligne, espaces).</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;a href=""&gt;</code></td>
+                    <td>Lien hypertexte. Ajoute <code>target="_blank"</code> pour ouvrir dans un nouvel onglet.</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;img src="" alt=""&gt;</code></td>
+                    <td>Insère une image. <code>loading="lazy"</code> pour différer le chargement.</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;</code></td>
+                    <td>Listes non ordonnées, ordonnées et leurs éléments.</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;blockquote&gt;</code></td>
+                    <td>Citation longue.</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;hr&gt;</code></td>
+                    <td>Trait horizontal (séparateur visuel).</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;br&gt;</code></td>
+                    <td>Retour à la ligne.</td>
+                </tr>
+            </table>
+
+            <h3>Les éléments structurants de BODY : </h3>
+            <ul>
+                <li>&lt;header&gt;</li>
+                <li>&lt;footer&gt;</li>
+                <li>&lt;nav&gt;</li>
+                <li>&lt;main&gt;</li>
+                <li>&lt;section&gt;</li>
+                <li>&lt;article&gt;</li>
+                <li>&lt;aside&gt;</li>
+                <li>&lt;adress&gt;</li>
+                <li>&lt;div&gt;</li>
+                <li>&lt;span&gt;</li>
+                <li>&lt;br&gt;</li>
+                <li>&lt;hr&gt;</li>
+            </ul>
+
+            <h3> Les Liens </h3>
+            <h4>Attributs :</h4>
+            <p>href : indique la cible du lien. Exemples de valeurs :</p>
+            <br>
+            <ul>
+                <li><code>http://url </code></li>
+                <li><code>mailto:adresseMail</code></li>
+                <li><code>tel:numeroDeTelephone</code></li>
+                <li><code>ftp://adresseFtp</code></li>
+                <li><code>#top</code></li>
+                <li><code>#nomID</code></li>
+            </ul>
+            <h4> Le lien vers une autre page </h4>
+            <pre>
+    &lt;a href="https://duckduckgo.com/"&gt;Duck Duck Go&lt;/a&gt;
+    &lt;p&gt; Si vous avez une question sans réponse, interrogez donc &lt;a href= https://duckduckgo.com&gt;Duck Duck Go&lt;/a&gt;&lt;/p&gt;
+</pre>
+            <br>
+            <h4> Lien dans le même dossier </h4>
+            <code>&lt;a href="page3.html"&gt;Lien dans un même dossier &lt;/a&gt;</code>
+            <h4> Lien vers un dossier fils</h4>
+            <code> &lt;a href="dossier2/page4.html"&gt;Lien dans un dossier fils&lt;/a&gt;</code>
+            <h4> Lien vers un dossier père</h4>
+            <code>&lt;a href="../page2.html"&gt;Lien dans un dossier père&lt;/a&gt;</code>
+            <h4> Lien vers un dossier adjacent</h4>
+            <code>&lt;a href="../dossier3/page5.html"&gt;Lien dans un dossier adjacent&lt;/a&gt;</code>
+            <h4> Afficher dans un nouvel onglet</h4>
+            <code>&lt;a href="page2.html"target="_blanck"&gt; Lien dans une autre fenêtre&lt;/a&gt;</code>
+
+
+            <h3>Les Tableaux</h3>
+            <pre>
+    &lt;table&gt;
+    &lt;caption&gt; Nom du Tableau &lt;/caption&gt;
+    &lt;thead&gt;
+    &lt;tr&gt;  
+    &lt;th&gt; colonne 1 &lt;/th&gt;
+    &lt;th&gt; colonne 2 &lt;/th&gt;
+    &lt;th&gt; colonne 3 &lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;/thead&gt;
+    
+    &lt;tbody&gt;
+    &lt;tr&gt;
+    &lt;td&gt; item 1 &lt;/td&gt;
+    &lt;td&gt; item 2 &lt;/td&gt;
+    &lt;td&gt; item 3 &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+    &lt;td&gt; item 4 &lt;/td&gt;
+    &lt;td&gt; item 5 &lt;/td&gt;
+    &lt;td&gt; item 6 &lt;/td&gt;
+    &lt;/tr&gt; 
+    &lt;/tbody&gt;  
+    
+    &lt;tfoot&gt;
+    &lt;tr&gt;
+    &lt;td&gt; footer 7 &lt;/td&gt;
+    &lt;td&gt; footer 8 &lt;/td&gt;
+    &lt;td&gt; footer 9 &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/tfoot&gt;
+    &lt;/table&gt;      
+</pre>
+
+            <table>
+                <caption> Nom du Tableau </caption>
+                <thead>
+                    <tr>
+                        <th> colonne 1 </th>
+                        <th> colonne 2 </th>
+                        <th> colonne 3 </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td> item 1 </td>
+                        <td> item 2 </td>
+                        <td> item 3 </td>
+                    </tr>
+
+                    <tr>
+                        <td> item 4 </td>
+                        <td> item 5 </td>
+                        <td> item 6 </td>
+                    </tr>
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td> footer 7 </td>
+                        <td> footer 8 </td>
+                        <td> footer 9 </td>
+                    </tr>
+                </tfoot>
+
+            </table>
+
+
+            <h3>Les Listes </h3>
+            <h4> Liste numérotée</h4>
+            <ul>
+                <li>Balise de la liste : <code>&lt;ol&gt;</code></li>
+                <li>Balise des items : <code>&lt;li&gt;</code></li>
+            </ul>
+
+            <h4>Liste à puces</h4>
+            <ul>
+                <li> Balise de la liste : <code>&lt;ul&gt;</code></li>
+                <li> Balise des items : <code>&lt;li&gt;</code></li>
+            </ul>
+
+            <h4> Liste de définitions </h4>
+            <ul>
+                <li> Balise de la liste : <code>&lt;dl&gt;</code></li>
+                <li> Balise des mots à définir : <code>&lt;dt&gt;</code></li>
+                <li> Balise des définitions : <code>&lt;dd&gt;</code></li>
+            </ul>
+
+            <h3>Les fonctions</h3>
+
+            <ul>
+
+                <li>
+                    <strong>calc()</strong><br>
+                    Effectue un calcul entre différentes unités (+, -, *, /).<br>
+                    <strong>Exemple :</strong><br>
+                    <code>width: calc(50vw - 20px);</code>
+                </li>
+
+                <li>
+                    <strong>min()</strong><br>
+                    Retourne la plus petite des valeurs fournies.<br>
+                    <strong>Exemple :</strong><br>
+                    <code>width: min(50vw, 10em, 200px);</code>
+                </li>
+
+                <li>
+                    <strong>max()</strong><br>
+                    Retourne la plus grande des valeurs fournies.<br>
+                    <strong>Exemple :</strong><br>
+                    <code>width: max(300px, 50vw);</code>
+                </li>
+
+                <li>
+                    <strong>clamp()</strong><br>
+                    Limite une valeur entre un minimum et un maximum.<br>
+                    Équivalent à <code>max(min, min(valeur, max))</code>.<br>
+                    <strong>Exemple :</strong><br>
+                    <code>width: clamp(100px, 10em, 200px);</code>
+                </li>
+            </ul>
+
+            <h3>📱 Responsivité (Responsive Design)</h3>
+
+            <ul>
+
+                <li>
+                    <strong>Définition</strong><br>
+                    La responsivité est la capacité d'un site web à s'adapter automatiquement aux différentes tailles
+                    d'écran (smartphone, tablette, ordinateur...).
+                </li>
+
+                <li>
+                    <strong>Mobile First</strong><br>
+                    Aujourd'hui, la majorité de la navigation se fait sur smartphone. Il est donc recommandé de
+                    concevoir d'abord l'interface pour les petits écrans, puis de l'adapter progressivement aux écrans
+                    plus larges.
+                </li>
+
+                <li>
+                    <strong>Objectifs</strong><br>
+                    • Améliorer l'UX (User Experience)<br>
+                    • Faciliter l'accessibilité<br>
+                    • Optimiser la lisibilité<br>
+                    • Adapter la disposition des éléments selon l'espace disponible
+                </li>
+
+                <li>
+                    <strong>Bonnes pratiques</strong><br>
+                    • Utiliser des unités relatives (<code>%, vw, vh, rem, em</code>)<br>
+                    • Éviter les dimensions fixes lorsque c'est possible<br>
+                    • Utiliser <code>flexbox</code> ou <code>grid</code><br>
+                    • Tester sur plusieurs tailles d'écran
+                </li>
+
+                <li>
+                    <strong>Media Query</strong><br>
+                    Permet d'appliquer des règles CSS uniquement sous certaines conditions (largeur, orientation,
+                    résolution...).
+                    <pre>
+            @media (max-width: 768px) {
+                /* CSS spécifique mobile */
+            }
+        </pre>
+                </li>
+
+            </ul>
+
+            <h3>📐 Breakpoints courants (6 tailles)</h3>
+
+            <table>
+                <tr>
+                    <th>Type d'écran</th>
+                    <th>Largeur</th>
+                </tr>
+                <tr>
+                    <td>📱 Petit smartphone</td>
+                    <td>&lt; 576 px</td>
+                </tr>
+                <tr>
+                    <td>📱 Grand smartphone</td>
+                    <td>576 à 768 px</td>
+                </tr>
+                <tr>
+                    <td>📱 Petite tablette</td>
+                    <td>768 à 992 px</td>
+                </tr>
+                <tr>
+                    <td>💻 Grande tablette</td>
+                    <td>992 à 1200 px</td>
+                </tr>
+                <tr>
+                    <td>🖥️ PC standard</td>
+                    <td>1200 à 1400 px</td>
+                </tr>
+                <tr>
+                    <td>🖥️ Grand écran</td>
+                    <td>&gt; 1400 px</td>
+                </tr>
+            </table>
+
+            <h3>📐 Version simplifiée (4 tailles)</h3>
+
+            <table>
+                <tr>
+                    <th>Type d'écran</th>
+                    <th>Largeur</th>
+                </tr>
+                <tr>
+                    <td>📱 Smartphone</td>
+                    <td>&lt; 750 px</td>
+                </tr>
+                <tr>
+                    <td>📱 Tablette</td>
+                    <td>750 à 970 px</td>
+                </tr>
+                <tr>
+                    <td>💻 PC standard</td>
+                    <td>970 à 1170 px</td>
+                </tr>
+                <tr>
+                    <td>🖥️ Grand écran</td>
+                    <td>&gt; 1170 px</td>
+                </tr>
+            </table>
+            <h3>💡 Exemples de Media Queries</h3>
+            <ul>
+                <li>
+                    <strong>Mobile</strong><br>
+                    <code>@media (max-width: 768px) { ... }</code>
+                </li>
+                <li>
+                    <strong>Tablette</strong><br>
+                    <code>@media (min-width: 768px) and (max-width: 992px) { ... }</code>
+                </li>
+                <li>
+                    <strong>Desktop</strong><br>
+                    <code>@media (min-width: 1200px) { ... }</code>
+                </li>
+                <li>
+                    <strong>Mode paysage</strong><br>
+                    <code>@media (orientation: landscape) { ... }</code>
+                </li>
+                <li>
+                    <strong>Mode portrait</strong><br>
+                    <code>@media (orientation: portrait) { ... }</code>
+                </li>
+            </ul>
+            <h3>📝 Champs texte</h3>
+            <ul>
+                <li>
+                    <strong>Texte simple</strong><br>
+                    Champ de saisie standard.
+
+                    <br><strong>Attributs utiles :</strong><br>
+                    <code>id</code> : identifiant unique<br>
+                    <code>name</code> : nom de la donnée envoyée<br>
+                    <code>placeholder</code> : texte indicatif<br>
+                    <code>required</code> : champ obligatoire<br>
+                    <code>autofocus</code> : focus automatique<br>
+                    <code>pattern</code> : validation (Regex)<br>
+                    <code>title</code> : info-bulle et message d'erreur
+                    <br><strong>Exemple :</strong><br>
+                    <pre>
+            &lt;input type="text"
+            id="nom"
+            name="nom"
+            placeholder="ABC"
+            required
+            autofocus
+            pattern="[A-Za-z]{3,}"
+            title="3 caractères minimum"&gt;
+        </pre>
+                </li>
+                <li>
+                    <strong>Texte multiligne</strong>
+                    <br><strong>Exemple :</strong><br>
+                    <pre>
+            &lt;textarea
+            id="commentaire"
+            name="commentaire"
+            placeholder="Votre commentaire..."&gt;
+            &lt;/textarea&gt;
+        </pre>
+                </li>
+                <li>
+                    <strong>Email</strong>
+                    <br><strong>Exemple :</strong>
+                    <pre>
+            &lt;input
+            type="email"
+            name="email"
+            placeholder="john.doe@mail.com"&gt;
+        </pre>
+                </li>
+                <li>
+                    <strong>URL</strong>
+                    <br><strong>Exemple :</strong>
+                    <pre>
+            &lt;input
+            type="url"
+            size="50"
+            placeholder="https://monsite.fr"&gt;
+        </pre>
+                </li>
+                <li>
+                    <strong>Téléphone</strong>
+                    <br><strong>Exemple :</strong>
+                    <pre>
+            &lt;input
+            type="tel"
+            placeholder="01 02 03 04 05"
+            pattern="[0]{1}[1-9]{1}[0-9]{8}"&gt;
+        </pre>
+                </li>
+                <li>
+                    <strong>Mot de passe</strong>
+                    <br><strong>Exemple :</strong>
+                    <pre>
+            &lt;input
+            type="password"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"&gt;
+        </pre>
+                </li>
+                <li>
+                    <strong>Recherche</strong>
+                    <br><strong>Exemple :</strong>
+                    <pre>
+            &lt;input
+            type="search"
+            placeholder="Rechercher..."
+            size="50"&gt;
+        </pre>
+                </li>
+            </ul>
+            <h3>🔢 Champ numérique</h3>
+            <ul>
+                <li>
+                    <strong>Nombre</strong>
+                    <br>Attributs :
+                    <code>min</code>,
+                    <code>max</code>,
+                    <code>step</code>
+                    <br><strong>Exemple :</strong>
+                    <pre>
+            &lt;input
+            type="number"
+            min="2"
+            max="12"
+            step="2"&gt;
+        </pre>
+                </li>
+            </ul>
+            <h3>📅 Dates et heures</h3>
+            <ul>
+                <li>
+                    <strong>Heure</strong>
+                    <pre>
+            &lt;input
+            type="time"
+            min="08:00"
+            max="18:00"
+            value="10:00"&gt;
+        </pre>
+                </li>
+                <li>
+                    <strong>Date</strong>
+                    <pre>
+            &lt;input
+            type="date"
+            min="2010-01-01"
+            max="2020-12-31"
+            value="2020-07-14"&gt;
+        </pre>
+                </li>
+                <li>
+                    <strong>Date + Heure</strong>
+                    <code>
+            &lt;input type="datetime-local"&gt;
+        </code>
+                </li>
+                <li>
+                    <strong>Mois</strong>
+                    <code>
+            &lt;input type="month"&gt;
+        </code>
+                </li>
+                <li>
+                    <strong>Semaine</strong>
+                    <code>
+            &lt;input type="week"&gt;
+        </code>
+                </li>
+            </ul>
+            <h3>✅ Choix utilisateur</h3>
+            <ul>
+                <li>
+                    <strong>Cases à cocher (Checkbox)</strong>
+                    <br>✔ Plusieurs choix possibles
+                    <br><strong>Important :</strong>
+                    Chaque checkbox possède un
+                    <code>name</code>
+                    différent.
+                    <br>
+                    <code>&lt;input type="checkbox" name="v1"&gt;</code>
+                    <br>
+                    <code>&lt;input type="checkbox" name="v2"&gt;</code>
+                </li>
+                <li>
+                    <strong>Boutons radio</strong>
+                    <br>🔘 Un seul choix possible
+                    <br><strong>Important :</strong>
+                    Tous les boutons radio doivent partager le même
+                    <code>name</code>.
+                    <br>
+                    <code>
+            &lt;input type="radio" name="genre"&gt;
+        </code>
+                    <br>
+                    <code>
+            &lt;input type="radio" name="genre"&gt;
+        </code>
+                </li>
+                <li>
+                    <h3>Liste déroulante</h3>
+                    <br>
+                    <h4> Exemple : </h4>
+                    <pre>
+            &lt;label for="pays"&gt;Pays :&lt;/label&gt;
+            &lt;select id="pays" name="pays"&gt;
+            &lt;option value="" disabled selected&gt;— Sélectionnez —&lt;/option&gt;
+            &lt;option value="fr"&gt;France&lt;/option&gt;
+            &lt;option value="be"&gt;Belgique&lt;/option&gt;
+            &lt;option value="ch"&gt;Suisse&lt;/option&gt;
+            &lt;option value="ca"&gt;Canada&lt;/option&gt;
+            &lt;option value="us"&gt;États‑Unis&lt;/option&gt;
+            &lt;/select&gt;
+        </pre>
+                    <label for="pays">Pays :</label>
+                    <select id="pays" name="pays">
+                        <option value="" disabled selected>— Sélectionnez —</option>
+                        <option value="fr">France</option>
+                        <option value="be">Belgique</option>
+                        <option value="ch">Suisse</option>
+                        <option value="ca">Canada</option>
+                        <option value="us">États‑Unis</option>
+                    </select>
+                </li>
+                <li>
+                    <strong>Liste avec saisie (datalist)</strong>
+                    <br>
+                    <pre>
+            &lt;input list="liste"&gt;
+            &lt;datalist id="liste"&gt;
+            &nbsp;&nbsp;&lt;option value="Paris"&gt;
+            &nbsp;&nbsp;&lt;option value="Lyon"&gt;
+            &lt;/datalist&gt;
+        </pre>
+                    <br>
+                    L'attribut
+                    <code>list</code>
+                    de l'input doit être identique à l'
+                    <code>id</code>
+                    du
+                    <code>datalist</code>.
+                </li>
+                <li>
+                    <strong>Sélecteur de couleur</strong>
+                    <code>
+            &lt;input type="color"&gt;
+        </code>
+                </li>
+            </ul>
+            <h3>📁 Fichier</h3>
+            <ul>
+                <li>
+                    <strong>Upload de fichier</strong>
+                    <br>
+                    <pre>
+            &lt;input
+            type="file"
+            accept=".jpg,.jpeg,.png"&gt;
+        </pre>
+                    <br><br>
+                    <strong>Le formulaire doit utiliser :</strong>
+                    <code>
+            method="POST"
+        </code>
+                    et
+                    <code>
+            enctype="multipart/form-data"
+        </code>
+                    <br><br>
+                    <pre>
+            &lt;form
+            method="POST"
+            enctype="multipart/form-data"&gt;
+        </pre>
+                </li>
+            </ul>
+            <h3>⭐ Attributs les plus utilisés</h3>
+            <ul>
+                <li><code>required</code> → champ obligatoire</li>
+                <li><code>readonly</code> → lecture seule</li>
+                <li><code>disabled</code> → désactivé</li>
+                <li><code>checked</code> → sélectionné par défaut</li>
+                <li><code>selected</code> → option sélectionnée</li>
+                <li><code>placeholder</code> → texte d'aide</li>
+                <li><code>value</code> → valeur par défaut</li>
+                <li><code>min</code> / <code>max</code> → bornes</li>
+                <li><code>step</code> → incrément</li>
+                <li><code>pattern</code> → validation Regex</li>
+                <li><code>autocomplete</code> → active/désactive l'autocomplétion</li>
+                <li><code>maxlength</code> → longueur maximale</li>
+                <li><code>multiple</code> → plusieurs valeurs/fichiers</li>
+            </ul>
+            <div>
+                <button id="btn_fermeture" data-close>Fermer</button>
+            </div>
+        </dialog>

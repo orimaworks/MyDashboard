@@ -1,0 +1,248 @@
+ <dialog id="markdown">
+            <h2>📝 Markdown</h2>
+
+            <h3>📖 Titres</h3>
+            <ul>
+                <li><code># Titre 1</code></li>
+                <li><code>## Titre 2</code></li>
+                <li><code>### Titre 3</code></li>
+                <li><code>#### Titre 4</code></li>
+            </ul>
+
+            <h3>✍️ Mise en forme</h3>
+            <ul>
+                <li><code>**Gras**</code></li>
+                <li><code>*Italique*</code></li>
+                <li><code>***Gras + Italique***</code></li>
+                <li><code>~~Texte barré~~</code></li>
+            </ul>
+
+            <h3>📋 Listes</h3>
+            <ul>
+                <li><code>- Élément</code></li>
+                <li><code>* Élément</code></li>
+                <li><code>1. Premier</code></li>
+                <li><code>2. Deuxième</code></li>
+            </ul>
+
+            <h3>☑️ Checklist</h3>
+            <ul>
+                <li><code>- [ ] À faire</code></li>
+                <li><code>- [x] Terminé</code></li>
+            </ul>
+
+            <h3>🔗 Liens</h3>
+            <ul>
+                <li><code>[Google](https://google.com)</code></li>
+                <li><code>&lt;https://google.com&gt;</code></li>
+            </ul>
+
+            <h3>🖼️ Images</h3>
+            <ul>
+                <li><code>![Logo](logo.png)</code></li>
+            </ul>
+
+            <h3>💻 Code en ligne</h3>
+            <ul>
+                <li><code>`console.log("Hello");`</code></li>
+            </ul>
+
+            <h3>📦 Bloc de code</h3>
+
+            <pre>```javascript
+        function hello() {
+            console.log("Hello World");
+        }
+    ```</pre>
+
+            <h3>💬 Citation</h3>
+            <ul>
+                <li><code>&gt; Ceci est une citation</code></li>
+            </ul>
+
+            <h3>➖ Séparateur</h3>
+            <ul>
+                <li><code>---</code></li>
+                <li><code>***</code></li>
+            </ul>
+
+            <h3>📊 Tableau</h3>
+
+            <pre>
+        | Nom   | Âge |
+        |-------|----:|
+        | Mario | 37  |
+    | Tilio |  0  |</pre>
+
+            <h3>😀 Emojis</h3>
+            <ul>
+                <li><code>🚀 💻 ⚙️ 📚 🎮</code></li>
+                <li><code>:rocket:</code></li>
+                <li><code>:warning:</code></li>
+                <li><code>:white_check_mark:</code></li>
+                <li><code>:bulb:</code></li>
+            </ul>
+
+            <h3>📍 Ancres</h3>
+            <ul>
+                <li><code>[Installation](#installation)</code></li>
+                <li><code>## Installation</code></li>
+            </ul>
+
+            <h3>🔤 Échappement</h3>
+            <ul>
+                <li><code>\*</code> → *</li>
+                <li><code>\#</code> → #</li>
+                <li><code>\`</code> → `</li>
+            </ul>
+
+            <h3>🐙 GitHub</h3>
+            <ul>
+                <li><code>@utilisateur</code></li>
+                <li><code>#123</code> (Issue)</li>
+                <li><code>- [ ] Todo</code></li>
+            </ul>
+
+            <h3>🌈 Coloration syntaxique</h3>
+            <ul>
+                <li><code>html</code></li>
+                <li><code>css</code></li>
+                <li><code>javascript</code></li>
+                <li><code>typescript</code></li>
+                <li><code>python</code></li>
+                <li><code>java</code></li>
+                <li><code>sql</code></li>
+                <li><code>powershell</code></li>
+                <li><code>bash</code></li>
+                <li><code>json</code></li>
+                <li><code>yaml</code></li>
+                <li><code>xml</code></li>
+                <li><code>php</code></li>
+                <li><code>csharp</code></li>
+                <li><code>cpp</code></li>
+            </ul>
+
+            <h3>💡 Bonnes pratiques</h3>
+            <ul>
+                <li>✔ Un seul <code>#</code> par document.</li>
+                <li>✔ Utiliser des titres hiérarchiques.</li>
+                <li>✔ Laisser une ligne vide entre deux sections.</li>
+                <li>✔ Toujours préciser le langage des blocs de code.</li>
+                <li>✔ Préférer des listes courtes et aérées.</li>
+            </ul>
+
+
+            <div>
+                <button id="btn_fermeture" data-close>Fermer</button>
+            </div>
+        </dialog>
+
+
+
+        <!--------------------------------
+           LINUX
+--------------------------------->
+
+        <dialog id="linux">
+            <div class="display_column center">
+                <h2>Linux</h2>
+            </div>
+            <ul>
+                <li>Création d'une boucle pour agir sur l'intégralité des fichiers d'un dossier
+                    <pre>
+        for file in .*; do
+        mv "$file" "${file#.}"
+    done </pre>
+                </li>
+                <li>Liste les fichiers et dossiers dans le répertoire actuel :
+                    <pre>
+        ls          #affichage simple
+        ls -l       #affichage détaillé
+    ls -a       #affichage des fichiers cachés </pre>
+                </li>
+
+                <li>Changer de répertoire : <code>cd</code></li>
+                <li>Remonter d'un niveau dans l'arborescence : <code>cd ..</code></li>
+                <li>Ouvrir le répertoire courant das l'explorateur : <code>xdg-open .</code></li>
+                <li>Affiche le chemin du répertoire actuel : <code>pwd</code></li>
+                <li>Créer un nouveau dossier : <code>mkdir mon_dossier</code></li>
+                <li>Créer un fichier vide : <code>touch nom_du_fichier_.extension</code></li>
+                <li>Copier un fichier : <code>cp fichier1.txt fichier2.txt</code></li>
+                <li>Copier un dossier : <code>cp -r dossier1 dossier2</code></li>
+                <li>Supprimer un fichier : <code>rm fichier.txt</code></li>
+                <li>Supprimer un dossier et son contenu :
+                    <pre>
+        rm -r dossier   #Supprime tout 
+    rm -i           #Demande une confirmation avant suppression</pre>
+                </li>
+                <li>Déplacer ou renommer un fichier : <code>mv ancien_nom.txt nouveau_nom.txt</code></li>
+                <li>Affiche le contenu d'un fichier : <code>cat fichier.txt</code></li>
+                <li>Ouvrir éditeurs de texte en ligne de commande : <code>nano fichier.txt</code></li>
+                <li>Changer les permissions d'un fichier ou dossier : <code>chmod +x script.sh</code></li>
+                <li>Rechercher un fichier dans l'arborescence : <code>  find /home -name "index.html"</code></li>
+            </ul>
+            <h3>Informations système</h3>
+            <ul>
+                <li>Afficher les informations sur le système d'exploitation : <code>uname -a</code></li>
+                <li>Afficher l'espace disque utilisé : <code>df -h</code></li>
+                <li>Afficher les processus en cours et l'utilisation des ressources : <code>top</code></li>
+                <li>Afficher l'utilisation de la mémoire : <code>free -h</code></li>
+            </ul>
+            <h3>Installation et gestion des logiciels</h3>
+            <ul>
+                <li>Mettre à jour la liste des paquets disponibles : <code>sudo apt update</code></li>
+                <li>Mettre à jour les paquets installés : <code>sudo apt upgrade</code></li>
+                <li>Installer un logiciel : <code>sudo apt install [nom_paquet]</code></li>
+                <li>Désinstaller un logiciel : <code>sudo apt remove [nom_paquet]</code></li>
+            </ul>
+            <h3>Gestion des utilisateurs et des permissions</h3>
+            <ul>
+                <li>Afficher l'utilisateur actuel : <code>whoami</code></li>
+                <li>Gèrer les permissions et les propriétaires : <code>chmod 755 [script.sh]</code></li>
+            </ul>
+
+
+            <h3>Commandes réseau</h3>
+            <ul>
+                <li>Vérifier la connectivité réseau : <code>ping google.com</code></li>
+                <li>Afficher les informations réseau: <code>ip a</code></li>
+                <li>Télécharge un fichier depuis une URL: <code>curl https://example.com</code></li>
+            </ul>
+
+
+            <h3>Commandes pour afficher le matériel</h3>
+            <ul>
+                <li>Liste détaillée du matériel : <code>sudo lshw</code></li>
+                <li>Liste résumée du matériel : <code>sudo lshw -short</code></li>
+                <li>Afficher un type particulier de matériel : <code>sudo lshw -class processor</code></li>
+                <li>Informations sur le processeur : <code>lscpu</code></li>
+                <li>Informations sur les périphériques de stockage : <code>lsblk</code></li>
+                <li>Informations détaillées sur les périphériques de stockage : <code>lsblk -f</code></li>
+                <li>Informations complètes sur le système et le matériel : <code>sudo apt install inxi</code>, puis :
+                    <code>inxi -Fxz</code>
+                </li>
+                <li>Rapport détaillé sur le matériel : <code>  sudo apt install hwinfo</code>, puis :
+                    <code>sudo hwinfo</code>
+                </li>
+            </ul>
+
+            <h3>🐧 Linux / Raspberry Pi</h3>
+            <ul>
+                <li>Mettre à jour les paquets : <code>sudo apt update && sudo apt upgrade</code></li>
+                <li>Voir l'espace disque : <code>df -h</code></li>
+                <li>Voir les processus : <code>top</code></li>
+                <li>Voir l'adresse IP : <code>hostname -I</code></li>
+                <li>Redémarrer : <code>sudo reboot</code></li>
+                <li>Éteindre : <code>sudo shutdown now</code></li>
+            </ul>
+            <h3>Remarques supplémentaires</h3>
+            <p>
+                Pour consulter le manuel d'une commande, utiliser <code>man [nom_commande]</code>.
+                Créer des alias pour des commandes courantes avec <code>alias</code> pour gagner du temps.
+            </p>
+
+            <div>
+                <button id="btn_fermeture" data-close>Fermer</button>
+            </div>
+        </dialog>
+

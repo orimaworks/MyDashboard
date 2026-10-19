@@ -1,0 +1,236 @@
+ <dialog id="cssCheats">
+            <div class="display_column center"><img style="max-width:60px; height: auto;" src="./assets/img/css.svg">
+                <h2>CSS - Cheat Sheet</h2>
+            </div>
+            <h3>🌱 Variables CSS (:root)</h3>
+            <ul>
+                <li>Déclare des variables réutilisables dans tout le projet.</li>
+                <li><code>:root { --primary:#0D6EFD; --secondary:#6C757D; --radius:10px; }</code></li>
+                <li><code>color: var(--primary);</code></li>
+                <li><code>background: var(--secondary, black);</code> (valeur par défaut)</li>
+            </ul>
+            <h3>🎨 Couleurs</h3>
+            <ul>
+                <li>Définit la couleur du texte ou du fond.</li>
+                <li><code>color: red | #FF0000 | rgb() | rgba() | hsl() | var(--primary);</code></li>
+                <li><code>background-color: white;</code></li>
+                <li><code>opacity: 0 → 1;</code></li>
+            </ul>
+            <h3>📦 Box Model</h3>
+            <ul>
+                <li>Gestion des dimensions d'un élément.</li>
+                <li><code>width</code>, <code>height</code></li>
+                <li><code>min-width</code>, <code>max-width</code></li>
+                <li><code>padding</code></li>
+                <li><code>margin</code></li>
+                <li><code>box-sizing: content-box | border-box;</code></li>
+            </ul>
+            <h3>🖼️ Border</h3>
+            <ul>
+                <li>Définit les bordures.</li>
+                <li><code>border: 2px solid black;</code></li>
+                <li><code>border-style: solid | dashed | dotted | double | groove | ridge | inset | outset | none;</code>
+                </li>
+                <li><code>border-radius: 5px | 50%;</code></li>
+            </ul>
+            <h3>📝 Texte</h3>
+            <ul>
+                <li>Mise en forme du texte.</li>
+                <li><code>font-size</code></li>
+                <li><code>font-family</code></li>
+                <li><code>font-weight: normal | bold | 100-900;</code></li>
+                <li><code>font-style: normal | italic;</code></li>
+                <li><code>text-align: left | center | right | justify;</code></li>
+                <li><code>text-decoration: none | underline | line-through;</code></li>
+                <li><code>text-transform: uppercase | lowercase | capitalize;</code></li>
+                <li><code>letter-spacing</code></li>
+                <li><code>line-height</code></li>
+                <li><code>text-shadow: 0 0 5px lime;</code></li>
+            </ul>
+            <h3>👁️ Affichage</h3>
+            <ul>
+                <li>Contrôle le rendu.</li>
+                <li><code>display: block | inline | inline-block | flex | grid | none;</code></li>
+                <li><code>visibility: visible | hidden;</code></li>
+                <li><code>opacity: 0-1;</code></li>
+            </ul>
+            <h3>📍 Positionnement</h3>
+            <ul>
+                <li>Position d'un élément.</li>
+                <li><code>position: static | relative | absolute | fixed | sticky;</code></li>
+                <li><code>top right bottom left</code></li>
+                <li><code>z-index</code></li>
+            </ul>
+            <h3>📜 Overflow</h3>
+            <ul>
+                <li>Gestion des débordements.</li>
+                <li><code>overflow: visible | hidden | auto | scroll;</code></li>
+                <li><code>overflow-x</code></li>
+                <li><code>overflow-y</code></li>
+            </ul>
+            <h3>🖼️ Images</h3>
+            <ul>
+                <li>Dimensionnement des images.</li>
+                <li><code>object-fit: contain | cover | fill | none | scale-down;</code></li>
+                <li><code>object-position: center;</code></li>
+            </ul>
+            <h3>🧲 Flexbox</h3>
+            <ul>
+                <li>Disposition sur un axe.</li>
+                <li><code>display:flex;</code></li>
+                <li><code>flex-direction: row | column | row-reverse | column-reverse;</code></li>
+                <li><code>flex-wrap: nowrap | wrap | wrap-reverse;</code></li>
+                <li><code>justify-content: flex-start | center | flex-end | space-between | space-around | space-evenly;</code>
+                </li>
+                <li><code>align-items: stretch | flex-start | center | flex-end | baseline;</code></li>
+                <li><code>align-content</code></li>
+                <li><code>gap</code></li>
+                <li><code>flex-grow</code></li>
+                <li><code>flex-shrink</code></li>
+                <li><code>flex-basis</code></li>
+                <li><code>flex: grow shrink basis;</code></li>
+                <li><code>order</code></li>
+                <li><code>align-self</code></li>
+            </ul>
+            <h3>🧩 Grid</h3>
+            <ul>
+                <li>Disposition en lignes et colonnes.</li>
+                <li><code>display:grid;</code></li>
+                <li><code>grid-template-columns</code></li>
+                <li><code>grid-template-rows</code></li>
+                <li><code>repeat()</code></li>
+                <li><code>minmax()</code></li>
+                <li><code>fr</code></li>
+                <li><code>grid-column</code></li>
+                <li><code>grid-row</code></li>
+                <li><code>grid-area</code></li>
+                <li><code>justify-items</code></li>
+                <li><code>align-items</code></li>
+                <li><code>place-items</code></li>
+                <li><code>gap</code></li>
+            </ul>
+            <h3>🎬 Transformations</h3>
+            <ul>
+                <li>Déplace ou redimensionne un élément.</li>
+                <li><code>transform: translate();</code></li>
+                <li><code>rotate()</code></li>
+                <li><code>scale()</code></li>
+                <li><code>skew()</code></li>
+            </ul>
+            <h3>✨ Transitions</h3>
+            <ul>
+                <li>Animation douce.</li>
+                <li><code>transition: all .3s ease;</code></li>
+                <li><code>linear | ease | ease-in | ease-out | ease-in-out;</code></li>
+            </ul>
+            <h3>🎞️ Animations</h3>
+            <ul>
+                <li>Animation complète.</li>
+                <li><code>@keyframes</code></li>
+                <li><code>animation-name</code></li>
+                <li><code>animation-duration</code></li>
+                <li><code>animation-delay</code></li>
+                <li><code>animation-iteration-count</code></li>
+                <li><code>animation-direction</code></li>
+                <li><code>animation-fill-mode</code></li>
+            </ul>
+            <h3>🖱️ Curseur</h3>
+            <ul>
+                <li>Apparence du pointeur.</li>
+                <li><code>cursor: pointer | text | grab | move | wait | crosshair | not-allowed;</code></li>
+            </ul>
+            <h3>🌗 Filtres</h3>
+            <ul>
+                <li>Effets graphiques.</li>
+                <li><code>filter: blur() brightness() contrast() grayscale() invert() saturate() sepia();</code></li>
+                <li><code>backdrop-filter: blur(5px);</code></li>
+            </ul>
+            <h3>💡 Ombres</h3>
+            <ul>
+                <li>Ajoute du relief.</li>
+                <li><code>box-shadow: x y blur color;</code></li>
+                <li><code>text-shadow: x y blur color;</code></li>
+            </ul>
+
+            <h3>📱 Responsive</h3>
+            <ul>
+                <li>Adaptation aux écrans.</li>
+                <li><code>@media (max-width:768px){ ... }</code></li>
+                <li><code>@media (min-width:1024px){ ... }</code></li>
+                <li><code>@media (orientation:portrait){ ... }</code></li>
+                <li><code>@media (prefers-color-scheme:dark){ ... }</code></li>
+                <li><code>@media (prefers-reduced-motion:reduce){ ... }</code></li>
+            </ul>
+
+            <h3>🖱️ Pseudo-classes</h3>
+            <ul>
+                <li>Réagit aux interactions.</li>
+                <li><code>:hover</code></li>
+                <li><code>:focus</code></li>
+                <li><code>:focus-visible</code></li>
+                <li><code>:active</code></li>
+                <li><code>:visited</code></li>
+                <li><code>:checked</code></li>
+                <li><code>:disabled</code></li>
+                <li><code>:nth-child()</code></li>
+                <li><code>:first-child</code></li>
+                <li><code>:last-child</code></li>
+                <li><code>:not()</code></li>
+            </ul>
+
+            <h3>🎭 Pseudo-éléments</h3>
+            <ul>
+                <li>Ajoute du contenu virtuel.</li>
+                <li><code>::before</code></li>
+                <li><code>::after</code></li>
+                <li><code>::first-letter</code></li>
+                <li><code>::first-line</code></li>
+                <li><code>::selection</code></li>
+                <li><code>::placeholder</code></li>
+            </ul>
+
+            <h3>📏 Unités</h3>
+            <ul>
+                <li>Les principales unités.</li>
+                <li><code>px</code> Pixel</li>
+                <li><code>%</code> Pourcentage</li>
+                <li><code>em</code> Taille du parent</li>
+                <li><code>rem</code> Taille racine</li>
+                <li><code>vw</code> Largeur écran</li>
+                <li><code>vh</code> Hauteur écran</li>
+                <li><code>fr</code> Fraction (Grid)</li>
+                <li><code>auto</code></li>
+            </ul>
+
+            <h3>🎯 Sélecteurs</h3>
+            <ul>
+                <li><code>*</code> Tous les éléments</li>
+                <li><code>div</code> Balise</li>
+                <li><code>.card</code> Classe</li>
+                <li><code>#menu</code> ID</li>
+                <li><code>div img</code> Descendant</li>
+                <li><code>div > img</code> Enfant direct</li>
+                <li><code>div + p</code> Frère adjacent</li>
+                <li><code>div ~ p</code> Frères suivants</li>
+                <li><code>[type="text"]</code> Attribut</li>
+            </ul>
+
+            <h3>🚀 Astuces utiles</h3>
+            <ul>
+                <li><code>scroll-behavior: smooth;</code></li>
+                <li><code>scrollbar-width: none;</code></li>
+                <li><code>user-select: none;</code></li>
+                <li><code>pointer-events: none;</code></li>
+                <li><code>white-space: nowrap;</code></li>
+                <li><code>text-wrap: balance;</code></li>
+                <li><code>accent-color: lime;</code></li>
+                <li><code>aspect-ratio: 16 / 9;</code></li>
+            </ul>
+
+
+            <div>
+                <button id="btn_fermeture" data-close>Fermer</button>
+            </div>
+
+
+        </dialog>

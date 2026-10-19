@@ -1,0 +1,155 @@
+    <dialog id="colors">
+            <div class="display_column center">
+                <h2>🎨 Colors</h2>
+            </div>
+            <p>Une couleur HSL se compose de 3 valeurs :
+                <code>hsl(H, S, L)</code>
+                H = Hue (teinte)
+                S = Saturation (intensité)
+                L = Lightness (luminosité)
+
+                Pour générer une paire de couleurs à partir d'une couleur, on part d'une couleur principale :
+            </p>
+            <pre>
+    Primaire :
+    H = 210
+    S = 80%
+    L = 50%
+            </pre>
+            <p>
+                On conserve la teinte (H) car on veut rester dans la même famille.
+                Ensuite on crée une variante :
+                Variante douce (secondaire)
+                On réduit la saturation :
+            </p>
+            <code>
+  S : 80% → 50%
+</code>
+            <p>On augmente la luminosité :</p>
+            <code>
+  L : 50% → 75%
+</code>
+            <h3>Résultat :</h3>
+            <pre>
+    Primaire :
+    hsl(210, 80%, 50%)
+
+    Secondaire :
+    hsl(210, 50%, 75%)
+</pre>
+
+            <h3>Quelque couleurs :</h3>
+            <div class="display_column">
+                <div class="colors">
+                    <div class="display_row"> <strong>DEVMJ :</strong>
+                        <div class="color-label" style="background-color : #001a33 ;">#001a33</div>
+                        <div class="color-label" style="background-color : #7ab3eb ;">#7ab3eb</div>
+                        <div class="color-label" style="background-color : #F28CBA ;">#F28CBA</div>
+                        <div class="color-label" style="background-color : #EC5197 ;">#EC5197</div>
+                    </div>
+
+
+                    <div class="display_row"><strong>Linkso :</strong>
+                        <div class="color-label" style="background-color : #00140b ; color: #00A0D4;"> #00140b </div>
+                        <div class="color-label" style="background-color : #00A0D4 ; color: #00140b;"> #00A0D4 </div>
+                        <div class="color-label" style="background-color : #065A82 ; color: white"> #065A82 </div>
+                    </div>
+
+
+                    <div class="color-label" style="background-color : darkgreen ;">darkgreen</div>
+                    <div class="color-label" style="background-color : #009c00 ;">#009c00</div>
+                    <div class="color-label" style="background-color : #c50000 ;">#c50000</div>
+                    <div class="color-label" style="background-color : darkred ;">darkred</div>
+                    <div class="color-label" style="background-color : yellow ; color : black;">yellow</div>
+                    <div class="color-label" style="background-color : #FFBC01 ; color : black;">#FFBC01</div>
+                </div>
+
+                <h3><strong> Dual tones : </strong></h3>
+                <div class="colors">
+                    <div class="color-label" style="background-color : #3447AA ; color : FBEAEB;">#3447AA</div>
+                    <div class="color-label" style="background-color : #FBEAEB ; color : #3447AA;">#FBEAEB</div>
+
+                    <div class="color-label" style="background-color : #9FE870 ; color : #163300;">#9FE870</div>
+                    <div class="color-label" style="background-color : #163300 ; color : #BDD9D7;">#163300</div>
+
+                    <div class="color-label" style="background-color : #BDD9D7 ; color : #03363D;">#BDD9D7</div>
+                    <div class="color-label" style="background-color : #03363D ; color : #BDD9D7;">#03363D</div>
+
+                    <div class="color-label" style="background-color : #FCDB32 ; color : #141D38;">#FCDB32</div>
+                    <div class="color-label" style="background-color : #141D38 ; color : #FCDB32;">#141D38</div>
+
+                    <div class="color-label" style="background-color : #34E0A1 ; color : #000000;">#34E0A1</div>
+                    <div class="color-label" style="background-color : #000000 ; color : #34E0A1;">#000000</div>
+
+                    <div class="color-label" style="background-color : #6260FF ; color : #E4E4FF;">#6260FF</div>
+                    <div class="color-label" style="background-color : #E4E4FF ; color : #6260FF;">#E4E4FF</div>
+
+                    <div class="color-label" style="background-color : #E53156 ; color : #1F497D;">#E53156</div>
+                    <div class="color-label" style="background-color : #1F497D ; color : #E53156;">#1F497D</div>
+
+                    <!-- selection couleurs par chatgpt : -->
+                    <div class="color-label" style="background-color : #2ECC71 ; color : #0B1F14;">#2ECC71</div>
+                    <div class="color-label" style="background-color : #0B1F14 ; color : #2ECC71;">#0B1F14</div>
+
+                    <div class="color-label" style="background-color : #3498DB ; color : #EAF6FF;">#3498DB</div>
+                    <div class="color-label" style="background-color : #EAF6FF ; color : #3498DB;">#EAF6FF</div>
+
+                    <div class="color-label" style="background-color : #F39C12 ; color : #2C1A00;">#F39C12</div>
+                    <div class="color-label" style="background-color : #2C1A00 ; color : #F39C12;">#2C1A00</div>
+
+                    <div class="color-label" style="background-color : #9B59B6 ; color : #F7EDFF;">#9B59B6</div>
+                    <div class="color-label" style="background-color : #F7EDFF ; color : #9B59B6;">#F7EDFF</div>
+
+                    <div class="color-label" style="background-color : #16A085 ; color : #E9FFFB;">#16A085</div>
+                    <div class="color-label" style="background-color : #E9FFFB ; color : #16A085;">#E9FFFB</div>
+
+                    <div class="color-label" style="background-color : #E67E22 ; color : #FFF3E6;">#E67E22</div>
+                    <div class="color-label" style="background-color : #FFF3E6 ; color : #E67E22;">#FFF3E6</div>
+
+                    <div class="color-label" style="background-color : #C0392B ; color : #FFEAEA;">#C0392B</div>
+                    <div class="color-label" style="background-color : #FFEAEA ; color : #C0392B;">#FFEAEA</div>
+
+                    <div class="color-label" style="background-color : #1ABC9C ; color : #06221D;">#1ABC9C</div>
+                    <div class="color-label" style="background-color : #06221D ; color : #1ABC9C;">#06221D</div>
+
+                    <div class="color-label" style="background-color : #34495E ; color : #ECF0F1;">#34495E</div>
+                    <div class="color-label" style="background-color : #ECF0F1 ; color : #34495E;">#ECF0F1</div>
+
+                    <div class="color-label" style="background-color : #D35400 ; color : #FFF4EA;">#D35400</div>
+                    <div class="color-label" style="background-color : #FFF4EA ; color : #D35400;">#FFF4EA</div>
+
+                    <div class="color-label" style="background-color : #8E44AD ; color : #F8F0FF;">#8E44AD</div>
+                    <div class="color-label" style="background-color : #F8F0FF ; color : #8E44AD;">#F8F0FF</div>
+
+                    <div class="color-label" style="background-color : #2980B9 ; color : #EDF8FF;">#2980B9</div>
+                    <div class="color-label" style="background-color : #EDF8FF ; color : #2980B9;">#EDF8FF</div>
+
+                    <div class="color-label" style="background-color : #27AE60 ; color : #F0FFF5;">#27AE60</div>
+                    <div class="color-label" style="background-color : #F0FFF5 ; color : #27AE60;">#F0FFF5</div>
+
+                    <div class="color-label" style="background-color : #E91E63 ; color : #FFF0F6;">#E91E63</div>
+                    <div class="color-label" style="background-color : #FFF0F6 ; color : #E91E63;">#FFF0F6</div>
+
+                    <div class="color-label" style="background-color : #607D8B ; color : #F4F8FA;">#607D8B</div>
+                    <div class="color-label" style="background-color : #F4F8FA ; color : #607D8B;">#F4F8FA</div>
+
+                    <div class="color-label" style="background-color : #795548 ; color : #FFF7F2;">#795548</div>
+                    <div class="color-label" style="background-color : #FFF7F2 ; color : #795548;">#FFF7F2</div>
+
+                    <div class="color-label" style="background-color : #3F51B5 ; color : #EEF1FF;">#3F51B5</div>
+                    <div class="color-label" style="background-color : #EEF1FF ; color : #3F51B5;">#EEF1FF</div>
+
+                    <div class="color-label" style="background-color : #009688 ; color : #ECFFFC;">#009688</div>
+                    <div class="color-label" style="background-color : #ECFFFC ; color : #009688;">#ECFFFC</div>
+
+                    <div class="color-label" style="background-color : #B71C1C ; color : #FFECEC;">#B71C1C</div>
+                    <div class="color-label" style="background-color : #FFECEC ; color : #B71C1C;">#FFECEC</div>
+
+                    <div class="color-label" style="background-color : #6A1B9A ; color : #F9EEFF;">#6A1B9A</div>
+                    <div class="color-label" style="background-color : #F9EEFF ; color : #6A1B9A;">#F9EEFF</div>
+                </div>
+
+                <div>
+                    <button id="btn_fermeture" data-close>Fermer</button>
+                </div>
+        </dialog>

@@ -1,0 +1,38 @@
+<!--------------------------------
+        PATTERN
+----------------------------------
+'''
+Définit le pattern à utiliser pour la conception de chaque modale
+- un seul <h2> par modale
+- un <br> avant chaque <h3>
+- suivre la structure ci-dessous :        
+
+<dialog id="xxxx">
+             <div class="display_column center"><img style="max-width:60px; height: auto;" src="xxxx"><h2>TITRE</h2></div> 
+            <p>
+               Courte introduction
+            </p>
+            <br>
+            <h3>Sous-Titre/Section</h3>
+            <ul>
+                <li>liste si nécessaire</li>
+                <li>liste si nécessaire</li>
+            </ul>
+            <hr>
+            <h3>Sous-Titre</h3>
+            <code>commande cli ou code sur une seule ligne</code>
+            <kbd>Touche</kdb><kbd>Clavier</kbd>
+            <pre>Extrait de code 
+                    indenté
+                    Sur plusieurs lignes 
+            </pre>
+            <br>
+            <h3>Sous-Titre</h3>
+            <p>etc etc</p>
+
+            <div>
+                <button id="btn_fermeture" data-close>Fermer</button>
+            </div>
+        </dialog> 
+        '''
+    -->

@@ -1,0 +1,138 @@
+ <dialog id="cheatSheets">
+
+            <h2 class="center"> ⭐ Cheat Sheets</h2>
+
+            <h3>📄 Office / Outlook </h3>
+            <ul>
+                <li>Signature (isolé) : <kbd>ALT</kbd> + <kbd>S</kbd><kbd>S</kbd><kbd>1</kbd></li>
+                <li>Signature (fen. context.) : <kbd>ALT</kbd> + <kbd>J</kbd><kbd>M</kbd><kbd>S</kbd></li>
+                <li>Insérer une pièce jointe Outlook : <kbd>ALT</kbd> + <kbd>S</kbd><kbd>A</kbd><kbd>F</kbd><kbd>P</kbd>
+                </li>
+                <li>Nouvel email Outlook : <kbd>CTRL</kbd> + <kbd>N</kbd></li>
+                <li>Répondre à un email : <kbd>CTRL</kbd> + <kbd>R</kbd></li>
+                <li>Transférer un email : <kbd>CTRL</kbd> + <kbd>F</kbd></li>
+                <li>Rétablir : <kbd>CTRL</kbd> + <kbd>Y</kbd></li>
+            </ul>
+
+
+            <h3>💻 Développement</h3>
+            <ul>
+                <li>
+                    <kbd>CTRL</kbd> + <kbd>MAJ</kbd> + <kbd> C </kbd>, puis ajouter <code>contenteditable=""</code> dans
+                    la baslise &lt;HTML&gt;
+                </li>
+                <li>
+                    Documentation Python :
+                    <code>"""Docstring"""</code>
+                </li>
+
+                <li>
+                    Frontmatter YAML :
+                    <pre>
+        ---
+        title: ""
+        description: ""
+        date: ""
+        ---
+    </pre>
+                </li>
+
+                <h3>🗒️ Conventions de nommage : </h3>
+                <ul>
+                    <li>Classe : <code>CamelCase</code></li>
+                    <li>Constante : <code>SNAKE_CASE</code></li>
+                    <li>Variable / fonction : <code>snake_case</code></li>
+                </ul>
+
+                <li>Commentaire ligne Python : <code># commentaire</code></li>
+                <li>Commentaire HTML : <code>&lt;!-- commentaire --&gt;</code></li>
+                <li>Commentaire CSS : <code>/* commentaire */</code></li>
+            </ul>
+
+
+            <h3>⌨️ Commande Exécuter (Win + R)</h3>
+            <ul>
+                <li>Applications utilisateur : <code>%appdata%</code></li>
+                <li>Données locales : <code>%localappdata%</code></li>
+                <li>Dossier temporaire : <code>%temp%</code></li>
+                <li>Dossier de démarrage automatique : <code>shell:startup</code></li>
+                <li>Activer/désactiver des fonctionnalités Windows : <code>optionalfeatures</code></li>
+                <li>Version Windows : <code>winver</code></li>
+                <li>Informations système : <code>msinfo32</code></li>
+                <li>Configuration système : <code>msconfig</code></li>
+                <li>Gestionnaire des tâches : <code>taskmgr</code></li>
+                <li>Gestionnaire de périphériques : <code>devmgmt.msc</code></li>
+                <li>Gestion des disques : <code>diskmgmt.msc</code></li>
+                <li>Nettoyage de disque : <code>cleanmgr</code></li>
+                <li>Services Windows : <code>services.msc</code></li>
+                <li>Éditeur du registre : <code>regedit</code></li>
+                <li>Programmes installés : <code>appwiz.cpl</code></li>
+                <li>Profil utilisateur : <code>%userprofile%</code></li>
+                <li>Données globales de programmes : <code>C:\ProgramData</code>
+            </ul>
+            <h4>🌐 Réseau</h4>
+            <ul>
+                <li>Configuration IP : <code>ipconfig</code></li>
+                <li>Configuration complète : <code>ipconfig /all</code></li>
+                <li>Vider le cache DNS : <code>ipconfig /flushdns</code></li>
+                <li>Tester une connexion : <code>ping adresse_ip</code></li>
+                <li>Voir les connexions réseau : <code>netstat -ano</code></li>
+                <li>Paramètres des cartes réseau : <code>ncpa.cpl</code></li>
+            </ul>
+            <h4>🔒 SÉCURITÉ & CONFIDENTIALITÉ</h4>
+            <ul>
+                <li>Gérer les utilisateurs / connexion automatique <code>netplwiz</code></li>
+                <li>Analyse et réparation des fichiers système : <code>sfc /scannow</code></li>
+            </ul>
+            <h4>🛑 Arrêt / Redémarrage Windows</h4>
+            <ul>
+                <li>Arrêt immédiat : <code>shutdown /s /t 0</code></li>
+                <li>Redémarrage immédiat :<code>shutdown /r /t 0</code></li>
+                <li>Arrêt avec délai de 60 secondes :<code>shutdown /s /t 60</code></li>
+                <li>Annuler un arrêt programmé :<code>shutdown /a</code></li>
+            </ul>
+
+
+
+            <h3>⚡ BONUS : OPTIONS CACHÉES UTILES </h3>
+            <ul>
+                <li>God Mode → Créer un dossier nommé : <code>GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}</code></li>
+                <li>Planificateur de tâches (automatisations) <code>taskschd.msc</code></li>
+                <li>Stratégies de sécurité locale (édition Pro seulement) <code>secpol.msc</code></li>
+            </ul>
+            <h3>🔳 QR Code Word</h3>
+            <ul>
+                <li>
+                    Génération QR Code :
+                    <kbd>Ctrl</kbd> + <kbd>F9</kbd>
+                    <pre>
+            { DISPLAYBARCODE 
+            "url_vers_le_site"
+            QR \t \h 1000 }
+        </pre>
+                </li>
+            </ul>
+
+            <h3> Création d'un fichier WordPad </h3>
+            <ul>
+                <li> Se placer dans le dossier voulu </li>
+                <pre>
+        alt+D -> cmd
+        echo. > test.rtf
+        start write test.rtf
+    </pre>
+            </ul>
+            <h3>🌐 Navigateur</h3>
+            <ul>
+                <li>
+                    Ouvrir Proton en navigation privée :
+                    <code>--inprivate "https://account.proton.me/fr/apps"</code>
+                </li>
+            </ul>
+
+            <div>
+                <button id="btn_fermeture" data-close>Fermer</button>
+            </div>
+        </dialog>
+
+

@@ -111,24 +111,24 @@ cards.forEach(card => {
 //              MODALE
 //--------------------------------------
 
-// document.querySelectorAll("[data-modal]").forEach(button => {
+document.querySelectorAll("[data-modal]").forEach(button => {
 
-//     button.addEventListener("click", () => {
+    button.addEventListener("click", () => {
 
-//         document
-//             .getElementById(button.dataset.modal)
-//             .showModal();
+        document
+            .getElementById(button.dataset.modal)
+            .showModal();
 
-//     });
+    });
 
-// });
+});
 
-// document.querySelectorAll("[data-close]").forEach(button => {
+document.querySelectorAll("[data-close]").forEach(button => {
 
-//     button.addEventListener("click", () => {
+    button.addEventListener("click", () => {
 
-//         button.closest("dialog").close();
+        button.closest("dialog").close();
 
-//     });
+    });
 
-// });
+});

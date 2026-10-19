@@ -47,7 +47,7 @@ document.addEventListener("click", async (event) => {
         // Convention : le fichier et l'identifiant portent le même nom
         // const idModal = `modal-${nom}`;
         const idModal = nom;
-        
+        console.log("Modale demandée :", idModal);
         // Vérifie si la modale est déjà présente dans la page
         let modal = document.getElementById(idModal);
 

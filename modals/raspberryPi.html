@@ -1,0 +1,152 @@
+<dialog id="raspberryPi">
+    <div class="display_column center"><img style="max-width:60px; height: auto;" src="./assets/img/raspberry.png">
+        <h2>Raspberry Pi OS</h2>
+    </div><p>Commandes de référence pour administrer un Raspberry Pi 5 sous Raspberry Pi OS : configuration matérielle, stockage, réseau, services, GPIO et maintenance système.</p>
+
+<br>
+<h3>Identification du système</h3>
+<ul>
+    <li><code>cat /etc/os-release</code> : afficher la distribution et sa version.</li>
+    <li><code>cat /etc/debian_version</code> : afficher la version de base Debian.</li>
+    <li><code>uname -a</code> : afficher les informations sur le noyau Linux et l'architecture.</li>
+    <li><code>uname -m</code> : identifier l'architecture du processeur, par exemple <code>aarch64</code> en 64 bits.</li>
+    <li><code>hostnamectl</code> : afficher le nom de la machine et les informations système disponibles.</li>
+    <li><code>vcgencmd version</code> : afficher la version du firmware VideoCore, si l'outil est disponible.</li>
+</ul>
+
+<br>
+<h3>Mises à jour et configuration</h3>
+<ul>
+    <li><code>sudo apt update</code> : actualiser les listes de paquets.</li>
+    <li><code>sudo apt full-upgrade</code> : appliquer les mises à jour en autorisant les changements de dépendances nécessaires.</li>
+    <li><code>sudo apt autoremove</code> : supprimer les dépendances devenues inutiles.</li>
+    <li><code>sudo raspi-config</code> : ouvrir l'outil de configuration Raspberry Pi, lorsqu'il est installé.</li>
+    <li><code>sudo reboot</code> : redémarrer le Raspberry Pi.</li>
+    <li><code>sudo poweroff</code> : arrêter proprement le système avant de couper son alimentation.</li>
+</ul>
+
+<br>
+<h3>Température et performances du Pi 5</h3>
+<ul>
+    <li><code>vcgencmd measure_temp</code> : afficher la température du SoC, si la commande est disponible.</li>
+    <li><code>vcgencmd get_throttled</code> : consulter les indicateurs de limitation thermique, de tension et leurs historiques.</li>
+    <li><code>vcgencmd measure_clock arm</code> : afficher la fréquence actuelle du domaine d'horloge ARM, si elle est exposée par le firmware.</li>
+    <li><code>free -h</code> : consulter l'utilisation de la RAM et de la mémoire d'échange.</li>
+    <li><code>uptime</code> : afficher la durée de fonctionnement et la charge moyenne.</li>
+    <li><code>top</code> : surveiller les processus et leur consommation de ressources.</li>
+    <li><code>watch -n 2 vcgencmd measure_temp</code> : actualiser la température toutes les deux secondes, si <code>vcgencmd</code> est disponible.</li>
+</ul>
+
+<br>
+<h3>Stockage — microSD et SSD NVMe</h3>
+<ul>
+    <li><code>lsblk -o NAME,SIZE,FSTYPE,MOUNTPOINTS,MODEL</code> : afficher les périphériques de stockage, leurs partitions et leurs points de montage.</li>
+    <li><code>df -hT</code> : consulter l'espace utilisé et disponible sur les systèmes de fichiers.</li>
+    <li><code>sudo fdisk -l</code> : afficher les disques et leurs partitions.</li>
+    <li><code>findmnt</code> : afficher les systèmes de fichiers montés.</li>
+    <li><code>ls -l /dev/nvme*</code> : vérifier la présence de fichiers de périphériques NVMe, si le SSD est détecté.</li>
+    <li><code>sudo nvme list</code> : lister les SSD NVMe, si le paquet <code>nvme-cli</code> est installé et si le périphérique est accessible.</li>
+    <li><code>sudo smartctl -a /dev/nvme0</code> : consulter les données SMART d'un contrôleur NVMe, si <code>smartmontools</code> est installé et le périphérique correctement identifié.</li>
+    <li><code>sudo blkid</code> : afficher les UUID et les types de systèmes de fichiers.</li>
+</ul>
+
+<br>
+<h3>Réseau et accès distant</h3>
+<ul>
+    <li><code>hostname -I</code> : afficher les adresses IP de la machine.</li>
+    <li><code>ip addr</code> : consulter les interfaces réseau et leurs adresses.</li>
+    <li><code>ip route</code> : afficher la route par défaut et les autres routes.</li>
+    <li><code>nmcli device status</code> : afficher l'état des interfaces gérées par NetworkManager, s'il est utilisé.</li>
+    <li><code>rfkill list</code> : consulter l'état des blocages des interfaces radio, si l'outil est installé.</li>
+    <li><code>sudo raspi-config</code> : configurer notamment les options d'interface disponibles, dont SSH selon la version.</li>
+    <li><code>sudo systemctl status ssh</code> : vérifier l'état du serveur SSH.</li>
+    <li><code>sudo systemctl enable --now ssh</code> : activer et démarrer le serveur SSH, s'il est installé.</li>
+    <li><code>ssh utilisateur@adresse_ip</code> : se connecter au Pi depuis un autre appareil disposant d'un client SSH.</li>
+    <li><code>ss -tulpn</code> : consulter les ports en écoute et les processus associés lorsque les permissions le permettent.</li>
+</ul>
+
+<br>
+<h3>Services et journaux</h3>
+<ul>
+    <li><code>systemctl --type=service --state=running</code> : lister les services actifs.</li>
+    <li><code>systemctl status nom_service</code> : consulter l'état d'un service.</li>
+    <li><code>sudo systemctl restart nom_service</code> : redémarrer un service.</li>
+    <li><code>sudo systemctl enable nom_service</code> : activer son démarrage automatique.</li>
+    <li><code>journalctl -b</code> : consulter les journaux du démarrage actuel.</li>
+    <li><code>journalctl -p err -b</code> : afficher les erreurs du démarrage actuel.</li>
+    <li><code>journalctl -u nom_service -f</code> : suivre les journaux d'un service en temps réel.</li>
+    <li><code>systemctl --failed</code> : lister les unités en échec.</li>
+</ul>
+
+<br>
+<h3>GPIO et matériel électronique</h3>
+<ul>
+    <li><code>pinout</code> : afficher le brochage GPIO du Raspberry Pi, si la commande est disponible.</li>
+    <li><code>pinctrl</code> : consulter ou configurer l'état des broches GPIO avec l'outil fourni pour le Raspberry Pi 5.</li>
+    <li><code>ls /dev/gpiochip*</code> : rechercher les périphériques GPIO exposés par le noyau.</li>
+    <li><code>gpiodetect</code> : lister les contrôleurs GPIO, si les outils libgpiod sont installés.</li>
+    <li><code>gpioinfo</code> : consulter les lignes GPIO et leurs informations, si les outils libgpiod sont installés.</li>
+    <li><code>i2cdetect -y 1</code> : rechercher les périphériques sur le bus I²C numéro 1, si I²C est activé et les outils installés.</li>
+    <li><code>ls /dev/spidev*</code> : vérifier la présence des périphériques SPI, si SPI est activé.</li>
+</ul>
+<p>Attention : le Raspberry Pi 5 utilise un contrôleur RP1 pour une partie de ses entrées-sorties. Les anciennes méthodes fondées sur certains outils GPIO historiques ne sont pas toutes compatibles. Ne relie jamais une broche GPIO directement à une tension de 5 V : les entrées GPIO fonctionnent en logique 3,3 V.</p>
+
+<br>
+<h3>USB, périphériques et bus</h3>
+<ul>
+    <li><code>lsusb</code> : afficher les périphériques USB détectés.</li>
+    <li><code>lsusb -t</code> : afficher l'organisation des périphériques USB et les vitesses de connexion.</li>
+    <li><code>lspci</code> : afficher les périphériques PCI, si l'outil est installé et des périphériques sont exposés.</li>
+    <li><code>lsblk</code> : afficher les périphériques de stockage détectés.</li>
+    <li><code>dmesg --follow</code> : suivre les nouveaux messages du noyau, notamment lors du branchement d'un périphérique.</li>
+</ul>
+
+<br>
+<h3>Partage de fichiers et Samba</h3>
+<ul>
+    <li><code>systemctl status smbd</code> : vérifier l'état du service Samba.</li>
+    <li><code>testparm -s</code> : vérifier et afficher la configuration Samba effective, si Samba est installé.</li>
+    <li><code>smbclient -L localhost</code> : lister les partages visibles localement, si le client Samba est installé.</li>
+    <li><code>sudo systemctl restart smbd</code> : redémarrer le service Samba après une modification de configuration.</li>
+    <li><code>journalctl -u smbd -b</code> : consulter les journaux du service Samba.</li>
+</ul>
+
+<br>
+<h3>Python et environnement de développement</h3>
+<ul>
+    <li><code>python3 --version</code> : afficher la version de Python 3.</li>
+    <li><code>python3 -m venv .venv</code> : créer un environnement virtuel Python dans le dossier courant, si le module venv est installé.</li>
+    <li><code>source .venv/bin/activate</code> : activer l'environnement virtuel dans le shell courant.</li>
+    <li><code>deactivate</code> : quitter l'environnement virtuel actif.</li>
+    <li><code>python3 -m pip --version</code> : vérifier la disponibilité de pip pour Python 3.</li>
+    <li><code>git --version</code> : vérifier l'installation de Git.</li>
+    <li><code>git status</code> : consulter l'état du dépôt Git courant.</li>
+    <li><code>python3 manage.py runserver 0.0.0.0:8000</code> : démarrer un serveur de développement Django accessible sur les interfaces réseau, si le projet et ses dépendances sont configurés.</li>
+</ul>
+<p>Le serveur de développement Django ne doit pas être exposé directement à Internet. Pour un accès distant, privilégie un VPN ou un tunnel SSH et configure correctement le pare-feu.</p>
+
+<br>
+<h3>Arrêt, redémarrage et maintenance</h3>
+<ul>
+    <li><code>sudo reboot</code> : redémarrer le Pi proprement.</li>
+    <li><code>sudo poweroff</code> : arrêter le système proprement.</li>
+    <li><code>systemctl list-timers</code> : consulter les minuteries systemd actives.</li>
+    <li><code>journalctl --disk-usage</code> : consulter l'espace utilisé par les journaux persistants.</li>
+    <li><code>sudo journalctl --vacuum-time=7d</code> : supprimer les anciens journaux archivés de plus de sept jours, sans supprimer les entrées du journal actif.</li>
+</ul>
+
+<br>
+<h3>Précautions spécifiques au Raspberry Pi 5</h3>
+<ul>
+    <li>Utilise une alimentation adaptée au Pi 5 et aux périphériques connectés. Un SSD NVMe et les périphériques USB peuvent augmenter la consommation électrique.</li>
+    <li>Avant de retirer l'alimentation, arrête proprement le système pour limiter les risques de corruption des données.</li>
+    <li>Avant toute opération sur un disque, vérifie son nom avec <code>lsblk</code>. Les noms de périphériques peuvent varier d'une configuration à l'autre.</li>
+    <li>Les commandes <code>vcgencmd</code>, <code>pinctrl</code>, <code>raspi-config</code> et les outils GPIO dépendent des paquets installés et de la version du système.</li>
+    <li>Les options de configuration et les chemins peuvent différer entre Raspberry Pi OS Bookworm et les versions ultérieures.</li>
+</ul>
+
+<div>
+    <button type="button" id="btn_fermeture" data-close>Fermer</button>
+</div>
+
+</dialog>

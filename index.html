@@ -74,7 +74,6 @@ Définit le pattern à utiliser pour la conception de chaque modale
 - suivre la structure ci-dessous :        
 
 <dialog id="xxxx">
-           <div class="display_column center">
              <div class="display_column center"><img style="max-width:60px; height: auto;" src="xxxx"><h2>TITRE</h2></div> 
             <p>
                Courte introduction
@@ -97,21 +96,19 @@ Définit le pattern à utiliser pour la conception de chaque modale
             <div>
                 <button id="btn_fermeture" data-close>Fermer</button>
             </div>
-            </div>
         </dialog> 
+        '''
     -->
-'''
+        
 
 <!--------------------------------
                VSCode
 --------------------------------->
         <dialog id="VSCODE">
-            <div class="display_column center">
                 <div class="display_column center"><img style="max-width:60px; height: auto;"
                         src="./assets/img/vscode.png">
                     <h2>VSCode</h2>
                 </div>
-            </div>
             <ul>
                 <h3> Général </h3>
                 <li><kbd>Ctrl</kbd> + <kbd>K</kbd>, puis <kbd>Ctrl</kbd> + <kbd>S</kbd> : ouvrir le panneau des
@@ -179,15 +176,13 @@ Définit le pattern à utiliser pour la conception de chaque modale
             </div>
         </dialog>
 
-<!--------------------------------
+        <!--------------------------------
                Excel
 --------------------------------->
         <dialog id="excel">
-            <div class="display_column center">
-                <div class="display_column center"><img style="max-width:60px; height: auto;"
-                        src="./assets/img/logo-excel.png">
-                    <h2>MS.EXCEL</h2>
-                </div>
+            <div class="display_column center"><img style="max-width:60px; height: auto;"
+                    src="./assets/img/logo-excel.png">
+                <h2>MS.EXCEL</h2>
             </div>
             <h3> Raccourcis clavier </h3>
             <ul>
@@ -209,12 +204,13 @@ Définit le pattern à utiliser pour la conception de chaque modale
             </div>
         </dialog>
 
-<!--------------------------------
+        <!--------------------------------
               COLORS
 --------------------------------->
         <dialog id="colors">
-
-            <h2>🎨 Colors</h2>
+            <div class="display_column center">
+                <h2>🎨 Colors</h2>
+            </div>
             <p>Une couleur HSL se compose de 3 valeurs :
                 <code>hsl(H, S, L)</code>
                 H = Hue (teinte)
@@ -367,11 +363,13 @@ Définit le pattern à utiliser pour la conception de chaque modale
                 </div>
         </dialog>
 
-<!--------------------------------
+        <!--------------------------------
         HTTP Status Codes
 --------------------------------->
         <dialog id="HTTP-errors">
-            <h2>🌐 HTTP Status Codes</h2>
+            <div class="display_column center">
+                <h2>🌐 HTTP Status Codes</h2>
+            </div>
             <p>
                 Les codes HTTP sont des réponses envoyées par un serveur après une requête.
                 Ils indiquent si la requête a réussi, a été redirigée ou a échoué.
@@ -496,7 +494,7 @@ Définit le pattern à utiliser pour la conception de chaque modale
 
             <h3>Exemple 404</h3>
 
-           <pre>
+            <pre>
         GET /images/logo.png
         404 Not Found
         </pre>
@@ -609,12 +607,13 @@ Définit le pattern à utiliser pour la conception de chaque modale
             </div>
         </dialog>
 
- <!--------------------------------
+        <!--------------------------------
                HTML
 --------------------------------->
         <dialog id="htmlCheats">
-            <div class="display_column center">
-                <div class="display_column center"><img style="max-width:60px; height: auto;" src="./assets/img/html.svg"><h2>HTML</h2></div>
+            <div class="display_column center"><img style="max-width:60px; height: auto;" src="./assets/img/html.svg">
+                <h2>HTML</h2>
+            </div>
             <h3> Balise HEAD </h3>
             <pre>
     &lt;!DOCTYPE html&gt;
@@ -1443,12 +1442,14 @@ Définit le pattern à utiliser pour la conception de chaque modale
 
         </dialog>
 
-<!--------------------------------
+        <!--------------------------------
                CSS
 --------------------------------->
         <dialog id="cssCheats">
-                <div class="display_column center"><img style="max-width:60px; height: auto;" src="./assets/img/css.svg"><h2>🎨 CSS - Cheat Sheet</h2></div>
-            
+            <div class="display_column center"><img style="max-width:60px; height: auto;" src="./assets/img/css.svg">
+                <h2>🎨 CSS - Cheat Sheet</h2>
+            </div>
+
             <h3>🌱 Variables CSS (:root)</h3>
             <ul>
                 <li>Déclare des variables réutilisables dans tout le projet.</li>

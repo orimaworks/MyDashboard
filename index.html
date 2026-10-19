@@ -70,7 +70,8 @@
 ----------------------------------
 '''
 Définit le pattern à utiliser pour la conception de chaque modale
-- un seul H2 par modale.
+- un seul <h2> par modale
+- un <br> avant chaque <h3>
 - suivre la structure ci-dessous :        
 
 <dialog id="xxxx">
@@ -78,8 +79,10 @@ Définit le pattern à utiliser pour la conception de chaque modale
             <p>
                Courte introduction
             </p>
+            <br>
             <h3>Sous-Titre/Section</h3>
             <ul>
+                <li>liste si nécessaire</li>
                 <li>liste si nécessaire</li>
             </ul>
             <hr>
@@ -90,6 +93,7 @@ Définit le pattern à utiliser pour la conception de chaque modale
                     indenté
                     Sur plusieurs lignes 
             </pre>
+            <br>
             <h3>Sous-Titre</h3>
             <p>etc etc</p>
 
@@ -979,43 +983,31 @@ Définit le pattern à utiliser pour la conception de chaque modale
                     <td>&gt; 1170 px</td>
                 </tr>
             </table>
-
             <h3>💡 Exemples de Media Queries</h3>
-
             <ul>
-
                 <li>
                     <strong>Mobile</strong><br>
                     <code>@media (max-width: 768px) { ... }</code>
                 </li>
-
                 <li>
                     <strong>Tablette</strong><br>
                     <code>@media (min-width: 768px) and (max-width: 992px) { ... }</code>
                 </li>
-
                 <li>
                     <strong>Desktop</strong><br>
                     <code>@media (min-width: 1200px) { ... }</code>
                 </li>
-
                 <li>
                     <strong>Mode paysage</strong><br>
                     <code>@media (orientation: landscape) { ... }</code>
                 </li>
-
                 <li>
                     <strong>Mode portrait</strong><br>
                     <code>@media (orientation: portrait) { ... }</code>
                 </li>
-
             </ul>
-
-
             <h3>📝 Champs texte</h3>
-
             <ul>
-
                 <li>
                     <strong>Texte simple</strong><br>
                     Champ de saisie standard.
@@ -1028,9 +1020,7 @@ Définit le pattern à utiliser pour la conception de chaque modale
                     <code>autofocus</code> : focus automatique<br>
                     <code>pattern</code> : validation (Regex)<br>
                     <code>title</code> : info-bulle et message d'erreur
-
                     <br><strong>Exemple :</strong><br>
-
                     <pre>
             &lt;input type="text"
             id="nom"
@@ -1041,15 +1031,10 @@ Définit le pattern à utiliser pour la conception de chaque modale
             pattern="[A-Za-z]{3,}"
             title="3 caractères minimum"&gt;
         </pre>
-
                 </li>
-
                 <li>
-
                     <strong>Texte multiligne</strong>
-
                     <br><strong>Exemple :</strong><br>
-
                     <pre>
             &lt;textarea
             id="commentaire"
@@ -1057,103 +1042,66 @@ Définit le pattern à utiliser pour la conception de chaque modale
             placeholder="Votre commentaire..."&gt;
             &lt;/textarea&gt;
         </pre>
-
                 </li>
-
                 <li>
-
                     <strong>Email</strong>
-
                     <br><strong>Exemple :</strong>
-
                     <pre>
             &lt;input
             type="email"
             name="email"
             placeholder="john.doe@mail.com"&gt;
         </pre>
-
                 </li>
-
                 <li>
-
                     <strong>URL</strong>
-
                     <br><strong>Exemple :</strong>
-
                     <pre>
             &lt;input
             type="url"
             size="50"
             placeholder="https://monsite.fr"&gt;
         </pre>
-
                 </li>
-
                 <li>
-
                     <strong>Téléphone</strong>
-
                     <br><strong>Exemple :</strong>
-
                     <pre>
             &lt;input
             type="tel"
             placeholder="01 02 03 04 05"
             pattern="[0]{1}[1-9]{1}[0-9]{8}"&gt;
         </pre>
-
                 </li>
-
                 <li>
-
                     <strong>Mot de passe</strong>
-
                     <br><strong>Exemple :</strong>
-
                     <pre>
             &lt;input
             type="password"
             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"&gt;
         </pre>
-
                 </li>
-
                 <li>
-
                     <strong>Recherche</strong>
-
                     <br><strong>Exemple :</strong>
-
                     <pre>
             &lt;input
             type="search"
             placeholder="Rechercher..."
             size="50"&gt;
         </pre>
-
                 </li>
-
             </ul>
-
-
-
             <h3>🔢 Champ numérique</h3>
-
             <ul>
-
                 <li>
-
                     <strong>Nombre</strong>
-
                     <br>Attributs :
-
                     <code>min</code>,
                     <code>max</code>,
                     <code>step</code>
-
                     <br><strong>Exemple :</strong>
-
                     <pre>
             &lt;input
             type="number"
@@ -1161,21 +1109,12 @@ Définit le pattern à utiliser pour la conception de chaque modale
             max="12"
             step="2"&gt;
         </pre>
-
                 </li>
-
             </ul>
-
-
-
             <h3>📅 Dates et heures</h3>
-
             <ul>
-
                 <li>
-
                     <strong>Heure</strong>
-
                     <pre>
             &lt;input
             type="time"
@@ -1183,13 +1122,9 @@ Définit le pattern à utiliser pour la conception de chaque modale
             max="18:00"
             value="10:00"&gt;
         </pre>
-
                 </li>
-
                 <li>
-
                     <strong>Date</strong>
-
                     <pre>
             &lt;input
             type="date"
@@ -1197,80 +1132,47 @@ Définit le pattern à utiliser pour la conception de chaque modale
             max="2020-12-31"
             value="2020-07-14"&gt;
         </pre>
-
                 </li>
-
                 <li>
-
                     <strong>Date + Heure</strong>
-
                     <code>
             &lt;input type="datetime-local"&gt;
         </code>
-
                 </li>
-
                 <li>
-
                     <strong>Mois</strong>
-
                     <code>
             &lt;input type="month"&gt;
         </code>
-
                 </li>
-
                 <li>
-
                     <strong>Semaine</strong>
-
                     <code>
             &lt;input type="week"&gt;
         </code>
-
                 </li>
-
             </ul>
-
-
-
             <h3>✅ Choix utilisateur</h3>
-
             <ul>
-
                 <li>
-
                     <strong>Cases à cocher (Checkbox)</strong>
-
                     <br>✔ Plusieurs choix possibles
-
                     <br><strong>Important :</strong>
-
                     Chaque checkbox possède un
                     <code>name</code>
                     différent.
-
                     <br>
-
                     <code>&lt;input type="checkbox" name="v1"&gt;</code>
                     <br>
                     <code>&lt;input type="checkbox" name="v2"&gt;</code>
-
                 </li>
-
                 <li>
-
                     <strong>Boutons radio</strong>
-
                     <br>🔘 Un seul choix possible
-
                     <br><strong>Important :</strong>
-
                     Tous les boutons radio doivent partager le même
                     <code>name</code>.
-
                     <br>
-
                     <code>
             &lt;input type="radio" name="genre"&gt;
         </code>
@@ -1278,17 +1180,13 @@ Définit le pattern à utiliser pour la conception de chaque modale
                     <code>
             &lt;input type="radio" name="genre"&gt;
         </code>
-
                 </li>
-
                 <li>
-
                     <h3>Liste déroulante</h3>
                     <br>
                     <h4> Exemple : </h4>
                     <pre>
             &lt;label for="pays"&gt;Pays :&lt;/label&gt;
-            
             &lt;select id="pays" name="pays"&gt;
             &lt;option value="" disabled selected&gt;— Sélectionnez —&lt;/option&gt;
             &lt;option value="fr"&gt;France&lt;/option&gt;
@@ -1298,9 +1196,7 @@ Définit le pattern à utiliser pour la conception de chaque modale
             &lt;option value="us"&gt;États‑Unis&lt;/option&gt;
             &lt;/select&gt;
         </pre>
-
                     <label for="pays">Pays :</label>
-
                     <select id="pays" name="pays">
                         <option value="" disabled selected>— Sélectionnez —</option>
                         <option value="fr">France</option>
@@ -1310,136 +1206,77 @@ Définit le pattern à utiliser pour la conception de chaque modale
                         <option value="us">États‑Unis</option>
                     </select>
                 </li>
-
                 <li>
-
                     <strong>Liste avec saisie (datalist)</strong>
-
                     <br>
-
                     <pre>
             &lt;input list="liste"&gt;
-
             &lt;datalist id="liste"&gt;
-
             &nbsp;&nbsp;&lt;option value="Paris"&gt;
-
             &nbsp;&nbsp;&lt;option value="Lyon"&gt;
-
             &lt;/datalist&gt;
         </pre>
-
                     <br>
-
                     L'attribut
                     <code>list</code>
                     de l'input doit être identique à l'
                     <code>id</code>
                     du
                     <code>datalist</code>.
-
                 </li>
-
                 <li>
-
                     <strong>Sélecteur de couleur</strong>
-
                     <code>
-
             &lt;input type="color"&gt;
-
         </code>
-
                 </li>
-
             </ul>
-
-
-
             <h3>📁 Fichier</h3>
-
             <ul>
-
                 <li>
-
                     <strong>Upload de fichier</strong>
-
                     <br>
-
                     <pre>
             &lt;input
             type="file"
             accept=".jpg,.jpeg,.png"&gt;
         </pre>
-
                     <br><br>
-
                     <strong>Le formulaire doit utiliser :</strong>
-
                     <code>
-
             method="POST"
-
         </code>
-
                     et
-
                     <code>
-
             enctype="multipart/form-data"
-
         </code>
-
                     <br><br>
-
                     <pre>
             &lt;form
             method="POST"
             enctype="multipart/form-data"&gt;
         </pre>
-
                 </li>
-
             </ul>
-
-
-
             <h3>⭐ Attributs les plus utilisés</h3>
-
             <ul>
-
                 <li><code>required</code> → champ obligatoire</li>
-
                 <li><code>readonly</code> → lecture seule</li>
-
                 <li><code>disabled</code> → désactivé</li>
-
                 <li><code>checked</code> → sélectionné par défaut</li>
-
                 <li><code>selected</code> → option sélectionnée</li>
-
                 <li><code>placeholder</code> → texte d'aide</li>
-
                 <li><code>value</code> → valeur par défaut</li>
-
                 <li><code>min</code> / <code>max</code> → bornes</li>
-
                 <li><code>step</code> → incrément</li>
-
                 <li><code>pattern</code> → validation Regex</li>
-
                 <li><code>autocomplete</code> → active/désactive l'autocomplétion</li>
-
                 <li><code>maxlength</code> → longueur maximale</li>
-
                 <li><code>multiple</code> → plusieurs valeurs/fichiers</li>
-
             </ul>
-
             <div>
                 <button id="btn_fermeture" data-close>Fermer</button>
             </div>
-
         </dialog>
 
         <!--------------------------------
@@ -1447,9 +1284,8 @@ Définit le pattern à utiliser pour la conception de chaque modale
 --------------------------------->
         <dialog id="cssCheats">
             <div class="display_column center"><img style="max-width:60px; height: auto;" src="./assets/img/css.svg">
-                <h2>🎨 CSS - Cheat Sheet</h2>
+                <h2>CSS - Cheat Sheet</h2>
             </div>
-
             <h3>🌱 Variables CSS (:root)</h3>
             <ul>
                 <li>Déclare des variables réutilisables dans tout le projet.</li>
@@ -1457,7 +1293,6 @@ Définit le pattern à utiliser pour la conception de chaque modale
                 <li><code>color: var(--primary);</code></li>
                 <li><code>background: var(--secondary, black);</code> (valeur par défaut)</li>
             </ul>
-
             <h3>🎨 Couleurs</h3>
             <ul>
                 <li>Définit la couleur du texte ou du fond.</li>
@@ -1465,7 +1300,6 @@ Définit le pattern à utiliser pour la conception de chaque modale
                 <li><code>background-color: white;</code></li>
                 <li><code>opacity: 0 → 1;</code></li>
             </ul>
-
             <h3>📦 Box Model</h3>
             <ul>
                 <li>Gestion des dimensions d'un élément.</li>
@@ -1475,7 +1309,6 @@ Définit le pattern à utiliser pour la conception de chaque modale
                 <li><code>margin</code></li>
                 <li><code>box-sizing: content-box | border-box;</code></li>
             </ul>
-
             <h3>🖼️ Border</h3>
             <ul>
                 <li>Définit les bordures.</li>
@@ -1484,7 +1317,6 @@ Définit le pattern à utiliser pour la conception de chaque modale
                 </li>
                 <li><code>border-radius: 5px | 50%;</code></li>
             </ul>
-
             <h3>📝 Texte</h3>
             <ul>
                 <li>Mise en forme du texte.</li>
@@ -1499,7 +1331,6 @@ Définit le pattern à utiliser pour la conception de chaque modale
                 <li><code>line-height</code></li>
                 <li><code>text-shadow: 0 0 5px lime;</code></li>
             </ul>
-
             <h3>👁️ Affichage</h3>
             <ul>
                 <li>Contrôle le rendu.</li>
@@ -1507,7 +1338,6 @@ Définit le pattern à utiliser pour la conception de chaque modale
                 <li><code>visibility: visible | hidden;</code></li>
                 <li><code>opacity: 0-1;</code></li>
             </ul>
-
             <h3>📍 Positionnement</h3>
             <ul>
                 <li>Position d'un élément.</li>
@@ -1515,7 +1345,6 @@ Définit le pattern à utiliser pour la conception de chaque modale
                 <li><code>top right bottom left</code></li>
                 <li><code>z-index</code></li>
             </ul>
-
             <h3>📜 Overflow</h3>
             <ul>
                 <li>Gestion des débordements.</li>
@@ -1523,14 +1352,12 @@ Définit le pattern à utiliser pour la conception de chaque modale
                 <li><code>overflow-x</code></li>
                 <li><code>overflow-y</code></li>
             </ul>
-
             <h3>🖼️ Images</h3>
             <ul>
                 <li>Dimensionnement des images.</li>
                 <li><code>object-fit: contain | cover | fill | none | scale-down;</code></li>
                 <li><code>object-position: center;</code></li>
             </ul>
-
             <h3>🧲 Flexbox</h3>
             <ul>
                 <li>Disposition sur un axe.</li>
@@ -1549,7 +1376,6 @@ Définit le pattern à utiliser pour la conception de chaque modale
                 <li><code>order</code></li>
                 <li><code>align-self</code></li>
             </ul>
-
             <h3>🧩 Grid</h3>
             <ul>
                 <li>Disposition en lignes et colonnes.</li>
@@ -1567,7 +1393,6 @@ Définit le pattern à utiliser pour la conception de chaque modale
                 <li><code>place-items</code></li>
                 <li><code>gap</code></li>
             </ul>
-
             <h3>🎬 Transformations</h3>
             <ul>
                 <li>Déplace ou redimensionne un élément.</li>
@@ -1576,14 +1401,12 @@ Définit le pattern à utiliser pour la conception de chaque modale
                 <li><code>scale()</code></li>
                 <li><code>skew()</code></li>
             </ul>
-
             <h3>✨ Transitions</h3>
             <ul>
                 <li>Animation douce.</li>
                 <li><code>transition: all .3s ease;</code></li>
                 <li><code>linear | ease | ease-in | ease-out | ease-in-out;</code></li>
             </ul>
-
             <h3>🎞️ Animations</h3>
             <ul>
                 <li>Animation complète.</li>
@@ -1595,20 +1418,17 @@ Définit le pattern à utiliser pour la conception de chaque modale
                 <li><code>animation-direction</code></li>
                 <li><code>animation-fill-mode</code></li>
             </ul>
-
             <h3>🖱️ Curseur</h3>
             <ul>
                 <li>Apparence du pointeur.</li>
                 <li><code>cursor: pointer | text | grab | move | wait | crosshair | not-allowed;</code></li>
             </ul>
-
             <h3>🌗 Filtres</h3>
             <ul>
                 <li>Effets graphiques.</li>
                 <li><code>filter: blur() brightness() contrast() grayscale() invert() saturate() sepia();</code></li>
                 <li><code>backdrop-filter: blur(5px);</code></li>
             </ul>
-
             <h3>💡 Ombres</h3>
             <ul>
                 <li>Ajoute du relief.</li>

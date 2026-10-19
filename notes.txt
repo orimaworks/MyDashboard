@@ -1,38 +1,164 @@
-<!--------------------------------
-        PATTERN
-----------------------------------
-'''
-Définit le pattern à utiliser pour la conception de chaque modale
-- un seul <h2> par modale
-- un <br> avant chaque <h3>
-- suivre la structure ci-dessous :        
+---
+specification:
+name: "Orima Works — Modal HTML Pattern"
+version: "1.0"
+language: "fr"
+format: "HTML5"
+scope: "Toutes les modales du projet"
 
-<dialog id="xxxx">
-             <div class="display_column center"><img style="max-width:60px; height: auto;" src="xxxx"><h2>TITRE</h2></div> 
-            <p>
-               Courte introduction
-            </p>
-            <br>
-            <h3>Sous-Titre/Section</h3>
-            <ul>
-                <li>liste si nécessaire</li>
-                <li>liste si nécessaire</li>
-            </ul>
-            <hr>
-            <h3>Sous-Titre</h3>
-            <code>commande cli ou code sur une seule ligne</code>
-            <kbd>Touche</kdb><kbd>Clavier</kbd>
-            <pre>Extrait de code 
-                    indenté
-                    Sur plusieurs lignes 
-            </pre>
-            <br>
-            <h3>Sous-Titre</h3>
-            <p>etc etc</p>
+objective: >
+Créer, modifier ou restaurer des modales HTML cohérentes,
+accessibles, lisibles et compatibles avec l'architecture
+existante du projet.
 
-            <div>
-                <button id="btn_fermeture" data-close>Fermer</button>
-            </div>
-        </dialog> 
-        '''
-    -->
+output:
+type: "HTML fragment"
+root_element: "dialog"
+standalone_document: false
+preserve_existing_project_conventions: true
+include_markdown_fences: false
+
+structure:
+required_elements:
+- "dialog"
+- "h2"
+- "div.display_column.center"
+- "button[data-close]"
+
+hierarchy:
+  - "dialog"
+  - "div.display_column.center"
+  - "img (optional)"
+  - "h2 (exactly one)"
+  - "p (optional introduction)"
+  - "section content"
+  - "div containing the close button"
+
+dialog:
+  required: true
+  id: "Unique identifier matching the modal name used by the project"
+  example: '<dialog id="linux">'
+
+header:
+  container_class: "display_column center"
+  title:
+    element: "h2"
+    count: 1
+    required: true
+  image:
+    required: false
+    attributes:
+      style: "max-width:60px; height: auto;"
+      src: "Path to the relevant project asset"
+
+introduction:
+  element: "p"
+  required: false
+  purpose: "Briefly explain the purpose or scope of the modal"
+
+sections:
+  heading_element: "h3"
+  separator_before_heading: "br"
+  list_element: "ul"
+  list_item_element: "li"
+  horizontal_separator: "hr"
+  all_optional: true
+  ordering: "Follow a logical progression appropriate to the topic"
+
+footer:
+  container_element: "div"
+  button:
+    element: "button"
+    text: "Fermer"
+    required_attribute: "data-close"
+    id: "btn_fermeture"
+    note: >
+      The id is optional if no project code depends on it.
+      The data-close attribute is required for compatibility
+      with the existing modal closing mechanism.
+
+semantic_rules:
+code:
+element: "code"
+meaning: "Inline command, expression, identifier or short code snippet"
+usage: "Use for single-line content that fits inline"
+wrapping: "Never nest inside pre"
+
+pre:
+  element: "pre"
+  meaning: "Multiline code, terminal output or whitespace-sensitive text"
+  usage: "Use for multiline content or content requiring preserved indentation"
+  wrapping: "Never nest code inside pre"
+
+kbd:
+  element: "kbd"
+  meaning: "Keyboard key, key combination or user input"
+  usage: "Write the key or combination first, followed by its explanation"
+  example: '<kbd>Ctrl</kbd> + <kbd>C</kbd> : interrompre la commande'
+
+explanation:
+  principle: >
+    Prefer explanatory text before the code or keyboard shortcut
+    whenever the content is introduced by an explanation.
+  inline_code:
+    pattern: "Explanation: <code>...</code>"
+  multiline_code:
+    pattern: "Explanation:<br><pre>...</pre>"
+  keyboard_shortcut:
+    pattern: "Shortcut: <kbd>...</kbd> — explanation"
+
+formatting:
+- "Use exactly one h2 element per modal."
+- "Insert a br element before each h3 section heading."
+- "Use hr only when a meaningful visual separation is needed."
+- "Use ul and li for lists of related items."
+- "Use p for prose and explanatory paragraphs."
+- "Do not use code or kbd as substitutes for ordinary prose."
+- "Do not nest code inside pre, or pre inside code."
+- "Preserve meaningful indentation in multiline code examples."
+- "Avoid duplicate headings and redundant content."
+- "Use valid, properly closed HTML elements."
+- "Do not add unrelated CSS or JavaScript to a modal fragment."
+
+compatibility:
+modal_loader:
+expected_root: "dialog"
+id_matching: "The dialog id must match the identifier expected by modals.js."
+loading: "The project loads modal fragments dynamically."
+closing:
+required_attribute: "data-close"
+behavior: "The existing JavaScript handler closes the nearest dialog."
+assets:
+rule: >
+Use paths valid relative to the published page URL,
+not paths assumed to be relative to the HTML fragment file.
+dependencies:
+rule: "Do not introduce external libraries without explicit authorization."
+
+validation:
+- "The fragment contains exactly one dialog root."
+- "The dialog has a non-empty id."
+- "The modal contains exactly one h2."
+- "Each h3 is preceded by a br element."
+- "No code element is nested inside pre."
+- "No pre element is nested inside code."
+- "The footer contains a button with data-close."
+- "All HTML tags are properly nested and closed."
+- "No duplicate headings or accidental repeated content remain."
+- "Commands and examples are technically accurate."
+- "Existing project conventions are preserved."
+
+llm_instructions:
+priority:
+- "Preserve the project's existing functional conventions."
+- "Follow the required structure and semantic rules."
+- "Correct invalid HTML and factual errors."
+- "Improve clarity without inventing project-specific dependencies."
+workflow:
+- "Inspect the supplied modal and identify deviations."
+- "Apply the specification."
+- "Check HTML validity and semantic consistency."
+- "Return the complete corrected HTML fragment."
+uncertainty: >
+If a requirement conflicts with existing code or is ambiguous,
+explain the conflict instead of silently inventing a convention.

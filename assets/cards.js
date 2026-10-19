@@ -1,10 +1,11 @@
 const cards = [
 
 // {
-    // title: "Nom technique/interne",
-    // label: "Texte affiché sous la carte",
-    // text: "Texte dans la carte si pas d'image",
-    // icon: "chemin/image.png",
+    // title: "Infobulle au hover sur la card",
+    // label: "Texte affiché sous la card",
+    // text: "Texte dans la carte si aucune image n'est chargée",
+    // icon: "chemin/image.png" ou "icon: null" ,
+    // color: "ghostwhite",
 	// category: "Catégorie du lien"
     // url: "https://..."
 // }
@@ -26,10 +27,9 @@ const cards = [
 	{
 		title: "Annonce T3 Eybens",
 		url: "https://orimaworks.github.io/Appart_Eybens/",
-		// icon: "https://github.com/DEVMJ00/Appart_Eybens/blob/main/cover.webp?raw=true",
-		icon: null,
+		icon: "https://github.com/DEVMJ00/Appart_Eybens/blob/main/cover.webp?raw=true",
 		text: "⭐️ T3 EYBENS ",
-		label: " ",
+		label: "⭐️ T3 EYBENS",
 		category: "Favoris"
 	},
 	

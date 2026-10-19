@@ -215,11 +215,11 @@ const cards = [
 //-----------------------
 
 	 {
-        title: "Microsoft Learn",
+        title: "Se connecter avec hotmail perso - pas devmj",
         url: "https://learn.microsoft.com/fr-fr/",
         icon: "./assets/img/microsoft.svg",
         text: "Microsoft Learn",
-		label:"Se connecter avec hotmail perso - pas devmj",
+		label:"Microsoft Learn",
 		category: "Geek"
     },
 	 {

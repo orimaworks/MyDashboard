@@ -344,7 +344,7 @@ const cards = [
         title: "Hexa",
 		url: "https://www.hexa.com/",
 		text: "Hexa",
-		icon: "./assets/img/.jpg",
+		icon: null,
 		label:"Hexa",
 		category: "Geek"	
 	},

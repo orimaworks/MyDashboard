@@ -625,6 +625,14 @@ const cards = [
     },
 	
 	{
+        title: "AgoraStore",
+        url: "https://www.agorastore.fr/fr",
+        icon: "./assets/img/logo-agora.svg",
+		text: "AgoraStore",
+		label:"AgoraStore",
+		category: "shopping"
+    },
+	{
         title: "Cigarette-Elec",
         url: "https://www.cigaretteelec.fr/",
         icon: "./assets/img/cigelec.svg",

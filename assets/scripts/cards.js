@@ -307,14 +307,6 @@ const cards = [
     },
 
     {
-        title: "fontAwesome",
-        url: "https://fontawesome.com",
-        icon: null,
-		label:"fontAwesome",
-		category: "Geek"
-    },
-
-    {
         title: "Thiings",
         url: "https://www.thiings.co/things",
         icon: "./assets/img/thiings.png",
@@ -352,7 +344,7 @@ const cards = [
 	{
         title: "Font Awesome",
         url: "https://fontawesome.com/",
-        icon: "./assets/img/fontawesome.jpeg",
+        icon: "./assets/img/fontawesome.png",
 		text: "Font Awesome",
 		label: "Font Awesome",
 		category: "Geek"

@@ -1,146 +1,204 @@
-
 <dialog id="linux">
     <div class="display_column center">
         <h2>Linux</h2>
-    </div><p>Retrouve les commandes essentielles pour naviguer dans le système, gérer les fichiers, consulter les processus et administrer un environnement Linux.</p>
+    </div>
 
-<br>
-<h3>Navigation dans le système</h3>
-<ul>
-    <li><code>pwd</code> : afficher le chemin du répertoire courant.</li>
-    <li><code>ls</code> : lister les fichiers et dossiers.</li>
-    <li><code>ls -la</code> : afficher tous les éléments, y compris les fichiers cachés, avec leurs détails.</li>
-    <li><code>cd dossier</code> : accéder à un répertoire.</li>
-    <li><code>cd ..</code> : remonter au répertoire parent.</li>
-    <li><code>cd ~</code> : revenir au répertoire personnel.</li>
-    <li><code>clear</code> : nettoyer l'affichage du terminal.</li>
-    <li><code>history</code> : afficher l'historique des commandes.</li>
-</ul>
+    <p>Retrouve les commandes essentielles pour naviguer dans le système, gérer les fichiers, consulter les processus et administrer un environnement Linux.</p>
 
-<br>
-<h3>Gestion des fichiers et dossiers</h3>
-<ul>
-    <li><code>touch fichier.txt</code> : créer un fichier vide ou actualiser sa date de modification.</li>
-    <li><code>mkdir dossier</code> : créer un répertoire.</li>
-    <li><code>mkdir -p parent/enfant</code> : créer une arborescence de répertoires.</li>
-    <li><code>cp source destination</code> : copier un fichier.</li>
-    <li><code>cp -r dossier destination</code> : copier un répertoire et son contenu.</li>
-    <li><code>mv source destination</code> : déplacer ou renommer un fichier ou un dossier.</li>
-    <li><code>rm fichier.txt</code> : supprimer un fichier.</li>
-    <li><code>rmdir dossier</code> : supprimer un répertoire vide.</li>
-    <li><code>cat fichier.txt</code> : afficher le contenu d'un fichier texte.</li>
-    <li><code>less fichier.txt</code> : consulter un fichier page par page.</li>
-    <li><code>nano fichier.txt</code> : ouvrir un fichier dans l'éditeur de texte Nano.</li>
-</ul>
+    <br>
+    <h3>Navigation dans le système</h3>
+    <ul>
+        <li><code>pwd</code> : afficher le chemin du répertoire courant.</li>
+        <li><code>ls</code> : lister les fichiers et dossiers.</li>
+        <li><code>ls -l</code> : afficher les éléments avec leurs détails et leurs permissions.</li>
+        <li><code>ls -a</code> : afficher également les fichiers cachés.</li>
+        <li><code>ls -la</code> : afficher tous les éléments, y compris les fichiers cachés, avec leurs détails.</li>
+        <li><code>cd dossier</code> : accéder à un répertoire.</li>
+        <li><code>cd ..</code> : remonter au répertoire parent.</li>
+        <li><code>cd ~</code> : revenir au répertoire personnel.</li>
+        <li><code>xdg-open .</code> : ouvrir le répertoire courant dans l'explorateur de fichiers, si un environnement graphique est disponible.</li>
+        <li><code>clear</code> : nettoyer l'affichage du terminal.</li>
+        <li><code>history</code> : afficher l'historique des commandes.</li>
+    </ul>
 
-<br>
-<h3>Recherche de fichiers et de contenu</h3>
-<ul>
-    <li><code>find . -name "*.txt"</code> : rechercher les fichiers TXT dans le répertoire courant et ses sous-répertoires.</li>
-    <li><code>grep "texte" fichier.txt</code> : rechercher une chaîne de caractères dans un fichier.</li>
-    <li><code>grep -Rni "texte" dossier/</code> : rechercher récursivement un texte, sans tenir compte de la casse, en affichant les numéros de ligne.</li>
-    <li><code>which python3</code> : afficher le chemin de l'exécutable trouvé dans le PATH.</li>
-    <li><code>command -v python3</code> : identifier la commande utilisée par le shell.</li>
-</ul>
+    <br>
+    <h3>Gestion des fichiers et dossiers</h3>
+    <ul>
+        <li><code>touch fichier.txt</code> : créer un fichier vide ou actualiser sa date de modification.</li>
+        <li><code>mkdir dossier</code> : créer un répertoire.</li>
+        <li><code>mkdir -p parent/enfant</code> : créer une arborescence de répertoires.</li>
+        <li><code>cp source destination</code> : copier un fichier.</li>
+        <li><code>cp -r dossier1 dossier2</code> : copier un répertoire et son contenu.</li>
+        <li><code>mv source destination</code> : déplacer ou renommer un fichier ou un dossier.</li>
+        <li><code>rm fichier.txt</code> : supprimer un fichier.</li>
+        <li><code>rm -r dossier</code> : supprimer récursivement un dossier et son contenu.</li>
+        <li><code>rm -ri dossier</code> : demander confirmation avant les suppressions récursives.</li>
+        <li><code>rmdir dossier</code> : supprimer un répertoire vide.</li>
+        <li><code>cat fichier.txt</code> : afficher le contenu d'un fichier texte.</li>
+        <li><code>less fichier.txt</code> : consulter un fichier page par page.</li>
+        <li><code>nano fichier.txt</code> : ouvrir un fichier dans l'éditeur de texte Nano.</li>
+    </ul>
 
-<br>
-<h3>Permissions et exécution</h3>
-<ul>
-    <li><code>ls -l</code> : consulter les permissions et propriétaires des fichiers.</li>
-    <li><code>chmod +x script.sh</code> : rendre un script exécutable.</li>
-    <li><code>chmod 644 fichier.txt</code> : attribuer les permissions de lecture et d'écriture au propriétaire, et de lecture aux autres.</li>
-    <li><code>chown utilisateur fichier.txt</code> : modifier le propriétaire d'un fichier, sous réserve des droits nécessaires.</li>
-    <li><code>sudo commande</code> : exécuter une commande avec les privilèges administrateur autorisés.</li>
-    <li><code>./script.sh</code> : exécuter un script situé dans le répertoire courant, si les permissions et l'interpréteur le permettent.</li>
-</ul>
+    <br>
+    <h3>Renommer des fichiers cachés en fichiers ordinaires</h3>
+<li>Création d'une boucle pour agir sur l'intégralité des fichiers d'un dossier
+        <pre>
+        for file in .*; do
+        mv "$file" "${file#.}"
+        done 
+        </pre>
+    </li>
+     <br>
+    <li>Liste les fichiers et dossiers dans le répertoire actuel :
+        <pre>
+        ls          #affichage simple
+        ls -l       #affichage détaillé
+        ls -a       #affichage des fichiers cachés 
+        </pre>
+    </li>
+    <br>
+    <li>Supprimer un dossier et son contenu : 
+        <pre>
+        rm -r dossier   #Supprime tout 
+        rm -i           #Demande une confirmation avant suppression
+        </pre>
+    </li>
 
-<br>
-<h3>Gestion des paquets — Debian, Ubuntu et Zorin OS</h3>
-<ul>
-    <li><code>sudo apt update</code> : actualiser les listes de paquets disponibles.</li>
-    <li><code>sudo apt upgrade</code> : installer les mises à jour des paquets installés.</li>
-    <li><code>sudo apt install nom_paquet</code> : installer un paquet.</li>
-    <li><code>sudo apt remove nom_paquet</code> : désinstaller un paquet sans demander systématiquement la suppression de ses fichiers de configuration.</li>
-    <li><code>sudo apt autoremove</code> : supprimer les dépendances devenues inutiles selon APT.</li>
-    <li><code>apt search mot_cle</code> : rechercher un paquet dans les dépôts configurés.</li>
-    <li><code>apt show nom_paquet</code> : consulter les informations d'un paquet.</li>
-</ul>
+    <br>
+    <h3>Recherche de fichiers et de contenu</h3>
+    <ul>
+        <li><code>find . -name "*.txt"</code> : rechercher les fichiers TXT dans le répertoire courant et ses sous-répertoires.</li>
+        <li><code>grep "texte" fichier.txt</code> : rechercher une chaîne de caractères dans un fichier.</li>
+        <li><code>grep -Rni "texte" dossier/</code> : rechercher récursivement un texte sans tenir compte de la casse, en affichant les numéros de ligne.</li>
+        <li><code>which python3</code> : afficher le chemin de l'exécutable trouvé dans le <code>PATH</code>.</li>
+        <li><code>command -v python3</code> : identifier la commande utilisée par le shell.</li>
+    </ul>
 
-<br>
-<h3>Processus et ressources système</h3>
-<ul>
-    <li><code>ps aux</code> : afficher les processus en cours.</li>
-    <li><code>top</code> : surveiller les processus et l'utilisation des ressources en temps réel.</li>
-    <li><code>htop</code> : afficher une vue interactive des processus, si l'outil est installé.</li>
-    <li><code>kill PID</code> : envoyer le signal SIGTERM au processus identifié par son PID.</li>
-    <li><code>kill -9 PID</code> : envoyer le signal SIGKILL, sans laisser au processus la possibilité de terminer proprement.</li>
-    <li><code>free -h</code> : afficher l'utilisation de la mémoire.</li>
-    <li><code>df -h</code> : consulter l'espace disponible sur les systèmes de fichiers montés.</li>
-    <li><code>du -sh dossier/</code> : afficher la taille totale d'un répertoire.</li>
-    <li><code>uptime</code> : afficher la durée de fonctionnement et la charge moyenne du système.</li>
-</ul>
+    <br>
+    <h3>Permissions, utilisateurs et exécution</h3>
+    <ul>
+        <li><code>whoami</code> : afficher le nom de l'utilisateur courant.</li>
+        <li><code>ls -l</code> : consulter les permissions et les propriétaires des fichiers.</li>
+        <li><code>chmod +x script.sh</code> : rendre un script exécutable.</li>
+        <li><code>chmod 644 fichier.txt</code> : donner au propriétaire les droits de lecture et d'écriture, et aux autres le droit de lecture.</li>
+        <li><code>chmod 755 script.sh</code> : donner au propriétaire les droits de lecture, d'écriture et d'exécution, et aux autres les droits de lecture et d'exécution.</li>
+        <li><code>chown utilisateur fichier.txt</code> : modifier le propriétaire d'un fichier, sous réserve des droits nécessaires.</li>
+        <li><code>sudo commande</code> : exécuter une commande avec les privilèges administrateur autorisés.</li>
+        <li><code>./script.sh</code> : exécuter un script situé dans le répertoire courant, si les permissions et l'interpréteur le permettent.</li>
+    </ul>
 
-<br>
-<h3>Réseau et connexions</h3>
-<ul>
-    <li><code>ip addr</code> : afficher les interfaces réseau et leurs adresses IP.</li>
-    <li><code>ip route</code> : consulter la table de routage.</li>
-    <li><code>ping -c 4 192.168.1.1</code> : envoyer quatre requêtes ICMP à une adresse IP.</li>
-    <li><code>ss -tulpn</code> : afficher les sockets TCP et UDP en écoute, avec les informations de processus accessibles selon les privilèges.</li>
-    <li><code>curl -I https://example.com</code> : consulter les en-têtes HTTP d'une réponse.</li>
-    <li><code>hostname -I</code> : afficher les adresses IP associées à la machine.</li>
-    <li><code>ssh utilisateur@192.168.1.98</code> : ouvrir une connexion SSH vers la machine distante, si le service est installé et accessible.</li>
-    <li><code>scp fichier.txt utilisateur@192.168.1.98:/chemin/</code> : copier un fichier vers une machine distante via SSH.</li>
-</ul>
+    <br>
+    <h3>Gestion des paquets — Debian, Ubuntu, Zorin OS et Raspberry Pi OS</h3>
+    <ul>
+        <li><code>sudo apt update</code> : actualiser les listes de paquets disponibles.</li>
+        <li><code>sudo apt upgrade</code> : installer les mises à jour des paquets installés.</li>
+        <li><code>sudo apt update &amp;&amp; sudo apt upgrade</code> : actualiser les listes puis mettre à jour les paquets.</li>
+        <li><code>sudo apt install nom_paquet</code> : installer un paquet.</li>
+        <li><code>sudo apt remove nom_paquet</code> : désinstaller un paquet sans demander systématiquement la suppression de ses fichiers de configuration.</li>
+        <li><code>sudo apt autoremove</code> : supprimer les dépendances devenues inutiles selon APT.</li>
+        <li><code>apt search mot_cle</code> : rechercher un paquet dans les dépôts configurés.</li>
+        <li><code>apt show nom_paquet</code> : consulter les informations d'un paquet.</li>
+    </ul>
 
-<br>
-<h3>Services et journaux système</h3>
-<ul>
-    <li><code>systemctl status nom_service</code> : consulter l'état d'un service géré par systemd.</li>
-    <li><code>sudo systemctl start nom_service</code> : démarrer un service.</li>
-    <li><code>sudo systemctl stop nom_service</code> : arrêter un service.</li>
-    <li><code>sudo systemctl restart nom_service</code> : redémarrer un service.</li>
-    <li><code>sudo systemctl enable nom_service</code> : activer le démarrage automatique du service.</li>
-    <li><code>journalctl -u nom_service</code> : consulter les journaux d'un service.</li>
-    <li><code>journalctl -f</code> : suivre les nouveaux messages du journal système.</li>
-    <li><code>dmesg</code> : consulter les messages du noyau, sous réserve des restrictions d'accès configurées.</li>
-</ul>
+    <br>
+    <h3>Processus et ressources système</h3>
+    <ul>
+        <li><code>ps aux</code> : afficher les processus en cours.</li>
+        <li><code>top</code> : surveiller les processus et l'utilisation des ressources en temps réel.</li>
+        <li><code>htop</code> : afficher une vue interactive des processus, si l'outil est installé.</li>
+        <li><code>kill PID</code> : envoyer le signal SIGTERM au processus identifié par son PID.</li>
+        <li><code>kill -9 PID</code> : envoyer le signal SIGKILL, sans laisser au processus la possibilité de terminer proprement.</li>
+        <li><code>free -h</code> : afficher l'utilisation de la mémoire.</li>
+        <li><code>df -h</code> : consulter l'espace utilisé et disponible sur les systèmes de fichiers montés.</li>
+        <li><code>du -sh dossier/</code> : afficher la taille totale d'un répertoire.</li>
+        <li><code>uptime</code> : afficher la durée de fonctionnement et la charge moyenne du système.</li>
+    </ul>
 
-<br>
-<h3>Archives et compression</h3>
-<ul>
-    <li><code>tar -czf archive.tar.gz dossier/</code> : créer une archive compressée au format gzip.</li>
-    <li><code>tar -xzf archive.tar.gz</code> : extraire une archive tar compressée avec gzip.</li>
-    <li><code>tar -tf archive.tar.gz</code> : lister le contenu d'une archive sans l'extraire.</li>
-    <li><code>zip -r archive.zip dossier/</code> : créer une archive ZIP, si l'outil est installé.</li>
-    <li><code>unzip archive.zip</code> : extraire une archive ZIP, si l'outil est installé.</li>
-</ul>
+    <br>
+    <h3>Réseau et connexions</h3>
+    <ul>
+        <li><code>ip addr</code> ou <code>ip a</code> : afficher les interfaces réseau et leurs adresses IP.</li>
+        <li><code>ip route</code> : consulter la table de routage.</li>
+        <li><code>hostname -I</code> : afficher les adresses IP associées à la machine.</li>
+        <li><code>ping -c 4 192.168.1.1</code> : envoyer quatre requêtes ICMP à une adresse IP.</li>
+        <li><code>ping google.com</code> : tester la connectivité vers un nom de domaine, si la résolution DNS fonctionne.</li>
+        <li><code>ss -tulpn</code> : afficher les sockets TCP et UDP en écoute, avec les informations de processus accessibles selon les privilèges.</li>
+        <li><code>curl -I https://example.com</code> : consulter les en-têtes HTTP d'une réponse.</li>
+        <li><code>curl https://example.com</code> : afficher le contenu renvoyé par l'URL, selon la réponse du serveur.</li>
+        <li><code>ssh utilisateur@192.168.1.98</code> : ouvrir une connexion SSH vers la machine distante, si le service est installé et accessible.</li>
+        <li><code>scp fichier.txt utilisateur@192.168.1.98:/chemin/</code> : copier un fichier vers une machine distante via SSH.</li>
+    </ul>
 
-<br>
-<h3>Raccourcis et aide</h3>
-<ul>
-    <li><kbd>Tab</kbd> : compléter automatiquement une commande ou un chemin lorsque c'est possible.</li>
-    <li><kbd>Ctrl</kbd> + <kbd>C</kbd> : interrompre la commande en cours dans un terminal interactif, généralement en envoyant SIGINT.</li>
-    <li><kbd>Ctrl</kbd> + <kbd>L</kbd> : nettoyer l'affichage du terminal dans les shells courants.</li>
-    <li><kbd>↑</kbd> / <kbd>↓</kbd> : parcourir l'historique des commandes.</li>
-    <li><code>man nom_commande</code> : consulter le manuel d'une commande.</li>
-    <li><code>nom_commande --help</code> : afficher l'aide intégrée, lorsqu'elle est disponible.</li>
-    <li><code>whatis nom_commande</code> : afficher une brève description issue des pages de manuel indexées.</li>
-</ul>
+    <br>
+    <h3>Services et journaux système</h3>
+    <ul>
+        <li><code>systemctl status nom_service</code> : consulter l'état d'un service géré par systemd.</li>
+        <li><code>sudo systemctl start nom_service</code> : démarrer un service.</li>
+        <li><code>sudo systemctl stop nom_service</code> : arrêter un service.</li>
+        <li><code>sudo systemctl restart nom_service</code> : redémarrer un service.</li>
+        <li><code>sudo systemctl enable nom_service</code> : activer le démarrage automatique du service.</li>
+        <li><code>journalctl -u nom_service</code> : consulter les journaux d'un service.</li>
+        <li><code>journalctl -f</code> : suivre les nouveaux messages du journal système.</li>
+        <li><code>dmesg</code> : consulter les messages du noyau, sous réserve des restrictions d'accès configurées.</li>
+    </ul>
 
-<br>
-<h3>Précautions importantes</h3>
-<ul>
-    <li><code>rm -r</code> : supprime récursivement des fichiers et des répertoires. Vérifie toujours le chemin avant exécution.</li>
-    <li><code>sudo</code> : accorde des privilèges élevés à une commande. Ne l'utilise pas systématiquement.</li>
-    <li><code>chmod -R</code> et <code>chown -R</code> : modifient récursivement les permissions ou les propriétaires. Une mauvaise cible peut perturber le fonctionnement du système.</li>
-    <li>Les commandes de suppression ne disposent généralement pas de corbeille : une suppression en terminal peut être irréversible.</li>
-</ul>
+    <br>
+    <h3>Archives et compression</h3>
+    <ul>
+        <li><code>tar -czf archive.tar.gz dossier/</code> : créer une archive compressée au format gzip.</li>
+        <li><code>tar -xzf archive.tar.gz</code> : extraire une archive tar compressée avec gzip.</li>
+        <li><code>tar -tf archive.tar.gz</code> : lister le contenu d'une archive sans l'extraire.</li>
+        <li><code>zip -r archive.zip dossier/</code> : créer une archive ZIP, si l'outil est installé.</li>
+        <li><code>unzip archive.zip</code> : extraire une archive ZIP, si l'outil est installé.</li>
+    </ul>
 
-<div>
-    <button type="button" id="btn_fermeture" data-close>Fermer</button>
-</div>
+    <br>
+    <h3>Informations sur le système et le matériel</h3>
+    <ul>
+        <li><code>uname -a</code> : afficher des informations sur le noyau et le système.</li>
+        <li><code>lscpu</code> : afficher les informations sur le processeur.</li>
+        <li><code>lsblk</code> : afficher les périphériques de stockage en mode bloc.</li>
+        <li><code>lsblk -f</code> : afficher les systèmes de fichiers et les points de montage des périphériques de stockage.</li>
+        <li><code>sudo lshw</code> : afficher une description détaillée du matériel, si <code>lshw</code> est installé.</li>
+        <li><code>sudo lshw -short</code> : afficher une liste résumée du matériel.</li>
+        <li><code>sudo lshw -class processor</code> : afficher les informations matérielles du processeur.</li>
+        <li><code>sudo apt install inxi</code>, puis <code>inxi -Fxz</code> : installer <code>inxi</code> puis afficher un rapport détaillé sur le système et le matériel.</li>
+        <li><code>sudo apt install hwinfo</code>, puis <code>sudo hwinfo</code> : installer <code>hwinfo</code> puis afficher un rapport détaillé sur le matériel.</li>
+    </ul>
 
+    <br>
+    <h3>Raccourcis et aide</h3>
+    <ul>
+        <li><kbd>Tab</kbd> : compléter automatiquement une commande ou un chemin lorsque c'est possible.</li>
+        <li><kbd>Ctrl</kbd> + <kbd>C</kbd> : interrompre la commande en cours dans un terminal interactif, généralement en envoyant SIGINT.</li>
+        <li><kbd>Ctrl</kbd> + <kbd>L</kbd> : nettoyer l'affichage du terminal dans les shells courants.</li>
+        <li><kbd>↑</kbd> / <kbd>↓</kbd> : parcourir l'historique des commandes.</li>
+        <li><code>man nom_commande</code> : consulter le manuel d'une commande.</li>
+        <li><code>nom_commande --help</code> : afficher l'aide intégrée, lorsqu'elle est disponible.</li>
+        <li><code>whatis nom_commande</code> : afficher une brève description issue des pages de manuel indexées.</li>
+        <li><code>alias</code> : afficher les alias définis dans le shell.</li>
+        <li><code>alias ll='ls -la'</code> : créer un alias pour raccourcir une commande dans le shell courant.</li>
+    </ul>
+
+    <br>
+    <h3>Commandes utiles sur Raspberry Pi</h3>
+    <ul>
+        <li><code>hostname -I</code> : afficher l'adresse IP de la machine.</li>
+        <li><code>sudo reboot</code> : redémarrer le système.</li>
+        <li><code>sudo shutdown now</code> : arrêter le système immédiatement.</li>
+    </ul>
+
+    <br>
+    <h3>Précautions importantes</h3>
+    <ul>
+        <li><code>rm -r</code> : supprime récursivement des fichiers et des répertoires. Vérifie toujours le chemin avant exécution.</li>
+        <li><code>sudo</code> : accorde des privilèges élevés à une commande. Ne l'utilise pas systématiquement.</li>
+        <li><code>chmod -R</code> et <code>chown -R</code> : modifient récursivement les permissions ou les propriétaires. Une mauvaise cible peut perturber le fonctionnement du système.</li>
+        <li>Les commandes de suppression en terminal ne passent généralement pas par une corbeille et peuvent être irréversibles.</li>
+        <li>Avant d'exécuter une boucle de renommage ou une commande destructive, vérifie le répertoire courant et les fichiers ciblés.</li>
+    </ul>
+
+    <div>
+        <button type="button" id="btn_fermeture" data-close>Fermer</button>
+    </div>
 </dialog>
-
-                      

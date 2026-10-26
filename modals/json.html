@@ -1,76 +1,256 @@
-<dialog id="json"> <div class="display_column center"> <img src="./assets/img/json.svg" style="max-width:60px; height: auto;" alt="JSON"> 
-    <h2>JSON</h2> 
-    </div>
-    <p>JavaScript Object Notation — format léger d'échange de données, facile à lire et à écrire pour les humains et les machines.</p> <br>
-<h3>📝 Structure de base</h3>
-<p>JSON est construit sur deux structures :</p>
-<ul>
-  <li>Une collection de paires nom/valeur — objet enveloppé dans <code>{}</code></li>
-  <li>Une liste ordonnée de valeurs — tableau enveloppé dans <code>[]</code></li>
-</ul>
-<p>Exemple minimal :</p>
-<pre>{
-"nom": "Orima", "version": 2.0 }</pre>
 
-<br>
-<h3>🔤 Types de données</h3>
-<p>JSON prend en charge six types de données :</p>
-<ul>
-  <li><code>string</code> — chaîne de caractères entre guillemets doubles</li>
-  <li><code>number</code> — nombre (sans guillemets)</li>
-  <li><code>object</code> — collection structurée <code>{}</code></li>
-  <li><code>array</code> — liste ordonnée <code>[]</code></li>
-  <li><code>boolean</code> — <code>true</code> ou <code>false</code></li>
-  <li><code>null</code> — valeur vide</li>
-</ul>
-<p>Exemples :</p>
-<pre>{
-"texte": "chaîne", "nombre": 42, "actif": true, "vide": null, "liste": [1, 2, 3], "objet": {"clé": "valeur"} }</pre>
+<dialog id="json">
+  <div class="display_column center">
+    <img src="./assets/img/json.svg"
+         style="max-width:60px; height:auto;"
+         alt="JSON">
+    <h2>JSON</h2>
+  </div>
 
-<br>
-<h3>⚙️ Syntaxe et règles</h3>
-<ul>
-  <li>Toujours utiliser des guillemets doubles <code>"</code> pour les chaînes</li>
-  <li>Ne pas mettre de virgule après le dernier élément</li>
-  <li>Ne pas inclure de commentaires natifs</li>
-  <li>Respecter la casse (<code>true</code> ≠ <code>True</code>)</li>
-  <li>Les clés doivent toujours être des chaînes</li>
-</ul>
-<p>Exemple invalide :</p>
-<pre>{
-"nom": "test", // Commentaire interdit valeur: "error" // Clé sans guillemets }</pre>
+  <p>
+    <strong>JavaScript Object Notation</strong> est un format léger
+    d'échange de données, indépendant du langage de programmation utilisé.
+    Il est facile à lire et à écrire pour les humains, et simple à analyser
+    pour les machines.
+  </p>
 
-<br>
-<h3>🛠️ Validation</h3>
-<p>Outils de validation recommandés :</p>
-<ul>
-  <li><a href="https://jsonlint.com" target="_blank">JSONLint</a> — validateur en ligne</li>
-  <li><a href="https://jsonformatter.org" target="_blank">JSON Formatter</a> — formatage et validation</li>
-  <li><code>jq</code> — outil CLI Unix</li>
-</ul>
-<p>Commande <code>jq</code> :</p>
-<pre>cat fichier.json | jq '.'</pre>
-<p>Raccourcis clavier :</p>
-<ul>
-  <li><kbd>Ctrl</kbd> + <kbd>S</kbd> : sauvegarder le fichier</li>
-  <li><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> : ouvrir la palette de commandes (éditeurs)</li>
-</ul>
+  <p>
+    JSON est couramment utilisé pour les fichiers de configuration,
+    les échanges entre applications et les réponses des API.
+  </p>
 
-<br>
-<h3>💾 Bonnes pratiques</h3>
-<ul>
-  <li>Utiliser <code>utf-8</code> comme encodage</li>
-  <li>Formater avec indentation pour la lisibilité</li>
-  <li>Valider contre un schéma (<code>JSON Schema</code>) pour les projets complexes</li>
-  <li>Éviter les données sensibles en clair (mots de passe, tokens)</li>
-  <li>Minifier (<code>compact</code>) pour la production si nécessaire</li>
-</ul>
+  <br>
+  <h3>📝 Structure de base</h3>
 
-<div>
-  <button data-close id="btn_fermeture">Fermer</button>
-</div>
+  <p>JSON repose sur deux structures principales :</p>
+  <ul>
+    <li>
+      <strong>Objet :</strong> une collection de paires clé/valeur,
+      délimitée par des accolades <code>{}</code>.
+    </li>
+    <li>
+      <strong>Tableau :</strong> une liste ordonnée de valeurs,
+      délimitée par des crochets <code>[]</code>.
+    </li>
+  </ul>
 
+  <p>Exemple d'objet :</p>
+  <pre>{
+  "nom": "Orima",
+  "version": 2.0
+}</pre>
+
+  <p>Exemple de tableau :</p>
+  <pre>[
+  "HTML",
+  "CSS",
+  "JavaScript"
+]</pre>
+
+  <p>
+    Les objets et les tableaux peuvent être imbriqués les uns dans les autres
+    pour représenter des données complexes.
+  </p>
+
+  <pre>{
+  "utilisateur": {
+    "nom": "Alex",
+    "actif": true
+  },
+  "roles": ["admin", "éditeur"]
+}</pre>
+
+  <br>
+  <h3>🔤 Types de données</h3>
+
+  <p>JSON accepte six catégories de valeurs :</p>
+  <ul>
+    <li><code>string</code> — chaîne de caractères entre guillemets doubles.</li>
+    <li><code>number</code> — nombre entier ou décimal, sans guillemets.</li>
+    <li><code>object</code> — objet contenant des paires clé/valeur.</li>
+    <li><code>array</code> — tableau de valeurs ordonnées.</li>
+    <li><code>boolean</code> — valeur logique <code>true</code> ou <code>false</code>.</li>
+    <li><code>null</code> — absence de valeur.</li>
+  </ul>
+
+  <p>Exemple regroupant ces types :</p>
+  <pre>{
+  "texte": "chaîne",
+  "nombre": 42,
+  "decimal": 3.14,
+  "actif": true,
+  "vide": null,
+  "liste": [1, 2, 3],
+  "objet": {
+    "cle": "valeur"
+  }
+}</pre>
+
+  <p>
+    Attention : <code>undefined</code>, les fonctions, les commentaires
+    et les valeurs comme <code>NaN</code> ne font pas partie de la syntaxe JSON.
+  </p>
+
+  <br>
+  <h3>⚙️ Syntaxe et règles</h3>
+
+  <ul>
+    <li>Les clés des objets doivent être des chaînes entre guillemets doubles.</li>
+    <li>Les chaînes utilisent des guillemets doubles, jamais des apostrophes seules.</li>
+    <li>Les éléments d'un objet et d'un tableau sont séparés par des virgules.</li>
+    <li>Aucune virgule ne doit suivre le dernier élément.</li>
+    <li>Les commentaires ne sont pas autorisés.</li>
+    <li>Les valeurs booléennes et <code>null</code> s'écrivent en minuscules.</li>
+    <li>Le séparateur décimal est le point, jamais la virgule.</li>
+  </ul>
+
+  <p>Exemple invalide :</p>
+  <pre>{
+  "nom": "test",
+  // Commentaire interdit
+  valeur: "error",
+}</pre>
+
+  <p>Version valide :</p>
+  <pre>{
+  "nom": "test",
+  "valeur": "error"
+}</pre>
+
+  <p>
+    JSON est un format de données, et non du code JavaScript :
+    un objet JavaScript peut notamment contenir des commentaires,
+    des propriétés sans guillemets et des fonctions, contrairement à JSON.
+  </p>
+
+  <br>
+  <h3>🔄 JSON et JavaScript</h3>
+
+  <p>
+    JavaScript fournit deux méthodes essentielles pour convertir des données
+    entre le format JSON et les objets manipulés dans le code.
+  </p>
+
+  <p><code>JSON.parse()</code> — transforme une chaîne JSON en valeur JavaScript.</p>
+  <pre>const json = '{"nom":"Orima","actif":true}';
+
+const donnees = JSON.parse(json);
+
+console.log(donnees.nom); // "Orima"</pre>
+
+  <p><code>JSON.stringify()</code> — convertit une valeur JavaScript en chaîne JSON.</p>
+  <pre>const utilisateur = {
+  nom: "Orima",
+  actif: true
+};
+
+const json = JSON.stringify(utilisateur);
+
+console.log(json);
+// {"nom":"Orima","actif":true}</pre>
+
+  <p>
+    <code>JSON.parse()</code> peut lever une erreur si la chaîne n'est pas
+    un JSON valide. En pratique, il est donc préférable de gérer cette
+    éventualité avec <code>try...catch</code> lorsque les données ne sont
+    pas maîtrisées.
+  </p>
+
+  <pre>try {
+  const donnees = JSON.parse(texteJson);
+  console.log(donnees);
+} catch (erreur) {
+  console.error("JSON invalide :", erreur.message);
+}</pre>
+
+  <br>
+  <h3>🛠️ Validation et formatage</h3>
+
+  <p>Quelques outils utiles pour contrôler un fichier JSON :</p>
+  <ul>
+    <li>
+      <a href="https://jsonlint.com" target="_blank" rel="noopener noreferrer">
+        JSONLint
+      </a>
+      — validation de la syntaxe.
+    </li>
+    <li>
+      <a href="https://jsonformatter.org" target="_blank" rel="noopener noreferrer">
+        JSON Formatter
+      </a>
+      — validation et mise en forme.
+    </li>
+    <li>
+      <a href="https://jqlang.org" target="_blank" rel="noopener noreferrer">
+        jq
+      </a>
+      — outil en ligne de commande pour lire, filtrer et transformer du JSON.
+    </li>
+  </ul>
+
+  <p>Exemples avec <code>jq</code> :</p>
+  <pre># Afficher le JSON avec indentation
+jq '.' fichier.json
+
+# Extraire la valeur de la clé "nom"
+jq '.nom' fichier.json
+
+# Afficher les éléments du tableau "roles"
+jq '.roles[]' fichier.json</pre>
+
+  <p>
+    Dans VS Code, un fichier JSON peut être formaté avec
+    <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>F</kbd> sous Windows.
+    Le raccourci peut varier selon les raccourcis configurés.
+  </p>
+
+  <br>
+  <h3>📐 JSON Schema</h3>
+
+  <p>
+    JSON Schema permet de décrire la structure attendue d'un document JSON :
+    propriétés obligatoires, types, valeurs autorisées et contraintes.
+    Il est utile pour valider les données échangées entre applications.
+  </p>
+
+  <p>Exemple de schéma simple :</p>
+  <pre>{
+  "type": "object",
+  "properties": {
+    "nom": {
+      "type": "string"
+    },
+    "version": {
+      "type": "number"
+    }
+  },
+  "required": ["nom", "version"],
+  "additionalProperties": false
+}</pre>
+
+  <p>
+    Ce schéma exige un objet contenant les propriétés
+    <code>nom</code> et <code>version</code>, respectivement de type
+    chaîne et nombre. Il interdit également les propriétés supplémentaires.
+  </p>
+
+  <br>
+  <h3>💾 Bonnes pratiques</h3>
+
+  <ul>
+    <li>Utiliser l'encodage UTF-8.</li>
+    <li>Indenter les données pour faciliter leur lecture et leur maintenance.</li>
+    <li>Choisir des noms de clés explicites et cohérents.</li>
+    <li>Valider les données reçues d'une API ou d'un utilisateur.</li>
+    <li>Utiliser JSON Schema lorsque la structure doit respecter un contrat précis.</li>
+    <li>Éviter de stocker des mots de passe, jetons d'accès ou autres secrets en clair.</li>
+    <li>
+      Ne minifier le JSON que lorsque cela présente un intérêt, par exemple
+      pour réduire la taille d'un fichier transmis.
+    </li>
+  </ul>
+
+  <div>
+    <button data-close id="btn_fermeture">Fermer</button>
+  </div>
 </dialog>
-
-
-

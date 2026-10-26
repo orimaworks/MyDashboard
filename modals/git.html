@@ -8,7 +8,7 @@
         travailler en branches, collaborer et revenir facilement à un état antérieur d'un projet.
     </p>
 
-    <hr>
+   
     <br>
     <h3>1️⃣ Initialisation et configuration</h3>
     <ul>
@@ -20,7 +20,6 @@
         <li><code>git clone URL_DU_REPO</code> : cloner un dépôt existant.</li>
     </ul>
 
-    <hr>
     <br>
     <h3>2️⃣ État et inspection</h3>
     <ul>
@@ -33,7 +32,6 @@
     </ul>
     <p><strong>💡 Réflexe :</strong> toujours consulter <code>git status</code> puis <code>git diff</code> avant un commit.</p>
 
-    <hr>
     <br>
     <h3>3️⃣ Ajouter des fichiers et créer des commits</h3>
     <ul>
@@ -45,7 +43,6 @@
     </ul>
     <p><strong>✔ Bon message :</strong> privilégier un message court, précis et représentatif des changements. Exemples : <code>feat: ajouter la recherche</code>, <code>fix: corriger le tri</code>, <code>docs: compléter le guide</code>.</p>
 
-    <hr>
     <br>
     <h3>4️⃣ Modifier ou supprimer des fichiers</h3>
     <ul>
@@ -56,7 +53,6 @@
         <li><code>git restore --source=HASH fichier</code> : restaurer le fichier à partir d'un commit donné.</li>
     </ul>
 
-    <hr>
     <br>
     <h3>5️⃣ Gestion des branches</h3>
     <ul>
@@ -70,7 +66,6 @@
     </ul>
     <p><strong>📌 Règle :</strong> une branche = une fonctionnalité ou un correctif.</p>
 
-    <hr>
     <br>
     <h3>6️⃣ Fusion et réécriture de l'historique</h3>
     <ul>
@@ -79,9 +74,8 @@
         <li><code>git rebase -i HEAD~3</code> : réorganiser interactivement les trois derniers commits pour les fusionner, les réordonner, modifier leurs messages ou en supprimer.</li>
     </ul>
     <p><strong>À retenir :</strong> le merge conserve la structure de l'historique ; le rebase réécrit les commits concernés. Évite de rebaser des commits déjà partagés sans coordination avec l'équipe.</p>
-
-    <hr>
     <br>
+
     <h3>7️⃣ Corriger une erreur avant le push</h3>
     <ul>
         <li><code>git restore --staged fichier</code> : retirer un fichier de l'index sans annuler ses modifications locales.</li>
@@ -96,9 +90,8 @@ git commit -m "Commit corrigé"</pre>
     <p>Le dernier commit est retiré de la branche et ses changements restent disponibles pour créer un nouveau commit.</p>
 
     <p><strong>⚠️ Attention :</strong> <code>git reset --hard</code> peut supprimer des modifications locales non sauvegardées. Vérifie l'état du dépôt avant de l'utiliser.</p>
-
-    <hr>
     <br>
+
     <h3>8️⃣ Après un push : cas sensible</h3>
     <p>Réécrire l'historique ne doit être fait que sur une branche personnelle ou après accord de l'équipe.</p>
     <ul>
@@ -107,17 +100,15 @@ git commit -m "Commit corrigé"</pre>
     </ul>
     <p><strong>🛡️ Recommandation :</strong> préférer <code>--force-with-lease</code> à <code>--force</code>. Cette option réduit les risques, mais ne rend pas l'opération sans danger.</p>
     <p><strong>🚫 Évite de forcer sur <code>main</code> en équipe.</strong></p>
-
-    <hr>
     <br>
+
     <h3>9️⃣ Annuler un commit proprement</h3>
     <ul>
         <li><code>git revert HASH</code> : créer un nouveau commit qui inverse les changements d'un commit existant.</li>
     </ul>
     <p>Contrairement à <code>reset</code>, cette méthode conserve l'historique et convient aux branches partagées.</p>
-
-    <hr>
     <br>
+
     <h3>🔟 Gestion du dépôt distant</h3>
     <ul>
         <li><code>git remote -v</code> : afficher les dépôts distants configurés.</li>
@@ -128,9 +119,8 @@ git commit -m "Commit corrigé"</pre>
         <li><code>git pull --rebase</code> : récupérer les modifications distantes puis rejouer les commits locaux au-dessus de celles-ci.</li>
     </ul>
     <p><strong>✔ Bonne pratique :</strong> préférer <code>git pull --rebase</code> lorsque le workflow de l'équipe repose sur le rebase, afin d'éviter certains commits de merge inutiles.</p>
-
-    <hr>
     <br>
+
     <h3>1️⃣1️⃣ Stash — mettre son travail de côté</h3>
     <ul>
         <li><code>git stash</code> : mettre temporairement de côté les modifications suivies du répertoire de travail et de l'index.</li>
@@ -139,9 +129,8 @@ git commit -m "Commit corrigé"</pre>
         <li><code>git stash apply</code> : réappliquer un stash sans le supprimer de la liste.</li>
     </ul>
     <p>Pratique avant de changer rapidement de branche. Par défaut, les fichiers non suivis ne sont pas inclus.</p>
-
-    <hr>
     <br>
+
     <h3>1️⃣2️⃣ Nettoyage du dépôt</h3>
     <ul>
         <li><code>git clean -n</code> : prévisualiser les fichiers non suivis qui seraient supprimés.</li>
@@ -149,18 +138,16 @@ git commit -m "Commit corrigé"</pre>
         <li><code>git clean -fd</code> : supprimer les fichiers et les dossiers non suivis.</li>
     </ul>
     <p><strong>⚠️ Prudence :</strong> toujours utiliser <code>-n</code> avant <code>git clean</code> pour vérifier ce qui sera supprimé.</p>
-
-    <hr>
     <br>
+
     <h3>1️⃣3️⃣ Commandes avancées</h3>
     <ul>
         <li><code>git reflog</code> : consulter l'historique des déplacements des références locales et retrouver parfois des commits devenus difficiles d'accès.</li>
         <li><code>git cherry-pick HASH</code> : appliquer un commit précis sur la branche courante.</li>
         <li><code>git bisect start</code> : démarrer une recherche dichotomique pour identifier le commit qui a introduit un bug. La recherche nécessite ensuite de définir les états bon et mauvais, puis de tester les commits proposés.</li>
     </ul>
-
-    <hr>
     <br>
+
     <h3>🌐 Cloner un projet puis le rattacher à son GitHub</h3>
     <ol>
         <li>Ouvrir l'IDE.</li>
@@ -176,9 +163,8 @@ git commit -m "Commit corrigé"</pre>
 git remote set-url origin https://github.com/ORIMAWORKS/NOM_NOUVEAU_DEPOT.git
 git push -u origin main</pre>
     <p>Cette opération conserve l'historique Git local tout en publiant le projet dans ton dépôt personnel. Vérifie que le dépôt distant cible est bien celui que tu souhaites utiliser.</p>
-
-    <hr>
     <br>
+
     <h3>🧠 Workflow recommandé</h3>
     <pre>
 git switch main
@@ -195,9 +181,8 @@ git switch main
 git pull --rebase
 git merge feature-ma-fonction
 git push</pre>
-
-    <hr>
     <br>
+    
     <h3>✅ Bonnes pratiques</h3>
     <ul>
         <li>✔ Faire des commits petits et atomiques.</li>
@@ -211,8 +196,8 @@ git push</pre>
         <li>✔ Réserver <code>--force</code> aux situations maîtrisées.</li>
         <li>✔ Privilégier un historique compréhensible plutôt qu'un historique simplement rapide à produire.</li>
     </ul>
-
     <hr>
+    
     <br>
     <h3>📋 Mémo rapide</h3>
     <ul>

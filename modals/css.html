@@ -2,6 +2,159 @@
             <div class="display_column center"><img style="max-width:60px; height: auto;" src="./assets/img/css.svg">
                 <h2>CSS - Cheat Sheet</h2>
             </div>
+
+
+            <h3 class="neon">Effet néon</h3>
+                <ul>
+                    <li><pre>
+    .neon {
+        color: #fff;
+        text-shadow: 0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px #2965f1,
+            0 0 82px #2965f1,
+            0 0 92px #2965f1;
+        animation: flicker 3s infinite;
+    }
+            </pre>
+        </li>
+        <li>
+            <pre>
+    @keyframes flicker {
+        0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {opacity: 1;}
+        20%, 24%, 55% {opacity: 0.4;}
+    }
+            </pre>
+        </li>
+                </ul>
+
+
+ <h3>📱 Responsivité (Responsive Design)</h3>
+
+            <ul>
+
+                <li>
+                    <strong>Définition</strong><br>
+                    La responsivité est la capacité d'un site web à s'adapter automatiquement aux différentes tailles
+                    d'écran (smartphone, tablette, ordinateur...).
+                </li>
+
+                <li>
+                    <strong>Mobile First</strong><br>
+                    Aujourd'hui, la majorité de la navigation se fait sur smartphone. Il est donc recommandé de
+                    concevoir d'abord l'interface pour les petits écrans, puis de l'adapter progressivement aux écrans
+                    plus larges.
+                </li>
+
+                <li>
+                    <strong>Objectifs</strong><br>
+                    • Améliorer l'UX (User Experience)<br>
+                    • Faciliter l'accessibilité<br>
+                    • Optimiser la lisibilité<br>
+                    • Adapter la disposition des éléments selon l'espace disponible
+                </li>
+
+                <li>
+                    <strong>Bonnes pratiques</strong><br>
+                    • Utiliser des unités relatives (<code>%, vw, vh, rem, em</code>)<br>
+                    • Éviter les dimensions fixes lorsque c'est possible<br>
+                    • Utiliser <code>flexbox</code> ou <code>grid</code><br>
+                    • Tester sur plusieurs tailles d'écran
+                </li>
+
+                <li>
+                    <strong>Media Query</strong><br>
+                    Permet d'appliquer des règles CSS uniquement sous certaines conditions (largeur, orientation,
+                    résolution...).
+                    <pre>
+            @media (max-width: 768px) {
+                /* CSS spécifique mobile */
+            }
+        </pre>
+                </li>
+
+            </ul>
+ <h3>📐 Breakpoints courants (6 tailles)</h3>
+
+            <table>
+                <tr>
+                    <th>Type d'écran</th>
+                    <th>Largeur</th>
+                </tr>
+                <tr>
+                    <td>📱 Petit smartphone</td>
+                    <td>&lt; 576 px</td>
+                </tr>
+                <tr>
+                    <td>📱 Grand smartphone</td>
+                    <td>576 à 768 px</td>
+                </tr>
+                <tr>
+                    <td>📱 Petite tablette</td>
+                    <td>768 à 992 px</td>
+                </tr>
+                <tr>
+                    <td>💻 Grande tablette</td>
+                    <td>992 à 1200 px</td>
+                </tr>
+                <tr>
+                    <td>🖥️ PC standard</td>
+                    <td>1200 à 1400 px</td>
+                </tr>
+                <tr>
+                    <td>🖥️ Grand écran</td>
+                    <td>&gt; 1400 px</td>
+                </tr>
+            </table>
+
+            <h3>📐 Version simplifiée (4 tailles)</h3>
+
+            <table>
+                <tr>
+                    <th>Type d'écran</th>
+                    <th>Largeur</th>
+                </tr>
+                <tr>
+                    <td>📱 Smartphone</td>
+                    <td>&lt; 750 px</td>
+                </tr>
+                <tr>
+                    <td>📱 Tablette</td>
+                    <td>750 à 970 px</td>
+                </tr>
+                <tr>
+                    <td>💻 PC standard</td>
+                    <td>970 à 1170 px</td>
+                </tr>
+                <tr>
+                    <td>🖥️ Grand écran</td>
+                    <td>&gt; 1170 px</td>
+                </tr>
+            </table>
+            <h3>💡 Exemples de Media Queries</h3>
+            <ul>
+                <li>
+                    <strong>Mobile</strong><br>
+                    <code>@media (max-width: 768px) { ... }</code>
+                </li>
+                <li>
+                    <strong>Tablette</strong><br>
+                    <code>@media (min-width: 768px) and (max-width: 992px) { ... }</code>
+                </li>
+                <li>
+                    <strong>Desktop</strong><br>
+                    <code>@media (min-width: 1200px) { ... }</code>
+                </li>
+                <li>
+                    <strong>Mode paysage</strong><br>
+                    <code>@media (orientation: landscape) { ... }</code>
+                </li>
+                <li>
+                    <strong>Mode portrait</strong><br>
+                    <code>@media (orientation: portrait) { ... }</code>
+                </li>
+            </ul>
             <h3>🌱 Variables CSS (:root)</h3>
             <ul>
                 <li>Déclare des variables réutilisables dans tout le projet.</li>

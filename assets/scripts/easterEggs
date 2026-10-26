@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const preloadSound = document.getElementById("konami-sound");
+    const preloadSound = document.getElementById("steam-sound");
     preloadSound.load();
 
     const konamiCode = [
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
             position++;
 
             if (position === sims.length) {
-                activateEasterEgg();
+                activateEasterEggSims();
                 position = 0;
             }
 

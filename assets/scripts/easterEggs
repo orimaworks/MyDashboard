@@ -20,6 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "s","u","d","o"
     ];
 
+    const notfound = [
+        "4","0","4"
+    ];
+
     let positionKonami = 0;
     let positionSims = 0;
     let positionLinux = 0;

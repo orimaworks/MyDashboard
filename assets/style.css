@@ -704,6 +704,55 @@ input:checked + .slider:before {
     }
 }
 
+/* =========================================================
+   GESTION DES TOOLTIPS
+   ========================================================= */
+
+.tooltip-trigger {
+    position: relative;
+}
+
+.tooltip-trigger::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 10px);
+    transform: translate(-50%, 4px);
+
+    width: max-content;
+    max-width: 260px;
+    padding: 8px 12px;
+
+    background: #001a33;
+    color: #FFDD09;
+    border: 1px solid #18314a;
+    border-radius: 6px;
+    box-shadow: 0 14px 12px rgb(0 0 0 / 20%);
+
+    font-size: 0.8rem;
+    font-weight: normal;
+    line-height: 1.4;
+    text-align: center;
+    white-space: normal;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 180ms ease,
+        transform 180ms ease,
+        visibility 0s linear 180ms;
+}
+
+.tooltip-trigger:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+
+    transition-delay: 0s;
+}
+
+
 
 /* =====================================================
 		Tablette (portrait) – largeur ≤ 1024 px

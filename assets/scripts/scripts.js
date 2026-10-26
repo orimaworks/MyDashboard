@@ -87,10 +87,11 @@ cards.forEach(card => {
             <a href="${card.url}"
                target="${target}"
                rel="${rel}">
-
-                <div class="card"
+                                                            
+                <div class="card tooltip-trigger"
                      style="${color}"
-                     title="${card.title}">
+                     data-tooltip="${card.title}"
+                     >
                     ${content}
                 </div>
 
@@ -105,7 +106,7 @@ cards.forEach(card => {
 
 });
 
-
+                //   title="${card.title}"
 
 //--------------------------------------
 //              MODALE

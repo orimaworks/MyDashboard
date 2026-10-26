@@ -549,6 +549,8 @@ pre {
 	font-family: "Consolas", "Courier New", monospace;
 	font-size: .85rem;
 	line-height: 1.5;
+	margin-top : 10px;
+	margin-bottom : 10px;
 	border-left: 4px solid var(--couleur-secondaire);
 }
 

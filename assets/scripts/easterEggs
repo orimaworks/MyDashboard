@@ -62,39 +62,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-function activateEasterEggKonami() {
-     const audio = document.getElementById("steam-sound");
-    if (audio) {
-        audio.currentTime = 0;
-        audio.play().catch(console.warn);
-    }
-
+function showEasterToast(label, title, description) {
     let toast = document.getElementById("easter-toast");
 
     if (!toast) {
         toast = document.createElement("div");
         toast.id = "easter-toast";
-
-        toast.innerHTML = `
-    <div class="achievement-content">
-        <div class="achievement-label">New Achievement unlocked</div>
-        <div class="achievement-title">Konami Code, vraiment ?</div>
-        <div class="achievement-description">
-            Désolé, mais KONAMI n'a rien à voir avec tout ça...😆
-        </div>
-    </div>
-`;
-
         document.body.appendChild(toast);
     }
 
-    // Force l'état initial
+    toast.innerHTML = `
+        <div class="achievement-content">
+            <div class="achievement-label">${label}</div>
+            <div class="achievement-title">${title}</div>
+            <div class="achievement-description">${description}</div>
+        </div>
+    `;
+
     toast.classList.remove("visible");
-
-    // Force un reflow
     void toast.offsetWidth;
-
-    // Lance l'animation
     toast.classList.add("visible");
 
     clearTimeout(toast._timer);
@@ -106,46 +92,32 @@ function activateEasterEggKonami() {
 
 
 
+function activateEasterEggKonami() {
+    const audio = document.getElementById("steam-sound");
 
-
-function activateEasterEggSims() {
-     const audio = document.getElementById("steam-sound");
     if (audio) {
         audio.currentTime = 0;
         audio.play().catch(console.warn);
     }
 
-    let toast = document.getElementById("easter-toast");
+    showEasterToast(
+        "New Achievement unlocked",
+        "Konami Code, vraiment ?",
+        "Désolé, mais KONAMI n'a rien à voir avec tout ça... 😆"
+    );
+}
 
-    if (!toast) {
-        toast = document.createElement("div");
-        toast.id = "easter-toast";
+function activateEasterEggSims() {
+    const audio = document.getElementById("steam-sound");
 
-        toast.innerHTML = `
-    <div class="achievement-content">
-        <div class="achievement-label">More Money</div>
-        <div class="achievement-title">Besoin d'argent ?</div>
-        <div class="achievement-description">
-            1000¤ simflooz viennent d'être crédités 😆
-        </div>
-    </div>
-`;
-
-        document.body.appendChild(toast);
+    if (audio) {
+        audio.currentTime = 0;
+        audio.play().catch(console.warn);
     }
 
-    // Force l'état initial
-    toast.classList.remove("visible");
-
-    // Force un reflow
-    void toast.offsetWidth;
-
-    // Lance l'animation
-    toast.classList.add("visible");
-
-    clearTimeout(toast._timer);
-
-    toast._timer = setTimeout(() => {
-        toast.classList.remove("visible");
-    }, 5000);
+    showEasterToast(
+        "More Money",
+        "Besoin d'argent ?",
+        "1000¤ simflooz viennent d'être crédités 😆"
+    );
 }

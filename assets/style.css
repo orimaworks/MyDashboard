@@ -330,7 +330,7 @@ kbd {
 	letter-spacing: 5%;
 	font-size: 2.5em;
 	animation:
-	hologram 8s infinite;
+	/* hologram 8s infinite; */
 }
 
 .logo > img {
@@ -358,7 +358,7 @@ kbd {
 	margin-left: 0.3em;
 }
 
-@keyframes logoPulse {
+/* @keyframes logoPulse {
 
 	0%, 100% {
 		transform: scale(1);
@@ -370,7 +370,7 @@ kbd {
 		filter: drop-shadow(0 0 12px var(--secondary-color));
 	}
 
-}
+} */
 
 @keyframes hologram {
 
@@ -669,12 +669,21 @@ input:checked + .slider:before {
       text-align: left;
     }
 
+.neon {
+	color: #fff;
+	text-shadow: 0 0 7px #fff,
+	0 0 10px #fff,
+	0 0 21px #fff,
+	0 0 42px #2965f1,
+	0 0 82px #2965f1,
+	0 0 92px #2965f1;
+	animation: flicker 3s infinite;
+}
 
-
-
-
-
-
+@keyframes flicker {
+	0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {opacity: 1;}
+	20%, 24%, 55% {opacity: 0.4;}
+}
 
 
 

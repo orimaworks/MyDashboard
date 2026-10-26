@@ -157,7 +157,7 @@ function showEasterToast(type, label, title, description) {
 
     toast._timer = setTimeout(() => {
         toast.classList.remove("visible");
-    }, 5000);
+    }, 7000);
 }
 
 

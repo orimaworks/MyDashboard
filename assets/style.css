@@ -899,7 +899,7 @@ input:checked + .slider:before {
     display: inline-block;
     width: 1em;
     height: 1em;
-    background: url("./assets/img/rockstar.svg") center / contain no-repeat;
+    background: url("img/rockstar.svg") center / contain no-repeat;
 }
 
 #easter-toast.gta .achievement-label {

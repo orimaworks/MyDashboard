@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let positionKonami = 0;
     let positionSims = 0;
     let positionLinux = 0;
+    let positionnotfound = 0;
 
 
     document.addEventListener("keydown", (event) => {
@@ -69,6 +70,18 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         } else {
             positionLinux = key === linux[0] ? 1 : 0;
+        }
+
+        // VERSION ERROR 404
+        if (key === notfound[positionnotfound]) {
+            positionnotfound++;
+
+            if (positionnotfound === notfound.length) {
+                activateEasterEggNotfound();
+                positionnotfound = 0;
+            }
+        } else {
+            positionnotfound = key === notfound[0] ? 1 : 0;
         }
 
 
@@ -153,7 +166,24 @@ function activateEasterEggLinux() {
     showEasterToast(
         "linux",
         "Access Granted",
-        "Privilèges administrateurs accordés",
+        "Permission accordée",
         "Pendant une durée de 0,0000000004 sec. Faites-vite !"
+    );
+}
+
+
+function activateEasterEggNotfound() {
+    const audio = document.getElementById("steam-sound");
+
+    if (audio) {
+        audio.currentTime = 0;
+        audio.play().catch(console.warn);
+    }
+
+    showEasterToast(
+        "notfound",
+        "ERROR 404",
+        "Easter Egg not found",
+        "Please try again later. Or not."
     );
 }

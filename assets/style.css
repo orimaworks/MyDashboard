@@ -874,6 +874,15 @@ input:checked + .slider:before {
     color: #dd3f00;
 }
 
+/* Easter egg ERROR 404 */
+#easter-toast.notfound::before {
+    content: "❌";
+}
+
+#easter-toast.notfound .achievement-label {
+    color: #dd3f00;
+}
+
 
 
 

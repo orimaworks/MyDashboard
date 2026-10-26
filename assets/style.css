@@ -847,8 +847,23 @@ input:checked + .slider:before {
     font-size: 12px;
 }
 
+/* Easter egg Konami */
+#easter-toast.konami::before {
+    content: "🎮";
+}
 
+#easter-toast.konami .achievement-label {
+    color: #66c0f4;
+}
 
+/* Easter egg Sims */
+#easter-toast.sims::before {
+    content: "💰";
+}
+
+#easter-toast.sims .achievement-label {
+    color: #81b900;
+}
 
 /* =====================================================
 		Tablette (portrait) – largeur ≤ 1024 px

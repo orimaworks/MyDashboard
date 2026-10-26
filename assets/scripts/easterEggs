@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-function showEasterToast(label, title, description) {
+function showEasterToast(type, label, title, description) {
     let toast = document.getElementById("easter-toast");
 
     if (!toast) {
@@ -71,6 +71,11 @@ function showEasterToast(label, title, description) {
         document.body.appendChild(toast);
     }
 
+    // Applique le style correspondant au code détecté
+    toast.classList.remove("konami", "sims");
+    toast.classList.add(type);
+
+    // Met à jour le contenu
     toast.innerHTML = `
         <div class="achievement-content">
             <div class="achievement-label">${label}</div>
@@ -101,6 +106,7 @@ function activateEasterEggKonami() {
     }
 
     showEasterToast(
+        "konami",
         "New Achievement unlocked",
         "Konami Code, vraiment ?",
         "Désolé, mais KONAMI n'a rien à voir avec tout ça... 😆"
@@ -116,6 +122,7 @@ function activateEasterEggSims() {
     }
 
     showEasterToast(
+        "sims",
         "More Money",
         "Besoin d'argent ?",
         "1000¤ simflooz viennent d'être crédités 😆"

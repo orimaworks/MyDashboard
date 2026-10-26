@@ -123,8 +123,8 @@ function activateEasterEggSims() {
 
     showEasterToast(
         "sims",
-        "More Money",
-        "Besoin d'argent ?",
-        "1000¤ simflooz viennent d'être crédités 😆"
+        "Need More Money",
+        "Les temps sont durs ?",
+        "1000$ simflouz viennent d'être crédités 🤑"
     );
 }

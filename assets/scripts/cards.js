@@ -286,7 +286,7 @@ const cards = [
     {
         title: "GitHub",
         url: "https://github.com/login",
-        icon: "./assets/img/github.png",
+        icon: "./assets/img/github.svg",
 		label:"GitHub",
 		category: "Geek"
     },

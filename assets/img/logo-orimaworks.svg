@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 672 632" role="img" aria-labelledby="title desc">
+  <title id="title">Logo Orima Works</title>
+  <desc id="desc">Anneau bleu nuit ouvert, W rose et losange bleu clair.</desc>
+  <defs>
+    <style>
+      .ring { fill: none; stroke: #001A33; stroke-width: 76; stroke-linecap: butt; }
+      .pink { fill: #EC5197; }
+      .blue { fill: #7AB3EB; }
+    </style>
+  </defs>
+  <!-- Anneau reconstruit avec un arc régulier et une épaisseur constante -->
+  <path class="ring" d="M 562 153 A 284 284 0 1 0 244 578" />
+  <!-- Losange aux arêtes nettes -->
+  <path class="blue" d="M 609 155 L 638 205 L 573 269 L 551 214 Z" />
+  <!-- W redessiné avec des sommets et des courbes maîtrisés -->
+  <path class="pink" d="
+    M 158 346
+    L 240 346
+    L 319 493
+    L 405 347
+    L 493 499
+    C 535 465 559 411 577 344
+    L 643 258
+    A 320 320 0 0 1 483 603
+    L 405 475
+    L 319 614
+    Z" />
+</svg>

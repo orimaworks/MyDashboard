@@ -35,7 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
             position++;
 
             if (position === konamiCode.length) {
+                console.log("activation")
                 activateEasterEggKonami();
+                console.log("activated")
                 position = 0;
             }
 
@@ -50,7 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
             position++;
 
             if (position === sims.length) {
+                console.log("activation")
                 activateEasterEggSims();
+                console.log("activated")
                 position = 0;
             }
 
@@ -72,7 +76,7 @@ function activateEasterEggKonami() {
     }
 
     let toast = document.getElementById("easter-toast");
-
+    
     if (!toast) {
         toast = document.createElement("div");
         toast.id = "easter-toast";

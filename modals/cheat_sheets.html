@@ -1,149 +1,151 @@
- <dialog id="cheat_sheets">
+<dialog id="cheat_sheets">
+    <div class="display_column center">
+        <h2>⭐ Cheat Sheets</h2>
+    </div>
 
-            <h2 class="center"> ⭐ Cheat Sheets</h2>
+    <br>
+    <h3>💻 Windows</h3>
+    <ul>
+        <li><kbd>Ctrl</kbd> + <kbd>Windows</kbd> + <kbd>D</kbd> : créer un nouveau bureau virtuel.</li>
+        <li><kbd>Ctrl</kbd> + <kbd>Windows</kbd> + <kbd>←</kbd> : basculer vers le bureau virtuel situé à gauche.</li>
+        <li><kbd>Ctrl</kbd> + <kbd>Windows</kbd> + <kbd>→</kbd> : basculer vers le bureau virtuel situé à droite.</li>
+    </ul>
 
+    <br>
+    <h3>📄 Office / Outlook</h3>
+    <ul>
+        <li><kbd>Alt</kbd> + <kbd>S</kbd>, puis <kbd>S</kbd>, puis <kbd>1</kbd> : accéder à la signature (séquence dépendante de la version d'Outlook).</li>
+        <li><kbd>Alt</kbd> + <kbd>J</kbd>, puis <kbd>M</kbd>, puis <kbd>S</kbd> : accéder aux options de signature (séquence dépendante de la version d'Outlook).</li>
+        <li><kbd>Alt</kbd> + <kbd>S</kbd>, puis <kbd>A</kbd>, puis <kbd>F</kbd>, puis <kbd>P</kbd> : insérer une pièce jointe (séquence dépendante de la version d'Outlook).</li>
+        <li><kbd>Ctrl</kbd> + <kbd>N</kbd> : créer un nouvel e-mail.</li>
+        <li><kbd>Ctrl</kbd> + <kbd>R</kbd> : répondre à un e-mail.</li>
+        <li><kbd>Ctrl</kbd> + <kbd>F</kbd> : transférer un e-mail dans les applications où ce raccourci est affecté à cette action.</li>
+        <li><kbd>Ctrl</kbd> + <kbd>Y</kbd> : rétablir une action.</li>
+    </ul>
 
-             <h3>💻 Windows</h3>
-            <ul>
-                <li>
-                    <kbd>Ctrl</kbd> + <kbd>Windows</kbd> + <kbd> D </kbd> : Créer un nouveau bureau
-                </li>
-                <li>
-                    <kbd>Ctrl</kbd> + <kbd>Win</kbd> + <kbd> ⬅️ </kbd> ou <kbd> ➡️ </kbd> : Basculer vers un autre bureau
-                </li>
-                </ul>
+    <br>
+    <h3>💻 Développement</h3>
+    <ul>
+        <li>
+            Dans les outils de développement du navigateur, sélectionner un élément HTML avec l'inspecteur, puis ajouter l'attribut suivant à sa balise ouvrante pour rendre son contenu éditable :
+            <code>contenteditable="true"</code>.
+        </li>
+        <li>
+            Documentation Python : utiliser une docstring pour documenter une fonction, une classe ou un module.
+            <code>"""Description de la fonction."""</code>
+        </li>
+        <li>
+            Frontmatter YAML : bloc de métadonnées placé au début d'un document.
+            <pre>---
+title: ""
+description: ""
+date: ""
+---</pre>
+        </li>
+        <li>Commentaire sur une ligne Python : <code># commentaire</code>.</li>
+        <li>Commentaire HTML : <code>&lt;!-- commentaire --&gt;</code>.</li>
+        <li>Commentaire CSS : <code>/* commentaire */</code>.</li>
+    </ul>
 
-            <h3>📄 Office / Outlook </h3>
-            <ul>
-                <li>Signature (isolé) : <kbd>ALT</kbd> + <kbd>S</kbd><kbd>S</kbd><kbd>1</kbd></li>
-                <li>Signature (fen. context.) : <kbd>ALT</kbd> + <kbd>J</kbd><kbd>M</kbd><kbd>S</kbd></li>
-                <li>Insérer une pièce jointe Outlook : <kbd>ALT</kbd> + <kbd>S</kbd><kbd>A</kbd><kbd>F</kbd><kbd>P</kbd>
-                </li>
-                <li>Nouvel email Outlook : <kbd>CTRL</kbd> + <kbd>N</kbd></li>
-                <li>Répondre à un email : <kbd>CTRL</kbd> + <kbd>R</kbd></li>
-                <li>Transférer un email : <kbd>CTRL</kbd> + <kbd>F</kbd></li>
-                <li>Rétablir : <kbd>CTRL</kbd> + <kbd>Y</kbd></li>
-            </ul>
+    <br>
+    <h3>🗒️ Conventions de nommage</h3>
+    <ul>
+        <li>Classe : <code>CamelCase</code>.</li>
+        <li>Constante : <code>SNAKE_CASE</code>.</li>
+        <li>Variable ou fonction : <code>snake_case</code> (convention courante en Python).</li>
+    </ul>
 
+    <br>
+    <h3>⌨️ Commande Exécuter (Windows + R)</h3>
+    <ul>
+        <li><code>%appdata%</code> : ouvrir le dossier des données itinérantes de l'utilisateur.</li>
+        <li><code>%localappdata%</code> : ouvrir le dossier des données locales de l'utilisateur.</li>
+        <li><code>%temp%</code> : ouvrir le dossier temporaire de l'utilisateur.</li>
+        <li><code>shell:startup</code> : ouvrir le dossier de démarrage automatique de l'utilisateur.</li>
+        <li><code>optionalfeatures</code> : activer ou désactiver des fonctionnalités Windows.</li>
+        <li><code>winver</code> : afficher la version de Windows.</li>
+        <li><code>msinfo32</code> : afficher les informations système.</li>
+        <li><code>msconfig</code> : ouvrir la configuration système.</li>
+        <li><code>taskmgr</code> : ouvrir le Gestionnaire des tâches.</li>
+        <li><code>devmgmt.msc</code> : ouvrir le Gestionnaire de périphériques.</li>
+        <li><code>diskmgmt.msc</code> : ouvrir la Gestion des disques.</li>
+        <li><code>cleanmgr</code> : ouvrir l'outil de nettoyage de disque.</li>
+        <li><code>services.msc</code> : gérer les services Windows.</li>
+        <li><code>regedit</code> : ouvrir l'Éditeur du Registre.</li>
+        <li><code>appwiz.cpl</code> : ouvrir Programmes et fonctionnalités.</li>
+        <li><code>%userprofile%</code> : ouvrir le dossier du profil utilisateur.</li>
+        <li><code>C:\ProgramData</code> : accéder au dossier des données communes des programmes.</li>
+    </ul>
 
-            <h3>💻 Développement</h3>
-            <ul>
-                <li>
-                    <kbd>CTRL</kbd> + <kbd>MAJ</kbd> + <kbd> C </kbd>, puis ajouter <code>contenteditable=""</code> dans
-                    la baslise &lt;HTML&gt;
-                </li>
-                <li>
-                    Documentation Python :
-                    <code>"""Docstring"""</code>
-                </li>
+    <br>
+    <h3>🌐 Réseau</h3>
+    <ul>
+        <li><code>ipconfig</code> : afficher la configuration IP.</li>
+        <li><code>ipconfig /all</code> : afficher la configuration réseau détaillée.</li>
+        <li><code>ipconfig /flushdns</code> : vider le cache du résolveur DNS.</li>
+        <li><code>ping adresse_ip</code> : tester la connectivité vers une adresse IP.</li>
+        <li><code>netstat -ano</code> : afficher les connexions réseau et les identifiants des processus associés.</li>
+        <li><code>ncpa.cpl</code> : ouvrir les connexions réseau.</li>
+    </ul>
 
-                <li>
-                    Frontmatter YAML :
-                    <pre>
-        ---
-        title: ""
-        description: ""
-        date: ""
-        ---
-    </pre>
-                </li>
+    <br>
+    <h3>🔒 Sécurité et confidentialité</h3>
+    <ul>
+        <li><code>netplwiz</code> : gérer les comptes utilisateur et certaines options de connexion.</li>
+        <li><code>sfc /scannow</code> : analyser et tenter de réparer les fichiers système protégés (terminal exécuté en administrateur recommandé).</li>
+        <li><code>secpol.msc</code> : gérer les stratégies de sécurité locale sur les éditions Windows compatibles, notamment Pro.</li>
+    </ul>
 
-                <h3>🗒️ Conventions de nommage : </h3>
-                <ul>
-                    <li>Classe : <code>CamelCase</code></li>
-                    <li>Constante : <code>SNAKE_CASE</code></li>
-                    <li>Variable / fonction : <code>snake_case</code></li>
-                </ul>
+    <br>
+    <h3>🛑 Arrêt et redémarrage de Windows</h3>
+    <ul>
+        <li><code>shutdown /s /t 0</code> : arrêter Windows immédiatement.</li>
+        <li><code>shutdown /r /t 0</code> : redémarrer Windows immédiatement.</li>
+        <li><code>shutdown /s /t 60</code> : programmer l'arrêt de Windows dans 60 secondes.</li>
+        <li><code>shutdown /a</code> : annuler un arrêt programmé, si le délai le permet.</li>
+    </ul>
 
-                <li>Commentaire ligne Python : <code># commentaire</code></li>
-                <li>Commentaire HTML : <code>&lt;!-- commentaire --&gt;</code></li>
-                <li>Commentaire CSS : <code>/* commentaire */</code></li>
-            </ul>
+    <br>
+    <h3>⚡ Options avancées utiles</h3>
+    <ul>
+        <li>
+            God Mode : créer un dossier avec le nom suivant pour regrouper de nombreux paramètres système :
+            <code>GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}</code>.
+        </li>
+        <li><code>taskschd.msc</code> : ouvrir le Planificateur de tâches pour créer des automatisations.</li>
+    </ul>
 
+    <br>
+    <h3>🔳 QR Code dans Word</h3>
+    <ul>
+        <li>
+            <kbd>Ctrl</kbd> + <kbd>F9</kbd> : insérer un champ Word.
+        </li>
+        <li>
+            Dans les accolades générées par Word, saisir le champ suivant pour générer un QR Code à partir d'une URL :
+            <pre>{ DISPLAYBARCODE "https://exemple.fr" QR \t \h 1000 }</pre>
+        </li>
+        <li>Remplacer <code>https://exemple.fr</code> par l'adresse souhaitée, puis mettre à jour le champ pour générer le code-barres.</li>
+    </ul>
 
-            <h3>⌨️ Commande Exécuter (Win + R)</h3>
-            <ul>
-                <li>Applications utilisateur : <code>%appdata%</code></li>
-                <li>Données locales : <code>%localappdata%</code></li>
-                <li>Dossier temporaire : <code>%temp%</code></li>
-                <li>Dossier de démarrage automatique : <code>shell:startup</code></li>
-                <li>Activer/désactiver des fonctionnalités Windows : <code>optionalfeatures</code></li>
-                <li>Version Windows : <code>winver</code></li>
-                <li>Informations système : <code>msinfo32</code></li>
-                <li>Configuration système : <code>msconfig</code></li>
-                <li>Gestionnaire des tâches : <code>taskmgr</code></li>
-                <li>Gestionnaire de périphériques : <code>devmgmt.msc</code></li>
-                <li>Gestion des disques : <code>diskmgmt.msc</code></li>
-                <li>Nettoyage de disque : <code>cleanmgr</code></li>
-                <li>Services Windows : <code>services.msc</code></li>
-                <li>Éditeur du registre : <code>regedit</code></li>
-                <li>Programmes installés : <code>appwiz.cpl</code></li>
-                <li>Profil utilisateur : <code>%userprofile%</code></li>
-                <li>Données globales de programmes : <code>C:\ProgramData</code>
-            </ul>
-            <h4>🌐 Réseau</h4>
-            <ul>
-                <li>Configuration IP : <code>ipconfig</code></li>
-                <li>Configuration complète : <code>ipconfig /all</code></li>
-                <li>Vider le cache DNS : <code>ipconfig /flushdns</code></li>
-                <li>Tester une connexion : <code>ping adresse_ip</code></li>
-                <li>Voir les connexions réseau : <code>netstat -ano</code></li>
-                <li>Paramètres des cartes réseau : <code>ncpa.cpl</code></li>
-            </ul>
-            <h4>🔒 SÉCURITÉ & CONFIDENTIALITÉ</h4>
-            <ul>
-                <li>Gérer les utilisateurs / connexion automatique <code>netplwiz</code></li>
-                <li>Analyse et réparation des fichiers système : <code>sfc /scannow</code></li>
-            </ul>
-            <h4>🛑 Arrêt / Redémarrage Windows</h4>
-            <ul>
-                <li>Arrêt immédiat : <code>shutdown /s /t 0</code></li>
-                <li>Redémarrage immédiat :<code>shutdown /r /t 0</code></li>
-                <li>Arrêt avec délai de 60 secondes :<code>shutdown /s /t 60</code></li>
-                <li>Annuler un arrêt programmé :<code>shutdown /a</code></li>
-            </ul>
+    <br>
+    <h3>📝 Créer un fichier RTF avec l'invite de commandes</h3>
+    <ul>
+        <li><kbd>Alt</kbd> + <kbd>D</kbd> : sélectionner la barre d'adresse de l'Explorateur de fichiers.</li>
+        <li>Dans cette barre, saisir <code>cmd</code>, puis valider avec <kbd>Entrée</kbd> pour ouvrir l'invite de commandes dans le dossier courant.</li>
+        <li>Exécuter les commandes suivantes pour créer un fichier RTF vide et tenter de l'ouvrir :</li>
+    </ul>
+    <pre>echo. > test.rtf
+start write test.rtf</pre>
+    <p>Remarque : WordPad n'est plus fourni avec les versions récentes de Windows 11. La commande <code>write</code> peut donc ne pas fonctionner.</p>
 
+    <br>
+    <h3>🌐 Navigateur</h3>
+    <ul>
+        <li><code>msedge --inprivate "https://account.proton.me/fr/apps"</code> : ouvrir Proton dans une fenêtre InPrivate de Microsoft Edge depuis une invite de commandes ou la boîte Exécuter.</li>
+    </ul>
 
-
-            <h3>⚡ BONUS : OPTIONS CACHÉES UTILES </h3>
-            <ul>
-                <li>God Mode → Créer un dossier nommé : <code>GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}</code></li>
-                <li>Planificateur de tâches (automatisations) <code>taskschd.msc</code></li>
-                <li>Stratégies de sécurité locale (édition Pro seulement) <code>secpol.msc</code></li>
-            </ul>
-            <h3>🔳 QR Code Word</h3>
-            <ul>
-                <li>
-                    Génération QR Code :
-                    <kbd>Ctrl</kbd> + <kbd>F9</kbd>
-                    <pre>
-            { DISPLAYBARCODE 
-            "url_vers_le_site"
-            QR \t \h 1000 }
-        </pre>
-                </li>
-            </ul>
-
-            <h3> Création d'un fichier WordPad </h3>
-            <ul>
-                <li> Se placer dans le dossier voulu </li>
-                <pre>
-        alt+D -> cmd
-        echo. > test.rtf
-        start write test.rtf
-    </pre>
-            </ul>
-            <h3>🌐 Navigateur</h3>
-            <ul>
-                <li>
-                    Ouvrir Proton en navigation privée :
-                    <code>--inprivate "https://account.proton.me/fr/apps"</code>
-                </li>
-            </ul>
-
-            <div>
-                <button id="btn_fermeture" data-close>Fermer</button>
-            </div>
-        </dialog>
-
-
+    <div>
+        <button id="btn_fermeture" data-close>Fermer</button>
+    </div>
+</dialog>

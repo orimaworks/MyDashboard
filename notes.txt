@@ -28,10 +28,9 @@ required_elements:
 hierarchy:
   - "dialog"
   - "div.display_column.center"
-  - "img (optional)"
+  - "img (required)"
   - "h2 (exactly one)"
   - "p (optional introduction)"
-  - "section content"
   - "div containing the close button"
 
 dialog:

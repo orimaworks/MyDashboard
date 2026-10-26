@@ -1,0 +1,72 @@
+<dialog id="json"> <div class="display_column center"> <img src="./assets/img/json.svg" style="max-width:60px; height: auto;" alt="JSON"> <h2>JSON</h2> <p>JavaScript Object Notation — format léger d'échange de données, facile à lire et à écrire pour les humains et les machines.</p> <br>
+<h3>📝 Structure de base</h3>
+<p>JSON est construit sur deux structures :</p>
+<ul>
+  <li>Une collection de paires nom/valeur — objet enveloppé dans <code>{}</code></li>
+  <li>Une liste ordonnée de valeurs — tableau enveloppé dans <code>[]</code></li>
+</ul>
+<p>Exemple minimal :</p>
+<pre>{
+"nom": "Orima", "version": 2.0 }</pre>
+
+<br>
+<h3>🔤 Types de données</h3>
+<p>JSON prend en charge six types de données :</p>
+<ul>
+  <li><code>string</code> — chaîne de caractères entre guillemets doubles</li>
+  <li><code>number</code> — nombre (sans guillemets)</li>
+  <li><code>object</code> — collection structurée <code>{}</code></li>
+  <li><code>array</code> — liste ordonnée <code>[]</code></li>
+  <li><code>boolean</code> — <code>true</code> ou <code>false</code></li>
+  <li><code>null</code> — valeur vide</li>
+</ul>
+<p>Exemples :</p>
+<pre>{
+"texte": "chaîne", "nombre": 42, "actif": true, "vide": null, "liste": [1, 2, 3], "objet": {"clé": "valeur"} }</pre>
+
+<br>
+<h3>⚙️ Syntaxe et règles</h3>
+<ul>
+  <li>Toujours utiliser des guillemets doubles <code>"</code> pour les chaînes</li>
+  <li>Ne pas mettre de virgule après le dernier élément</li>
+  <li>Ne pas inclure de commentaires natifs</li>
+  <li>Respecter la casse (<code>true</code> ≠ <code>True</code>)</li>
+  <li>Les clés doivent toujours être des chaînes</li>
+</ul>
+<p>Exemple invalide :</p>
+<pre>{
+"nom": "test", // Commentaire interdit valeur: "error" // Clé sans guillemets }</pre>
+
+<br>
+<h3>🛠️ Validation</h3>
+<p>Outils de validation recommandés :</p>
+<ul>
+  <li><a href="https://jsonlint.com" target="_blank">JSONLint</a> — validateur en ligne</li>
+  <li><a href="https://jsonformatter.org" target="_blank">JSON Formatter</a> — formatage et validation</li>
+  <li><code>jq</code> — outil CLI Unix</li>
+</ul>
+<p>Commande <code>jq</code> :</p>
+<pre>cat fichier.json | jq '.'</pre>
+<p>Raccourcis clavier :</p>
+<ul>
+  <li><kbd>Ctrl</kbd> + <kbd>S</kbd> : sauvegarder le fichier</li>
+  <li><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> : ouvrir la palette de commandes (éditeurs)</li>
+</ul>
+
+<br>
+<h3>💾 Bonnes pratiques</h3>
+<ul>
+  <li>Utiliser <code>utf-8</code> comme encodage</li>
+  <li>Formater avec indentation pour la lisibilité</li>
+  <li>Valider contre un schéma (<code>JSON Schema</code>) pour les projets complexes</li>
+  <li>Éviter les données sensibles en clair (mots de passe, tokens)</li>
+  <li>Minifier (<code>compact</code>) pour la production si nécessaire</li>
+</ul>
+
+<div>
+  <button data-close id="btn_fermeture">Fermer</button>
+</div>
+</div> </dialog>
+
+
+

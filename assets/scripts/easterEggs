@@ -10,15 +10,20 @@ document.addEventListener("DOMContentLoaded", () => {
         "b","a"
     ];
 
-
     const sims = [
         "r","o","s","e","b","u","d"
         // "m","o","s","e","r","l","o","d","e"
         // "k","l","a","p","a","u","c","i","u","s"
     ];
 
+    const linux = [
+        "s","u","d","o"
+    ];
+
     let positionKonami = 0;
     let positionSims = 0;
+    let positionLinux = 0;
+
 
     document.addEventListener("keydown", (event) => {
 
@@ -35,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
             positionKonami++;
 
             if (positionKonami === konamiCode.length) {
-                console.log("Activation Konami");
                 activateEasterEggKonami();
                 positionKonami = 0;
             }
@@ -48,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
             positionSims++;
 
             if (positionSims === sims.length) {
-                console.log("Activation Sims");
                 activateEasterEggSims();
                 positionSims = 0;
             }
@@ -56,7 +59,17 @@ document.addEventListener("DOMContentLoaded", () => {
             positionSims = key === sims[0] ? 1 : 0;
         }
 
+        // VERSION LINUX
+        if (key === linux[positionLinux]) {
+            positionLinux++;
 
+            if (positionLinux === linux.length) {
+                activateEasterEggLinux();
+                positionLinux = 0;
+            }
+        } else {
+            positionLinux = key === linux[0] ? 1 : 0;
+        }
 
 
     });
@@ -72,7 +85,7 @@ function showEasterToast(type, label, title, description) {
     }
 
     // Applique le style correspondant au code détecté
-    toast.classList.remove("konami", "sims");
+    toast.classList.remove("konami", "sims", "linux");
     toast.classList.add(type);
 
     // Met à jour le contenu
@@ -126,5 +139,21 @@ function activateEasterEggSims() {
         "Need More Money",
         "Les temps sont durs ?",
         "1000$ simflouz viennent d'être crédités 🤑"
+    );
+}
+
+function activateEasterEggLinux() {
+    const audio = document.getElementById("steam-sound");
+
+    if (audio) {
+        audio.currentTime = 0;
+        audio.play().catch(console.warn);
+    }
+
+    showEasterToast(
+        "linux",
+        "Access Granted",
+        "Privilèges administrateurs accordés",
+        "Pendant une durée de 0,0000000004 sec. Faites-vite !"
     );
 }

@@ -865,6 +865,20 @@ input:checked + .slider:before {
     color: #81b900;
 }
 
+/* Easter egg Linux */
+#easter-toast.linux::before {
+    content: "🐧";
+}
+
+#easter-toast.linux .achievement-label {
+    color: #dd3f00;
+}
+
+
+
+
+
+
 /* =====================================================
 		Tablette (portrait) – largeur ≤ 1024 px
    ===================================================== */

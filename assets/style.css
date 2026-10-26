@@ -259,7 +259,7 @@ footer {
 header {
   min-height: var(--header-height);
   padding: 10px;
-  background-color: linear-gradient(180deg, var(--couleur-primaire) 0%,#002141 100%);
+  background: linear-gradient(180deg, #001a33 0%,#002141 100%);
   color: var(--couleur-secondaire);
   display: flex ;
   flex-direction: row ;

@@ -754,6 +754,101 @@ input:checked + .slider:before {
 }
 
 
+/* =====================================================
+		ESTER EGGS
+   ===================================================== */
+#easter-toast {
+    position: fixed;
+    bottom: 70px;
+    right: 30px;
+    width: 360px;
+    min-height: 82px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 18px;
+
+    /* Style Steam */
+    background: linear-gradient(
+        135deg,
+        #1b2838 0%,
+        #171d25 100%
+    );
+
+    border: 1px solid #3a4a5c;
+    border-radius: 3px;
+    color: #d6d7d8;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(102, 192, 244, 0.08);
+
+    /* Animation */
+    opacity: 0;
+    transform: translateY(70px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+
+    z-index: 9999;
+}
+
+#easter-toast.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Icône de l'achievement */
+#easter-toast::before {
+    content: "🎮";
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    background: #101820;
+    border: 1px solid #3c5268;
+    border-radius: 2px;
+    box-shadow:
+        inset 0 0 12px rgba(102, 192, 244, 0.08);
+}
+
+
+/* Contenu */
+#easter-toast .achievement-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Petit label */
+#easter-toast .achievement-label {
+    color: #66c0f4;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Titre */
+#easter-toast .achievement-title {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* Description */
+#easter-toast .achievement-description {
+    color: #8f98a0;
+    font-size: 12px;
+}
+
+
+
 
 /* =====================================================
 		Tablette (portrait) – largeur ≤ 1024 px

@@ -897,8 +897,8 @@ input:checked + .slider:before {
 #easter-toast.gta::before {
 	content: "";
     display: inline-block;
-    width: 1em;
-    height: 1em;
+    width: 32px;
+    height: 32px;
     background: url("img/rockstar.svg") center / contain no-repeat;
 }
 

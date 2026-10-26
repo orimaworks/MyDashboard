@@ -893,9 +893,23 @@ input:checked + .slider:before {
 }
 
 
+/* Easter egg GTA */
+#easter-toast.gta::before {
+	content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background: url(".assets/img/rockstar.svg") center / contain no-repeat;
+}
+
+#easter-toast.gta .achievement-label {
+    color: yellow;
+}
 
 
 
+
+   
 
 /* =====================================================
 		Tablette (portrait) – largeur ≤ 1024 px

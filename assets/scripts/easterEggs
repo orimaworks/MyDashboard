@@ -28,11 +28,16 @@ document.addEventListener("DOMContentLoaded", () => {
         "c","a","f","é"
     ];
 
+    const gta = [
+        "g","t","a"
+    ];
+
     let positionKonami = 0;
     let positionSims = 0;
     let positionLinux = 0;
     let positionError404 = 0;
     let positionCoffee = 0;
+    let positionGta = 0;
 
 
     document.addEventListener("keydown", (event) => {
@@ -103,6 +108,18 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         } else {
             positionCoffee = key === coffee[0] ? 1 : 0;
+        }
+        
+        // VERSION GTA
+        if (key === gta[positionGta]) {
+            positionGta++;
+
+            if (positionGta === gta.length) {
+                activateEasterEggGta();
+                positionGta = 0;
+            }
+        } else {
+            positionGta = key === gta[0] ? 1 : 0;
         }
 
 
@@ -208,6 +225,7 @@ function activateEasterEggNotfound() {
         "Easter Egg not found",
         "Please try again later. Or not."
     );
+}
 
 function activateEasterEggCoffee() {
     const audio = document.getElementById("steam-sound");
@@ -222,5 +240,21 @@ function activateEasterEggCoffee() {
         "HAVE A BREAK",
         "Un p'tit café ?",
         "La pause s'impose. Prenez donc un café !"
+    );
+}
+
+function activateEasterEggGta() {
+    const audio = document.getElementById("steam-sound");
+
+    if (audio) {
+        audio.currentTime = 0;
+        audio.play().catch(console.warn);
+    }
+
+    showEasterToast(
+        "gta",
+        "Bienvenue à Los Santos",
+        "Trevor vous passe le bonjour",
+        "Quoi de mieux qu'une virée à Los Santos ? Pas grand chose hein... on est d'accord ! "
     );
 }

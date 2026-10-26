@@ -1,0 +1,80 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const preloadSound = document.getElementById("konami-sound");
+    preloadSound.load();
+
+    const konamiCode = [
+        "ArrowUp","ArrowUp",
+        "ArrowDown","ArrowDown",
+        "ArrowLeft","ArrowRight",
+        "ArrowLeft","ArrowRight",
+        "b","a"
+    ];
+    
+    let position = 0;
+
+    document.addEventListener("keydown", (event) => {
+
+        const target = event.target.tagName.toLowerCase();
+
+        if (target === "input" || target === "textarea") {
+            return;
+        }
+
+        const key = event.key.toLowerCase();
+
+        if (key === konamiCode[position].toLowerCase()) {
+            position++;
+
+            if (position === konamiCode.length) {
+                activateEasterEgg();
+                position = 0;
+            }
+
+        } else {
+            position = 0;
+        }
+
+    });
+});
+
+function activateEasterEgg() {
+     const audio = document.getElementById("konami-sound");
+    if (audio) {
+        audio.currentTime = 0;
+        audio.play().catch(console.warn);
+    }
+
+    let toast = document.getElementById("easter-toast");
+
+    if (!toast) {
+        toast = document.createElement("div");
+        toast.id = "easter-toast";
+
+        toast.innerHTML = `
+    <div class="achievement-content">
+        <div class="achievement-label">New Achievement unlocked</div>
+        <div class="achievement-title">Konami Code, vraiment ?</div>
+        <div class="achievement-description">
+            Désolé, mais KONAMI n'a rien à voir avec tout ça...😆
+        </div>
+    </div>
+`;
+
+        document.body.appendChild(toast);
+    }
+
+    // Force l'état initial
+    toast.classList.remove("visible");
+
+    // Force un reflow
+    void toast.offsetWidth;
+
+    // Lance l'animation
+    toast.classList.add("visible");
+
+    clearTimeout(toast._timer);
+
+    toast._timer = setTimeout(() => {
+        toast.classList.remove("visible");
+    }, 5000);
+}

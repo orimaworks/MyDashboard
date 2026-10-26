@@ -883,6 +883,15 @@ input:checked + .slider:before {
     color: #dd3f00;
 }
 
+/* Easter egg Coffee */
+#easter-toast.coffee::before {
+    content: "☕";
+}
+
+#easter-toast.coffee .achievement-label {
+    color: #35190e;
+}
+
 
 
 

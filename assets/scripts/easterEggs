@@ -20,14 +20,19 @@ document.addEventListener("DOMContentLoaded", () => {
         "s","u","d","o"
     ];
 
-    const notfound = [
+    const error404 = [
         "4","0","4"
+    ];
+
+    const coffee = [
+        "c","a","f","é"
     ];
 
     let positionKonami = 0;
     let positionSims = 0;
     let positionLinux = 0;
-    let positionnotfound = 0;
+    let positionError404 = 0;
+    let positionCoffee = 0;
 
 
     document.addEventListener("keydown", (event) => {
@@ -77,16 +82,29 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // VERSION ERROR 404
-        if (key === notfound[positionnotfound]) {
-            positionnotfound++;
+        if (key === error404[positionError404]) {
+            positionError404++;
 
-            if (positionnotfound === notfound.length) {
-                activateEasterEggNotfound();
-                positionnotfound = 0;
+            if (positionError404 === error404.length) {
+                activateEasterEggError404();
+                positionError404 = 0;
             }
         } else {
-            positionnotfound = key === notfound[0] ? 1 : 0;
+            positionError404 = key === error404[0] ? 1 : 0;
         }
+        
+        // VERSION CAFE
+        if (key === coffee[positionCoffee]) {
+            positionCoffee++;
+
+            if (positionCoffee === coffee.length) {
+                activateEasterEggCoffee();
+                positionCoffee = 0;
+            }
+        } else {
+            positionCoffee = key === coffee[0] ? 1 : 0;
+        }
+
 
 
     });
@@ -189,5 +207,20 @@ function activateEasterEggNotfound() {
         "ERROR 404",
         "Easter Egg not found",
         "Please try again later. Or not."
+    );
+
+function activateEasterEggCoffee() {
+    const audio = document.getElementById("steam-sound");
+
+    if (audio) {
+        audio.currentTime = 0;
+        audio.play().catch(console.warn);
+    }
+
+    showEasterToast(
+        "coffee",
+        "HAVE A BREAK",
+        "Un p'tit café ?",
+        "La pause s'impose. Prenez donc un café !"
     );
 }

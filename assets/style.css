@@ -93,7 +93,10 @@ body.dark .card-label {
 }
 	
 .btn_fermeture {
-	position: fixed;
+    position: sticky;
+    top: 10px;
+    margin-left: auto;
+    z-index: 10;
 }
 
 button {

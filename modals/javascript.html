@@ -1,0 +1,347 @@
+<dialog id="javascript">
+    <div class="display_column center">
+        <h2>🟨 JavaScript</h2>
+    </div>
+
+    <p>Fiche de référence JavaScript : syntaxe, types, fonctions, tableaux, objets, DOM, événements, programmation asynchrone et bonnes pratiques.</p>
+
+    <br>
+    <h3>📌 Déclaration de variables</h3>
+    <ul>
+        <li><code>const</code> : déclarer une variable dont la réaffectation est interdite.</li>
+        <li><code>let</code> : déclarer une variable dont la valeur pourra être réaffectée.</li>
+        <li><code>var</code> : ancienne syntaxe, généralement à éviter dans le code moderne.</li>
+    </ul>
+    <pre>const nom = "Mario";
+let age = 30;
+age = 31;</pre>
+    <p>Privilégier <code>const</code> par défaut et utiliser <code>let</code> lorsqu'une réaffectation est nécessaire. Un objet déclaré avec <code>const</code> peut toujours être modifié : seule la réaffectation de la variable est interdite.</p>
+
+    <br>
+    <h3>🔤 Types de données</h3>
+    <ul>
+        <li><code>string</code> : chaîne de caractères, par exemple <code>"Bonjour"</code>.</li>
+        <li><code>number</code> : nombre, par exemple <code>42</code> ou <code>3.14</code>.</li>
+        <li><code>boolean</code> : valeur booléenne, <code>true</code> ou <code>false</code>.</li>
+        <li><code>undefined</code> : valeur d'une variable déclarée mais non initialisée.</li>
+        <li><code>null</code> : absence de valeur intentionnelle.</li>
+        <li><code>bigint</code> : entier de grande taille, par exemple <code>123n</code>.</li>
+        <li><code>symbol</code> : identifiant unique utilisé notamment comme clé de propriété.</li>
+        <li><code>object</code> : objets, tableaux et autres structures de données.</li>
+    </ul>
+    <pre>const texte = "Bonjour";
+const nombre = 42;
+const actif = true;
+const vide = null;
+
+console.log(typeof texte);  // "string"
+console.log(typeof nombre); // "number"
+console.log(typeof actif);  // "boolean"
+console.log(typeof vide);   // "object" (particularité historique)</pre>
+
+    <br>
+    <h3>🔍 Opérateurs et comparaisons</h3>
+    <ul>
+        <li><code>+</code> : addition numérique ou concaténation de chaînes.</li>
+        <li><code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> : soustraction, multiplication, division et reste de division.</li>
+        <li><code>===</code> : égalité stricte, sans conversion implicite de type.</li>
+        <li><code>!==</code> : différence stricte.</li>
+        <li><code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code> : comparaisons.</li>
+        <li><code>&amp;&amp;</code> : ET logique.</li>
+        <li><code>||</code> : OU logique.</li>
+        <li><code>!</code> : négation logique.</li>
+        <li><code>??</code> : valeur de remplacement uniquement si la valeur de gauche est <code>null</code> ou <code>undefined</code>.</li>
+        <li><code>?.</code> : accès optionnel à une propriété.</li>
+    </ul>
+    <pre>const age = 20;
+
+console.log(age >= 18);          // true
+console.log(age === "20");       // false
+console.log(null ?? "Inconnu");  // "Inconnu"
+console.log(false || "Défaut");  // "Défaut"
+console.log(false ?? "Défaut");  // false</pre>
+
+    <br>
+    <h3>🔀 Conditions et opérateur ternaire</h3>
+    <ul>
+        <li><code>if / else</code> : exécuter du code selon une condition.</li>
+        <li><code>switch</code> : sélectionner une branche selon une valeur.</li>
+        <li><code>?:</code> : choisir une valeur selon une condition.</li>
+    </ul>
+    <pre>const age = 20;
+
+if (age >= 18) {
+    console.log("Majeur");
+} else {
+    console.log("Mineur");
+}
+
+const statut = age >= 18 ? "Majeur" : "Mineur";</pre>
+    <p>Le ternaire convient aux choix simples entre deux expressions. Pour une logique complexe, préférer <code>if / else</code>.</p>
+
+    <br>
+    <h3>🔁 Boucles</h3>
+    <ul>
+        <li><code>for</code> : répéter des instructions avec une initialisation, une condition et une évolution.</li>
+        <li><code>while</code> : répéter tant qu'une condition est vraie.</li>
+        <li><code>for...of</code> : parcourir les valeurs d'un itérable, comme un tableau.</li>
+        <li><code>for...in</code> : parcourir les clés énumérables d'un objet.</li>
+        <li><code>break</code> : interrompre une boucle.</li>
+        <li><code>continue</code> : passer à l'itération suivante.</li>
+    </ul>
+    <pre>const fruits = ["Pomme", "Poire", "Kiwi"];
+
+for (const fruit of fruits) {
+    console.log(fruit);
+}</pre>
+    <p>Pour parcourir un tableau, privilégier généralement <code>for...of</code> ou une méthode adaptée comme <code>forEach()</code>.</p>
+
+    <br>
+    <h3>⚙️ Fonctions</h3>
+    <ul>
+        <li>Déclaration classique : fonction nommée, disponible avant sa déclaration dans son périmètre grâce au mécanisme de remontée des déclarations de fonctions.</li>
+        <li>Expression de fonction : fonction affectée à une variable.</li>
+        <li>Fonction fléchée : syntaxe concise, avec un comportement particulier de <code>this</code>.</li>
+        <li><code>return</code> : renvoyer un résultat et terminer l'exécution de la fonction.</li>
+        <li>Paramètre : variable déclarée dans la signature d'une fonction.</li>
+        <li>Argument : valeur transmise lors de l'appel.</li>
+    </ul>
+    <pre>function addition(a, b) {
+    return a + b;
+}
+
+const multiplier = function (a, b) {
+    return a * b;
+};
+
+const carre = nombre => nombre ** 2;
+
+console.log(addition(2, 3));    // 5
+console.log(multiplier(2, 3));  // 6
+console.log(carre(4));          // 16</pre>
+
+    <br>
+    <h3>🧩 Tableaux et méthodes utiles</h3>
+    <ul>
+        <li><code>push()</code> : ajouter un élément à la fin.</li>
+        <li><code>pop()</code> : retirer le dernier élément.</li>
+        <li><code>includes()</code> : vérifier la présence d'une valeur.</li>
+        <li><code>find()</code> : récupérer le premier élément correspondant à une condition.</li>
+        <li><code>filter()</code> : créer un tableau contenant les éléments retenus.</li>
+        <li><code>map()</code> : créer un tableau transformé.</li>
+        <li><code>forEach()</code> : exécuter une fonction pour chaque élément.</li>
+        <li><code>reduce()</code> : accumuler les éléments en une valeur.</li>
+        <li><code>some()</code> : vérifier si au moins un élément satisfait une condition.</li>
+        <li><code>every()</code> : vérifier si tous les éléments satisfont une condition.</li>
+        <li><code>sort()</code> : trier le tableau en place.</li>
+        <li><code>slice()</code> : extraire une portion sans modifier le tableau original.</li>
+        <li><code>splice()</code> : ajouter, retirer ou remplacer des éléments dans le tableau original.</li>
+    </ul>
+    <pre>const nombres = [1, 2, 3, 4, 5];
+
+const doubles = nombres.map(n => n * 2);
+const pairs = nombres.filter(n => n % 2 === 0);
+const premierPair = nombres.find(n => n % 2 === 0);
+const somme = nombres.reduce((total, n) => total + n, 0);
+
+console.log(doubles);      // [2, 4, 6, 8, 10]
+console.log(pairs);        // [2, 4]
+console.log(premierPair);  // 2
+console.log(somme);        // 15</pre>
+
+    <br>
+    <h3>🧱 Objets et décomposition</h3>
+    <ul>
+        <li><code>objet.propriete</code> : accéder à une propriété.</li>
+        <li><code>objet["propriete"]</code> : accéder à une propriété par une clé dynamique ou textuelle.</li>
+        <li><code>...</code> : syntaxe de décomposition ou de regroupement, selon le contexte.</li>
+        <li><code>Object.keys()</code> : obtenir les clés propres énumérables.</li>
+        <li><code>Object.values()</code> : obtenir les valeurs propres énumérables.</li>
+        <li><code>Object.entries()</code> : obtenir les paires clé-valeur.</li>
+    </ul>
+    <pre>const utilisateur = {
+    nom: "Mario",
+    age: 30
+};
+
+const { nom, age } = utilisateur;
+const copie = { ...utilisateur, actif: true };
+
+console.log(nom);          // "Mario"
+console.log(copie.actif);  // true
+console.log(Object.keys(utilisateur));</pre>
+    <p>La décomposition avec <code>...</code> réalise une copie superficielle : les objets imbriqués restent partagés entre la source et la copie.</p>
+
+    <br>
+    <h3>📝 Chaînes de caractères</h3>
+    <ul>
+        <li><code>length</code> : longueur de la chaîne en unités de code UTF-16.</li>
+        <li><code>trim()</code> : supprimer les espaces en début et en fin.</li>
+        <li><code>toLowerCase()</code> : convertir en minuscules.</li>
+        <li><code>toUpperCase()</code> : convertir en majuscules.</li>
+        <li><code>includes()</code> : rechercher une sous-chaîne.</li>
+        <li><code>replace()</code> : remplacer la première occurrence correspondante, selon le motif fourni.</li>
+        <li><code>replaceAll()</code> : remplacer toutes les occurrences correspondantes.</li>
+        <li><code>split()</code> : découper une chaîne en tableau.</li>
+        <li><code>slice()</code> : extraire une portion de chaîne.</li>
+        <li><code>`Texte ${expression}`</code> : insérer une expression dans une chaîne de gabarit.</li>
+    </ul>
+    <pre>const nom = " Mario ";
+const propre = nom.trim();
+
+console.log(propre.toUpperCase()); // "MARIO"
+console.log(propre.includes("Mar")); // true
+
+const age = 30;
+console.log(`Âge : ${age} ans`);</pre>
+
+    <br>
+    <h3>🌐 DOM : manipuler une page HTML</h3>
+    <ul>
+        <li><code>document.querySelector()</code> : sélectionner le premier élément correspondant à un sélecteur CSS.</li>
+        <li><code>document.querySelectorAll()</code> : sélectionner tous les éléments correspondants.</li>
+        <li><code>document.getElementById()</code> : sélectionner un élément par son identifiant.</li>
+        <li><code>textContent</code> : lire ou modifier le contenu textuel.</li>
+        <li><code>innerHTML</code> : lire ou modifier le contenu HTML.</li>
+        <li><code>classList.add()</code> : ajouter une classe CSS.</li>
+        <li><code>classList.remove()</code> : retirer une classe CSS.</li>
+        <li><code>classList.toggle()</code> : ajouter ou retirer une classe selon son état.</li>
+        <li><code>setAttribute()</code> : définir un attribut HTML.</li>
+        <li><code>createElement()</code> : créer un élément HTML.</li>
+        <li><code>append()</code> : ajouter un élément ou du texte à un parent.</li>
+    </ul>
+    <pre>const titre = document.querySelector("h1");
+
+if (titre) {
+    titre.textContent = "Nouveau titre";
+    titre.classList.add("actif");
+}</pre>
+    <p>Préférer <code>textContent</code> pour afficher du texte non fiable. Éviter d'injecter des données utilisateur dans <code>innerHTML</code>, car cela peut créer une faille XSS.</p>
+
+    <br>
+    <h3>🖱️ Événements</h3>
+    <ul>
+        <li><code>addEventListener()</code> : enregistrer un gestionnaire d'événement.</li>
+        <li><code>click</code> : clic sur un élément.</li>
+        <li><code>input</code> : modification de la valeur d'un champ.</li>
+        <li><code>change</code> : changement validé d'une valeur selon le type de contrôle.</li>
+        <li><code>submit</code> : soumission d'un formulaire.</li>
+        <li><code>event.target</code> : élément à l'origine de l'événement.</li>
+        <li><code>event.preventDefault()</code> : empêcher le comportement par défaut.</li>
+        <li><code>event.stopPropagation()</code> : empêcher la propagation de l'événement.</li>
+    </ul>
+    <pre>const bouton = document.querySelector("#mon-bouton");
+
+if (bouton) {
+    bouton.addEventListener("click", event => {
+        console.log("Clic détecté", event.target);
+    });
+}</pre>
+
+    <br>
+    <h3>⏳ Programmation asynchrone</h3>
+    <ul>
+        <li><code>setTimeout()</code> : programmer l'exécution différée d'une fonction.</li>
+        <li><code>Promise</code> : représenter le résultat futur d'une opération asynchrone.</li>
+        <li><code>async</code> : déclarer une fonction qui renvoie une promesse.</li>
+        <li><code>await</code> : attendre le règlement d'une promesse dans un contexte compatible.</li>
+        <li><code>Promise.all()</code> : attendre la réussite de toutes les promesses fournies ou rejeter dès qu'une échoue.</li>
+        <li><code>try / catch</code> : intercepter les erreurs, notamment celles d'une opération asynchrone attendue avec <code>await</code>.</li>
+    </ul>
+    <pre>async function chargerDonnees() {
+    try {
+        const reponse = await fetch("/api/donnees");
+
+        if (!reponse.ok) {
+            throw new Error(`HTTP ${reponse.status}`);
+        }
+
+        const donnees = await reponse.json();
+        console.log(donnees);
+    } catch (erreur) {
+        console.error("Échec du chargement :", erreur);
+    }
+}
+
+chargerDonnees();</pre>
+    <p><code>fetch()</code> ne rejette pas automatiquement sa promesse en cas de réponse HTTP telle que 404 ou 500 : vérifier <code>response.ok</code>.</p>
+
+    <br>
+    <h3>📦 Modules JavaScript</h3>
+    <ul>
+        <li><code>export</code> : rendre une fonction, une classe ou une valeur accessible depuis un autre module.</li>
+        <li><code>export default</code> : définir l'exportation par défaut d'un module.</li>
+        <li><code>import</code> : importer une valeur exportée.</li>
+        <li><code>type="module"</code> : charger un script HTML comme module JavaScript.</li>
+    </ul>
+    <pre>// calculs.js
+export function addition(a, b) {
+    return a + b;
+}
+
+// app.js
+import { addition } from "./calculs.js";
+
+console.log(addition(2, 3)); // 5</pre>
+    <p>Les modules s'exécutent en mode strict et possèdent leur propre portée. Pour les tester dans un navigateur, un serveur HTTP local est généralement préférable à l'ouverture directe d'un fichier avec <code>file://</code>.</p>
+
+    <br>
+    <h3>🛡️ Gestion des erreurs</h3>
+    <ul>
+        <li><code>try</code> : encadrer du code susceptible de lever une exception.</li>
+        <li><code>catch</code> : traiter une exception interceptée.</li>
+        <li><code>finally</code> : exécuter un bloc après le traitement, qu'une exception ait eu lieu ou non.</li>
+        <li><code>throw new Error()</code> : lever une erreur explicite.</li>
+        <li><code>console.log()</code> : afficher une information de débogage.</li>
+        <li><code>console.warn()</code> : afficher un avertissement.</li>
+        <li><code>console.error()</code> : afficher une erreur.</li>
+        <li><code>console.table()</code> : afficher des données tabulaires dans la console.</li>
+        <li><code>debugger</code> : interrompre l'exécution si les outils de développement autorisent le débogage.</li>
+    </ul>
+    <pre>function diviser(a, b) {
+    if (b === 0) {
+        throw new Error("Division par zéro impossible.");
+    }
+
+    return a / b;
+}
+
+try {
+    console.log(diviser(10, 0));
+} catch (erreur) {
+    console.error(erreur.message);
+}</pre>
+
+    <br>
+    <h3>🧠 Concepts essentiels</h3>
+    <ul>
+        <li><strong>Portée (scope)</strong> : zone dans laquelle un identifiant est accessible.</li>
+        <li><strong>Closure</strong> : fonction qui conserve l'accès aux variables de son environnement lexical.</li>
+        <li><strong>Hoisting</strong> : mécanisme de traitement des déclarations avant l'exécution du code.</li>
+        <li><strong>Callback</strong> : fonction transmise à une autre fonction pour être appelée ultérieurement ou selon une condition.</li>
+        <li><strong>Promesse</strong> : objet représentant une opération qui peut être en attente, réussie ou rejetée.</li>
+        <li><strong>Event loop</strong> : mécanisme qui coordonne l'exécution du code, les tâches et les callbacks asynchrones.</li>
+        <li><strong>Mutation</strong> : modification d'un objet ou d'un tableau existant.</li>
+        <li><strong>Immutabilité</strong> : principe consistant à éviter de modifier directement les données existantes.</li>
+        <li><strong>Programmation fonctionnelle</strong> : approche privilégiant notamment les fonctions pures et les transformations de données.</li>
+    </ul>
+
+    <br>
+    <h3>✨ Bonnes pratiques</h3>
+    <ul>
+        <li>Privilégier <code>const</code>, puis <code>let</code> lorsque nécessaire ; éviter <code>var</code> dans le code moderne.</li>
+        <li>Utiliser <code>===</code> et <code>!==</code> pour éviter les conversions implicites non souhaitées.</li>
+        <li>Donner des noms explicites aux variables et fonctions.</li>
+        <li>Écrire des fonctions courtes avec une responsabilité identifiable.</li>
+        <li>Éviter les variables globales inutiles.</li>
+        <li>Préférer les méthodes de tableau adaptées à l'intention : <code>map()</code> pour transformer, <code>filter()</code> pour sélectionner et <code>find()</code> pour rechercher un élément.</li>
+        <li>Traiter les erreurs et vérifier les réponses des appels réseau.</li>
+        <li>Ne jamais considérer une donnée reçue du navigateur ou d'un serveur comme fiable sans validation appropriée.</li>
+        <li>Ne pas confondre une copie superficielle avec une copie profonde.</li>
+        <li>Utiliser les outils de développement du navigateur pour inspecter la console, le DOM, les requêtes réseau et les points d'arrêt.</li>
+    </ul>
+
+    <div>
+        <button id="btn_fermeture" data-close>Fermer</button>
+    </div>
+</dialog>

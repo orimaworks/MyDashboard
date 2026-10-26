@@ -61,8 +61,6 @@ Get-Member</pre>
             <strong>Get-Member</strong> → Qu'est-ce que contient l'objet retourné ?
         </p>
 
-        <hr>
-
         <h3>⌨️ Travailler sans souris</h3>
 
         <ul>
@@ -116,8 +114,6 @@ Get-Member</pre>
                 — Réexécute l'entrée numéro 5.
             </li>
         </ul>
-
-        <hr>
 
         <h3>📂 Navigation dans les dossiers</h3>
 
@@ -199,8 +195,6 @@ Get-Member</pre>
             </li>
         </ul>
 
-        <hr>
-
         <h3>🔄 Naviguer dans les deux sens</h3>
 
         <p>
@@ -225,7 +219,7 @@ Entrée</pre>
             L'Explorateur s'ouvre dans le dossier courant.
         </p>
 
-        <hr>
+        
 
         <h3>🧩 Les commandes accessibles via le PATH</h3>
 
@@ -298,7 +292,7 @@ Get-Command winget</pre>
             l'utilitaire Windows.
         </p>
 
-        <hr>
+        
 
         <h3>📄 Créer et manipuler des fichiers</h3>
 
@@ -349,7 +343,7 @@ Get-Command winget</pre>
             Toujours vérifier le chemin avant de l'utiliser.
         </p>
 
-        <hr>
+        
 
         <h3>📖 Lire et écrire du texte</h3>
 
@@ -390,7 +384,7 @@ Get-Command winget</pre>
             </li>
         </ul>
 
-        <hr>
+        
 
         <h3>🔗 Le pipeline <code>|</code></h3>
 
@@ -430,7 +424,7 @@ Get-Service | Where-Object Status -eq "Running"</pre>
 
         <code>Get-ChildItem | Measure-Object</code>
 
-        <hr>
+        
 
         <h3>🧮 Opérateurs</h3>
 
@@ -460,7 +454,7 @@ Get-Service | Where-Object Status -eq "Running"</pre>
 
 ($age -ge 18) -and ($country -eq "France")</pre>
 
-        <hr>
+        
 
         <h3>📦 Variables</h3>
 
@@ -503,7 +497,7 @@ $ordinateur.OS</pre>
             Les guillemets simples conservent le texte littéralement.
         </p>
 
-        <hr>
+        
 
         <h3>⚙️ Processus</h3>
 
@@ -520,7 +514,7 @@ $ordinateur.OS</pre>
             ⚠️ <code>Stop-Process -Force</code> force l'arrêt du processus.
         </p>
 
-        <hr>
+        
 
         <h3>🔧 Services Windows</h3>
 
@@ -669,12 +663,11 @@ $ordinateur.OS</pre>
 
         <h3>📊 Exporter des données</h3>
 
-        <pre><code>Get-Process | Export-Csv processus.csv -NoTypeInformation
-
-    Get-Service | Out-File services.txt
-
-Get-Process | ConvertTo-Json | Out-File processus.json</code></pre>
-
+        <pre>
+Get-Process | Export-Csv processus.csv -NoTypeInformation
+Get-Service | Out-File services.txt
+Get-Process | ConvertTo-Json | Out-File processus.json
+        </pre>
         <p>
             <strong>Attention :</strong> <code>Format-Table</code> et
             <code>Format-List</code> servent principalement à l'affichage.
@@ -682,15 +675,14 @@ Get-Process | ConvertTo-Json | Out-File processus.json</code></pre>
             les objets.
         </p>
 
-        <pre><code>Get-Process |
-    Where-Object CPU -gt 100 |
-    Select-Object Name, CPU |
-Export-Csv processus.csv -NoTypeInformation</code></pre>
-
-        <hr>
+        <pre>
+Get-Process |
+Where-Object CPU -gt 100 |
+Select-Object Name, CPU |
+Export-Csv processus.csv -NoTypeInformation
+</pre>
 
         <h3>🎨 Affichage</h3>
-
         <ul>
             <li><code>Format-Table</code> — Affichage sous forme de tableau.</li>
             <li><code>Format-List</code> — Affichage détaillé propriété par propriété.</li>
@@ -698,34 +690,27 @@ Export-Csv processus.csv -NoTypeInformation</code></pre>
             </li>
         </ul>
 
-        <pre><code>Get-Process | Format-Table Name, CPU, Id
-
-Get-Process | Format-List Name, CPU, Id</code></pre>
-
-        <hr>
+        <pre>
+Get-Process | Format-Table Name, CPU, Id
+Get-Process | Format-List Name, CPU, Id
+        </pre>
 
         <h3>🗜️ Archives ZIP</h3>
-
-        <pre>Compress-Archive -Path C:\Projet\* -DestinationPath C:\Backup\Projet.zip
-
-Expand-Archive -Path C:\Backup\Projet.zip -DestinationPath C:\Projet</pre>
-
-        <hr>
+        <pre>
+Compress-Archive -Path C:\Projet\* -DestinationPath C:\Backup\Projet.zip
+Expand-Archive -Path C:\Backup\Projet.zip -DestinationPath C:\Projet
+        </pre>
 
         <h3>🔐 Hash et fichiers</h3>
-
-        <pre>Get-FileHash fichier.iso
-
-Get-FileHash fichier.iso -Algorithm SHA256</pre>
-
+        <pre>
+Get-FileHash fichier.iso
+Get-FileHash fichier.iso -Algorithm SHA256
+</pre>
         <p>
             Utile pour vérifier qu'un fichier possède bien l'empreinte attendue.
         </p>
 
-        <hr>
-
         <h3>🛠️ Logiciels avec WinGet</h3>
-
         <p>
             <code>winget</code> est le gestionnaire de paquets Windows.
             Il peut être utilisé directement depuis PowerShell.
@@ -733,7 +718,6 @@ Get-FileHash fichier.iso -Algorithm SHA256</pre>
 
         <ul>
             <li><code>winget search firefox</code> — Recherche un logiciel.</li>
-
             <li>
                 <code>winget install Mozilla.Firefox --exact</code>
                 — Installe un logiciel identifié précisément.
@@ -913,7 +897,7 @@ finally {
     $LASTEXITCODE
 $Error</pre>
 
-        <hr>
+        
 
         <h3>🔑 Exécuter PowerShell en administrateur</h3>
 
@@ -930,7 +914,7 @@ $Error</pre>
         </p>
 
         <code>#Requires -RunAsAdministrator</code></pre>
-        <hr>
+        
 
         <h3>🔒 Politique d'exécution des scripts</h3>
 
@@ -947,7 +931,7 @@ $Error</pre>
             Elle participe aux mécanismes de sécurité de PowerShell.
         </p>
 
-        <hr>
+        
 
         <h3>👤 Profil PowerShell</h3>
 
@@ -976,7 +960,7 @@ $Error</pre>
 
         <pre>notepad $PROFILE</pre>
 
-        <hr>
+        
 
         <h3>🖥️ PowerShell 5.1 ou PowerShell 7 ?</h3>
 
@@ -997,31 +981,30 @@ $Error</pre>
             </li>
         </ul>
 
-        <hr>
+        
 
         <h3>🌐 Sessions PowerShell à distance</h3>
 
-        <pre><code>Enter-PSSession PC-REMOTE
-
-Exit-PSSession</code></pre>
+        <pre>
+Enter-PSSession PC-REMOTE
+Exit-PSSession
+        </pre>
 
         <p>
             Exécuter une commande sur une machine distante :
         </p>
 
-        <pre><code>Invoke-Command -ComputerName PC-REMOTE -ScriptBlock {
+        <pre>
+Invoke-Command -ComputerName PC-REMOTE -ScriptBlock {
     Get-Process
-}</code></pre>
-
+    }
+</pre>
         <p>
             Le fonctionnement du remoting dépend de la configuration réseau,
             des droits et des mécanismes d'administration à distance de Windows.
         </p>
 
-        <hr>
-
         <h3>⏰ Tâches planifiées</h3>
-
         <ul>
             <li><code>Get-ScheduledTask</code> — Liste les tâches planifiées.</li>
             <li><code>Get-ScheduledTaskInfo -TaskName "Nom"</code> — Informations d'exécution.</li>
@@ -1030,78 +1013,65 @@ Exit-PSSession</code></pre>
             <li><code>Enable-ScheduledTask -TaskName "Nom"</code> — Réactive une tâche.</li>
         </ul>
 
-        <hr>
-
         <h3>🔀 Redirections</h3>
-
-        <pre><code>commande > fichier.txt</code></pre>
-
+        <pre>commande > fichier.txt</pre>
         <p>
             Écrit la sortie dans un fichier en remplaçant son contenu.
         </p>
 
-        <pre><code>commande >> fichier.txt</code></pre>
-
+        <pre>commande >> fichier.txt</pre>
         <p>
             Ajoute la sortie à la fin du fichier.
         </p>
 
-        <pre><code>commande 2> erreurs.txt</code></pre>
-
+        <pre>commande 2> erreurs.txt</pre>
         <p>
             Redirige les erreurs.
         </p>
-
-        <pre><code>commande *> sortie.txt</code></pre>
+        <pre>commande *> sortie.txt</pre>
 
         <p>
             Redirige les différents flux vers le fichier.
         </p>
 
-        <hr>
-
         <h3>🔄 Boucle ForEach</h3>
-
-        <pre><code>Get-ChildItem *.txt | ForEach-Object {
+        <pre>
+Get-ChildItem *.txt | ForEach-Object {
     Write-Host $_.Name
-}</code></pre>
-
+}
+        </pre>
         <p>
             <code>$_</code> représente l'objet actuellement traité dans le pipeline.
         </p>
 
-        <hr>
-
         <h3>🧠 Comprendre les objets PowerShell</h3>
-
         <p>
             C'est l'un des concepts les plus importants de PowerShell.
             Une commande ne renvoie généralement pas simplement du texte :
             elle renvoie des <strong>objets</strong>.
         </p>
-
-        <pre><code>$processus = Get-Process
-
-    $processus[0].Name
-    $processus[0].Id
-$processus[0].CPU</code></pre>
-
+        <pre>
+$processus = Get-Process
+$processus[0].Name
+$processus[0].Id
+$processus[0].CPU
+        </pre>
         <p>
             Pour découvrir ce qu'un objet contient :
         </p>
 
-        <pre><code>Get-Process | Get-Member</code></pre>
+        <pre>Get-Process | Get-Member</pre>
 
         <p>
             On peut ensuite enchaîner les opérations :
         </p>
 
-        <pre><code>Get-Process |
-    Where-Object CPU -gt 100 |
-    Sort-Object CPU -Descending |
-Select-Object -First 10 Name, CPU, Id</code></pre>
-
-        <hr>
+        <pre>
+Get-Process |
+Where-Object CPU -gt 100 |
+Sort-Object CPU -Descending |
+Select-Object -First 10 Name, CPU, Id
+        </pre>
 
         <h3>🧪 Exemple de workflow PowerShell</h3>
 
@@ -1109,31 +1079,28 @@ Select-Object -First 10 Name, CPU, Id</code></pre>
             Rechercher les gros fichiers PDF d'un dossier :
         </p>
 
-        <pre><code>Get-ChildItem C:\Documents -Recurse -Filter *.pdf |
-    Where-Object Length -gt 10MB |
-    Sort-Object Length -Descending |
-Select-Object FullName, Length</code></pre>
-
+        <pre>
+Get-ChildItem C:\Documents -Recurse -Filter *.pdf |
+Where-Object Length -gt 10MB |
+Sort-Object Length -Descending |
+Select-Object FullName, Length
+        </pre>
         <p>
             Exporter le résultat :
         </p>
-
-        <pre><code>Get-ChildItem C:\Documents -Recurse -Filter *.pdf |
-    Where-Object Length -gt 10MB |
-    Sort-Object Length -Descending |
-    Select-Object FullName, Length |
-Export-Csv gros-pdf.csv -NoTypeInformation</code></pre>
-
-        <hr>
-
+        <pre>
+Get-ChildItem C:\Documents -Recurse -Filter *.pdf |
+Where-Object Length -gt 10MB |
+Sort-Object Length -Descending |
+Select-Object FullName, Length |
+Export-Csv gros-pdf.csv -NoTypeInformation
+</pre>
         <h3>📌 Alias courants</h3>
-
         <p>
             PowerShell possède de nombreux alias. Ils sont pratiques pour travailler
             rapidement, mais il est préférable d'apprendre les noms complets des
             cmdlets.
         </p>
-
         <pre>
     cd      → Set-Location
     pwd     → Get-Location
@@ -1150,26 +1117,21 @@ Export-Csv gros-pdf.csv -NoTypeInformation</code></pre>
         <p>
             Pour connaître les alias :
         </p>
-
-        <pre><code>Get-Alias</code></pre>
-
+        <code>Get-Alias</code>
         <p>
             Et pour connaître l'origine d'un alias :
         </p>
-
-        <pre><code>Get-Alias cd
-    Get-Alias ls
-Get-Alias dir</code></pre>
-
-        <hr>
-
+<pre>
+Get-Alias cd
+Get-Alias ls
+Get-Alias dir
+</pre>
         <h3>🎯 La logique à retenir</h3>
-
         <p>
             Pour apprendre PowerShell efficacement, pense toujours dans cet ordre :
         </p>
-
-        <pre><code>1. Je cherche une commande
+    <pre>
+1. Je cherche une commande
  ↓
  Get-Command
 
@@ -1195,17 +1157,18 @@ Get-Alias dir</code></pre>
 
  7. J'enchaîne
  ↓
-|</code></pre>
+</pre>
 
         <p>
             Exemple :
         </p>
 
-        <pre><code>Get-Process |
-    Where-Object CPU -gt 50 |
-    Sort-Object CPU -Descending |
-Select-Object -First 10 Name, CPU</code></pre>
-
+<pre>
+Get-Process |
+Where-Object CPU -gt 50 |
+Sort-Object CPU -Descending |
+Select-Object -First 10 Name, CPU
+</pre>
     </div>
     
     <div>

@@ -1,163 +1,382 @@
 ---
 specification:
 name: "Orima Works — Modal HTML Pattern"
-version: "1.0"
+version: "2.0"
 language: "fr"
 format: "HTML5"
 scope: "Toutes les modales du projet"
 
 objective: >
-Créer, modifier ou restaurer des modales HTML cohérentes,
-accessibles, lisibles et compatibles avec l'architecture
-existante du projet.
+Créer, modifier, corriger ou restaurer des modales HTML cohérentes,
+accessibles, lisibles et compatibles avec l'architecture existante
+du projet Orima Works.
+
+Préserver strictement le contenu fonctionnel existant, sauf demande
+explicite de suppression, de remplacement ou de correction justifiée.
 
 output:
 type: "HTML fragment"
 root_element: "dialog"
 standalone_document: false
+markdown_fences: false
+include_explanations_before_fragment: false
+return_complete_fragment: true
 preserve_existing_project_conventions: true
-include_markdown_fences: false
+
+priority:
+
+- "Respecter l'architecture et les mécanismes fonctionnels du projet."
+- "Préserver le contenu initial et toutes les sections existantes."
+- "Respecter la structure HTML et les règles sémantiques."
+- "Appliquer les conventions de présentation, notamment les émoticônes et les raccourcis clavier."
+- "Corriger les erreurs techniques et factuelles avec justification si nécessaire."
+- "Améliorer la lisibilité sans réécriture injustifiée."
+
+workflow:
+
+- "Identifier si la demande concerne une création ou une modification."
+- "Pour une modification, analyser le fragment source avant toute intervention."
+- "Repérer les erreurs structurelles, sémantiques, fonctionnelles et factuelles."
+- "Préserver le contenu existant, sauf demande explicite ou erreur avérée."
+- "Appliquer les modifications strictement nécessaires."
+- "Vérifier la structure, les conventions et la compatibilité du fragment."
+- "Retourner le fragment HTML complet, directement exploitable."
 
 structure:
 required_elements:
-- "dialog"
-- "h2"
-- "div.display_column.center"
-- "button[data-close]"
+\- "dialog"
+\- "div.display_column.center"
+\- "h2"
+\- "div contenant le bouton de fermeture"
+\- "button[data-close]"
 
 hierarchy:
-  - "dialog"
-  - "div.display_column.center"
-  - "img (required)"
-  - "h2 (exactly one)"
-  - "p (optional introduction)"
-  - "div containing the close button"
+\- "dialog"
+\- "div.display_column.center"
+\- "img facultative selon le contexte"
+\- "h2 unique"
+\- "p d'introduction facultatif"
+\- "div contenant le bouton de fermeture"
 
 dialog:
-  required: true
-  id: "Unique identifier matching the modal name used by the project"
-  example: '<dialog id="linux">'
+required: true
+root_count: 1
+id:
+required: true
+non_empty: true
+unique_in_project: true
+rule: >
+Conserver l'identifiant existant lors d'une modification.
+Pour une nouvelle modale, choisir un identifiant unique
+correspondant à celui attendu par le chargeur modals.js.
+example: '\<dialog id="linux">'
 
 header:
-  container_class: "display_column center"
-  title:
-    element: "h2"
-    count: 1
-    required: true
-  image:
-    required: true
-    attributes:
-      style: "max-width:60px; height: auto;"
-      src: "./assets/img/"
+container:
+element: "div"
+class: "display_column center"
+required: true
+
+title:
+element: "h2"
+count: 1
+required: true
+rule: >
+Chaque modale doit contenir exactement un h2.
+Conserver le titre existant, sauf demande explicite de modification.
+
+image:
+required_by_default: true
+exception: >
+L'image peut être omise si le contexte de la modale ou une
+convention existante justifie son absence.
+attributes:
+style: "max-width:60px; height: auto;"
+src: "./assets/img/"
+rules:
+\- "Utiliser un fichier réellement pertinent et disponible."
+\- "Ne pas inventer un nom de fichier ou un chemin d'asset."
+\- "Conserver les conventions d'images déjà utilisées dans le projet."
+\- "Respecter les chemins relatifs à l'URL de publication."
 
 introduction:
-  element: "p"
-  required: false
-  purpose: "Briefly explain the purpose or scope of the modal"
+element: "p"
+required: false
+purpose: "Présenter brièvement l'objectif ou le périmètre de la modale."
+rules:
+\- "Ne pas ajouter d'introduction inutile."
+\- "Préserver l'introduction existante si elle reste pertinente."
 
 sections:
-  heading_element: "h3"
-  separator_before_heading: "br"
-  list_element: "ul"
-  list_item_element: "li"
-  horizontal_separator: "hr"
-  all_optional: true
-  ordering: "Follow a logical progression appropriate to the topic"
+heading:
+element: "h3"
+required_emoji: true
+emoji_position: "Immediately before the heading text"
+separator_before: "br"
+rules:
+\- >
+Chaque h3 doit être précédé immédiatement d'un élément br,
+sauf si une convention spécifique du projet impose une
+structure différente explicitement documentée.
+\- >
+Chaque h3 doit commencer par une petite émoticône pertinente,
+suivie d'une espace, puis du titre.
+\- >
+Exemple : \<br>\<h3>💻 Développement\</h3>
+\- "Ne pas placer l'émoticône après le texte du titre."
+\- "Choisir une émoticône cohérente avec le sujet."
+\- "Conserver les émoticônes existantes lors d'une modification, sauf demande contraire."
+\- "Ne pas multiplier inutilement les émoticônes dans un même titre."
 
-footer:
-  container_element: "div"
-  button:
-    element: "button"
-    text: "Fermer"
-    required_attribute: "data-close"
-    id: "btn_fermeture"
-    note: >
-      The id is optional if no project code depends on it.
-      The data-close attribute is required for compatibility
-      with the existing modal closing mechanism.
+list:
+container: "ul"
+item: "li"
+rules:
+\- "Utiliser ul et li pour les listes d'éléments apparentés."
+\- "Chaque li doit être fermé correctement."
+\- "Ne jamais placer un h3 directement à l'intérieur d'un ul."
+\- "Ne pas placer un pre directement dans un ul sans li parent."
+\- "Les listes imbriquées doivent se trouver à l'intérieur d'un li."
+\- "Ne pas imbriquer des listes sans nécessité."
+
+separator:
+element: "hr"
+required: false
+rule: "Utiliser hr uniquement lorsqu'une séparation visuelle significative est nécessaire."
+
+heading_hierarchy:
+\- "h2 : titre principal unique de la modale."
+\- "h3 : titres des sections."
+\- "Ne pas utiliser h4 uniquement pour réduire la taille d'un titre."
+\- "Ne pas créer de titres redondants."
+\- "Chaque section doit avoir un périmètre clair."
+
+content_preservation:
+priority: "critical"
+rules:
+\- >
+Lors d'une modification, conserver toutes les sections existantes,
+leur contenu, leurs commandes, leurs exemples, leurs raccourcis
+clavier, leurs URL et leurs informations utiles.
+\- >
+Ne supprimer aucune section, commande, entrée de liste,
+explication ou exemple simplement pour raccourcir ou simplifier
+la réponse.
+\- >
+Ne pas résumer, condenser, fusionner ou reformuler largement
+le contenu sans nécessité technique ou demande explicite.
+\- >
+Ne pas déplacer des sections si la structure actuelle reste
+cohérente et valide.
+\- >
+Ne pas remplacer une commande par une autre commande,
+même supposée plus moderne, sans justification.
+\- >
+Ne pas supprimer une information au motif qu'elle semble
+secondaire ou redondante sans vérifier son utilité.
+\- >
+Si une correction factuelle est nécessaire, préserver autant
+que possible le contenu initial et corriger uniquement
+l'élément concerné.
+\- >
+Si une information ne peut pas être vérifiée, conserver
+l'information d'origine et signaler l'incertitude, plutôt que
+d'inventer une correction.
+\- >
+Si une suppression, une incompatibilité ou un remplacement
+est indispensable, l'indiquer explicitement.
+\- >
+Pour une nouvelle modale, ne pas inventer de conventions
+spécifiques au projet qui n'ont pas été fournies.
+
+before_after_check:
+required: true
+verify:
+\- "Toutes les sections initiales sont présentes."
+\- "Toutes les entrées de liste initiales sont conservées."
+\- "Toutes les commandes et tous les raccourcis sont conservés."
+\- "Tous les exemples, URL et identifiants utiles sont conservés."
+\- "Toute modification de contenu est justifiée."
+\- "Aucune suppression accidentelle n'a eu lieu."
 
 semantic_rules:
 code:
 element: "code"
-meaning: "Inline command, expression, identifier or short code snippet"
-usage: "Use for single-line content that fits inline"
-wrapping: "Never nest inside pre"
+meaning: "Commande, expression, identifiant ou extrait court."
+usage: "Contenu court intégré à une phrase ou à une liste."
+rules:
+\- "Utiliser code pour les commandes, identifiants, attributs HTML et expressions courtes."
+\- "Ne pas utiliser code pour du texte explicatif ordinaire."
+\- "Ne jamais imbriquer code dans pre."
 
 pre:
-  element: "pre"
-  meaning: "Multiline code, terminal output or whitespace-sensitive text"
-  usage: "Use for multiline content or content requiring preserved indentation"
-  wrapping: "Never nest code inside pre"
+element: "pre"
+meaning: "Bloc de code multiligne, sortie terminal ou texte à indentation significative."
+usage: "Contenu nécessitant de conserver les espaces et les retours à la ligne."
+rules:
+\- "Utiliser pre pour les exemples multilignes."
+\- "Conserver l'indentation significative."
+\- "Ne jamais imbriquer pre dans code."
+\- "Ne pas utiliser pre pour une simple commande sur une ligne."
+\- "Ne pas supprimer les retours à la ligne significatifs."
 
 kbd:
-  element: "kbd"
-  meaning: "Keyboard key, key combination or user input"
-  usage: "Write the key or combination first, followed by its explanation"
-  example: '<kbd>Ctrl</kbd> + <kbd>C</kbd> : interrompre la commande'
+element: "kbd"
+meaning: "Touche clavier, combinaison de touches ou saisie utilisateur."
+usage: "Représenter explicitement les touches et raccourcis clavier."
+required_pattern: >
+Touches ou combinaison en premier, suivies immédiatement de
+deux-points et de l'explication.
+example: >
+\<kbd>Ctrl\</kbd> + \<kbd>C\</kbd> : interrompre la commande
+rules:
+\- >
+L'ordre obligatoire est : touches, deux-points, explication.
+\- >
+Ne jamais placer l'explication avant les touches.
+\- >
+Ne pas écrire une explication avant un raccourci présenté
+dans un élément de liste.
+\- >
+Exemple valide : \<kbd>Ctrl\</kbd> + \<kbd>S\</kbd> :
+enregistrer le fichier.
+\- >
+Exemple invalide : Enregistrer le fichier avec
+\<kbd>Ctrl\</kbd> + \<kbd>S\</kbd>.
+\- >
+Chaque touche doit disposer de sa propre balise kbd.
+\- >
+Utiliser une écriture cohérente des touches : Ctrl, Alt,
+Maj, Windows, Entrée, Échap, F1, etc.
+\- >
+Ne pas inclure d'espaces superflus à l'intérieur des balises kbd.
+\- >
+Pour une séquence de touches successives, conserver l'ordre
+d'exécution et l'indiquer clairement avant l'explication.
+\- >
+Exemple : \<kbd>Alt\</kbd> + \<kbd>D\</kbd>, puis
+\<kbd>Entrée\</kbd> : valider la saisie.
+\- >
+Si une combinaison est incertaine ou dépend de la version
+d'une application, le signaler sans présenter le raccourci
+comme universel.
+\- >
+Ne pas convertir une commande textuelle en kbd : une commande
+destinée à être saisie dans un terminal doit normalement
+être présentée avec code ou pre.
 
 explanation:
-  principle: >
-    Prefer explanatory text before the code or keyboard shortcut
-    whenever the content is introduced by an explanation.
-  inline_code:
-    pattern: "Explanation: <code>...</code>"
-  multiline_code:
-    pattern: "Explanation:<br><pre>...</pre>"
-  keyboard_shortcut:
-    pattern: "Shortcut: <kbd>...</kbd> — explanation"
+principle: >
+Placer l'explication avant le code lorsque le code illustre
+une instruction. Exception : les raccourcis clavier suivent
+obligatoirement la convention kbd, avec les touches d'abord.
+inline_code:
+pattern: "Explication : \<code>...\</code>"
+multiline_code:
+pattern: "Explication :\<br>\<pre>...\</pre>"
+keyboard_shortcut:
+pattern: "\<kbd>Ctrl\</kbd> + \<kbd>C\</kbd> : explication"
 
 formatting:
-- "Use exactly one h2 element per modal."
-- "Insert a br element before each h3 section heading."
-- "Use hr only when a meaningful visual separation is needed."
-- "Use ul and li for lists of related items."
-- "Use p for prose and explanatory paragraphs."
-- "Do not use code or kbd as substitutes for ordinary prose."
-- "Do not nest code inside pre, or pre inside code."
-- "Preserve meaningful indentation in multiline code examples."
-- "Avoid duplicate headings and redundant content."
-- "Use valid, properly closed HTML elements."
-- "Do not add unrelated CSS or JavaScript to a modal fragment."
+
+- "Utiliser exactement un h2 par modale."
+- "Insérer un br avant chaque h3."
+- "Commencer chaque h3 par une émoticône pertinente."
+- "Utiliser p pour les paragraphes explicatifs."
+- "Utiliser ul et li pour les listes."
+- "Utiliser code pour le contenu court."
+- "Utiliser pre pour le contenu multiligne."
+- "Utiliser kbd uniquement pour les touches et saisies clavier."
+- "Ne jamais imbriquer code dans pre ou pre dans code."
+- "Respecter la hiérarchie des éléments HTML."
+- "Éviter les espaces superflus et les répétitions accidentelles."
+- "Conserver les retours à la ligne nécessaires aux blocs multilignes."
+- "Ne pas introduire de styles inline supplémentaires sans nécessité."
+- "Ne pas ajouter de CSS ou JavaScript sans demande explicite."
+
+footer:
+container: "div"
+required: true
+button:
+element: "button"
+text: "Fermer"
+required_attribute: "data-close"
+id: "btn_fermeture"
+id_optional: true
+rules:
+\- "Le bouton doit être placé dans un conteneur div."
+\- "L'attribut data-close est obligatoire."
+\- "Conserver btn_fermeture si le projet l'utilise."
+\- "Ne pas ajouter de logique JavaScript de fermeture."
+\- "Le mécanisme existant ferme le dialog le plus proche."
 
 compatibility:
 modal_loader:
 expected_root: "dialog"
-id_matching: "The dialog id must match the identifier expected by modals.js."
-loading: "The project loads modal fragments dynamically."
+id_matching: "Identifiant attendu par modals.js"
+loading: "Chargement dynamique des fragments HTML"
+rules:
+\- "Ne pas retourner un document HTML complet."
+\- "Ne pas ajouter doctype, html, head ou body."
+\- "Ne pas ajouter de second dialog."
+\- "Ne pas modifier l'identifiant existant sans nécessité."
+\- "Ne pas inventer de mécanisme de chargement."
+
 closing:
 required_attribute: "data-close"
-behavior: "The existing JavaScript handler closes the nearest dialog."
+behavior: "Le gestionnaire JavaScript existant ferme le dialog le plus proche."
+rules:
+\- "Ne pas supprimer data-close."
+\- "Ne pas remplacer le bouton par un autre mécanisme."
+
 assets:
 rule: >
-Use paths valid relative to the published page URL,
-not paths assumed to be relative to the HTML fragment file.
-dependencies:
-rule: "Do not introduce external libraries without explicit authorization."
+Les chemins doivent être valides relativement à l'URL de la
+page publiée, et non relativement au fichier du fragment.
+rules:
+\- "Ne pas inventer de chemin de fichier."
+\- "Ne pas introduire de dépendance externe."
+\- "Préserver les chemins déjà valides."
+
+technical_accuracy:
+rules:
+\- "Vérifier la validité des commandes et des exemples lorsque c'est possible."
+\- "Ne pas présenter comme universelle une commande dépendante de la version."
+\- "Ne pas remplacer une commande initiale sans motif valable."
+\- "Signaler les risques associés aux commandes destructrices ou administratives."
+\- "Ne pas inventer de raccourcis clavier."
+\- "Distinguer les faits vérifiés des informations incertaines."
+\- "Corriger une erreur avérée sans altérer inutilement le reste du contenu."
 
 validation:
-- "The fragment contains exactly one dialog root."
-- "The dialog has a non-empty id."
-- "The modal contains exactly one h2."
-- "Each h3 is preceded by a br element."
-- "No code element is nested inside pre."
-- "No pre element is nested inside code."
-- "The footer contains a button with data-close."
-- "All HTML tags are properly nested and closed."
-- "No duplicate headings or accidental repeated content remain."
-- "Commands and examples are technically accurate."
-- "Existing project conventions are preserved."
+required: true
+checklist:
+\- "Le fragment contient exactement un dialog racine."
+\- "Le dialog possède un id non vide et conforme au projet."
+\- "Le conteneur display_column center est présent."
+\- "Le fragment contient exactement un h2."
+\- "Chaque h3 est précédé d'un br."
+\- "Chaque h3 commence par une émoticône pertinente."
+\- "Les listes et éléments li sont correctement imbriqués."
+\- "Aucun h3 ou pre n'est directement placé dans un ul."
+\- "Aucun code n'est imbriqué dans pre."
+\- "Aucun pre n'est imbriqué dans code."
+\- "Chaque raccourci clavier respecte l'ordre touches, deux-points, explication."
+\- "Les commandes et exemples n'ont pas été supprimés accidentellement."
+\- "Toutes les sections initiales sont préservées lors d'une modification."
+\- "Le bouton de fermeture porte data-close."
+\- "Les balises HTML sont correctement imbriquées et fermées."
+\- "Aucun identifiant utile n'a été modifié sans justification."
+\- "Aucune dépendance externe ou logique JavaScript nouvelle n'a été ajoutée."
+\- "Les chemins d'assets restent cohérents avec le projet."
+\- "Le fragment complet est retourné, sans omission ni points de suspension."
 
-llm_instructions:
-priority:
-- "Preserve the project's existing functional conventions."
-- "Follow the required structure and semantic rules."
-- "Correct invalid HTML and factual errors."
-- "Improve clarity without inventing project-specific dependencies."
-workflow:
-- "Inspect the supplied modal and identify deviations."
-- "Apply the specification."
-- "Check HTML validity and semantic consistency."
-- "Return the complete corrected HTML fragment."
-uncertainty: >
-If a requirement conflicts with existing code or is ambiguous,
-explain the conflict instead of silently inventing a convention.
+output_rules:
+
+- "Retourner le fragment HTML complet."
+- "Ne pas utiliser de blocs Markdown autour du HTML."
+- "Ne pas retourner uniquement les modifications partielles."
+- "Ne pas remplacer une section par un commentaire indiquant qu'elle est inchangée."
+- "Ne pas omettre les sections longues."
+- "Ne pas ajouter une longue analyse avant le code lorsque la demande porte sur une modification."
+- "Signaler brièvement après le fragment les corrections factuelles importantes ou les incertitudes."

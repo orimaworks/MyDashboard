@@ -35,13 +35,16 @@
   </ul>
 
   <p>Exemple d'objet :</p>
-  <pre>{
+  <pre>
+{
   "nom": "Orima",
   "version": 2.0
-}</pre>
+}
+</pre>
 
   <p>Exemple de tableau :</p>
-  <pre>[
+  <pre>
+[
   "HTML",
   "CSS",
   "JavaScript"
@@ -52,7 +55,8 @@
     pour représenter des données complexes.
   </p>
 
-  <pre>{
+  <pre>
+{
   "utilisateur": {
     "nom": "Alex",
     "actif": true
@@ -74,7 +78,8 @@
   </ul>
 
   <p>Exemple regroupant ces types :</p>
-  <pre>{
+  <pre>
+{
   "texte": "chaîne",
   "nombre": 42,
   "decimal": 3.14,
@@ -84,7 +89,8 @@
   "objet": {
     "cle": "valeur"
   }
-}</pre>
+}
+</pre>
 
   <p>
     Attention : <code>undefined</code>, les fonctions, les commentaires
@@ -105,17 +111,21 @@
   </ul>
 
   <p>Exemple invalide :</p>
-  <pre>{
+  <pre>
+{
   "nom": "test",
   // Commentaire interdit
   valeur: "error",
-}</pre>
+}
+</pre>
 
   <p>Version valide :</p>
-  <pre>{
+  <pre>
+{
   "nom": "test",
   "valeur": "error"
-}</pre>
+}
+</pre>
 
   <p>
     JSON est un format de données, et non du code JavaScript :
@@ -132,14 +142,15 @@
   </p>
 
   <p><code>JSON.parse()</code> — transforme une chaîne JSON en valeur JavaScript.</p>
-  <pre>const json = '{"nom":"Orima","actif":true}';
+  <pre>
+const json = '{"nom":"Orima","actif":true}';
 
 const donnees = JSON.parse(json);
 
 console.log(donnees.nom); // "Orima"</pre>
-
   <p><code>JSON.stringify()</code> — convertit une valeur JavaScript en chaîne JSON.</p>
-  <pre>const utilisateur = {
+  <pre>
+const utilisateur = {
   nom: "Orima",
   actif: true
 };
@@ -156,12 +167,16 @@ console.log(json);
     pas maîtrisées.
   </p>
 
-  <pre>try {
+  <pre>
+try {
   const donnees = JSON.parse(texteJson);
   console.log(donnees);
+
 } catch (erreur) {
   console.error("JSON invalide :", erreur.message);
-}</pre>
+
+}
+</pre>
 
   <br>
   <h3>🛠️ Validation et formatage</h3>
@@ -189,15 +204,16 @@ console.log(json);
   </ul>
 
   <p>Exemples avec <code>jq</code> :</p>
-  <pre># Afficher le JSON avec indentation
+  <pre>
+# Afficher le JSON avec indentation
 jq '.' fichier.json
 
 # Extraire la valeur de la clé "nom"
 jq '.nom' fichier.json
 
 # Afficher les éléments du tableau "roles"
-jq '.roles[]' fichier.json</pre>
-
+jq '.roles[]' fichier.json
+</pre>
   <p>
     Dans VS Code, un fichier JSON peut être formaté avec
     <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>F</kbd> sous Windows.
@@ -214,7 +230,8 @@ jq '.roles[]' fichier.json</pre>
   </p>
 
   <p>Exemple de schéma simple :</p>
-  <pre>{
+  <pre>
+{
   "type": "object",
   "properties": {
     "nom": {
@@ -226,7 +243,8 @@ jq '.roles[]' fichier.json</pre>
   },
   "required": ["nom", "version"],
   "additionalProperties": false
-}</pre>
+}
+</pre>
 
   <p>
     Ce schéma exige un objet contenant les propriétés

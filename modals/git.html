@@ -1,273 +1,236 @@
-        <dialog id="git">
-            <h2>🌿 Git — Guide complet</h2>
-            <p>
-                Git est un système de gestion de versions distribué permettant de suivre les modifications,
-                travailler en branches, collaborer et revenir facilement à un état antérieur d'un projet.
-            </p>
-            <h3>🎯 Objectif</h3>
-            <ul>
-                <li>Maîtriser les bases de Git</li>
-                <li>Gérer proprement les branches</li>
-                <li>Corriger les erreurs avant et après un push</li>
-                <li>Réécrire l'historique lorsque c'est pertinent</li>
-                <li>Adopter les bonnes pratiques d'un développeur expérimenté</li>
-            </ul>
-            <hr>
-            <h2>1️⃣ Initialisation & configuration</h2>
-            <h3>Vérifier la version</h3>
-            <pre>git --version</pre>
-            <h3>Configurer son identité (globale)</h3>
-            <pre>git config --global user.name "Nom Prénom"
-                 git config --global user.email "email@exemple.com"</pre>
-            <h3>Afficher la configuration</h3>
-            <pre>git config --list</pre>
-            <h3>Créer un dépôt Git</h3>
-            <pre>git init</pre>
-            <h3>Cloner un dépôt existant</h3>
-            <pre>git clone URL_DU_REPO</pre>
-            <hr>
-            <h2>2️⃣ État & inspection</h2>
-            <h3>Voir l'état du dépôt</h3>
-            <pre>git status</pre>
-            <h3>Différences non indexées</h3>
-            <pre>git diff</pre>
-            <h3>Différences prêtes à être commit</h3>
-            <pre>git diff --staged</pre>
-            <h3>Historique lisible</h3>
-            <pre>git log --oneline --graph --decorate --all</pre>
-            <h3>Afficher un commit</h3>
-            <pre>git show HASH</pre>
-            <h3>Identifier l'auteur d'une ligne</h3>
-            <pre>git blame fichier</pre>
-            <p><strong>💡 Réflexe :</strong> toujours consulter <code>status</code> puis <code>diff</code> avant un
-                commit.</p>
-            <hr>
-            <h2>3️⃣ Ajouter & commit</h2>
-            <h3>Ajouter un fichier</h3>
-            <pre>git add fichier</pre>
-            <h3>Ajouter toutes les modifications</h3>
-            <pre>git add .</pre>
-            <h3>Créer un commit</h3>
-            <pre>git commit -m "Message clair et précis"</pre>
-            <h3>Modifier le dernier commit</h3>
-            <pre>git commit --amend</pre>
-            <h3>Modifier uniquement son message</h3>
-            <pre>git commit --amend -m "Nouveau message"</pre>
-            <p><strong>✔ Bon message :</strong></p>
-            <hr>
-            <h2>4️⃣ Modifier ou supprimer des fichiers</h2>
-            <table>
-                <tr>
-                    <th>Action</th>
-                    <th>Commande</th>
-                </tr>
-                <tr>
-                    <td>Supprimer du dépôt</td>
-                    <td><code>git rm fichier</code></td>
-                </tr>
-                <tr>
-                    <td>Retirer du suivi uniquement</td>
-                    <td><code>git rm --cached fichier</code></td>
-                </tr>
-                <tr>
-                    <td>Renommer</td>
-                    <td><code>git mv ancien nouveau</code></td>
-                </tr>
-                <tr>
-                    <td>Annuler les modifications</td>
-                    <td><code>git restore fichier</code></td>
-                </tr>
-                <tr>
-                    <td>Restaurer depuis un commit</td>
-                    <td><code>git restore --source=HASH fichier</code></td>
-                </tr>
-            </table>
-            <hr>
-            <h2>5️⃣ Gestion des branches</h2>
-            <h3>Voir les branches</h3>
-            <pre>git branch</pre>
-            <h3>Créer une branche</h3>
-            <pre>git branch feature-login</pre>
-            <h3>Créer + basculer</h3>
-            <pre>git switch -c feature-login</pre>
-            <p>Ancienne syntaxe :</p>
-            <pre>git checkout -b feature-login</pre>
-            <h3>Changer de branche</h3>
-            <pre>git switch main</pre>
-            <h3>Supprimer une branche locale</h3>
-            <pre>git branch -d feature-login</pre>
-            <h3>Supprimer une branche distante</h3>
-            <pre>git push origin --delete feature-login</pre>
-            <p><strong>📌 Règle :</strong> une branche = une fonctionnalité ou un correctif.</p>
-            <hr>
-            <h2>6️⃣ Merge & Rebase</h2>
-            <h3>Fusion classique</h3>
-            <pre>git merge feature-login</pre>
-            <p>Conserve l'historique tel quel.</p>
-            <h3>Rebase</h3>
-            <pre>git rebase main</pre>
-            <p>Replace les commits de la branche au-dessus de <code>main</code> pour obtenir un historique linéaire.</p>
-            <h3>Rebase interactif</h3>
-            <pre>git rebase -i HEAD~3</pre>
-            <p>Permet de :</p>
-            <ul>
-                <li>squash plusieurs commits</li>
-                <li>réorganiser l'ordre</li>
-                <li>modifier un message</li>
-                <li>supprimer un commit</li>
-            </ul>
-            <hr>
-            <h2>7️⃣ Corriger une erreur avant le push</h2>
-            <h3>Retirer un fichier ajouté par erreur</h3>
-            <pre>git restore --staged fichier</pre>
-            <p>Le fichier reste modifié localement mais ne fera plus partie du prochain commit.</p>
-            <h3>Corriger le dernier commit</h3>
-            <pre>   git reset --soft HEAD~1
-                    git add .
-                    git commit -m "Commit corrigé"
-            </pre>
-            <p>Le commit disparaît, mais toutes les modifications sont conservées.</p>
-            <h3>Annuler complètement le dernier commit</h3>
-            <p>Conserver les fichiers :</p>
-            <pre>git reset --soft HEAD~1</pre>
-            <p>Supprimer également les modifications :</p>
-            <pre>git reset --hard HEAD~1</pre>
-            <p><strong>⚠️ Attention :</strong> <code>--hard</code> détruit définitivement les modifications non
-                sauvegardées.</p>
-            <hr>
-            <h2>8️⃣ Après un push (cas sensible)</h2>
-            <p>
-                Réécrire l'historique ne doit être fait que sur une branche personnelle ou après accord de l'équipe.
-            </p>
-            <h3>Force push</h3>
-            <pre>git push --force</pre>
-            <h3>Version recommandée</h3>
-            <pre>git push --force-with-lease</pre>
-            <ul>
-                <li>Vérifie que personne n'a poussé entre-temps</li>
-                <li>Beaucoup plus sûre que <code>--force</code></li>
-            </ul>
-            <p><strong>🚫 Ne jamais forcer sur <code>main</code> en équipe.</strong></p>
-            <hr>
-            <h2>9️⃣ Annuler un commit proprement</h2>
-            <p>Créer un nouveau commit qui inverse les modifications :</p>
-            <pre>git revert HASH</pre>
-            <p>
-                Contrairement à <code>reset</code>, cette méthode conserve l'historique et est adaptée aux branches
-                partagées.
-            </p>
-            <hr>
-            <h2>🔟 Gestion du dépôt distant</h2>
-            <h3>Voir les remotes</h3>
-            <pre>git remote -v</pre>
-            <h3>Ajouter un remote</h3>
-            <pre>git remote add origin URL</pre>
-            <h3>Modifier son URL</h3>
-            <pre>git remote set-url origin NOUVELLE_URL</pre>
-            <h3>Premier push</h3>
-            <pre>git push -u origin main</pre>
-            <h3>Push suivant</h3>
-            <pre>git push</pre>
-            <h3>Récupérer les modifications</h3>
-            <pre>git pull --rebase</pre>
-            <p><strong>✔ Préférer toujours <code>pull --rebase</code> afin d'éviter les commits de merge
-                    inutiles.</strong></p>
-            <hr>
-            <h2>1️⃣1️⃣ Stash</h2>
-            <p>Mettre son travail temporairement de côté.</p>
-            <h3>Sauvegarder</h3>
-            <pre>git stash</pre>
-            <h3>Lister</h3>
-            <pre>git stash list</pre>
-            <h3>Récupérer et supprimer</h3>
-            <pre>git stash pop</pre>
-            <h3>Appliquer sans supprimer</h3>
-            <pre>git stash apply</pre>
-            <p>Idéal avant de changer de branche rapidement.</p>
-            <hr>
-            <h2>1️⃣2️⃣ Nettoyage</h2>
-            <h3>Prévisualiser</h3>
-            <pre>git clean -n</pre>
-            <h3>Supprimer les fichiers non suivis</h3>
-            <pre>git clean -f</pre>
-            <h3>Inclure les dossiers</h3>
-            <pre>git clean -fd</pre>
-            <p><strong>⚠️ Toujours utiliser <code>-n</code> avant un <code>clean</code>.</strong></p>
-            <hr>
-            <h2>1️⃣3️⃣ Niveau avancé</h2>
-            <h3>Reflog — Sauvetage ultime</h3>
-            <pre>git reflog</pre>
-            <p>Permet de retrouver des commits perdus, même après un reset.</p>
-            <h3>Cherry-pick</h3>
-            <pre>git cherry-pick HASH</pre>
-            <p>Copie un commit précis dans une autre branche.</p>
-            <h3>Bisect</h3>
-            <pre>git bisect start</pre>
-            <p>Recherche automatiquement le commit ayant introduit un bug grâce à une recherche dichotomique.</p>
-            <hr>
-            <h2>🌐 Cloner un projet puis le rattacher à son GitHub</h2>
-            <h3>Étapes</h3>
-            <ol>
-                <li>Ouvrir l'IDE</li>
-                <li>Onglet <strong>Git → Clone</strong></li>
-                <li>Saisir l'URL du dépôt source</li>
-                <li>Cloner le projet</li>
-                <li>Créer un nouveau dépôt vide sur GitHub</li>
-                <li>Ouvrir le terminal dans le projet</li>
-            </ol>
-            <h3>Remplacer le dépôt distant</h3>
-            <pre>git remote -v
-            git remote set-url origin \
-            https://github.com/DEVMJ00/NOM_NOUVEAU_DEPOT.git
+    <dialog id="git">
+    <div class="display_column center"><img style="max-width:60px; height: auto;" src="./assets/img/github.png">
+        <h2>🌿 Git — Guide complet</h2>
+    </div>
 
-            git push -u origin main</pre>
-            <p>Cette opération conserve l'historique Git tout en publiant le projet dans ton dépôt personnel.</p>
-            <hr>
-            <h2>🧠 Workflow recommandé</h2>
-            <pre>git switch main
-            git pull --rebase
-            git switch -c feature-ma-fonction
+    <p>
+        Git est un système de gestion de versions distribué permettant de suivre les modifications,
+        travailler en branches, collaborer et revenir facilement à un état antérieur d'un projet.
+    </p>
 
-            # Développement...
-            git status
-            git diff
-            git add .
-            git commit -m "feat: nouvelle fonctionnalité"
+    <hr>
+    <br>
+    <h3>1️⃣ Initialisation et configuration</h3>
+    <ul>
+        <li><code>git --version</code> : vérifier la version de Git.</li>
+        <li><code>git config --global user.name "Nom Prénom"</code> : configurer son nom pour les commits.</li>
+        <li><code>git config --global user.email "email@exemple.com"</code> : configurer son adresse e-mail pour les commits.</li>
+        <li><code>git config --list</code> : afficher la configuration.</li>
+        <li><code>git init</code> : créer un dépôt Git dans le répertoire courant.</li>
+        <li><code>git clone URL_DU_REPO</code> : cloner un dépôt existant.</li>
+    </ul>
 
-            git switch main
-            git pull --rebase
-            git merge feature-ma-fonction
-            git push</pre>
-            <hr>
-            <h2>✅ Bonnes pratiques</h2>
-            <ul>
-                <li>✔ Commits petits et atomiques</li>
-                <li>✔ Messages explicites (feat, fix, docs, refactor...)</li>
-                <li>✔ Une branche par fonctionnalité</li>
-                <li>✔ Éviter de travailler directement sur <code>main</code></li>
-                <li>✔ Toujours vérifier <code>git status</code> avant un commit</li>
-                <li>✔ Lire <code>git diff</code> avant de valider les modifications</li>
-                <li>✔ Utiliser un <code>.gitignore</code> dès le début du projet</li>
-                <li>✔ Préférer <code>git pull --rebase</code> à <code>git pull</code></li>
-                <li>✔ Réserver <code>--force</code> aux branches personnelles</li>
-                <li>✔ Un historique propre vaut mieux qu'un historique rapide</li>
-            </ul>
-            <hr>
-            <h2>📋 Mémo rapide</h2>
-            <pre>
-            git status              État du dépôt
-            git diff                Modifications
-            git add .               Indexer
-            git commit -m           Commit
-            git switch -c           Nouvelle branche
-            git merge               Fusion
-            git rebase              Historique linéaire
-            git stash               Mettre de côté
-            git revert              Annuler proprement
-            git reflog              Sauver un historique perdu
-            git push                Envoyer
-            git pull --rebase       Synchroniser
-        </pre>
-            <div>
-                <button id="btn_fermeture" data-close>Fermer</button>
-            </div>
+    <hr>
+    <br>
+    <h3>2️⃣ État et inspection</h3>
+    <ul>
+        <li><code>git status</code> : consulter l'état du dépôt et les fichiers modifiés, indexés ou non suivis.</li>
+        <li><code>git diff</code> : afficher les différences non indexées.</li>
+        <li><code>git diff --staged</code> : afficher les différences indexées, prêtes à être incluses dans un commit.</li>
+        <li><code>git log --oneline --graph --decorate --all</code> : consulter l'historique sous forme compacte avec les branches.</li>
+        <li><code>git show HASH</code> : afficher les informations et les modifications d'un commit.</li>
+        <li><code>git blame fichier</code> : identifier l'auteur associé aux modifications de chaque ligne.</li>
+    </ul>
+    <p><strong>💡 Réflexe :</strong> toujours consulter <code>git status</code> puis <code>git diff</code> avant un commit.</p>
+
+    <hr>
+    <br>
+    <h3>3️⃣ Ajouter des fichiers et créer des commits</h3>
+    <ul>
+        <li><code>git add fichier</code> : indexer un fichier précis.</li>
+        <li><code>git add .</code> : indexer les modifications présentes sous le répertoire courant.</li>
+        <li><code>git commit -m "Message clair et précis"</code> : créer un commit avec un message explicite.</li>
+        <li><code>git commit --amend</code> : modifier le dernier commit, notamment son contenu ou son message.</li>
+        <li><code>git commit --amend -m "Nouveau message"</code> : modifier uniquement le message du dernier commit.</li>
+    </ul>
+    <p><strong>✔ Bon message :</strong> privilégier un message court, précis et représentatif des changements. Exemples : <code>feat: ajouter la recherche</code>, <code>fix: corriger le tri</code>, <code>docs: compléter le guide</code>.</p>
+
+    <hr>
+    <br>
+    <h3>4️⃣ Modifier ou supprimer des fichiers</h3>
+    <ul>
+        <li><code>git rm fichier</code> : supprimer le fichier du répertoire de travail et indexer sa suppression.</li>
+        <li><code>git rm --cached fichier</code> : retirer le fichier du suivi Git sans le supprimer du disque.</li>
+        <li><code>git mv ancien nouveau</code> : renommer ou déplacer un fichier en indexant l'opération.</li>
+        <li><code>git restore fichier</code> : restaurer le fichier depuis son état indexé, en abandonnant ses modifications non indexées.</li>
+        <li><code>git restore --source=HASH fichier</code> : restaurer le fichier à partir d'un commit donné.</li>
+    </ul>
+
+    <hr>
+    <br>
+    <h3>5️⃣ Gestion des branches</h3>
+    <ul>
+        <li><code>git branch</code> : afficher les branches locales.</li>
+        <li><code>git branch feature-login</code> : créer une branche sans basculer dessus.</li>
+        <li><code>git switch -c feature-login</code> : créer une branche et basculer dessus.</li>
+        <li><code>git checkout -b feature-login</code> : ancienne syntaxe pour créer une branche et basculer dessus.</li>
+        <li><code>git switch main</code> : basculer vers la branche <code>main</code>.</li>
+        <li><code>git branch -d feature-login</code> : supprimer une branche locale déjà fusionnée.</li>
+        <li><code>git push origin --delete feature-login</code> : supprimer une branche distante.</li>
+    </ul>
+    <p><strong>📌 Règle :</strong> une branche = une fonctionnalité ou un correctif.</p>
+
+    <hr>
+    <br>
+    <h3>6️⃣ Fusion et réécriture de l'historique</h3>
+    <ul>
+        <li><code>git merge feature-login</code> : fusionner la branche indiquée dans la branche courante.</li>
+        <li><code>git rebase main</code> : replacer les commits de la branche courante au-dessus de <code>main</code>, pour obtenir un historique linéaire.</li>
+        <li><code>git rebase -i HEAD~3</code> : réorganiser interactivement les trois derniers commits pour les fusionner, les réordonner, modifier leurs messages ou en supprimer.</li>
+    </ul>
+    <p><strong>À retenir :</strong> le merge conserve la structure de l'historique ; le rebase réécrit les commits concernés. Évite de rebaser des commits déjà partagés sans coordination avec l'équipe.</p>
+
+    <hr>
+    <br>
+    <h3>7️⃣ Corriger une erreur avant le push</h3>
+    <ul>
+        <li><code>git restore --staged fichier</code> : retirer un fichier de l'index sans annuler ses modifications locales.</li>
+        <li><code>git reset --soft HEAD~1</code> : supprimer le dernier commit tout en conservant les changements dans l'index.</li>
+        <li><code>git reset --hard HEAD~1</code> : revenir au commit précédent et abandonner les modifications suivies concernées.</li>
+    </ul>
+
+    <p><strong>Exemple : reprendre le dernier commit pour le corriger</strong></p>
+    <pre>git reset --soft HEAD~1
+git add .
+git commit -m "Commit corrigé"</pre>
+    <p>Le dernier commit est retiré de la branche et ses changements restent disponibles pour créer un nouveau commit.</p>
+
+    <p><strong>⚠️ Attention :</strong> <code>git reset --hard</code> peut supprimer des modifications locales non sauvegardées. Vérifie l'état du dépôt avant de l'utiliser.</p>
+
+    <hr>
+    <br>
+    <h3>8️⃣ Après un push : cas sensible</h3>
+    <p>Réécrire l'historique ne doit être fait que sur une branche personnelle ou après accord de l'équipe.</p>
+    <ul>
+        <li><code>git push --force</code> : forcer la mise à jour distante, au risque d'écraser des commits présents sur le serveur.</li>
+        <li><code>git push --force-with-lease</code> : forcer la mise à jour en vérifiant que la référence distante correspond à celle attendue localement.</li>
+    </ul>
+    <p><strong>🛡️ Recommandation :</strong> préférer <code>--force-with-lease</code> à <code>--force</code>. Cette option réduit les risques, mais ne rend pas l'opération sans danger.</p>
+    <p><strong>🚫 Évite de forcer sur <code>main</code> en équipe.</strong></p>
+
+    <hr>
+    <br>
+    <h3>9️⃣ Annuler un commit proprement</h3>
+    <ul>
+        <li><code>git revert HASH</code> : créer un nouveau commit qui inverse les changements d'un commit existant.</li>
+    </ul>
+    <p>Contrairement à <code>reset</code>, cette méthode conserve l'historique et convient aux branches partagées.</p>
+
+    <hr>
+    <br>
+    <h3>🔟 Gestion du dépôt distant</h3>
+    <ul>
+        <li><code>git remote -v</code> : afficher les dépôts distants configurés.</li>
+        <li><code>git remote add origin URL</code> : ajouter un dépôt distant nommé <code>origin</code>.</li>
+        <li><code>git remote set-url origin NOUVELLE_URL</code> : modifier l'URL du dépôt distant.</li>
+        <li><code>git push -u origin main</code> : publier <code>main</code> pour la première fois et définir sa branche de suivi.</li>
+        <li><code>git push</code> : envoyer les commits vers le dépôt distant configuré.</li>
+        <li><code>git pull --rebase</code> : récupérer les modifications distantes puis rejouer les commits locaux au-dessus de celles-ci.</li>
+    </ul>
+    <p><strong>✔ Bonne pratique :</strong> préférer <code>git pull --rebase</code> lorsque le workflow de l'équipe repose sur le rebase, afin d'éviter certains commits de merge inutiles.</p>
+
+    <hr>
+    <br>
+    <h3>1️⃣1️⃣ Stash — mettre son travail de côté</h3>
+    <ul>
+        <li><code>git stash</code> : mettre temporairement de côté les modifications suivies du répertoire de travail et de l'index.</li>
+        <li><code>git stash list</code> : afficher les stash enregistrés.</li>
+        <li><code>git stash pop</code> : réappliquer le stash le plus récent et le retirer de la liste si l'application réussit.</li>
+        <li><code>git stash apply</code> : réappliquer un stash sans le supprimer de la liste.</li>
+    </ul>
+    <p>Pratique avant de changer rapidement de branche. Par défaut, les fichiers non suivis ne sont pas inclus.</p>
+
+    <hr>
+    <br>
+    <h3>1️⃣2️⃣ Nettoyage du dépôt</h3>
+    <ul>
+        <li><code>git clean -n</code> : prévisualiser les fichiers non suivis qui seraient supprimés.</li>
+        <li><code>git clean -f</code> : supprimer les fichiers non suivis.</li>
+        <li><code>git clean -fd</code> : supprimer les fichiers et les dossiers non suivis.</li>
+    </ul>
+    <p><strong>⚠️ Prudence :</strong> toujours utiliser <code>-n</code> avant <code>git clean</code> pour vérifier ce qui sera supprimé.</p>
+
+    <hr>
+    <br>
+    <h3>1️⃣3️⃣ Commandes avancées</h3>
+    <ul>
+        <li><code>git reflog</code> : consulter l'historique des déplacements des références locales et retrouver parfois des commits devenus difficiles d'accès.</li>
+        <li><code>git cherry-pick HASH</code> : appliquer un commit précis sur la branche courante.</li>
+        <li><code>git bisect start</code> : démarrer une recherche dichotomique pour identifier le commit qui a introduit un bug. La recherche nécessite ensuite de définir les états bon et mauvais, puis de tester les commits proposés.</li>
+    </ul>
+
+    <hr>
+    <br>
+    <h3>🌐 Cloner un projet puis le rattacher à son GitHub</h3>
+    <ol>
+        <li>Ouvrir l'IDE.</li>
+        <li>Choisir <strong>Git → Clone</strong>.</li>
+        <li>Saisir l'URL du dépôt source.</li>
+        <li>Cloner le projet.</li>
+        <li>Créer un nouveau dépôt vide sur GitHub.</li>
+        <li>Ouvrir le terminal dans le projet.</li>
+    </ol>
+
+    <p><strong>Remplacer le dépôt distant</strong></p>
+    <pre>git remote -v
+git remote set-url origin https://github.com/ORIMAWORKS/NOM_NOUVEAU_DEPOT.git
+git push -u origin main</pre>
+    <p>Cette opération conserve l'historique Git local tout en publiant le projet dans ton dépôt personnel. Vérifie que le dépôt distant cible est bien celui que tu souhaites utiliser.</p>
+
+    <hr>
+    <br>
+    <h3>🧠 Workflow recommandé</h3>
+    <pre>
+git switch main
+git pull --rebase
+git switch -c feature-ma-fonction
+
+# Développement...
+git status
+git diff
+git add .
+git commit -m "feat: nouvelle fonctionnalité"
+
+git switch main
+git pull --rebase
+git merge feature-ma-fonction
+git push</pre>
+
+    <hr>
+    <br>
+    <h3>✅ Bonnes pratiques</h3>
+    <ul>
+        <li>✔ Faire des commits petits et atomiques.</li>
+        <li>✔ Écrire des messages explicites : <code>feat</code>, <code>fix</code>, <code>docs</code>, <code>refactor</code>…</li>
+        <li>✔ Créer une branche par fonctionnalité.</li>
+        <li>✔ Éviter de travailler directement sur <code>main</code>.</li>
+        <li>✔ Vérifier <code>git status</code> avant un commit.</li>
+        <li>✔ Lire <code>git diff</code> avant de valider les modifications.</li>
+        <li>✔ Utiliser un fichier <code>.gitignore</code> dès le début du projet.</li>
+        <li>✔ Préférer <code>git pull --rebase</code> lorsque le workflow le permet.</li>
+        <li>✔ Réserver <code>--force</code> aux situations maîtrisées.</li>
+        <li>✔ Privilégier un historique compréhensible plutôt qu'un historique simplement rapide à produire.</li>
+    </ul>
+
+    <hr>
+    <br>
+    <h3>📋 Mémo rapide</h3>
+    <ul>
+        <li><code>git status</code> : état du dépôt.</li>
+        <li><code>git diff</code> : consulter les modifications.</li>
+        <li><code>git add .</code> : indexer les modifications sous le répertoire courant.</li>
+        <li><code>git commit -m "message"</code> : créer un commit.</li>
+        <li><code>git switch -c nom</code> : créer une branche et basculer dessus.</li>
+        <li><code>git merge nom</code> : fusionner une branche dans la branche courante.</li>
+        <li><code>git rebase main</code> : replacer les commits au-dessus de <code>main</code>.</li>
+        <li><code>git stash</code> : mettre temporairement de côté les modifications suivies.</li>
+        <li><code>git revert HASH</code> : annuler un commit en créant un commit inverse.</li>
+        <li><code>git reflog</code> : rechercher un ancien état d'une référence locale.</li>
+        <li><code>git push</code> : envoyer les commits vers le dépôt distant.</li>
+        <li><code>git pull --rebase</code> : synchroniser le dépôt en rebasant les commits locaux.</li>
+    </ul>
+
+    <div>
+        <button id="btn_fermeture" data-close>Fermer</button>
+    </div>
+</dialog>

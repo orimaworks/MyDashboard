@@ -92,12 +92,12 @@ body.dark .card-label {
 		color: var(--dark-couleur-texte);
 }
 	
-.btn_fermeture {
+/* .btn_fermeture {
     position: sticky;
     top: 10px;
     margin-left: auto;
     z-index: 10;
-}
+} */
 
 button {
 	display: flex;

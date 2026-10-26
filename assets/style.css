@@ -858,7 +858,9 @@ input:checked + .slider:before {
 
 /* Easter egg Sims */
 #easter-toast.sims::before {
-    content: "💰";
+	content: "";
+    display: inline-block;
+    background: url("img/sims.png") center / contain no-repeat;
 }
 
 #easter-toast.sims .achievement-label {
@@ -867,7 +869,9 @@ input:checked + .slider:before {
 
 /* Easter egg Linux */
 #easter-toast.linux::before {
-    content: "🐧";
+	content: "";
+    display: inline-block;
+    background: url("img/linux.png") center / contain no-repeat;
 }
 
 #easter-toast.linux .achievement-label {

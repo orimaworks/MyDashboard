@@ -681,9 +681,9 @@ input:checked + .slider:before {
 	text-shadow: 0 0 7px #fff,
 	0 0 10px #fff,
 	0 0 21px #fff,
-	0 0 42px #2965f1,
-	0 0 82px #2965f1,
-	0 0 92px #2965f1;
+	0 0 42px var(--couleur-secondaire),
+	0 0 82px var(--couleur-secondaire),
+	0 0 92px var(--couleur-secondaire);
 	animation: flicker 3s infinite;
 }
 

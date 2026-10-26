@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
         // "k","l","a","p","a","u","c","i","u","s"
     ];
 
-    let position = 0;
+    let positionKonami = 0;
+    let positionSims = 0;
 
     document.addEventListener("keydown", (event) => {
 
@@ -29,37 +30,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const key = event.key.toLowerCase();
 
-        //VERSION KONAMI
-        if (key === konamiCode[position].toLowerCase()) {
-            console.log("Konami detected")
-            position++;
+        // VERSION KONAMI
+        if (key === konamiCode[positionKonami].toLowerCase()) {
+            positionKonami++;
 
-            if (position === konamiCode.length) {
-                console.log("activation")
+            if (positionKonami === konamiCode.length) {
+                console.log("Activation Konami");
                 activateEasterEggKonami();
-                console.log("activated")
-                position = 0;
+                positionKonami = 0;
             }
-
         } else {
-            position = 0;
+            positionKonami = key === konamiCode[0].toLowerCase() ? 1 : 0;
         }
 
+        // VERSION SIMS
+        if (key === sims[positionSims]) {
+            positionSims++;
 
-        //VERSION SIMS
-        if (key === sims[position].toLowerCase()) {
-            console.log("Sims detected")
-            position++;
-
-            if (position === sims.length) {
-                console.log("activation")
+            if (positionSims === sims.length) {
+                console.log("Activation Sims");
                 activateEasterEggSims();
-                console.log("activated")
-                position = 0;
+                positionSims = 0;
             }
-
         } else {
-            position = 0;
+            positionSims = key === sims[0] ? 1 : 0;
         }
 
 
@@ -76,7 +70,7 @@ function activateEasterEggKonami() {
     }
 
     let toast = document.getElementById("easter-toast");
-    
+
     if (!toast) {
         toast = document.createElement("div");
         toast.id = "easter-toast";

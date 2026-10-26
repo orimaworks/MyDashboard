@@ -682,7 +682,7 @@ const cards = [
         url: "https://astech.valenceromansagglo.fr/#/",
         text: "ASTech",
 		label:"ASTech",
-		icon: "https://astech.valenceromansagglo.fr/assets/images/logo-symphonie1.png",
+		icon: "./assets/img/logo-astech.svg",
 		category: "pro"
     },
 

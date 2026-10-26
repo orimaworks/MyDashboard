@@ -755,7 +755,7 @@ input:checked + .slider:before {
 
 
 /* =====================================================
-		ESTER EGGS
+		EASTER EGGS
    ===================================================== */
 #easter-toast {
     position: fixed;
@@ -802,9 +802,9 @@ input:checked + .slider:before {
 
 /* Icône de l'achievement */
 #easter-toast::before {
-    content: "🎮";
-    width: 52px;
-    height: 52px;
+    content: "";
+    width: 60px;
+    height: 60px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
@@ -897,8 +897,6 @@ input:checked + .slider:before {
 #easter-toast.gta::before {
 	content: "";
     display: inline-block;
-    width: 32px;
-    height: 32px;
     background: url("img/rockstar.svg") center / contain no-repeat;
 }
 

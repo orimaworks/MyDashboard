@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         //VERSION KONAMI
         if (key === konamiCode[position].toLowerCase()) {
+            console.log("Konami detected")
             position++;
 
             if (position === konamiCode.length) {
@@ -45,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         //VERSION SIMS
         if (key === sims[position].toLowerCase()) {
+            console.log("Sims detected")
             position++;
 
             if (position === sims.length) {

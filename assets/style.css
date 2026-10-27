@@ -319,53 +319,82 @@ img {
 
 
 kbd {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
 
-    padding: 3px 8px;
-    min-width: 1.4em;
+    min-width: 1.8em;
+    min-height: 1.8em;
+    padding: 3px 9px;
+    margin: 0 2px;
 
     font-family: "Consolas", monospace;
-    font-size: .85rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    line-height: 1.5;
-    text-align: center;
+    line-height: 1.2;
     white-space: nowrap;
 
-    color: var(--couleur-primaire);
+    color: #263448;
     background: linear-gradient(
         180deg,
         #ffffff 0%,
-        #f1f2f5 45%,
-        #e1e4e9 100%
+        #f4f5f7 18%,
+        #e6e8ec 72%,
+        #d5d9e0 100%
     );
 
-    border: 1px solid #c5c9d1;
+    border: 1px solid #c4c9d2;
     border-radius: 5px;
 
     box-shadow:
-        0 1px 0 #ffffff inset,
-        0 -1px 0 #d4d7de inset,
-        0 2px 0 #aeb3bd,
-        0 3px 5px rgb(0 0 0 / 15%);
+        inset 0 2px 1px rgb(255 255 255 / 95%),
+        inset 0 -2px 2px rgb(120 130 145 / 20%),
+        0 1px 0 #aeb4bf,
+        0 3px 0 #858d9a,
+        0 4px 5px rgb(0 0 0 / 25%);
 
-    transform: translateY(0);
+    vertical-align: middle;
+    transform: translateY(-2px);
+
     transition:
-        transform .08s ease,
-        box-shadow .08s ease;
+        transform 100ms ease,
+        box-shadow 100ms ease,
+        background 100ms ease;
 }
 
+/* Survol : éclaircissement subtil */
 kbd:hover {
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f5f8ff 45%,
+        #dce7fa 100%
+    );
+
+    border-color: #a9bddc;
+
+    box-shadow:
+        inset 0 2px 1px rgb(255 255 255 / 95%),
+        0 1px 0 #aebbd0,
+        0 3px 0 #7185a4,
+        0 5px 9px rgb(0 0 0 / 25%);
+}
+
+/* Pression : la touche descend réellement */
+kbd:active {
     transform: translateY(1px);
 
     box-shadow:
-        0 1px 0 #ffffff inset,
-        0 -1px 0 #d4d7de inset,
-        0 1px 0 #aeb3bd,
-        0 2px 3px rgb(0 0 0 / 12%);
+        inset 0 2px 4px rgb(0 0 0 / 12%),
+        0 1px 0 #858d9a,
+        0 1px 2px rgb(0 0 0 / 20%);
 }
 
-
+/* Combinaison de touches */
+kbd + kbd {
+    margin-left: 3px;
+}
 
  li {
   margin-bottom: 9px;

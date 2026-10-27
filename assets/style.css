@@ -415,7 +415,7 @@ kbd::after {
     inset 0 -2px 6px color-mix(in srgb, var(--kbd-led) 40%, transparent);
 }
 
-kbd:hover {
+/* kbd:hover {
   color: #e6edf3;
   background: linear-gradient(180deg,
     color-mix(in srgb, var(--kbd-surface) 120%, #fff) 0%,
@@ -423,7 +423,7 @@ kbd:hover {
     color-mix(in srgb, var(--kbd-surface) 70%, #fff) 100%);
 }
 
-kbd:hover::after { opacity: 0.5; }
+kbd:hover::after { opacity: 0.5; } */
 
 /* Classe optionnelle pour allumer la touche en permanence */
 kbd.lit {

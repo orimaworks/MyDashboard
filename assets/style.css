@@ -436,7 +436,7 @@ table {
     table tbody tr {
         transition: none;
     }
-
+}
 
 @media (max-width: 700px) {
     table {

@@ -403,6 +403,15 @@ const cards = [
 //       GAMING
 //-----------------------
     {
+        title: "Géo",
+        url: "./geo.html",
+        icon: "./assets/img/geo.svg",
+		text: "Géo.",
+		label: "Géo.",
+		category: "Gaming"
+    },
+    
+    {
         title: "Rockstar",
         url: "https://socialclub.rockstargames.com/",
         icon: "./assets/img/rockstar.svg",

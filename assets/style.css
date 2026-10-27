@@ -196,88 +196,110 @@ button:hover {
 
 
 
-/* =====================================================
-						TABLEAUX
-===================================================== */
+/* ==============================
+   TABLEAUX
+============================== */
+
 table {
-    /* Variables personnalisables */
-    --table-primary: #1F497D;
-    --table-primary-light: #3680DB;
-    --table-bg: #ffffff;
-    --table-text: #2d3748;
-    --table-border: #e2e8f0;
-    --table-hover: rgba(230, 46, 107, 0.2);
-    --table-radius: 15px;
-    --table-shadow: 0 12px 12px 1px rgba(120, 50, 86, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
-    
-    /* Base du tableau */
-    width: auto;
-    max-width: 95%;
+    width: 100%;
     border-collapse: collapse;
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    font-size: 14px;
-    color: var(--table-text);
-    border-radius: var(--table-radius);
-    box-shadow: var(--table-shadow);
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    text-align: left;
+    border-radius: 8px;
     overflow: hidden;
-    background: var(--table-bg);
-    margin: 1rem 0;
-    margin-bottom: 80px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
 
-  }
+/* Légende */
 
-
-  /* En-tête - adaptable quel que soit le nombre de colonnes */
-  table tr:first-child td {
-    /*background: linear-gradient(180deg, var(--primary) 0%, var(--primary-light) 100%);*/
-    background: var(--primary);
-    color: white;
-    padding: 16px 12px;
+table caption {
+    caption-side: top;
+    padding: 0.75rem;
     font-weight: 600;
-    letter-spacing: 0.3px;
-    border: none;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-  }
+    font-size: 1rem;
+    color: #001a33;
+    text-align: left;
+}
 
+/* En-tête */
 
-  /* Corps du tableau - toutes les cellules */
-  table td {
-    padding: 12px;
-    border-bottom: 1px solid var(--table-border);
-    background: var(--table-bg);
-    vertical-align: middle;
-    transition: background-color 0.15s ease;
-            animation: fade-in 1s forwards;
-            opacity: 0;
-  }
+table thead {
+    background-color: #001a33;
+    color: #ffffff;
+}
 
-  /* Lignes alternées */
-  table tr:nth-child(even) td {
-    background-color: #fafbfc;
-  }
+table th {
+    padding: 0.85rem 1rem;
+    font-weight: 600;
+    border: 1px solid #24415d;
+}
 
-  /* Effet de survol sur toute la ligne (sauf la première) */
-  table tr:not(:first-child):hover td {
-    background-color: var(--table-hover);
-  }
+/* Cellules */
 
-  /* Dernière ligne - pas de bordure */
-  table tr:last-child td {
-    border-bottom: none;
-  }
+table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #dce3eb;
+    transition: background-color 0.2s ease;
+}
 
- 
-  /* Responsive - scroll horizontal si nécessaire */
-  .table-wrapper {
-    overflow-x: auto;
-    width: auto;
-    max-width: 100%;
-    border-radius: var(--table-radius);
-  }
+/* Alternance des lignes */
 
+table tbody tr:nth-child(odd) {
+    background-color: #f0f5fa;
+}
 
+table tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* Hover sur les lignes impaires */
+
+table tbody tr:nth-child(odd):hover {
+    background-color: #d9eaff;
+}
+
+/* Hover sur les lignes paires */
+
+table tbody tr:nth-child(even):hover {
+    background-color: #e8f2ff;
+}
+
+/* Première colonne : numérotation */
+
+table tbody td:first-child {
+    width: 40px;
+    text-align: center;
+    font-weight: 600;
+    color: #54718e;
+}
+
+/* Formules Excel */
+
+table tbody td:nth-child(3) {
+    font-family: Consolas, "Courier New", monospace;
+    color: #075e9b;
+    font-size: 0.85rem;
+}
+
+/* Résultats */
+
+table tbody td:last-child {
+    color: #176b45;
+}
+
+/* Responsive */
+
+@media (max-width: 700px) {
+    table {
+        font-size: 0.8rem;
+    }
+
+    table th,
+    table td {
+        padding: 0.6rem;
+    }
+}
 
 
 

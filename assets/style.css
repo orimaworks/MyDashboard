@@ -323,106 +323,178 @@ kbd {
     align-items: center;
     justify-content: center;
     position: relative;
-    isolation: isolate;
-
-    min-width: 2em;
-    min-height: 2em;
-    padding: 4px 10px;
-    margin: 0 3px 5px 0;
-
+    
+    min-width: 2.2em;
+    min-height: 2.2em;
+    padding: 6px 14px;
+    margin: 0 4px 6px 0;
+    
     font-family: "Consolas", "Courier New", monospace;
-    font-size: 0.85rem;
-    font-weight: 600;
-    line-height: 1.2;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.3;
     white-space: nowrap;
     vertical-align: middle;
-
-    color: #29374b;
-
-    /* Surface supérieure */
-    background: linear-gradient(
-        180deg,
-        #ffffff 0%,
-        #f8f9fb 10%,
-        #eef0f4 48%,
-        #e0e3e9 85%,
-        #d0d5dd 100%
-    );
-
-    border: 1px solid #bfc5cf;
-    border-radius: 7px;
-
-    /* Biseau, flanc et socle */
+    
+    color: #3a4a5f;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    
+    /* Surface principale avec micro-grain */
+    background: 
+        radial-gradient(circle at 50% 30%, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 6%),
+        radial-gradient(ellipse at 50% 60%, rgba(0,0,0,0.03) 0%, rgba(0,0,0,0) 40%),
+        linear-gradient(
+            180deg,
+            #f5f7fa 0%,
+            #ebeef3 25%,
+            #dfe3ea 50%,
+            #d3d8e0 75%,
+            #c5cbd4 100%
+        );
+    
+    border: none;
+    border-radius: 5px;
+    
+    /* Profil mécanique complet */
     box-shadow:
-        inset 0 2px 1px rgb(255 255 255 / 100%),
-        inset 1px 0 1px rgb(255 255 255 / 80%),
-        inset -1px 0 1px rgb(160 168 180 / 25%),
-        inset 0 -2px 2px rgb(135 145 160 / 22%),
-        0 1px 0 #aeb5c0,
-        0 2px 0 #969eaa,
-        0 3px 0 #737d8b,
-        0 4px 0 #3b4553,
-        0 5px 7px rgb(0 0 0 / 30%);
-
-    transform: translateY(-3px);
-
-    transition:
-        transform 140ms ease,
-        box-shadow 140ms ease,
-        background 140ms ease,
-        border-color 140ms ease;
+        /* Réflexions internes (surface brillante) */
+        inset 0 1px 0 rgba(255, 255, 255, 1),
+        inset 0 2px 3px rgba(255, 255, 255, 0.6),
+        inset 0 -1px 2px rgba(0, 0, 0, 0.08),
+        
+        /* Contour du bord supérieur (light catch) */
+        inset 0 3px 0 rgba(255, 255, 255, 0.9),
+        
+        /* Épaiseur latérale avec dégradé d'ombre */
+        0 1px 0 #b8bcc5,
+        0 2px 0 #a4a9b3,
+        0 3px 0 #9197a2,
+        0 4px 0 #7d8491,
+        0 5px 0 #697180,
+        
+        /* Ombre portée diffuse */
+        0 8px 12px rgba(0, 0, 0, 0.25),
+        0 12px 20px rgba(0, 0, 0, 0.15);
+    
+    transform: translateY(-2px);
+    transition: all 120ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Micro-texture pour éviter l'effet plastique trop lisse */
+    backdrop-filter: blur(0.5px);
 }
 
-/* Reflet périphérique sur le dessus */
+/* Effet de concavité centrale (empreinte doigt) */
 kbd::before {
     content: "";
     position: absolute;
-    z-index: -1;
-
-    inset: 2px;
-    border-radius: 4px;
-
-    border-top: 1px solid rgb(255 255 255 / 95%);
-    border-left: 1px solid rgb(255 255 255 / 65%);
-    border-right: 1px solid rgb(255 255 255 / 25%);
-
-    pointer-events: none;
-}
-
-/* Survol : lumière froide et relief accentué */
-kbd:hover {
-    color: #203c63;
-
-    background: linear-gradient(
-        180deg,
-        #ffffff 0%,
-        #f7f9ff 20%,
-        #e5edfb 70%,
-        #d3e0f4 100%
+    inset: 3px 4px 8px 4px;
+    border-radius: 3px;
+    
+    background: radial-gradient(
+        ellipse at 50% 40%,
+        rgba(255, 255, 255, 0.15) 0%,
+        rgba(255, 255, 255, 0) 55%
     );
-
-    border-color: #aabbd5;
-
-    box-shadow:
-        inset 0 2px 1px rgb(255 255 255 / 100%),
-        inset 1px 0 1px rgb(255 255 255 / 90%),
-        inset 0 -2px 2px rgb(120 145 180 / 20%),
-        0 1px 0 #b1bfd3,
-        0 2px 0 #8b9db8,
-        0 3px 0 #627794,
-        0 4px 0 #303f53,
-        0 6px 10px rgb(0 0 0 / 35%);
-
-    transform: translateY(-4px);
+    
+    pointer-events: none;
+    z-index: 1;
 }
 
-/* Respect des préférences d'accessibilité */
+/* Biseau périphérique interne */
+kbd::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 5px;
+    pointer-events: none;
+    z-index: 2;
+    
+    background: 
+        linear-gradient(180deg,
+            rgba(255,255,255,0.7) 0%,
+            rgba(255,255,255,0.3) 15%,
+            rgba(0,0,0,0.05) 48%,
+            rgba(0,0,0,0.12) 100%
+        );
+    
+    mask: 
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask: 
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+}
+
+/* État pressé - simulateur d'enfoncement mécanique */
+kbd:active {
+    transform: translateY(3px);
+    
+    box-shadow:
+        inset 0 2px 4px rgba(0, 0, 0, 0.15),
+        inset 0 0 0 rgba(255, 255, 255, 0),
+        0 1px 0 #8a8f9a,
+        0 2px 0 #757a85,
+        0 3px 0 #616670,
+        0 4px 0 #4d525c,
+        0 5px 0 #393e48,
+        0 6px 8px rgba(0, 0, 0, 0.3);
+    
+    color: #2d3a4d;
+    text-shadow: 0 0 0 transparent;
+    
+    background: 
+        radial-gradient(circle at 50% 30%, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 6%),
+        radial-gradient(ellipse at 50% 60%, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 40%),
+        linear-gradient(
+            180deg,
+            #ebeef3 0%,
+            #dfe3ea 25%,
+            #d3d8e0 50%,
+            #c5cbd4 75%,
+            #b8bec7 100%
+        );
+}
+
+/* Survol subtil */
+kbd:hover {
+    transform: translateY(-3px);
+    
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 1),
+        inset 0 2px 4px rgba(255, 255, 255, 0.7),
+        inset 0 -1px 2px rgba(0, 0, 0, 0.06),
+        inset 0 3px 0 rgba(255, 255, 255, 0.95),
+        0 1px 0 #bdc1ca,
+        0 2px 0 #a9adb7,
+        0 3px 0 #9599a3,
+        0 4px 0 #818590,
+        0 5px 0 #6d717f,
+        0 10px 16px rgba(0, 0, 0, 0.28),
+        0 16px 28px rgba(0, 0, 0, 0.18);
+    
+    color: #324258;
+}
+
+/* Accessibilité */
 @media (prefers-reduced-motion: reduce) {
-    kbd {
+    kbd, kbd:hover, kbd:active {
         transition: none;
     }
 }
 
+/* Pour les touches avec plusieurs symboles (ex: Cmd+Space) */
+kbd .key-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+kbd .key-separator {
+    color: #9da5b0;
+    font-size: 0.75em;
+}
 
 
 

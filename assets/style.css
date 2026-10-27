@@ -209,6 +209,7 @@ table {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	border-radius: 10px;
 }
 
 /* Légende */
@@ -226,7 +227,6 @@ table th {
 	padding: 0.85rem 1rem;
 	font-weight: 600;
 	border: 1px solid #24415d;
-	border-radius: 10px;
 	background-color: #001a33;
 	color: #ffffff;
 }
@@ -235,7 +235,10 @@ table th {
 table td {
     padding: 4px;
     border: 1px solid #dce3eb;
-    transition: background-color 0.2s ease;
+	vertical-align: middle;
+	transition: background-color 0.15s ease;
+            animation: fade-in 1s forwards;
+            opacity: 0;
 }
 
 /* Alternance des lignes */

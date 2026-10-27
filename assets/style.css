@@ -849,7 +849,8 @@ input:checked + .slider:before {
 
 /* Easter egg Konami */
 #easter-toast.konami::before {
-    content: "🎮";
+    background: #101820;
+	content: "🎮";
 }
 
 #easter-toast.konami .achievement-label {
@@ -871,7 +872,7 @@ input:checked + .slider:before {
 #easter-toast.linux::before {
 	content: "";
     display: inline-block;
-    background: url("img/linux.png") center / contain no-repeat;
+    background: #101820 url("img/linux.png") center / contain no-repeat;
 }
 
 #easter-toast.linux .achievement-label {
@@ -901,7 +902,7 @@ input:checked + .slider:before {
 #easter-toast.gta::before {
 	content: "";
     display: inline-block;
-    background: url("img/rockstar.svg") center / contain no-repeat;
+    background: #101820 url("img/rockstar.svg") center / contain no-repeat;
 }
 
 #easter-toast.gta .achievement-label {

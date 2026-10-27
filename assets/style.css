@@ -849,7 +849,8 @@ input:checked + .slider:before {
 
 /* Easter egg Konami */
 #easter-toast.konami::before {
-	content: "🎮";
+	content: "";
+	display: inline-block;
 	background: url("img/konami.png") center / contain no-repeat;
 }
 
@@ -894,7 +895,7 @@ input:checked + .slider:before {
 }
 
 #easter-toast.coffee .achievement-label {
-    color: #35190e;
+    color: #613322;
 }
 
 

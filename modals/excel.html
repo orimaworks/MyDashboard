@@ -165,58 +165,104 @@
             </tbody>
         </table>
 
+        <table>
+            <caption>Extraction du jour</caption>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>A (données)</th>
+                    <th>B (formule à appliquer)</th>
+                    <th>C (résultat obtenu)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>20/03/2020</td>
+                    <td>=JOUR(A1)</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>05/10/2025</td>
+                    <td>=JOUR(A2)</td>
+                    <td>5</td>
+                </tr>
+            </tbody>
+        </table>
 
-    <table>
-        <caption>Extraction du jour</caption>
-        <thead>
-            <tr>
-                <th></th>
-                <th>A (données)</th>
-                <th>B (formule à appliquer)</th>
-                <th>C (résultat obtenu)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>20/03/2020</td>
-                <td>=JOUR(A1)</td>
-                <td>20</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>05/10/2025</td>
-                <td>=JOUR(A2)</td>
-                <td>5</td>
-            </tr>
-        </tbody>
-    </table>
+        <table>
+            <caption>Calcul de l'ancienneté en années révolues</caption>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>A (date de référence)</th>
+                    <th>B (formule à appliquer)</th>
+                    <th>C (résultat obtenu)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>20/03/2020</td>
+                    <td>=DATEDIF(A1;AUJOURDHUI();"y")</td>
+                    <td>Nombre d'années écoulées</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>05/10/2025</td>
+                    <td>=DATEDIF(A2;AUJOURDHUI();"y")</td>
+                    <td>Nombre d'années écoulées</td>
+                </tr>
+            </tbody>
+        </table>
 
-    <table>
-        <caption>Calcul de l'ancienneté en années révolues</caption>
-        <thead>
-            <tr>
-                <th></th>
-                <th>A (date de référence)</th>
-                <th>B (formule à appliquer)</th>
-                <th>C (résultat obtenu)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>20/03/2020</td>
-                <td>=DATEDIF(A1;AUJOURDHUI();"y")</td>
-                <td>Nombre d'années écoulées</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>05/10/2025</td>
-                <td>=DATEDIF(A2;AUJOURDHUI();"y")</td>
-                <td>Nombre d'années écoulées</td>
-            </tr>
-        </tbody>
-    </table>
+        <h3>Contrôle et vérificationd es données</h3>
+        <table>
+            <caption>Comptage des occurrences d'une valeur</caption>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>A (statut recherché)</th>
+                    <th>B (formule à appliquer)</th>
+                    <th>C (résultat obtenu)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>MARCHE PUBLIC</td>
+                    <td>=NB.SI(B1:B5;A1)</td>
+                    <td>Nombre d'occurrences</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Assemblage et recherche de données</h3>
+        <table>
+            <caption>Gestion d'une erreur de recherche</caption>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>A (identifiant recherché)</th>
+                    <th>B (formule à appliquer)</th>
+                    <th>C (résultat obtenu)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>B9999</td>
+                    <td>=SIERREUR(RECHERCHEV(A1;E2:F3;2;FAUX);"Introuvable")</td>
+                    <td>Introuvable</td>
+                </tr>
+            </tbody>
+            <p>Pour l'exemple RECHERCHEV, le tableau de recherche E2:F3 doit contenir les identifiants en colonne E et les libellés correspondants en colonne F. La recherche exacte est activée par FAUX.</p>
+        </table>
+
+
+
+
 
             <h3> Raccourcis clavier </h3>
             <ul>

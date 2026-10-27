@@ -222,17 +222,12 @@ table caption {
     text-align: left;
 }
 
-/* En-tête */
-
-table thead {
-    background-color: #001a33;
-    color: #ffffff;
-}
-
 table th {
-    padding: 0.85rem 1rem;
-    font-weight: 600;
-    border: 1px solid #24415d;
+	padding: 0.85rem 1rem;
+	font-weight: 600;
+	border: 1px solid #24415d;
+	background-color: #001a33;
+	color: #ffffff;
 }
 
 /* Cellules */

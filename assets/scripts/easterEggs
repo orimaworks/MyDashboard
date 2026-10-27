@@ -211,7 +211,7 @@ function activateEasterEggLinux() {
 }
 
 
-function activateEasterEggNotfound() {
+function activateEasterEggError404() {
     const audio = document.getElementById("steam-sound");
 
     if (audio) {
@@ -220,7 +220,7 @@ function activateEasterEggNotfound() {
     }
 
     showEasterToast(
-        "notfound",
+        "error404",
         "ERROR 404",
         "Easter Egg not found",
         "Please try again later. Or not."

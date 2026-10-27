@@ -880,11 +880,11 @@ input:checked + .slider:before {
 }
 
 /* Easter egg ERROR 404 */
-#easter-toast.notfound::before {
+#easter-toast.error404::before {
     content: "❌";
 }
 
-#easter-toast.notfound .achievement-label {
+#easter-toast.error404 .achievement-label {
     color: #dd3f00;
 }
 

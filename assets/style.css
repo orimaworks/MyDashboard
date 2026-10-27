@@ -231,7 +231,6 @@ table th {
 }
 
 /* Cellules */
-
 table td {
     padding: 0.75rem 1rem;
     border: 1px solid #dce3eb;
@@ -239,7 +238,6 @@ table td {
 }
 
 /* Alternance des lignes */
-
 table tbody tr:nth-child(odd) {
     background-color: #f0f5fa;
 }
@@ -249,19 +247,16 @@ table tbody tr:nth-child(even) {
 }
 
 /* Hover sur les lignes impaires */
-
 table tbody tr:nth-child(odd):hover {
     background-color: #d9eaff;
 }
 
 /* Hover sur les lignes paires */
-
 table tbody tr:nth-child(even):hover {
     background-color: #e8f2ff;
 }
 
 /* Première colonne : numérotation */
-
 table tbody td:first-child {
     width: 40px;
     text-align: center;
@@ -270,7 +265,6 @@ table tbody td:first-child {
 }
 
 /* Formules Excel */
-
 table tbody td:nth-child(3) {
     font-family: Consolas, "Courier New", monospace;
     color: #075e9b;
@@ -278,13 +272,11 @@ table tbody td:nth-child(3) {
 }
 
 /* Résultats */
-
 table tbody td:last-child {
     color: #176b45;
 }
 
 /* Responsive */
-
 @media (max-width: 700px) {
     table {
         font-size: 0.8rem;

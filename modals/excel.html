@@ -3,33 +3,221 @@
                     src="./assets/img/excel.svg">
                 <h2>MS.EXCEL</h2>
             </div>
-            <h3> FORMULES </h3>
+            
+            
+            <h3> Manipulation de caractères </h3>
             <table>
-                <caption> extraction de l'année </caption>
-                <thead>
+            <caption>Extraction des premiers caractères</caption>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>A (données)</th>
+                    <th>B (formule à appliquer)</th>
+                    <th>C (résultat obtenu)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>BATIMENT-025</td>
+                    <td>=GAUCHE(A1;9)</td>
+                    <td>BATIMENT-</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>ESPACE-104</td>
+                    <td>=GAUCHE(A2;6)</td>
+                    <td>ESPACE</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table>
+            <caption>Extraction des derniers caractères</caption>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>A (données)</th>
+                    <th>B (formule à appliquer)</th>
+                    <th>C (résultat obtenu)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>BATIMENT-025</td>
+                    <td>=DROITE(A1;3)</td>
+                    <td>025</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>ESPACE-104</td>
+                    <td>=DROITE(A2;3)</td>
+                    <td>104</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <table>
+            <caption>Extraction d'une partie du texte</caption>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>A (données)</th>
+                    <th>B (formule à appliquer)</th>
+                    <th>C (résultat obtenu)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>BATIMENT-025</td>
+                    <td>=STXT(A1;10;3)</td>
+                    <td>025</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>REF-2026-014</td>
+                    <td>=STXT(A2;5;4)</td>
+                    <td>2026</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table>
+            <caption>Remplacement d'un caractère</caption>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>A (données)</th>
+                    <th>B (formule à appliquer)</th>
+                    <th>C (résultat obtenu)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>04000-B0263</td>
+                    <td>=SUBSTITUE(A1;"-";"")</td>
+                    <td>04000B0263</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>26/10/2026</td>
+                    <td>=SUBSTITUE(A2;"/";"-")</td>
+                    <td>26-10-2026</td>
+                </tr>
+            </tbody>
+        </table>
+
+    <h3>Manipulation de Dates</h3>
+      <table>
+        <caption> Extraction de l'année </caption>
+            <thead>
                 <tr>  
-                <th>  </th>
-                <th> A </th>
-                <th> B </th>
-                <th> Résultat : </th>
+                <th></th>
+                <th> A (données)</th>
+                <th> B (formule à appliquer)</th>
+                <th> C (résultat obtenu) </th>
                 </tr>
-                </thead>
+            </thead>
                 
-                <tbody>
+            <tbody>
                 <tr>
-                <td> 1 </td>
-                <td> 20/03/2020 </td>
-                <td> =ANNEE(A1) </td>
-                <td> 2020 </td>
+                    <td> 1 </td>
+                    <td> 20/03/2020 </td>
+                    <td> =ANNEE(A1) </td>
+                    <td> 2020 </td>
                 </tr>
                 <tr>
-                <td> 2 </td>
-                <td> 05/10/2025 </td>
-                <td> =ANNEE(A2) </td>
-                <td> 2025 </td>
+                    <td> 2 </td>
+                    <td> 05/10/2025 </td>
+                    <td> =ANNEE(A2) </td>
+                    <td> 2025 </td>
                 </tr> 
-                </tbody>  
-            </table>
+            </tbody>  
+        </table>
+
+        <table>
+            <caption>Extraction du mois</caption>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>A (données)</th>
+                    <th>B (formule à appliquer)</th>
+                    <th>C (résultat obtenu)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>20/03/2020</td>
+                    <td>=MOIS(A1)</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>05/10/2025</td>
+                    <td>=MOIS(A2)</td>
+                    <td>10</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    <table>
+        <caption>Extraction du jour</caption>
+        <thead>
+            <tr>
+                <th></th>
+                <th>A (données)</th>
+                <th>B (formule à appliquer)</th>
+                <th>C (résultat obtenu)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>20/03/2020</td>
+                <td>=JOUR(A1)</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>05/10/2025</td>
+                <td>=JOUR(A2)</td>
+                <td>5</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table>
+        <caption>Calcul de l'ancienneté en années révolues</caption>
+        <thead>
+            <tr>
+                <th></th>
+                <th>A (date de référence)</th>
+                <th>B (formule à appliquer)</th>
+                <th>C (résultat obtenu)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>20/03/2020</td>
+                <td>=DATEDIF(A1;AUJOURDHUI();"y")</td>
+                <td>Nombre d'années écoulées</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>05/10/2025</td>
+                <td>=DATEDIF(A2;AUJOURDHUI();"y")</td>
+                <td>Nombre d'années écoulées</td>
+            </tr>
+        </tbody>
+    </table>
+
             <h3> Raccourcis clavier </h3>
             <ul>
                 <li><kbd>Ctrl</kbd> + <kbd>Maj</kbd> + <kbd>L</kbd> : activer ou désactiver les filtres automatiques</li>

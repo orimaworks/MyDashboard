@@ -303,7 +303,7 @@ img {
   max-height : 100%;
 }
 
-kbd {
+/* kbd {
   display: inline-block;
   padding: 3px 8px;
   font-family: "Consolas", monospace;
@@ -315,8 +315,55 @@ kbd {
   border-radius: 5px;
   box-shadow:
     0 2px 0 #bfc5d3;
+} */
+
+
+kbd {
+    display: inline-block;
+    position: relative;
+
+    padding: 3px 8px;
+    min-width: 1.4em;
+
+    font-family: "Consolas", monospace;
+    font-size: .85rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+
+    color: var(--couleur-primaire);
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f1f2f5 45%,
+        #e1e4e9 100%
+    );
+
+    border: 1px solid #c5c9d1;
+    border-radius: 5px;
+
+    box-shadow:
+        0 1px 0 #ffffff inset,
+        0 -1px 0 #d4d7de inset,
+        0 2px 0 #aeb3bd,
+        0 3px 5px rgb(0 0 0 / 15%);
+
+    transform: translateY(0);
+    transition:
+        transform .08s ease,
+        box-shadow .08s ease;
 }
 
+kbd:hover {
+    transform: translateY(1px);
+
+    box-shadow:
+        0 1px 0 #ffffff inset,
+        0 -1px 0 #d4d7de inset,
+        0 1px 0 #aeb3bd,
+        0 2px 3px rgb(0 0 0 / 12%);
+}
 
 
 

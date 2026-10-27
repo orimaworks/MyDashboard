@@ -271,7 +271,7 @@ const cards = [
         url: "https://connect.raspberrypi.com/sign-in",
         icon: "./assets/img/raspberry.png",
 		color: "black",
-		label:"RaspberryPi Connect",
+		label:"Pi Connect",
 		category: "Geek"
     },
 	

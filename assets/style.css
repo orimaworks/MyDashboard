@@ -849,8 +849,8 @@ input:checked + .slider:before {
 
 /* Easter egg Konami */
 #easter-toast.konami::before {
-    background: #101820;
 	content: "🎮";
+	background: url("img/konami.png") center / contain no-repeat;
 }
 
 #easter-toast.konami .achievement-label {

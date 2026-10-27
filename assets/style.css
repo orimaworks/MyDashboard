@@ -193,6 +193,88 @@ button:hover {
     margin-top: 1.5rem;
 }
 
+.table {
+    /* Variables personnalisables */
+    --table-primary: #1F497D;
+    --table-primary-light: #3680DB;
+    --table-bg: #ffffff;
+    --table-text: #2d3748;
+    --table-border: #e2e8f0;
+    --table-hover: rgba(230, 46, 107, 0.2);
+    --table-radius: 15px;
+    --table-shadow: 0 12px 12px 1px rgba(120, 50, 86, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
+    
+    /* Base du tableau */
+    width: auto;
+    max-width: 95%;
+    border-collapse: collapse;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    color: var(--table-text);
+    border-radius: var(--table-radius);
+    box-shadow: var(--table-shadow);
+    overflow: hidden;
+    background: var(--table-bg);
+    margin: 1rem 0;
+    margin-bottom: 80px;
+
+  }
+
+
+  /* En-tête - adaptable quel que soit le nombre de colonnes */
+  .table tr:first-child td {
+    /*background: linear-gradient(180deg, var(--primary) 0%, var(--primary-light) 100%);*/
+    background: var(--primary);
+    color: white;
+    padding: 16px 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    border: none;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+
+  /* Corps du tableau - toutes les cellules */
+  .table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--table-border);
+    background: var(--table-bg);
+    vertical-align: middle;
+    transition: background-color 0.15s ease;
+            animation: fade-in 1s forwards;
+            opacity: 0;
+  }
+
+  /* Lignes alternées */
+  .table tr:nth-child(even) td {
+    background-color: #fafbfc;
+  }
+
+  /* Effet de survol sur toute la ligne (sauf la première) */
+  .table tr:not(:first-child):hover td {
+    background-color: var(--table-hover);
+  }
+
+  /* Dernière ligne - pas de bordure */
+  .table tr:last-child td {
+    border-bottom: none;
+  }
+
+ 
+  /* Responsive - scroll horizontal si nécessaire */
+  .table-wrapper {
+    overflow-x: auto;
+    width: auto;
+    max-width: 100%;
+    border-radius: var(--table-radius);
+  }
+
+
+
+  
+
 code {
   background: var(--code-bg);
   color: var(--couleur-primaire);

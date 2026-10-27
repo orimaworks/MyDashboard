@@ -193,7 +193,13 @@ button:hover {
     margin-top: 1.5rem;
 }
 
-.table {
+
+
+
+/* =====================================================
+						TABLEAUX
+===================================================== */
+table {
     /* Variables personnalisables */
     --table-primary: #1F497D;
     --table-primary-light: #3680DB;
@@ -222,7 +228,7 @@ button:hover {
 
 
   /* En-tête - adaptable quel que soit le nombre de colonnes */
-  .table tr:first-child td {
+  table tr:first-child td {
     /*background: linear-gradient(180deg, var(--primary) 0%, var(--primary-light) 100%);*/
     background: var(--primary);
     color: white;
@@ -237,7 +243,7 @@ button:hover {
 
 
   /* Corps du tableau - toutes les cellules */
-  .table td {
+  table td {
     padding: 12px;
     border-bottom: 1px solid var(--table-border);
     background: var(--table-bg);
@@ -248,17 +254,17 @@ button:hover {
   }
 
   /* Lignes alternées */
-  .table tr:nth-child(even) td {
+  table tr:nth-child(even) td {
     background-color: #fafbfc;
   }
 
   /* Effet de survol sur toute la ligne (sauf la première) */
-  .table tr:not(:first-child):hover td {
+  table tr:not(:first-child):hover td {
     background-color: var(--table-hover);
   }
 
   /* Dernière ligne - pas de bordure */
-  .table tr:last-child td {
+  table tr:last-child td {
     border-bottom: none;
   }
 
@@ -273,7 +279,7 @@ button:hover {
 
 
 
-  
+
 
 code {
   background: var(--code-bg);

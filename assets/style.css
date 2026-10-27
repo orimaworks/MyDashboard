@@ -232,7 +232,7 @@ table th {
 
 /* Cellules */
 table td {
-    padding: 0.75rem 1rem;
+    padding: 4px;
     border: 1px solid #dce3eb;
     transition: background-color 0.2s ease;
 }
@@ -258,8 +258,8 @@ table tbody tr:nth-child(even):hover {
 
 /* Première colonne : numérotation */
 table tbody td:first-child {
-    width: 40px;
-    text-align: center;
+    width: auto;
+    text-align: left;
     font-weight: 600;
     color: #54718e;
 }

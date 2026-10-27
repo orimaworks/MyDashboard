@@ -810,6 +810,7 @@ input:checked + .slider:before {
     align-items: center;
     justify-content: center;
     font-size: 25px;
+	padding : 5px;
     background: #101820;
     border: 1px solid #3c5268;
     border-radius: 2px;
@@ -895,7 +896,7 @@ input:checked + .slider:before {
 }
 
 #easter-toast.coffee .achievement-label {
-    color: #613322;
+    color: #883f25;
 }
 
 

@@ -10,11 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
         "b","a"
     ];
 
-    const sims = [
-        "r","o","s","e","b","u","d"
-        // "m","o","s","e","r","l","o","d","e"
-        // "k","l","a","p","a","u","c","i","u","s"
-    ];
+   const sims = [
+    ["r", "o", "s", "e", "b", "u", "d"],              
+    ["m", "o", "t", "h", "e", "r", "l", "o", "d", "e"], 
+    ["k", "l", "a", "p", "a", "u", "c", "i", "u", "s"]  
+];
+
+const positionsSims = sims.map(() => 0);
 
     const linux = [
         "s","u","d","o"
@@ -63,16 +65,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // VERSION SIMS
-        if (key === sims[positionSims]) {
-            positionSims++;
+        sims.forEach((code, index) => {
+            if (key === code[positionsSims[index]]) {
+                positionsSims[index]++;
 
-            if (positionSims === sims.length) {
-                activateEasterEggSims();
-                positionSims = 0;
+                if (positionsSims[index] === code.length) {
+                    activateEasterEggSims();
+
+                    // Réinitialise tous les compteurs Sims
+                    positionsSims.fill(0);
+                }
+            } else {
+                positionsSims[index] = key === code[0] ? 1 : 0;
             }
-        } else {
-            positionSims = key === sims[0] ? 1 : 0;
-        }
+        });
 
         // VERSION LINUX
         if (key === linux[positionLinux]) {

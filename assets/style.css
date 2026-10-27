@@ -899,7 +899,6 @@ input:checked + .slider:before {
     color: #883f25;
 }
 
-
 /* Easter egg GTA */
 #easter-toast.gta::before {
 	content: "";

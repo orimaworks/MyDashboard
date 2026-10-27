@@ -137,7 +137,7 @@ function showEasterToast(type, label, title, description) {
     }
 
     // Applique le style correspondant au code détecté
-    toast.classList.remove("konami", "sims", "linux");
+    toast.classList.remove("konami", "sims", "linux", "rockstar","error404", "coffee" );
     toast.classList.add(type);
 
     // Met à jour le contenu

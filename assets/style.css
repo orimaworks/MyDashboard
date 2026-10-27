@@ -199,264 +199,80 @@ button:hover {
 /* ==============================
    TABLEAUX
 ============================== */
-/* ==========================================================================
-   TABLEAUX — feuille de style
-   --------------------------------------------------------------------------
-   Compatible avec un balisage <table> simple : aucune classe n'est requise.
-   Les couleurs sont regroupées dans des variables CSS (jetons de thème) :
-   il suffit de les modifier en tête de règle pour changer tout l'habillage.
-   ========================================================================== */
 
 table {
-    /* --- Jetons de thème --------------------------------------------------- */
-    --table-border:         #dce3eb;   /* filets intérieurs          */
-    --table-border-strong:  #24415d;   /* filets de l'en-tête        */
-    --table-head-bg:        #001a33;   /* fond de l'en-tête          */
-    --table-head-fg:        #ffffff;   /* texte de l'en-tête         */
-    --table-row-odd:        #f0f5fa;   /* lignes impaires            */
-    --table-row-even:       #ffffff;   /* lignes paires              */
-    --table-row-hover-odd:  #d9eaff;   /* survol ligne impaire       */
-    --table-row-hover-even: #e8f2ff;   /* survol ligne paire         */
-    --table-index:          #47647f;   /* 1re colonne (numérotation) */
-    --table-formula:        #075e9b;   /* colonne « formules »       */
-    --table-result:         #176b45;   /* dernière colonne           */
-    --table-radius:         10px;
-
-    /* --- Boîte ------------------------------------------------------------- */
     width: 100%;
     border-collapse: collapse;
-    margin: 1.5rem 0;
-    font-size: 0.9rem;
-    line-height: 1.45;
-    text-align: left;
-    /* Aligne les chiffres verticalement d'une ligne à l'autre */
-    font-variant-numeric: tabular-nums;
-    /* Le rayon sert aussi à arrondir l'ombre portée */
-    border-radius: var(--table-radius);
-    box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
-    /* Pas d'« overflow: hidden » : cela couperait les anneaux de focus
-       clavier et empêcherait tout en-tête collant (position: sticky). */
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
 }
 
-/* --------------------------------------------------------------------------
-   LÉGENDE
-   -------------------------------------------------------------------------- */
-table caption {
+/* Titre du tableau */
+caption {
     caption-side: top;
-    padding: 0 0 0.75rem;
-    font-weight: 600;
-    font-size: 1rem;
-    line-height: 1.3;
-    color: #001a33;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2c3e50;
     text-align: left;
 }
 
-/* --------------------------------------------------------------------------
-   EN-TÊTE
-   -------------------------------------------------------------------------- */
-table th {
-    padding: 0.7rem 1rem;
-    font-weight: 600;
-    background-color: var(--table-head-bg);
-    color: var(--table-head-fg);
-    border: 1px solid var(--table-border-strong);
+/* En-têtes */
+thead {
+    background-color: #2c3e50;
+    color: #fff;
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
     vertical-align: middle;
 }
 
-/* --------------------------------------------------------------------------
-   CELLULES
-   -------------------------------------------------------------------------- */
-table td {
-    /* Même rythme vertical que l'en-tête : les colonnes restent alignées */
-    padding: 0.7rem 1rem;
-    border: 1px solid var(--table-border);
-    vertical-align: middle;
-    /* Évite qu'une formule ou une URL longue ne déborde de la cellule */
-    overflow-wrap: break-word;
+/* Lignes alternées */
+tbody tr:nth-child(even) {
+    background-color: #f2f5f8;
 }
 
-/* --------------------------------------------------------------------------
-   ALTERNANCE ET SURVOL
-   La transition est posée sur <tr>, car c'est lui qui porte la couleur de fond.
-   :focus-within reproduit le survol au clavier (tabulation dans les liens).
-   -------------------------------------------------------------------------- */
-table tbody tr {
-    transition: background-color 0.15s ease;
+/* Survol des lignes */
+tbody tr:hover {
+    background-color: #e8f0fe;
 }
 
-table tbody tr:nth-child(odd) {
-    background-color: var(--table-row-odd);
+/* Première colonne : numéros */
+tbody td:first-child {
+    text-align: center;
+    font-weight: bold;
+    width: 50px;
 }
 
-table tbody tr:nth-child(even) {
-    background-color: var(--table-row-even);
+/* Formules */
+tbody td:nth-child(3) {
+    font-family: Consolas, monospace;
+    color: #1565c0;
+    white-space: nowrap;
 }
 
-table tbody tr:nth-child(odd):hover,
-table tbody tr:nth-child(odd):focus-within {
-    background-color: var(--table-row-hover-odd);
-}
-
-table tbody tr:nth-child(even):hover,
-table tbody tr:nth-child(even):focus-within {
-    background-color: var(--table-row-hover-even);
-}
-
-/* --------------------------------------------------------------------------
-   COLONNES SPÉCIALISÉES
-   Ces sélecteurs supposent : 1re colonne = numéro, 3e = formule,
-   dernière = résultat. Adaptez les index (ou passez à des classes, voir plus
-   bas) si la structure de vos tableaux change.
-   -------------------------------------------------------------------------- */
-table tbody td:first-child {
-    font-weight: 600;
-    color: var(--table-index);
-}
-
-table tbody td:nth-child(3) {
-    font-family: Consolas, "Courier New", ui-monospace, SFMono-Regular, monospace;
-    font-size: 0.85rem;
-    color: var(--table-formula);
-    /* Les formules n'ont pas d'espaces exploitables : on autorise la coupure */
-    overflow-wrap: anywhere;
-}
-
-table tbody td:last-child {
-    color: var(--table-result);
-    font-weight: 500;
-}
-
-/* Variante recommandée si vous pouvez modifier le HTML : plus robuste que
-   nth-child, elle survit à l'ajout ou au déplacement d'une colonne.
-
-   <td class="cell-formula">…</td>   <td class="cell-result">…</td>
-
-   table tbody td.cell-formula { … }
-   table tbody td.cell-result  { … }
-*/
-
-/* --------------------------------------------------------------------------
-   COINS ARRONDIS
-   Avec « border-collapse: collapse », le rayon doit être appliqué aux quatre
-   cellules d'angle : sans cela, les fonds de l'en-tête et de la dernière
-   ligne débordent en angles droits.
-   -------------------------------------------------------------------------- */
-table tr:first-child th:first-child {
-    border-top-left-radius: var(--table-radius);
-}
-
-table tr:first-child th:last-child {
-    border-top-right-radius: var(--table-radius);
-}
-
-table tr:last-child td:first-child {
-    border-bottom-left-radius: var(--table-radius);
-}
-
-table tr:last-child td:last-child {
-    border-bottom-right-radius: var(--table-radius);
-}
-
-/* --------------------------------------------------------------------------
-   APPARITION
-   Une seule animation sur le tableau, et non sur chaque cellule :
-   plus léger, et surtout sans risque de contenu invisible si l'animation
-   n'est pas jouée (mode économie d'énergie, navigateur ancien, impression).
-   -------------------------------------------------------------------------- */
-@keyframes table-fade-in {
-    from {
-        opacity: 0;
-        transform: translateY(4px);
-    }
-    to {
-        opacity: 1;
-        transform: none;
-    }
-}
-
-table {
-    animation: table-fade-in 0.35s ease-out both;
-}
-
-/* Respect de « réduire les animations » (accessibilité, batterie) */
-@media (prefers-reduced-motion: reduce) {
-    table {
-        animation: none;
-    }
-
-    table tbody tr {
-        transition: none;
-    }
-}
-
-/* --------------------------------------------------------------------------
-   MODE SOMBRE
-   Grâce aux jetons, seules les variables sont redéfinies.
-   -------------------------------------------------------------------------- */
-@media (prefers-color-scheme: dark) {
-    table {
-        --table-border:         #2c3b4d;
-        --table-border-strong:  #16283d;
-        --table-head-bg:        #101a26;
-        --table-head-fg:        #eef4fb;
-        --table-row-odd:        #141c26;
-        --table-row-even:       #101720;
-        --table-row-hover-odd:  #1d2a3a;
-        --table-row-hover-even: #223044;
-        --table-index:          #9db4cc;
-        --table-formula:        #7cc0f0;
-        --table-result:         #79d3a8;
-
-        box-shadow: 0 2px 8px rgb(0 0 0 / 40%);
-    }
-
-    table caption {
-        color: #e6eef7;
-    }
-}
-
-/* --------------------------------------------------------------------------
-   IMPRESSION
-   Fond blanc, texte sombre, pas d'animation ni d'ombre.
-   -------------------------------------------------------------------------- */
-@media print {
-    table {
-        --table-head-bg:        #e8edf3;
-        --table-head-fg:        #001a33;
-        --table-row-odd:        #ffffff;
-        --table-row-even:       #ffffff;
-        --table-row-hover-odd:  #ffffff;
-        --table-row-hover-even: #ffffff;
-
-        font-size: 10pt;
-        box-shadow: none;
-        animation: none;
-    }
-
-    table tbody tr {
-        transition: none;
-    }
-}
-
+/* Adaptation aux petits écrans */
 @media (max-width: 700px) {
     table {
-        font-size: 0.82rem;
-        margin: 1rem 0;
+        font-size: 12px;
     }
 
-    table th,
-    table td {
-        padding: 0.55rem 0.7rem;
+    th, td {
+        padding: 8px;
     }
 
-    table caption {
-        font-size: 0.95rem;
-    }
-
-    table tbody td:nth-child(3) {
-        font-size: 0.78rem;
+    /* Permet le défilement horizontal */
+    .table-container {
+        overflow-x: auto;
     }
 }
+
 
 
 

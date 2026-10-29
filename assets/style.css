@@ -216,21 +216,26 @@ caption {
     padding: 12px;
     font-size: 18px;
     font-weight: bold;
-    color: #2c3e50;
+    color: var(--couleur-primaire);
     text-align: left;
 }
 
-table tr:first-child td {
-    /*background: linear-gradient(180deg, var(--primary) 0%, var(--primary-light) 100%);*/
-    background: var(--couleur-primaire);
-    color: white;
-}
+/* table tr:first-child td {
+    background: linear-gradient(180deg, var(--primary) 0%, var(--primary-light) 100%); 
+}*/
 
-/* En-têtes
+/* En-têtes µ*/
 thead, thead th {
-    background-color: var(--couleur-primaire);
-    color: #fff;
-} */
+	background: var(--couleur-primaire);
+	color: white;
+    /* background-color: var(--couleur-primaire);
+    color: #fff; */
+} 
+
+th {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
 
 th, td {
     padding: 12px 15px;

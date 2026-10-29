@@ -431,9 +431,9 @@ display: inline-flex;
 align-items: center;
 justify-content: center;
 
-min-width: 1.6em;
-min-height: 1.6em;
-padding: 0.25rem 0.6rem;
+min-width: 1.7em;
+min-height: 1.7em;
+padding: 3px 8px;
 margin: 0 1px;
 
 font-family: "Consolas", "SFMono-Regular", "Courier New", monospace;
@@ -445,7 +445,7 @@ white-space: nowrap;
 
 color: white;
 border: none;
-border-radius: 7px;
+border-radius: 5px;
 cursor: default;
 
 background: linear-gradient(180deg,
@@ -467,14 +467,15 @@ box-shadow:
 	0 6px 9px rgb(0 0 0 / 45%),
 	0 10px 18px rgb(0 0 0 / 30%); 
 
-transform: translateY(-2px);
+/* transform: translateY(-2px); */
 }
 
 kbd:hover {
 	color: var(--kbd-led);
-	filter:
+	box-shadow: 0 0 10px var(--kbd-led);
+	/* filter:
 	drop-shadow(0 0 4px  color-mix(in srgb, var(--kbd-led) 40%, transparent))
-	drop-shadow(0 0 10px color-mix(in srgb, var(--kbd-led) 22%, transparent));
+	drop-shadow(0 0 10px color-mix(in srgb, var(--kbd-led) 22%, transparent)); */
 
 	/* text-shadow:
 	0 0 2px  color-mix(in srgb, var(--kbd-led) 60%, transparent),

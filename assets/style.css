@@ -220,11 +220,17 @@ caption {
     text-align: left;
 }
 
-/* En-têtes */
-thead {
-    background-color: #2c3e50;
-    color: #fff;
+table tr:first-child td {
+    /*background: linear-gradient(180deg, var(--primary) 0%, var(--primary-light) 100%);*/
+    background: var(--couleur-primaire);
+    color: white;
 }
+
+/* En-têtes
+thead, thead th {
+    background-color: var(--couleur-primaire);
+    color: #fff;
+} */
 
 th, td {
     padding: 12px 15px;
@@ -244,18 +250,18 @@ tbody tr:hover {
 }
 
 /* Première colonne : numéros */
-tbody td:first-child {
+/* tbody td:first-child {
     text-align: center;
     font-weight: bold;
     width: 50px;
-}
+} */
 
 /* Formules */
-tbody td:nth-child(3) {
+/* tbody td:nth-child(3) {
     font-family: Consolas, monospace;
     color: #1565c0;
     white-space: nowrap;
-}
+} */
 
 /* Adaptation aux petits écrans */
 @media (max-width: 700px) {

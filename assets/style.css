@@ -220,9 +220,6 @@ caption {
     text-align: left;
 }
 
-/* table tr:first-child td {
-    background: linear-gradient(180deg, var(--primary) 0%, var(--primary-light) 100%); 
-}*/
 
 /* En-têtes µ*/
 thead, thead th {
@@ -232,10 +229,14 @@ thead, thead th {
     color: #fff; */
 } 
 
-th {
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+/* Bords arrondis sur les entêtes du tableau*/
+th:first-child {
+	border-top-left-radius: 15px;
 }
+th:last-child {
+	border-top-right-radius: 15px;
+}
+
 
 th, td {
     padding: 12px 15px;

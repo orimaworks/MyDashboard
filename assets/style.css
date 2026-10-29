@@ -202,7 +202,9 @@ button:hover {
 
 table {
     width: 100%;
-    border-collapse: collapse;
+	border-collapse: separate;
+    border-spacing: 0;
+    /* border-collapse: collapse; */
     margin: 20px 0;
     font-family: Arial, sans-serif;
     font-size: 14px;

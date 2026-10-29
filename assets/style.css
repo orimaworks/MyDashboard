@@ -573,9 +573,7 @@ kbd.space::before {
     height: 2px;
 }
 
-kbd.space:after{
-    content:"espace";
-}
+
 
 /* Touche Entrée */
 kbd.enter {
@@ -616,11 +614,14 @@ kbd.enter::before {
     opacity: 0.5;
 }
 
+kbd.space:after{
+    content:"␣ Espace";
+}
 kbd.enter:after{
-    content:"↵";
+    content:"↵ Enter";
 }
 kbd.shift:after{
-    content:"⇧";
+    content:"⇧ Shift";
 }
 
 /* Survol : conserver le relief et accentuer la lumière */

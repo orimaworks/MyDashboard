@@ -827,7 +827,7 @@ input:checked + .slider:before {
 		border : solid 1px var(--couleur-primaire);
 }
 /* ===================================================== */
-    table {
+    /* table {
       width: 100%;
       border-collapse: collapse;
     }
@@ -838,7 +838,7 @@ input:checked + .slider:before {
     th {
       background: #f0f0f0;
       text-align: left;
-    }
+    } */
 
 .neon {
 	color: #fff;

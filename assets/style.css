@@ -608,7 +608,6 @@ kbd.enter {
 }
 /* Rétroéclairage plus marqué sous Entrée */
 kbd.enter::before {
-
     left: 4px;
     right: 4px;
     bottom: -4px;
@@ -619,6 +618,9 @@ kbd.enter::before {
 
 kbd.enter:after{
     content:"↵";
+}
+kbd.shift:after{
+    content:"⇧";
 }
 
 /* Survol : conserver le relief et accentuer la lumière */

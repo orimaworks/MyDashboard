@@ -471,15 +471,15 @@ transform: translateY(-2px);
 }
 
 kbd:hover {
-color: var(--kbd-led);
+	color: var(--kbd-led);
 	filter:
 	drop-shadow(0 0 4px  color-mix(in srgb, var(--kbd-led) 40%, transparent))
 	drop-shadow(0 0 10px color-mix(in srgb, var(--kbd-led) 22%, transparent));
 
-	text-shadow:
+	/* text-shadow:
 	0 0 2px  color-mix(in srgb, var(--kbd-led) 60%, transparent),
 	0 0 8px  color-mix(in srgb, var(--kbd-led) 35%, transparent),
-	0 1px 1px rgb(0 0 0 / 55%);
+	0 1px 1px rgb(0 0 0 / 55%); */
 }
 
 

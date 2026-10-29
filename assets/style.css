@@ -240,10 +240,15 @@ th:last-child {
 
 th, td {
     padding: 12px 15px;
-    border: 1px solid #ddd;
     text-align: left;
     vertical-align: middle;
 }
+
+
+td {
+	border:  1px solid var(--couleur-primaire);
+}
+
 
 /* Lignes alternées */
 tbody tr:nth-child(even) {

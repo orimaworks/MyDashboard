@@ -225,6 +225,7 @@ caption {
 thead, thead th {
 	background: var(--couleur-primaire);
 	color: white;
+	border:  1px solid var(--couleur-primaire);
     /* background-color: var(--couleur-primaire);
     color: #fff; */
 } 

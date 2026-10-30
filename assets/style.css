@@ -483,7 +483,7 @@ kbd {
 }
 
 kbd.windows {
-    display: inline-block;
+    /* display: inline-block; */
     max-width: 10px;
     max-height: 10px;
     background-image: url("img/windows.png");
@@ -491,7 +491,7 @@ kbd.windows {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    vertical-align: middle;
+    /* vertical-align: middle; */
 }
 
 /* Lumière diffusée sous le capuchon */

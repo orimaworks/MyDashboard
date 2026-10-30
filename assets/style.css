@@ -597,7 +597,7 @@ kbd.space::before {
     bottom: -4px;
     height: 2px;
 }
-
+/* 
 kbd.windows::before {
     content: "";
     display: inline-block;
@@ -609,8 +609,20 @@ kbd.windows::before {
     background-position: center;
     background-color: transparent;
     vertical-align: middle;
-}
+} */
 
+/* Logo Windows */
+kbd.windows::after {
+    content: "";
+    display: block;
+    width: 14px;
+    height: 14px;
+
+    background-image: url("img/windows.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 /* Touche Entrée */
 kbd.enter {
     border-radius: 4px 5px 5px 4px;
@@ -684,6 +696,9 @@ kbd.enter:active {
         transition: none;
     }
 }
+
+
+
 
 
  li {

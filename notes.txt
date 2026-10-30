@@ -144,6 +144,23 @@ element: "hr"
 required: false
 rule: "Utiliser hr uniquement lorsqu'une séparation visuelle significative est nécessaire."
 
+additional_details:
+element: "details"
+required: false
+purpose: >
+Présenter des informations complémentaires qui sont utiles,
+mais qui n'ont pas besoin d'être visibles en permanence.
+rules:
+\\- "Ajouter un bloc details uniquement si des indications supplémentaires sont nécessaires ou pertinentes."
+\\- "Utiliser summary pour décrire clairement le contenu masqué."
+\\- "Placer les informations complémentaires à l'intérieur de details, après summary."
+\\- "Ne pas utiliser details pour masquer une information essentielle au fonctionnement ou à la compréhension de la modale."
+example: >
+\\<details>
+    \\<summary>🔹 Fonctionnement/Informations complémentaires</summary>
+    Lorem ipsum set dolor sic nucmenurous...
+\\</details>
+
 heading_hierarchy:
 \- "h2 : titre principal unique de la modale."
 \- "h3 : titres des sections."

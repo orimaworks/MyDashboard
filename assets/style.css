@@ -502,18 +502,7 @@ kbd.windows {
     height: auto;
 }
 
-kbd.windows::before {
-    content: "";
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    background-image: url("img/windows.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: transparent;
-    vertical-align: middle;
-}
+
 
 /* Lumière diffusée sous le capuchon */
 kbd::before {
@@ -609,7 +598,18 @@ kbd.space::before {
     height: 2px;
 }
 
-
+kbd.windows::before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-image: url("img/windows.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    vertical-align: middle;
+}
 
 /* Touche Entrée */
 kbd.enter {

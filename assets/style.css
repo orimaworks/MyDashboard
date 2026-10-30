@@ -484,10 +484,10 @@ kbd {
 
 kbd.windows {
     display: inline-block;
-    width: 4px;
-    height: 4px;
+    max-width: 10px;
+    max-height: 10px;
     background-image: url("img/windows.png");
-    background-color: none;
+    background-color: transparent;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

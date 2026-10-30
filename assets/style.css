@@ -225,9 +225,9 @@ caption {
 
 /* En-têtes µ*/
 thead, thead th {
-	background: var(--couleur-primaire);
+	background: var(--couleur-accent);
 	color: white;
-	border:  1px solid var(--couleur-primaire);
+	border:  1px solid var(--couleur-accent);
     /* background-color: var(--couleur-primaire);
     color: #fff; */
 } 

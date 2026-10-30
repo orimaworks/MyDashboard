@@ -227,17 +227,15 @@ caption {
 thead, thead th {
 	background: var(--couleur-accent);
 	color: white;
-	border:  1px solid var(--couleur-accent);
-    /* background-color: var(--couleur-primaire);
-    color: #fff; */
+	border:  1px solid var(--background-color);
 } 
 
 /* Bords arrondis sur les entêtes du tableau*/
 th:first-child {
-	border-top-left-radius: 15px;
+	border-top-left-radius: 10px;
 }
 th:last-child {
-	border-top-right-radius: 15px;
+	border-top-right-radius: 10px;
 }
 
 
@@ -249,7 +247,7 @@ th, td {
 
 
 td {
-	border:  1px solid var(--couleur-primaire);
+	border:  1px solid var(--background-color);
 }
 
 
@@ -842,7 +840,7 @@ main {
 	===================================================== */
 dialog {
     border: none;
-	scrollbar-width: none;
+	/* scrollbar-width: none; */
     background-color: var(--background-color);
     border-radius: 12px;
     padding: 1.5rem;

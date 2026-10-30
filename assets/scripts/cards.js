@@ -222,6 +222,16 @@ const cards = [
 		label:"Microsoft Learn",
 		category: "Geek"
     },
+
+    {
+        title: "OpenClassRoom",
+        url: "https://openclassrooms.com/fr/",
+        icon: "./assets/img/openclassroom.png",
+        text: "OpenClassRoom",
+		label:"OpenClassRoom",
+		category: "Geek"
+    },
+
 	 {
         title: "Logiciels Libres",
         url: "https://code.gouv.fr/sill/",

@@ -30,7 +30,9 @@
     --code-bg: #eef1f7;
     --dark-code-bg: #141D38;
 
-	--kbd-led: rgba(255,255,0,0.8);       /* Couleur du rétroéclairage  */
+    --kbd-text: white;
+	/* --kbd-led: rgba(255,255,0,0.8);       Couleur du rétroéclairage  */
+	--kbd-led: #7ab3eb;       /* Couleur du rétroéclairage  */
   	--kbd-surface: #2a2f36;   /* Couleur de la touche */
 
 }
@@ -444,7 +446,7 @@ kbd {
     letter-spacing: 0.02em;
     white-space: nowrap;
 
-    color: #e9edf5;
+    color: var(--kbd-text);
     background:
         linear-gradient(
             155deg,

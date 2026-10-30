@@ -26,6 +26,99 @@
     <br>
     <h4>La fonction TROUVE() permet de localiser un caractère dans une cellule :</h4>
     <li><code>=TROUVE("-";A3)</code> : Dans la cellule A3, indique où se trouve le caractère : - </li>
+
+    <h4>Rechercher une valeur et récupérer une information avec <strong>RECHERCHEV()</strong> :</h4>
+    <li><code>=RECHERCHEV(A2;E2:F4;2;FAUX)</code></li>
+    <li><code>A2</code> // Valeur recherchée (ex. : un identifiant).</li>
+    <li><code>E2:F4</code> // Plage de recherche. La première colonne doit contenir la valeur recherchée.</li>
+    <li><code>2</code> // Numéro de la colonne dont on souhaite récupérer la valeur (ici, la deuxième).</li>
+    <li><code>FAUX</code> // Recherche une correspondance exacte.</li>
+    <li>Exemple : recherche l'identifiant de A2 dans la première colonne de E2:F4 et renvoie l'information correspondante de la deuxième colonne.</li>
+    <li><strong>Attention :</strong> RECHERCHEV() recherche toujours dans la première colonne de la plage et renvoie une valeur située à droite.</li>
+
+<h3>Recherche de données avec RECHERCHEV()</h3>
+
+<div class="table-container">
+    <table>
+        <caption>Tableau des employés</caption>
+        <thead>
+            <tr style="background-color: rgba(128, 0, 128, 0.670)">
+                <th></th>
+                <th>A (Matricule)</th>
+                <th>B (Nom)</th>
+                <th>C (Service ID)</th>
+                <th>D (Service recherché)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>101</td>
+                <td>Martin</td>
+                <td>1</td>
+                <td>Comptabilité</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>102</td>
+                <td>Dupont</td>
+                <td>2</td>
+                <td>Informatique</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>103</td>
+                <td>Bernard</td>
+                <td>3</td>
+                <td>Technique</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="table-container">
+    <table>
+        <caption>Tableau de référence des services (E2:F4)</caption>
+        <thead>
+            <tr style="background-color: rgba(128, 0, 128, 0.670)">
+                <th></th>
+                <th>E (ID)</th>
+                <th>F (Service)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2</td>
+                <td>1</td>
+                <td>Comptabilité</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>2</td>
+                <td>Informatique</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>3</td>
+                <td>Technique</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4>Formule à appliquer en D1, puis à recopier vers le bas :</h4>
+<code>=RECHERCHEV(C1;$E$2:$F$4;2;FAUX)</code>
+
+<ul>
+    <li><code>C1</code> : valeur recherchée (identifiant du service).</li>
+    <li><code>$E$2:$F$4</code> : plage contenant les données de référence. Les signes <code>$</code> permettent de figer la plage lors de la recopie de la formule.</li>
+    <li><code>2</code> : numéro de la colonne contenant l'information à récupérer (Service).</li>
+    <li><code>FAUX</code> : recherche une correspondance exacte.</li>
+</ul>
+
+<p><strong>Résultat :</strong> Excel recherche l'identifiant du service dans la colonne E et renvoie le nom correspondant depuis la colonne F.</p>
+
+
 </ul>
 
 <h3> Raccourcis clavier </h3>

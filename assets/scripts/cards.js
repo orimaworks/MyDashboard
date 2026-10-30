@@ -373,7 +373,7 @@ const cards = [
 	{
 		title: "SVGRepo",
 		url:"https://www.svgrepo.com/",
-		icon: null,
+		icon: "./assets/img/svgrepo.png",
 		text: "SVGRepo",
 		label: "SVGRepo",
 		category: "Geek"

@@ -484,7 +484,7 @@ kbd.windows {
     display: inline-block;
     width: 6px;
     height: 6px;
-    background-image: url("img/windows.svg");
+    background-image: url("img/windows.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

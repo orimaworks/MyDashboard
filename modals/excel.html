@@ -1,13 +1,64 @@
-        <dialog id="excel">
-            <div class="display_column center"><img style="max-width:60px; height: auto;"
-                    src="./assets/img/excel.svg">
-                <h2>MS.EXCEL</h2>
-            </div>
+<dialog id="excel">
+    <div class="display_column center"><img style="max-width:60px; height: auto;"
+            src="./assets/img/excel.svg">
+        <h2>MS.EXCEL</h2>
+    </div>
             
-            
-            <h3> Manipulation de caractères </h3>
-            <table>
-            <caption>Extraction des premiers caractères</caption>
+<h3>Cheats</h3>
+<ul>
+    <li>Figer une cellule : (A1) par exemple </li>
+    <li><code>$A$1</code> ou <kbd>F4</kbd> pendant la sélection de la cellule</li>
+</ul>
+
+<h3> Raccourcis clavier </h3>
+    <ul>
+        <li><kbd>Ctrl</kbd> + <kbd>Maj</kbd> + <kbd>L</kbd> : activer ou désactiver les filtres automatiques</li>
+        <li><kbd>Ctrl</kbd> + <kbd class="shift"></kbd> + <kbd>1</kbd> : ouvrir la boîte de dialogue <strong>Format de cellule</strong></li>
+        <li><kbd>Ctrl</kbd> + <kbd>L</kbd> : Créer un tableau</li>
+        <li><kbd> Ctrl </kbd> + <kbd class="space">  </kbd> : Sélectionner <strong>la colonne</strong> du tableau </li>
+        <li><kbd class="shift"></kbd> + <kbd class="space"></kbd> : Sélectionner <strong>la ligne</strong> du tableau </li>
+    </ul>
+        
+    <h3>Insérer ou supprimer des lignes et colonnes</h3>
+    <ul>
+        <li><kbd class="lit">Ctrl</kbd> + <kbd class="lit">Shift</kbd> + <kbd class="lit">+</kbd> : ouvrir la boîte de dialogue <strong>Insérer des cellules</strong></li>
+        <li><kbd>Ctrl</kbd> + <kbd>-</kbd> : ouvrir la boîte de dialogue <strong>Supprimer des cellules</strong></li>
+        <li><kbd>Alt</kbd> + <kbd>L</kbd> + <kbd>U</kbd> + <kbd>S</kbd> + <kbd>D</kbd> : supprimer la ligne entière</li>
+    </ul>
+    
+    <h3>Ajuster la largeur des colonnes et la hauteur des lignes</h3>
+    <p>Sélectionner les lignes ou colonnes à modifier. Pour toute la feuille, utiliser le bouton de sélection situé à l'intersection des en-têtes de lignes et de colonnes.</p>
+    <ul>
+        <li><kbd> Alt </kbd> + <kbd> L </kbd> + <kbd> ç </kbd> + <kbd> J </kbd>  : Ajuste automatiquement <strong>la hauteur</strong></li>
+        <li><kbd> Alt </kbd> + <kbd> L </kbd> + <kbd> ç </kbd> + <kbd> A </kbd>  : Ajuste automatiquement <strong>la largeur</strong></li>
+    </ul>
+    
+        <h3>Trier les données</h3>
+    <ul>
+        <li><kbd> Alt </kbd> + <kbd> é </kbd> + <kbd> 2 </kbd> : Ordre <strong>Ascendant</strong></li>
+        <li><kbd> Alt </kbd> + <kbd> é </kbd> + <kbd> D </kbd> + <kbd> 1 </kbd> : Ordre <strong>Descendant</strong></li>
+    </ul>
+
+    <h3>Navigation et édition</h3>
+        <ul>
+            <li><kbd>F2</kbd> : modifier le contenu de la cellule active</li>
+            <li><kbd>Ctrl</kbd> + <kbd>←</kbd> ou <kbd>→</kbd>: atteindre le bord de la plage de données dans la direction choisie</li>
+            <li><kbd>Ctrl</kbd> + <kbd>Début</kbd> : revenir au début de la feuille</li>
+            <li><kbd>Ctrl</kbd> + <kbd>Fin</kbd> : atteindre la dernière cellule utilisée de la feuille</li>
+            <li><kbd class="enter"></kbd> : valider la saisie</li>
+            <li><kbd>Échap</kbd> : annuler la saisie en cours</li>
+        </ul>
+
+    <h3>Insérer date ou heure dans une cellule :</h3>
+    <ul>
+        <li><kbd>Ctrl </kbd> + <kbd> ; </kbd> : insérer la date </li>
+        <li><kbd>Ctrl </kbd> + <kbd> : </kbd> : insérer l'heure </li>
+    </ul>
+
+<h3> Manipulation de caractères </h3>
+<div class="table-container">
+    <table>
+        <caption>Extraction des premiers caractères</caption>
             <thead>
                 <tr>
                     <th></th>
@@ -31,34 +82,37 @@
                 </tr>
             </tbody>
         </table>
+</div>
 
-        <table>
-            <caption>Extraction des derniers caractères</caption>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>A (données)</th>
-                    <th>B (formule à appliquer)</th>
-                    <th>C (résultat obtenu)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>BATIMENT-025</td>
-                    <td>=DROITE(A1;3)</td>
-                    <td>025</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>ESPACE-104</td>
-                    <td>=DROITE(A2;3)</td>
-                    <td>104</td>
-                </tr>
-            </tbody>
-        </table>
+<div class="table-container">
+    <table>
+        <caption>Extraction des derniers caractères</caption>
+        <thead>
+            <tr>
+                <th></th>
+                <th>A (données)</th>
+                <th>B (formule à appliquer)</th>
+                <th>C (résultat obtenu)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>BATIMENT-025</td>
+                <td>=DROITE(A1;3)</td>
+                <td>025</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>ESPACE-104</td>
+                <td>=DROITE(A2;3)</td>
+                <td>104</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-
+<div class="table-container">
         <table>
             <caption>Extraction d'une partie du texte</caption>
             <thead>
@@ -84,7 +138,8 @@
                 </tr>
             </tbody>
         </table>
-
+</div>        
+<div class="table-container">
         <table>
             <caption>Remplacement d'un caractère</caption>
             <thead>
@@ -110,7 +165,9 @@
                 </tr>
             </tbody>
         </table>
+</div>
 
+<div class="table-container">
     <h3>Manipulation de Dates</h3>
       <table>
         <caption> Extraction de l'année </caption>
@@ -138,58 +195,63 @@
                 </tr> 
             </tbody>  
         </table>
+</div>      
 
-        <table>
-            <caption>Extraction du mois</caption>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>A (données)</th>
-                    <th>B (formule à appliquer)</th>
-                    <th>C (résultat obtenu)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>20/03/2020</td>
-                    <td>=MOIS(A1)</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>05/10/2025</td>
-                    <td>=MOIS(A2)</td>
-                    <td>10</td>
-                </tr>
-            </tbody>
-        </table>
+<div class="table-container">
+    <table>
+        <caption>Extraction du mois</caption>
+        <thead>
+            <tr>
+                <th></th>
+                <th>A (données)</th>
+                <th>B (formule à appliquer)</th>
+                <th>C (résultat obtenu)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>20/03/2020</td>
+                <td>=MOIS(A1)</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>05/10/2025</td>
+                <td>=MOIS(A2)</td>
+                <td>10</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-        <table>
-            <caption>Extraction du jour</caption>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>A (données)</th>
-                    <th>B (formule à appliquer)</th>
-                    <th>C (résultat obtenu)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>20/03/2020</td>
-                    <td>=JOUR(A1)</td>
-                    <td>20</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>05/10/2025</td>
-                    <td>=JOUR(A2)</td>
-                    <td>5</td>
-                </tr>
-            </tbody>
-        </table>
+<div class="table-container">
+    <table>
+        <caption>Extraction du jour</caption>
+        <thead>
+            <tr>
+                <th></th>
+                <th>A (données)</th>
+                <th>B (formule à appliquer)</th>
+                <th>C (résultat obtenu)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>20/03/2020</td>
+                <td>=JOUR(A1)</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>05/10/2025</td>
+                <td>=JOUR(A2)</td>
+                <td>5</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
         
 <div class="table-container">
         <table>
@@ -243,78 +305,33 @@
         </table>
 </div>
 
-        <h3>Assemblage et recherche de données</h3>
-        <table>
-            <caption>Gestion d'une erreur de recherche</caption>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>A (identifiant recherché)</th>
-                    <th>B (formule à appliquer)</th>
-                    <th>C (résultat obtenu)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>B9999</td>
-                    <td>=SIERREUR(RECHERCHEV(A1;E2:F3;2;FAUX);"Introuvable")</td>
-                    <td>Introuvable</td>
-                </tr>
-            </tbody>
-        </table>
-        <p>Pour l'exemple RECHERCHEV, le tableau de recherche E2:F3 doit contenir les identifiants en colonne E et les libellés correspondants en colonne F. La recherche exacte est activée par FAUX.</p>
-
+<div class="table-container">
+    <h3>Assemblage et recherche de données</h3>
+    <table>
+        <caption>Gestion d'une erreur de recherche</caption>
+        <thead>
+            <tr>
+                <th></th>
+                <th>A (identifiant recherché)</th>
+                <th>B (formule à appliquer)</th>
+                <th>C (résultat obtenu)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>B9999</td>
+                <td>=SIERREUR(RECHERCHEV(A1;E2:F3;2;FAUX);"Introuvable")</td>
+                <td>Introuvable</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Pour l'exemple RECHERCHEV, le tableau de recherche E2:F3 doit contenir les identifiants en colonne E et les libellés correspondants en colonne F. La recherche exacte est activée par FAUX.</p>
+</div>
         <hr>
         <br>
 
-
-
-            <h3> Raccourcis clavier </h3>
-            <ul>
-                <li><kbd>Ctrl</kbd> + <kbd>Maj</kbd> + <kbd>L</kbd> : activer ou désactiver les filtres automatiques</li>
-                <li><kbd>Ctrl</kbd> + <kbd class="shift"></kbd> + <kbd>1</kbd> : ouvrir la boîte de dialogue <strong>Format de cellule</strong></li>
-                <li><kbd>Ctrl</kbd> + <kbd>L</kbd> : Créer un tableau</li>
-                <li><kbd> Ctrl </kbd> + <kbd class="space">  </kbd> : Sélectionner <strong>la colonne</strong> du tableau </li>
-                <li><kbd class="shift"></kbd> + <kbd class="space"></kbd> : Sélectionner <strong>la ligne</strong> du tableau </li>
-            </ul>
-            
-            <h3>Insérer ou supprimer des lignes et colonnes</h3>
-            <ul>
-                <li><kbd class="lit">Ctrl</kbd> + <kbd class="lit">Shift</kbd> + <kbd class="lit">+</kbd> : ouvrir la boîte de dialogue <strong>Insérer des cellules</strong></li>
-                <li><kbd>Ctrl</kbd> + <kbd>-</kbd> : ouvrir la boîte de dialogue <strong>Supprimer des cellules</strong></li>
-                <li><kbd>Alt</kbd> + <kbd>L</kbd> + <kbd>U</kbd> + <kbd>S</kbd> + <kbd>D</kbd> : supprimer la ligne entière</li>
-            </ul>
-            
-            <h3>Ajuster la largeur des colonnes et la hauteur des lignes</h3>
-            <p>Sélectionner les lignes ou colonnes à modifier. Pour toute la feuille, utiliser le bouton de sélection situé à l'intersection des en-têtes de lignes et de colonnes.</p>
-            <ul>
-                <li><kbd> Alt </kbd> + <kbd> L </kbd> + <kbd> ç </kbd> + <kbd> J </kbd>  : Ajuste automatiquement <strong>la hauteur</strong></li>
-                <li><kbd> Alt </kbd> + <kbd> L </kbd> + <kbd> ç </kbd> + <kbd> A </kbd>  : Ajuste automatiquement <strong>la largeur</strong></li>
-            </ul>
-            
-              <h3>Trier les données</h3>
-            <ul>
-                <li><kbd> Alt </kbd> + <kbd> é </kbd> + <kbd> 2 </kbd> : Ordre <strong>Ascendant</strong></li>
-                <li><kbd> Alt </kbd> + <kbd> é </kbd> + <kbd> D </kbd> + <kbd> 1 </kbd> : Ordre <strong>Descendant</strong></li>
-            </ul>
-
-            <h3>Navigation et édition</h3>
-                <ul>
-                    <li><kbd>F2</kbd> : modifier le contenu de la cellule active</li>
-                    <li><kbd>Ctrl</kbd> + <kbd>←</kbd> ou <kbd>→</kbd>: atteindre le bord de la plage de données dans la direction choisie</li>
-                    <li><kbd>Ctrl</kbd> + <kbd>Début</kbd> : revenir au début de la feuille</li>
-                    <li><kbd>Ctrl</kbd> + <kbd>Fin</kbd> : atteindre la dernière cellule utilisée de la feuille</li>
-                    <li><kbd class="enter"></kbd> : valider la saisie</li>
-                    <li><kbd>Échap</kbd> : annuler la saisie en cours</li>
-                </ul>
-
-            <h3>Insérer date ou heure dans une cellule :</h3>
-            <ul>
-                <li><kbd>Ctrl </kbd> + <kbd> ; </kbd> : insérer la date </li>
-                <li><kbd>Ctrl </kbd> + <kbd> : </kbd> : insérer l'heure </li>
-            </ul>
-
+    
             <div>
                 <button id="btn_fermeture" data-close>Fermer</button>
             </div>

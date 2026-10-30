@@ -497,9 +497,10 @@ kbd {
 
 kbd.windows {
     display: inline-block;
-    padding: 4px 9px;
+    /* padding: 4px 9px; */
     width: auto;
     height: auto;
+    border: none;
 }
 
 kbd.windows::before {

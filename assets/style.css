@@ -1075,6 +1075,74 @@ input:checked + .slider:before {
     }
 }
 
+
+/* =========================================================
+   GESTION DES DETAILS & SUMMARY
+   ========================================================= */
+details {
+    margin-top: 12px;
+    padding: 10px 14px;
+    /* border: 1px solid var(--border); */
+    border-radius: 10px;
+    transition: background-color 0.8s ease,
+                border-color 0.8s ease;
+}
+
+details summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 2px;
+    cursor: pointer;
+    color: inherit;
+    list-style: none;
+}
+
+/* Supprime le marqueur natif */
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+details summary::marker {
+    content: "";
+}
+
+/* Chevron personnalisé */
+details summary::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    flex-shrink: 0;
+    margin-right: 4px;
+    border-right: 1.8px solid currentColor;
+    border-bottom: 1.8px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform 0.8s ease;
+}
+
+details:hover{
+       background-color: white;
+}
+
+/* État ouvert */
+details[open] {
+    background-color: white;
+    border-left: 4px solid var(--couleur-primaire);
+}
+
+details[open] summary {
+    margin-bottom: 10px;
+    color: var(--couleur-primaire);
+}
+
+details[open] summary::after {
+    transform: rotate(225deg);
+}
+
+
+
+
 /* =========================================================
    GESTION DES TOOLTIPS
    ========================================================= */

@@ -498,16 +498,16 @@ kbd {
 kbd.windows {
     display: inline-block;
     /* padding: 4px 9px; */
-    width: auto;
-    height: auto;
+    /* width: auto;
+    height: auto; */
+    width: 14px;
+    height: 14px;
     border: none;
 }
 
 kbd.windows::before {
     content: "";
     display: inline-block;
-    width: 14px;
-    height: 14px;
     background-image: url("img/windows.png");
     background-size: contain;
     background-repeat: no-repeat;

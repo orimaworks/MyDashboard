@@ -8,6 +8,24 @@
 <ul>
     <li>Figer une cellule : (A1) par exemple </li>
     <li><code>$A$1</code> ou <kbd>F4</kbd> pendant la sélection de la cellule</li>
+    <br>
+    <li>Convertir une cellule au format texte en valeur numérique :</li>
+    <li>La cellule A1 contient un nombre enregistré sous forme de texte.</li>
+    <li>Dans B1, saisir : <code>=VALEURNOMBRE(A1)</code> // Convertit le texte de A1 en valeur numérique.</li>
+    <br>
+    <li>Compter et extraire des caractères :</li>
+    <li>Créer une colonne pour la fonction <code>NBCAR</code>, puis une autre pour <code>GAUCHE</code> ou <code>DROITE</code> :</li>
+    <li><code>=NBCAR(A1)</code> // Compte le nombre de caractères de la cellule A1, espaces compris.</li>
+    <li>B1 contient le résultat de <code>NBCAR(A1)</code>, utilisé dans les formules suivantes :</li>
+    <li><code>=DROITE(A1;B1-4)</code> // Extrait les caractères situés à droite, en ignorant les 4 premiers. </li>
+    <li><code>=GAUCHE(A1;B1-6)</code> // Extrait les caractères situés à gauche, en ignorant les 6 derniers.</li>
+    <br>
+    <li>Les fonctions GAUCHE() et DROITE() permettent d'extraire des caractères depuis une cellule :</li>
+    <li><code>=DROITE(A1;4)</code> : Extrait les 4 derniers caractères de la cellule A1, en partant de la droite (de la fin).</li>
+    <li><code>=GAUCHE(A2;3)</code> : Extrait les 3 premiers caractères de la cellule A2, en partant de la gauche (du début).</li>
+    <br>
+    <li>La fonction TROUVE() permet de localiser un caractère dans une cellule :</li>
+    <li><code>=TROUVE("-";A3)</code> : Dans la cellule A3, indique où se trouve le caractère : - </li>
 </ul>
 
 <h3> Raccourcis clavier </h3>

@@ -482,16 +482,37 @@ kbd {
 
 }
 
-kbd.windows {
-    /* display: inline-block; */
+/* kbd.windows {
+    display: inline-block;
     max-width: 10px;
     max-height: 10px;
     background-image: url("img/windows.png");
-    background-color: transparent;
+    background-color: transparent !important;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    /* vertical-align: middle; */
+    vertical-align: middle;
+
+} */
+
+kbd.windows {
+    display: inline-block;
+    padding: 4px 9px;
+    width: auto;
+    height: auto;
+}
+
+kbd.windows::before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-image: url("img/windows.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    vertical-align: middle;
 }
 
 /* Lumière diffusée sous le capuchon */

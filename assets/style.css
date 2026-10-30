@@ -882,7 +882,7 @@ dialog {
 
 body.dark dialog{
     background-color: var(--dark-background-color);
-    color: var(--dark-couleur-texte);
+            p, li, h2, h3, h4 {color: var(--dark-couleur-texte);}
 }
 
 dialog::backdrop {

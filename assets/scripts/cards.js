@@ -79,7 +79,7 @@ const cards = [
     {
         title: "Lumo",
         url: "https://lumo.proton.me/u/3/",
-        icon: "./assets/img/lumo.png",
+        icon: "./assets/img/lumo.svg",
 		label:"Lumo",
 		category: "A.I"
     },
@@ -378,7 +378,16 @@ const cards = [
 		label: "SVGRepo",
 		category: "Geek"
 	},
-	
+
+    {
+		title: "Dashboard Icons",
+		url:"https://dashboardicons.com/",
+		icon: "./assets/img/dashboardIcons.svg",
+		text: "Dashboard Icons",
+		label: "Dashboard Icons",
+		category: "Geek"
+	},
+
 	{
         title: "Flat Icon",
         url: "https://flaticon.com/",

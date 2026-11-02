@@ -159,7 +159,7 @@ const cards = [
     {
         title: "Hotmail",
         url: "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
-        icon: "https://aadcdn.msftauth.net/shared/1.0/content/images/microsoft_logo_564db913a7fa0ca42727161c6d031bef.svg",
+        icon: "./assets/img/hotmail.svg",
 		label:"Hotmail",
 		category: "Administratif"
     },

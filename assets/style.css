@@ -32,7 +32,8 @@
 
     --kbd-text: white;
 	/* --kbd-led: rgba(255,255,0,0.8);       Couleur du rétroéclairage  */
-	--kbd-led: #7ab3eb;       /* Couleur du rétroéclairage  */
+	/* --kbd-led: #7ab3eb;       Couleur du rétroéclairage  */
+	--kbd-led: yellow;       /* Couleur du rétroéclairage  */
   	--kbd-surface: #2a2f36;   /* Couleur de la touche */
 
 }
@@ -496,7 +497,7 @@ kbd {
 } */
 
 kbd.windows {
-    display: inline-block;
+    /* display: inline-block; */
     padding: 4px 9px;
     width: auto;
     height: auto;

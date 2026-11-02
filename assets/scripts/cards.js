@@ -54,7 +54,7 @@ const cards = [
     {
         title: "Google",
         url: "https://www.google.com/",
-        icon: "./assets/img/google.png",
+        icon: "./assets/img/google.svg",
 		label:"Google",
 		category: "Favoris"
     },
@@ -63,7 +63,7 @@ const cards = [
 	    {
         title: "Google Maps",
         url: "https://www.google.com/maps",
-        icon: "./assets/img/maps.png",
+        icon: "./assets/img/maps.svg",
 		label:"Google Maps",
 		category: "Favoris"
 		

@@ -143,7 +143,7 @@ const cards = [
     {
         title: "Crédit Agricole",
         url: "https://www.ca-sudrhonealpes.fr/",
-        icon: "./assets/img/ca.webp",
+        icon: "./assets/img/credit-agricole.svg",
 		label:"C.A",
 		category: "Administratif"
     },
@@ -151,7 +151,7 @@ const cards = [
     {
         title: "Caisse d'Epargne",
         url: "https://www.caisse-epargne.fr/languedoc-roussillon/",
-        icon: "./assets/img/ce.webp",
+        icon: "./assets/img/caisse-epargne.svg",
 		label:"C.E",
 		category: "Administratif"
     },

@@ -752,6 +752,15 @@ const cards = [
 		category: "pro"
     },
 
+    {
+        title: "Patri-View",
+        url: "file:///C:/Users/JODARM/Documents/PATRI-VIEW/index.html",
+        text: "Patri-View",
+		label:"Patri-View",
+		icon: "./assets/img/patri-view.svg",
+		category: "pro"
+    },
+
 			 {
         title: "Class'Croûte",
         url: "https://www.classcroute.com",

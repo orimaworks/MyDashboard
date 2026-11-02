@@ -93,6 +93,7 @@ body.dark .card {
 
 body.dark .navbar {
 	background-color : var(--dark-background-color);
+    border-bottom: var(--dark-background-card-color);
 }
 
 body.dark .card-label {

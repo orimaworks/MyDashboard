@@ -673,7 +673,7 @@ const cards = [
 	{
         title: "Bullrot Wear",
         url: "https://www.bullrotwearofficiel.fr/boutiquebullrotwear/",
-        icon: "https://6802c95ea3.clvaw-cdnwnd.com/0015b2864b9b18ec3ca6bde016b7993e/200000001-c62cac62cc/450/Bullrot%20Wear%20Noir%20et%20rouge.webp?ph=6802c95ea3",
+        icon: "./assets/img/bullrot.png",
 		text: "Bullrot",
 		label:"Bullrot Wear",
 		category: "shopping"
@@ -684,7 +684,7 @@ const cards = [
 	{
         title: "VALENCE ROMANS AGGLO",
         url: "https://intragglo.valenceromansagglo.fr/fr/index.html",
-        icon: "https://intragglo.valenceromansagglo.fr/skins/IntranetAgglo/resources/templates/common/img/logo-colorful.svg",
+        icon: "./assets/img/vra.svg",
 		label:"IntrAgglo",
 		category: "pro"
     }, 
@@ -692,7 +692,7 @@ const cards = [
 	{
         title: "VALENCE VILLE",
         url: "https://intraval.valence.fr/fr/index.html",
-        icon: "https://intraval.valence.fr/skins/IntranetVille/resources/templates/common/img/logo-colorful.svg",
+        icon: "./assets/img/valenceville.svg",
 		label:"IntraVille",
 		category: "pro"
     }, 
@@ -700,7 +700,7 @@ const cards = [
 	{
         title: "ChronoTime",
         url: "https://chronotime.valenceromansagglo.fr/chronotime/login/login.html",
-        icon: "https://chronotime.valenceromansagglo.fr/chronotime/assets/images/Chronotime_UX.png",
+        icon: "./assets/img/chronotime.png",
 		label:"ChronoTime",
 		category: "pro"
     },
@@ -720,7 +720,7 @@ const cards = [
         url: "https://support.astech-solutions.com/",
         text: "ASTech-Solutions",
 		label:"ASTech-Solutions",
-		icon: "https://support.astech-solutions.com/images/main-logo.svg?v=2",
+		icon: "./assets/img/astech_solutions.svg",
 		category: "pro"
     },    
 

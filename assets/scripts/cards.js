@@ -208,6 +208,13 @@ const cards = [
 		label:"Cadastre",
 		category: "Administratif"
     },
+    {
+        title: "What3Words",
+        url: "https://what3words.com/gardon.hangar.enserrer",
+        icon: null,
+		label:"What3Words",
+		category: "Administratif"
+    },
 
 
 //-----------------------

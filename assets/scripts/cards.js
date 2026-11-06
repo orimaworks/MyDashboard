@@ -211,7 +211,7 @@ const cards = [
     {
         title: "What3Words",
         url: "https://what3words.com/gardon.hangar.enserrer",
-        icon: null,
+        icon: "./assets/img/what3words.png",
 		label:"What3Words",
 		category: "Administratif"
     },

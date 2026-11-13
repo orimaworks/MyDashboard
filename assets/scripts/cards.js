@@ -175,17 +175,16 @@ const cards = [
     {
         title: "VEOLIA",
         url: "https://www.eau.veolia.fr/",
-        icon: "https://prd-ref-marque-logo.istefr.fr/VEOLIAWATERP/Veolia/logo_home.svg",
+        icon: "./assets/img/veolia.svg"",
 		label:"VEOLIA",
 		category: "Administratif"
     },
-
 
 	
 	{
         title: "Le CRAT",
         url: "https://www.lecrat.fr/",
-        icon: null,
+        icon: "./assets/img/crat.png",
 		label:"Le CRAT / Santé",
 		category: "Administratif"
     },
@@ -222,6 +221,15 @@ const cards = [
 //-----------------------
 
 	 {
+        title: "EPIEOS",
+        url: "https://epieos.com/",
+        icon: "./assets/img/epieos.svg",
+        text: "EPIEOS",
+		label:"EPIEOS",
+		category: "Geek"
+    },
+	 
+    {
         title: "Se connecter avec hotmail perso - pas devmj",
         url: "https://learn.microsoft.com/fr-fr/",
         icon: "./assets/img/microsoft.svg",
@@ -335,7 +343,8 @@ const cards = [
 		title: "Khroma.co",
 		url: "https://www.khroma.co/",
 		text: "khroma.co",
-		icon: null,
+		icon: "./assets/img/khroma.svg",
+        color: "black",
 		label: "khroma.co",
 		category: "Geek"
 	},
@@ -344,7 +353,8 @@ const cards = [
         title: "Squoosh | Convertir img en svg",
         url: "https://squoosh.app",
         text:"Squoosh",
-		icon: null,
+		icon: "./assets/img/squoosh.svg",
+        color: #f06,
 		label:"Squoosh",
 		category: "Geek"
     },

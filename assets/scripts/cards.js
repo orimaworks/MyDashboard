@@ -222,7 +222,7 @@ const cards = [
 
 	 {
         title: "EPIEOS",
-        url: "https://epieos.com/",
+        url: "https://epieos.com/fr-FR",
         icon: "./assets/img/epieos.svg",
         text: "EPIEOS",
 		label:"EPIEOS",

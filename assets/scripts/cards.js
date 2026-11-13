@@ -175,7 +175,7 @@ const cards = [
     {
         title: "VEOLIA",
         url: "https://www.eau.veolia.fr/",
-        icon: "./assets/img/veolia.svg"",
+        icon: "./assets/img/veolia.svg",
 		label:"VEOLIA",
 		category: "Administratif"
     },

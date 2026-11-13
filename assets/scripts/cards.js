@@ -354,7 +354,7 @@ const cards = [
         url: "https://squoosh.app",
         text:"Squoosh",
 		icon: "./assets/img/squoosh.svg",
-        color: #f06,
+        color: "#f06",
 		label:"Squoosh",
 		category: "Geek"
     },

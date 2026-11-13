@@ -591,7 +591,7 @@ const cards = [
 
     {
         title: "DTC",
-        url: "https://danstonchat.com/latest.html",
+        url: "https://danstonchat.com/random",
         icon: "./assets/img/dtc.webp",
 		label: "DTC"
 		

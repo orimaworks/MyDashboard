@@ -70,7 +70,7 @@ body.dark {
     background-image: url("./img/RPiSystem_dark.png");
 	text-shadow:0 0 2px rgba(0,255,65,.15);
 	/*font-family: "JetBrains Mono", monospace;*/
-	cursor: crosshair;
+	/* cursor: crosshair; */
 	color: var(--dark-couleur-texte);
 }
 
@@ -83,8 +83,7 @@ body.dark button {
 }
 
 
-body.dark footer,
-body.dark nav {
+body.dark footer {
     background-color: black;
 }
 /*
@@ -103,7 +102,8 @@ body.dark .card {
 }
 
 body.dark .navbar {
-	background-color : var(--dark-background-color);
+	/* background-color : var(--dark-background-color); */
+	background-color : black;
     border-bottom: var(--dark-background-card-color);
 }
 

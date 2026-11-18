@@ -48,7 +48,12 @@ a {
 body {
 	font-family: "Nunito", sans-serif;
 	align-items: center ; 
-	background-color: var(--background-color); 
+	/* background-color: var(--background-color);  */
+    background-image: url("./img/RPiSystem.png");
+    background-size: cover;          /* l'image couvre toute la zone */
+    background-position: center;     /* centrée */
+    background-repeat: no-repeat;    /* pas de répétition en mosaïque */
+    background-attachment: fixed;    /* optionnel : effet parallaxe au scroll */
 	height: 100vh;
 	overflow: auto; 
 	overflow-x: hidden;
@@ -62,6 +67,7 @@ body.dark {
 	color: white;
     */
 	background-color: var(--dark-background-color);
+    background-image: url("./img/RPiSystem_dark.png");
 	text-shadow:0 0 2px rgba(0,255,65,.15);
 	/*font-family: "JetBrains Mono", monospace;*/
 	cursor: crosshair;

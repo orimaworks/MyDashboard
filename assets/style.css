@@ -82,6 +82,11 @@ body.dark button {
 	color: dimgray;
 }
 
+
+body.dark footer,
+body.dark nav {
+    background-color: black;
+}
 /*
 
 body.dark aside,

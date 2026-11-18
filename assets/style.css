@@ -949,8 +949,6 @@ section {
 	justify-content: flex-start ; 
     align-items: center;
 	padding : 15px;  
-    font-size: 1.4em;
-    font-weight: 700;
 	right: 0;
 	gap : 30px ; 
     margin-bottom: 5%;
@@ -959,6 +957,8 @@ section {
 
 section #title{
     min-width: 100%;
+    font-size: 1.4em;
+    font-weight: 700;
 }
 /* 	=====================================================
 						SELECTION TEXTE

@@ -780,13 +780,6 @@ main {
 	padding: 2%;
 }
 
-.main-title {
-    font-size: 1.5em;
-    color: black;
-    font-weight: 700;
-    margin-top: 2%;
-    text-align: left;
-}
 
 /* .message {
 	display: flex;
@@ -952,7 +945,10 @@ section {
 	flex-wrap : wrap;
 	flex-direction : row ; 
 	justify-content: flex-start ; 
-	padding : 15px;             
+    align-items: center;
+	padding : 15px;  
+    font-size: 1.4em;
+    font-weight: 700;
 	right: 0;
 	gap : 30px ; 
 }

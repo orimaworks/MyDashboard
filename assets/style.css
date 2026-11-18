@@ -1395,3 +1395,48 @@ details[open] summary::after {
 	}
 }
 
+/* =====================================================
+        Très grands écrans – largeur ≥ 2560 px
+   ===================================================== */
+@media (min-width: 2560px) {
+    html {
+        font-size: 20px;   /* base agrandie : tout ce qui est en em suit */
+    }
+
+    .card {
+        width: 180px;
+        height: 140px;
+        border-radius: 12px;
+    }
+
+    section {
+        gap: 25px;
+    }
+
+    dialog {
+        max-width: 80vw;   /* évite qu'un dialog s'étale sur 2 m de large */
+    }
+}
+
+/* =====================================================
+        4K natif – largeur ≥ 3840 px
+   ===================================================== */
+@media (min-width: 3840px) {
+    html {
+        font-size: 26px;
+    }
+
+    .card {
+        width: 240px;
+        height: 185px;
+        font-size: 1.1em;
+    }
+
+    .logo > img {
+        max-width: 80px;
+    }
+
+    section {
+        gap: 35px;
+    }
+}

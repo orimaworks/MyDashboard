@@ -771,7 +771,7 @@ kbd.enter:active {
 
 main {
 	display : flex ; 
-	flex-direction : row ; 
+	flex-direction : column ; 
 	width : 100%;
     min-height: calc(100vh - var(--header-height));
 	overflow-y: auto; 

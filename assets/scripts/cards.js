@@ -801,11 +801,20 @@ const cards = [
 
 
 for (const card of cards) {
-    const target = document.querySelector(`.mesCards[category="${card.category}"]`);
+
+    const target = document.querySelector(
+        `.mesCards[data-category="${card.category}"]`
+    );
+
+    // Vérifie que la section existe
+    if (!target) {
+        console.warn(`Catégorie introuvable : ${card.category}`);
+        continue;
+    }
 
     target.insertAdjacentHTML("beforeend", `
         <a class="card" href="${card.url}" title="${card.title}">
-            <img src="${card.icon}" alt="">
+            ${card.icon ? `<img src="${card.icon}" alt="">` : ""}
             <span>${card.label}</span>
         </a>
     `);

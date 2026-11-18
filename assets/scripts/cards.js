@@ -552,7 +552,8 @@ const cards = [
         title: "Facebook",
         url: "https://www.facebook.com/",
         icon: "./assets/img/fb.svg",
-		label: "Facebook"
+		label: "Facebook",
+		category: "Detente"
     },
 
 
@@ -560,7 +561,8 @@ const cards = [
         title: "Whatsapp",
         url: "https://web.whatsapp.com/",
         icon: "./assets/img/whatsapp.svg",
-		label: "Whatsapp"
+		label: "Whatsapp",
+		category: "Detente"
     },
 
 	    {
@@ -568,7 +570,8 @@ const cards = [
         url: "https://news.google.com/",
         icon: "./assets/img/google-news.png",
 		text: "Actualités",
-		label: "News"
+		label: "News",
+		category: "Detente"
     },
 
 	    {
@@ -576,7 +579,8 @@ const cards = [
         url: "https://www.noisli.com/",
         icon: "./assets/img/noisli.png",
 		text: "Noisli",
-		label: "Noisli"
+		label: "Noisli",
+		category: "Detente"
     },
 
 
@@ -585,7 +589,8 @@ const cards = [
         url: "https://twitch.tv/",
         icon: "./assets/img/twitch.svg",
 		text: "Twitch",
-		label: "Twitch"
+		label: "Twitch",
+		category: "Detente"
     },
 
 	    {
@@ -593,7 +598,8 @@ const cards = [
         url: "https://discord.com/login",
         icon: "./assets/img/discord.svg",
 		text: "Discord",
-		label: "Discord"
+		label: "Discord",
+		category: "Detente"
     },
 
 
@@ -601,7 +607,8 @@ const cards = [
         title: "DTC",
         url: "https://danstonchat.com/random",
         icon: "./assets/img/dtc.webp",
-		label: "DTC"
+		label: "DTC",
+		category: "Detente"
 		
     },
 
@@ -609,7 +616,8 @@ const cards = [
         title: "NewsBlur",
         url: "https://www.newsblur.com/",
         icon: "./assets/img/logo-newsblur.png",
-		label: "NewsBlur"
+		label: "NewsBlur",
+		category: "Detente"
 		
     },
 	
@@ -618,7 +626,8 @@ const cards = [
         url: "https://linkedin.com/feed/",
         icon: "./assets/img/linkedin.png",
 		text: "LinkedIn",
-		label: "Linked In"
+		label: "Linked In",
+		category: "Detente"
     },
 	
 	
@@ -628,7 +637,8 @@ const cards = [
         url: "https://viedemerde.fr/",
         icon: "./assets/img/vdm.png",
 		text: "VDM",
-		label: "VDM"
+		label: "VDM",
+		category: "Detente"
     },
 	
 	    {
@@ -636,7 +646,8 @@ const cards = [
         url: "https://secouchermoinsbete.fr/",
         icon: "./assets/img/scmb.jpeg",
 		text: "SCMB",
-		label: "SCMB"
+		label: "SCMB",
+		category: "Detente"
     },
 	
 //-----------------------

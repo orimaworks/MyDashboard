@@ -797,3 +797,16 @@ const cards = [
 	
 
 ];
+
+
+
+for (const card of cards) {
+    const target = document.querySelector(`.mesCards[category="${card.category}"]`);
+
+    target.insertAdjacentHTML("beforeend", `
+        <a class="card" href="${card.url}" title="${card.title}">
+            <img src="${card.icon}" alt="">
+            <span>${card.label}</span>
+        </a>
+    `);
+}

@@ -110,6 +110,8 @@ body.dark .navbar {
 body.dark .card-label {
 		color: var(--dark-couleur-texte);
 }
+
+body.dark section {color: white;}
 	
 /* .btn_fermeture {
     position: sticky;

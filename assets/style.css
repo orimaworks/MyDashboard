@@ -957,8 +957,8 @@ section {
 }
 
 
-section:first-child{
-    min-width: 6%;
+section #title{
+    min-width: 100%;
     border: solid 1px red; 
 }
 /* 	=====================================================

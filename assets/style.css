@@ -784,7 +784,7 @@ main {
     font-size: 1.5em;
     color: black;
     font-weight: 700;
-    margin-top: 4%;
+    margin-top: 2%;
     text-align: left;
 }
 
@@ -951,9 +951,7 @@ section {
 	flex: 1; 
 	flex-wrap : wrap;
 	flex-direction : row ; 
-	align-items : space-between ; 
-	align-content : space-evenly ;
-	justify-content: space-evenly ; 
+	justify-content: flex-start ; 
 	padding : 15px;             
 	right: 0;
 	gap : 30px ; 

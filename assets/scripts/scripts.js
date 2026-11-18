@@ -62,9 +62,73 @@ btn.addEventListener("click", () => {
 //--------------------------------------
 //      AJOUT DE NOUVELLES CARDS
 //--------------------------------------
-const container = document.querySelector(".mesCards");
+// const container = document.querySelector(".mesCards");
+
+// cards.forEach(card => {
+
+//     const target = card.target ?? "_blank";
+
+//     const rel = target === "_blank"
+//         ? "noopener noreferrer"
+//         : "";
+
+//     const content = card.icon
+//         ? `<img src="${card.icon}" alt="${card.title}">`
+//         : `<span>${card.text ?? ""}</span>`;
+
+//     const color = card.color
+//         ? `background-color:${card.color};`
+//         : "";
+
+
+//     container.insertAdjacentHTML("beforeend", `
+//         <div class="card-container">
+
+//             <a href="${card.url}"
+//                target="${target}"
+//                rel="${rel}">
+                                                            
+//                 <div class="card tooltip-trigger"
+//                      style="${color}"
+//                      data-tooltip="${card.title}"
+//                      >
+//                     ${content}
+//                 </div>
+
+//             </a>
+
+//             <label class="card-label">
+//                 ${card.label ?? card.title}
+//             </label>
+
+//         </div>
+//     `);
+
+// });
+
+
+
+
+
+
+
+
+//--------------------------------------
+//      AJOUT DE NOUVELLES CARDS
+//--------------------------------------
 
 cards.forEach(card => {
+
+    // Recherche de la section correspondant à la catégorie
+    const container = document.querySelector(
+        `.mesCards[data-category="${card.category}"]`
+    );
+
+    // Si aucune section ne correspond, on ignore la card
+    if (!container) {
+        console.warn(`Catégorie introuvable : ${card.category}`);
+        return;
+    }
 
     const target = card.target ?? "_blank";
 
@@ -80,18 +144,16 @@ cards.forEach(card => {
         ? `background-color:${card.color};`
         : "";
 
-
     container.insertAdjacentHTML("beforeend", `
         <div class="card-container">
 
             <a href="${card.url}"
                target="${target}"
                rel="${rel}">
-                                                            
+
                 <div class="card tooltip-trigger"
                      style="${color}"
-                     data-tooltip="${card.title}"
-                     >
+                     data-tooltip="${card.title}">
                     ${content}
                 </div>
 
@@ -105,6 +167,8 @@ cards.forEach(card => {
     `);
 
 });
+
+
 
                 //   title="${card.title}"
 

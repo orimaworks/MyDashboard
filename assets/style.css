@@ -959,6 +959,7 @@ section {
 
 section:first-child{
     min-width: 6%;
+    border: solid 1px red; 
 }
 /* 	=====================================================
 						SELECTION TEXTE

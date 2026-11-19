@@ -790,6 +790,14 @@ const cards = [
 		color: "#e5004e",
 		category: "pro"
     },    
+    {
+        title: "PSS-ARCHI",
+        url: "https://www.pss-archi.eu/",
+        text: "PSS-archi",
+		label:"GEO Portail",
+		icon: "./assets/img/pss_archi.webp",
+		category: "pro"
+    },    
 
     {
         title: "PATRI-DATA",

@@ -471,32 +471,39 @@ const cards = [
 //       GAMING
 //-----------------------
     {
-        title: "Géo",
-        url: "./geo.html",
-        icon: "./assets/img/geo.svg",
-		text: "Géo.",
-		label: "Géo.",
-		category: "Gaming"
+        title: "Steam",
+        url: "https://store.steampowered.com/?l=french",
+        icon: "./assets/img/steam.svg",
+        label: "Steam",
+        category: "Gaming"
     },
-    
+
+    {
+        title: "Nintendo",
+        url: "https://www.nintendo.fr/Rechercher/Rechercher-299117.html?f=147394-5-81",
+        icon: "./assets/img/nintendo.svg",
+        label: "Nintendo",
+        category: "Gaming"
+    },
+
     {
         title: "Rockstar",
         url: "https://socialclub.rockstargames.com/",
         icon: "./assets/img/rockstar.svg",
-		text: "Rockstar",
-		label: "SocialClub",
-		category: "Gaming"
+        text: "Rockstar",
+        label: "SocialClub",
+        category: "Gaming"
     },
-
+    
     {
         title: "Epic Games",
         url: "https://www.epicgames.com/site/fr/home",
         icon: "./assets/img/epicgames.png",
 		label: "Epic Games",
 		category: "Gaming"
-
+        
     },
-
+    
     {
         title: "Steam DB",
         url: "https://steamdb.info/upcoming/free/",
@@ -504,7 +511,7 @@ const cards = [
 		label: "Steam DB",
 		category: "Gaming"
     },
-
+    
     {
         title: "G.O.G",
         url: "https://www.gog.com/fr/",
@@ -512,23 +519,8 @@ const cards = [
 		label: "G.O.G",
 		category: "Gaming"
     },
-
-    {
-        title: "Nintendo",
-        url: "https://www.nintendo.fr/Rechercher/Rechercher-299117.html?f=147394-5-81",
-        icon: "./assets/img/nintendo.svg",
-		label: "Nintendo",
-		category: "Gaming"
-    },
-
-	{
-		title: "Steam",
-		url: "https://store.steampowered.com/?l=french",
-		icon: "./assets/img/steam.svg",
-		label: "Steam",
-		category: "Gaming"
-	},
-
+    
+    
 	{
         title: "Humble",
         url: "https://fr.humblebundle.com/",
@@ -537,8 +529,17 @@ const cards = [
 		label: "Humble Bundle",
 		category: "Gaming"
     },
+    
+    {
+        title: "Géo",
+        url: "./geo.html",
+        icon: "./assets/img/geo.svg",
+        text: "Géo.",
+        label: "Géo.",
+        category: "Gaming"
+    },
 
-	{
+    {
         title: "Dino",
         url: "brave://dino/",
         icon: "./assets/img/dino.png",

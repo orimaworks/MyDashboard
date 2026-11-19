@@ -794,7 +794,7 @@ const cards = [
         title: "PSS-ARCHI",
         url: "https://www.pss-archi.eu/",
         text: "PSS-archi",
-		label:"GEO Portail",
+		label:"PSS-archi",
 		icon: "./assets/img/pss_archi.webp",
 		category: "pro"
     },    

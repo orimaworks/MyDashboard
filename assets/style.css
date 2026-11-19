@@ -958,11 +958,13 @@ section {
 
 section #title{
     min-width: 100%;
-    font-size: 1.6em;
+    font-size: 1.5em;
     font-weight: 700;
     font-family: 'Comfortaa';
-
+    border-bottom: 1.8px solid var(--couleur-primaire);
+    margin: 0;
 }
+
 /* 	=====================================================
 						SELECTION TEXTE
 	===================================================== */

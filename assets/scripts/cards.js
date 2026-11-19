@@ -69,8 +69,29 @@ const cards = [
 		
     },
 	
-	
-    
+    {
+        title: "Hotmail",
+        url: "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
+        icon: "./assets/img/hotmail.svg",
+		label:"Hotmail",
+		category: "Favoris"
+    },
+
+    {
+        title: "Crédit Agricole",
+        url: "https://www.ca-sudrhonealpes.fr/",
+        icon: "./assets/img/credit-agricole.svg",
+        label:"C.A",
+        category: "Favoris"
+    },
+
+    {
+        title: "Caisse d'Epargne",
+        url: "https://www.caisse-epargne.fr/languedoc-roussillon/",
+        icon: "./assets/img/caisse-epargne.svg",
+        label:"C.E",
+        category: "Favoris"
+    },
 	
 //-----------------------
 //       A.I
@@ -171,15 +192,6 @@ const cards = [
 		category: "Administratif"
     },
 	
-    
-    {
-        title: "Hotmail",
-        url: "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
-        icon: "./assets/img/hotmail.svg",
-		label:"Hotmail",
-		category: "Administratif"
-    },
-    
     {
         title: "EDF",
         url: "https://espace-client.edf.fr/sso/XUI/#login/",
@@ -196,7 +208,6 @@ const cards = [
 		category: "Administratif"
     },
     
-	
 	{
         title: "Le CRAT",
         url: "https://www.lecrat.fr/",
@@ -206,30 +217,12 @@ const cards = [
     },
     
     {
-        title: "Crédit Agricole",
-        url: "https://www.ca-sudrhonealpes.fr/",
-        icon: "./assets/img/credit-agricole.svg",
-        label:"C.A",
-        category: "Administratif"
-    },
-
-    {
-        title: "Caisse d'Epargne",
-        url: "https://www.caisse-epargne.fr/languedoc-roussillon/",
-        icon: "./assets/img/caisse-epargne.svg",
-        label:"C.E",
-        category: "Administratif"
-    },
-	
-    {
         title: "EPSENS",
         url: "https://www.epsens.com/",
         icon: "https://www.epsens.com/themes/custom/epargne_salariale/img/logo.svg",
 		label:"EPSENS",
 		category: "Administratif"
     },
-
-  
 
     {
         title: "Cadastre",
@@ -372,7 +365,6 @@ const cards = [
 		label:"FreeboxOS",
 		category: "Geek"
     },
-
 
     {
         title: "Thiings",
@@ -519,7 +511,6 @@ const cards = [
 		label: "G.O.G",
 		category: "Gaming"
     },
-    
     
 	{
         title: "Humble",

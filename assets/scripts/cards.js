@@ -29,7 +29,7 @@ const cards = [
 		url: "https://orimaworks.github.io/Appart_Eybens/",
 		icon: "https://github.com/DEVMJ00/Appart_Eybens/blob/main/cover.webp?raw=true",
 		text: "⭐️ T3 EYBENS ",
-		label: "⭐️ T3 EYBENS",
+		label: " ",
 		category: "Favoris"
 	},
 	
@@ -47,7 +47,7 @@ const cards = [
         url: "https://account.proton.me/fr/apps",
         icon: "./assets/img/Proton.svg",
         color: "#EDE8FF",
-		label:"Proton Apps",
+		label:" ",
 		category: "Favoris"
     },
 
@@ -55,7 +55,7 @@ const cards = [
         title: "Google",
         url: "https://www.google.com/",
         icon: "./assets/img/google.svg",
-		label:"Google",
+		label:" ",
 		category: "Favoris"
     },
 	
@@ -64,14 +64,13 @@ const cards = [
         title: "Google Maps",
         url: "https://www.google.com/maps",
         icon: "./assets/img/maps.svg",
-		label:"Google Maps",
+		label:" ",
 		category: "Favoris"
 		
     },
 	
 	
     
-	
 	
 //-----------------------
 //       A.I
@@ -92,13 +91,46 @@ const cards = [
 		category: "A.I"
 		
     },
+    
+    {
+        title: "Mammouth AI",
+        url: "https://mammouth.ai/",
+        icon: "./assets/img/mammouth.svg",
+        label:"Mammouth AI",
+		category: "A.I"
+		
+    },
+
+    {
+        title: "Mistral",
+        url: "https://mistral.ai/fr/",
+        icon: "./assets/img/mistral.webp",
+        label:"Mistral",
+		category: "A.I"
+    },
+
 
 
 //-----------------------
 //       ADMINISTRATIF
 //-----------------------
+    {
+        title: "Impôts",
+        url: "https://cfspart.impots.gouv.fr/LoginMDP?op=c&url=aHR0cHM6Ly9jZnNwYXJ0LmltcG90cy5nb3V2LmZyL3BvcnRhbC9kZ2kvcHVibGljL3BlcnNvO2pzZXNzaW9uaWQ9SU9EMUlNQVhET0dJSlFGSUVJUUNGRlE/cGFnZUlkPXBuYTJwYXImc2ZpZD0zMA==",
+        icon: "./assets/img/impots.png",
+        label:"Impôts",
+        category: "Administratif"
+    },
 
-{
+    {
+        title: "Retraite",
+        url: "https://www.info-retraite.fr/portail-info/home.html",
+        icon: "./assets/img/retraite.jpg",
+        label:"Info Retraite",
+        category: "Administratif"
+    },
+
+    {
         title: "NounouTop",
         url: "https://www.nounou-top.fr/",
         icon: "./assets/img/nounoutop.svg",
@@ -106,28 +138,19 @@ const cards = [
 		category: "Administratif"
     },
 
-	
+    {
+        title: "C.A.F",
+        url: "https://www.caf.fr/",
+        icon: "./assets/img/caf.svg",
+        label:"C.A.F",
+        category: "Administratif"
+    },
+    
     {
         title: "Pajemploi",
         url: "https://pajemploi.urssaf.fr/employeur/tableau-de-bord",
         icon: "./assets/img/pajemploi.svg",
 		label:"PajEmploi",
-		category: "Administratif"
-    },
-
-    {
-        title: "C.A.F",
-        url: "https://www.caf.fr/",
-        icon: "./assets/img/caf.svg",
-		label:"C.A.F",
-		category: "Administratif"
-    },
-    
-    {
-        title: "Impôts",
-        url: "https://cfspart.impots.gouv.fr/LoginMDP?op=c&url=aHR0cHM6Ly9jZnNwYXJ0LmltcG90cy5nb3V2LmZyL3BvcnRhbC9kZ2kvcHVibGljL3BlcnNvO2pzZXNzaW9uaWQ9SU9EMUlNQVhET0dJSlFGSUVJUUNGRlE/cGFnZUlkPXBuYTJwYXImc2ZpZD0zMA==",
-        icon: "./assets/img/impots.png",
-		label:"Impôts",
 		category: "Administratif"
     },
 
@@ -148,22 +171,7 @@ const cards = [
 		category: "Administratif"
     },
 	
-    {
-        title: "Crédit Agricole",
-        url: "https://www.ca-sudrhonealpes.fr/",
-        icon: "./assets/img/credit-agricole.svg",
-		label:"C.A",
-		category: "Administratif"
-    },
-
-    {
-        title: "Caisse d'Epargne",
-        url: "https://www.caisse-epargne.fr/languedoc-roussillon/",
-        icon: "./assets/img/caisse-epargne.svg",
-		label:"C.E",
-		category: "Administratif"
-    },
-
+    
     {
         title: "Hotmail",
         url: "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
@@ -171,7 +179,7 @@ const cards = [
 		label:"Hotmail",
 		category: "Administratif"
     },
-
+    
     {
         title: "EDF",
         url: "https://espace-client.edf.fr/sso/XUI/#login/",
@@ -179,7 +187,7 @@ const cards = [
 		label:"E.D.F",
 		category: "Administratif"
     },
-
+    
     {
         title: "VEOLIA",
         url: "https://www.eau.veolia.fr/",
@@ -187,7 +195,7 @@ const cards = [
 		label:"VEOLIA",
 		category: "Administratif"
     },
-
+    
 	
 	{
         title: "Le CRAT",
@@ -196,7 +204,22 @@ const cards = [
 		label:"Le CRAT / Santé",
 		category: "Administratif"
     },
+    
+    {
+        title: "Crédit Agricole",
+        url: "https://www.ca-sudrhonealpes.fr/",
+        icon: "./assets/img/credit-agricole.svg",
+        label:"C.A",
+        category: "Administratif"
+    },
 
+    {
+        title: "Caisse d'Epargne",
+        url: "https://www.caisse-epargne.fr/languedoc-roussillon/",
+        icon: "./assets/img/caisse-epargne.svg",
+        label:"C.E",
+        category: "Administratif"
+    },
 	
     {
         title: "EPSENS",
@@ -215,73 +238,36 @@ const cards = [
 		label:"Cadastre",
 		category: "Administratif"
     },
+    
+    
+
+    //-----------------------
+    //       GEEK
+    //-----------------------
     {
-        title: "What3Words",
-        url: "https://what3words.com/gardon.hangar.enserrer",
-        icon: "./assets/img/what3words.png",
-		label:"What3Words",
-		category: "Administratif"
-    },
-
-
-//-----------------------
-//       GEEK
-//-----------------------
-
-	 {
-        title: "EPIEOS",
-        url: "https://epieos.com/fr-FR",
-        icon: "./assets/img/epieos.svg",
-        text: "EPIEOS",
-		label:"EPIEOS",
-		category: "Geek"
-    },
-	 
-    {
-        title: "Se connecter avec hotmail perso - pas devmj",
-        url: "https://learn.microsoft.com/fr-fr/",
-        icon: "./assets/img/microsoft.svg",
-        text: "Microsoft Learn",
-		label:"Microsoft Learn",
-		category: "Geek"
+        title: "GitHub",
+        url: "https://github.com/login",
+        icon: "./assets/img/github.svg",
+        label:"GitHub",
+        category: "Geek"
     },
 
     {
-        title: "OpenClassRoom",
-        url: "https://openclassrooms.com/fr/",
-        icon: "./assets/img/openclassroom.png",
-        text: "OpenClassRoom",
-		label:"OpenClassRoom",
-		category: "Geek"
+        title: "GitHub Dév.",
+        url: "https://github.com/login",
+        icon: "./assets/img/Githubdev.png",
+        label:"GitHub Dév.",
+        category: "Geek"
     },
-
-	 {
-        title: "Logiciels Libres",
-        url: "https://code.gouv.fr/sill/",
-        icon: "https://code.gouv.fr/sill/assets/illustration_sill-B0NPUQ_V.svg",
-        text: "Logiciels Libres",
-		label:"Logiciels Libres",
-		category: "Geek"
-    },
-
+    
     {
-        title: "Perfect Buttons",
-        url: "perfect-buttons.html",
-        icon: null,
-        text: "Perfect Buttons",
-		label:"Perfect Buttons",
-		category: "Geek"
+        title: "VSCode",
+        url: "https://vscode.dev",
+        icon: "./assets/img/vscode.png",
+        label:"VSCode.",
+        category: "Geek"
     },
-	
-    {
-        title: "Cheats Sheet",
-        url: "cheats_sheet.html",
-        icon: null,
-        text: ">_ :",
-		label:"Cheat Sheets",
-		category: "Geek"
-    },
-	
+    
     {
         title: "Spotnix",
         url: "http://192.168.1.165:8000/accounts/login/",
@@ -307,6 +293,77 @@ const cards = [
 		label:"Pi Connect",
 		category: "Geek"
     },
+
+    {
+        title: "Perfect Buttons",
+        url: "perfect-buttons.html",
+        icon: null,
+        text: "Perfect Buttons",
+        label:"Perfect Buttons",
+        category: "Geek"
+    },
+    
+    {
+        title: "Cheats Sheet",
+        url: "cheats_sheet.html",
+        icon: null,
+        text: ">_ :",
+        label:"Cheat Sheets",
+        category: "Geek"
+    },
+    
+    {
+        title: "Se connecter avec hotmail perso - pas devmj",
+        url: "https://learn.microsoft.com/fr-fr/",
+        icon: "./assets/img/microsoft.svg",
+        text: "Microsoft Learn",
+        label:"Microsoft Learn",
+        category: "Geek"
+    },
+
+    {
+        title: "OpenClassRoom",
+        url: "https://openclassrooms.com/fr/",
+        icon: "./assets/img/openclassroom.png",
+        text: "OpenClassRoom",
+        label:"OpenClassRoom",
+        category: "Geek"
+    },
+
+    {
+        title: "Logiciels Libres",
+        url: "https://code.gouv.fr/sill/",
+        icon: "https://code.gouv.fr/sill/assets/illustration_sill-B0NPUQ_V.svg",
+        text: "Logiciels Libres",
+        label:"Logiciels Libres",
+        category: "Geek"
+    },
+   
+    {
+        title: "PDFSam",
+        url: "https://pdfsam.org/fr/",
+        icon: "./assets/img/pdfsam.svg",
+        text: "PDFSam",
+		label:"PDF Sam",
+		category: "Geek"
+    },
+
+    {
+        title: "What3Words",
+        url: "https://what3words.com/gardon.hangar.enserrer",
+        icon: "./assets/img/what3words.png",
+		label:"What3Words",
+		category: "Administratif"
+    },
+	
+    {
+        title: "EPIEOS",
+        url: "https://epieos.com/fr-FR",
+        icon: "./assets/img/epieos.svg",
+        text: "EPIEOS",
+		label:"EPIEOS",
+		category: "Geek"
+    },
 	
     {
         title: "Freebox OS",
@@ -316,28 +373,6 @@ const cards = [
 		category: "Geek"
     },
 
-    {
-        title: "GitHub",
-        url: "https://github.com/login",
-        icon: "./assets/img/github.svg",
-		label:"GitHub",
-		category: "Geek"
-    },
-
-    {
-        title: "GitHub Dév.",
-        url: "https://github.com/login",
-        icon: "./assets/img/Githubdev.png",
-		label:"GitHub Dév.",
-		category: "Geek"
-    },
-    {
-        title: "VSCode",
-        url: "https://vscode.dev",
-        icon: "./assets/img/vscode.png",
-		label:"VSCode.",
-		category: "Geek"
-    },
 
     {
         title: "Thiings",
@@ -357,7 +392,7 @@ const cards = [
 		category: "Geek"
 	},
 	
-	    {
+    {
         title: "Squoosh | Convertir img en svg",
         url: "https://squoosh.app",
         text:"Squoosh",
@@ -394,7 +429,6 @@ const cards = [
 		category: "Geek"
     },
 
-
 	{
 		title: "SVGRepo",
 		url:"https://www.svgrepo.com/",
@@ -422,15 +456,6 @@ const cards = [
 		category: "Geek"
     },
 
-    {
-        title: "PDFSam",
-        url: "https://pdfsam.org/fr/",
-        icon: "./assets/img/pdfsam.svg",
-        text: "PDFSam",
-		label:"PDF Sam",
-		category: "Geek"
-    },
-	
 	{
         title: "DaFont",
         url: "https://dafont.com/",
@@ -441,8 +466,7 @@ const cards = [
 		category: "Geek"
     },
 	
-	
-	
+		
 //-----------------------
 //       GAMING
 //-----------------------
@@ -463,7 +487,6 @@ const cards = [
 		label: "SocialClub",
 		category: "Gaming"
     },
-
 
     {
         title: "Epic Games",
@@ -524,7 +547,6 @@ const cards = [
 		category: "Gaming"
     },
 
-	
 	{
         title: "La Guerre des Gangs",
         url: "https://www.guerredesgangs.net/beta/index.html#home",
@@ -534,7 +556,7 @@ const cards = [
 		category: "Gaming"
     },
 
-		{
+    {
         title: "Galaxy.click",
         url: "https://galaxy.click",
         icon: null,
@@ -584,7 +606,7 @@ const cards = [
     },
 
 
-	    {
+    {
         title: "Twitch",
         url: "https://twitch.tv/",
         icon: "./assets/img/twitch.svg",
@@ -593,7 +615,7 @@ const cards = [
 		category: "Detente"
     },
 
-	    {
+    {
         title: "Discord",
         url: "https://discord.com/login",
         icon: "./assets/img/discord.svg",
@@ -601,7 +623,6 @@ const cards = [
 		label: "Discord",
 		category: "Detente"
     },
-
 
     {
         title: "DTC",
@@ -612,7 +633,7 @@ const cards = [
 		
     },
 
-	    {
+    {
         title: "NewsBlur",
         url: "https://www.newsblur.com/",
         icon: "./assets/img/logo-newsblur.png",
@@ -621,7 +642,7 @@ const cards = [
 		
     },
 	
-	    {
+    {
         title: "Linked In",
         url: "https://linkedin.com/feed/",
         icon: "./assets/img/linkedin.png",
@@ -630,9 +651,7 @@ const cards = [
 		category: "Detente"
     },
 	
-	
-	
-	    {
+    {
         title: "VDM",
         url: "https://viedemerde.fr/",
         icon: "./assets/img/vdm.png",
@@ -641,7 +660,7 @@ const cards = [
 		category: "Detente"
     },
 	
-	    {
+    {
         title: "SCMB",
         url: "https://secouchermoinsbete.fr/",
         icon: "./assets/img/scmb.jpeg",
@@ -714,6 +733,8 @@ const cards = [
 		label:"Bullrot Wear",
 		category: "shopping"
     },
+
+
 //-----------------------
 //       PRO
 //-----------------------
@@ -750,8 +771,7 @@ const cards = [
 		category: "pro"
     },
 
-
-	 {
+	{
         title: "ASTECH-Solutions",
         url: "https://support.astech-solutions.com/",
         text: "ASTech-Solutions",
@@ -760,7 +780,7 @@ const cards = [
 		category: "pro"
     },    
 
-		 {
+    {
         title: "GEO",
         url: "https://geo.valenceromansagglo.fr/adws/app/5f1019b5-9dfd-11ec-a909-8bd6ac5949ab/index.html",
         text: "GEO",
@@ -770,7 +790,7 @@ const cards = [
 		category: "pro"
     },    
 
-		 {
+    {
         title: "PATRI-DATA",
         url: "https://orimaworks.github.io/patri-data",
         text: "PATRI-DATA",
@@ -779,7 +799,7 @@ const cards = [
 		category: "pro"
     },    
 	
-		 {
+    {
         title: "wever - mobilité participative",
         url: "https://yeswever.com/",
         text: "Wever",
@@ -797,7 +817,7 @@ const cards = [
 		category: "pro"
     },
 
-			 {
+    {
         title: "Class'Croûte",
         url: "https://www.classcroute.com",
         text: "Class'Croûte",

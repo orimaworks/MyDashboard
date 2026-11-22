@@ -26,7 +26,7 @@
 
 	--dark-couleur-texte: #dbdbdb;
 	--dark-background-color: #001a33;
-	--dark-background-card-color: rgb(170, 170, 170);
+	--dark-background-card-color: rgb(122, 122, 122);
     --code-bg: #eef1f7;
     --dark-code-bg: #141D38;
 
@@ -103,7 +103,7 @@ body.dark .card {
 	/*border: solid 1px #00CC33;*/
 	background-color: var(--dark-background-card-color);
 	/*box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); */
-	color: dimgray;
+	color: lightgrey;
 }
 
 body.dark .navbar {

@@ -81,7 +81,7 @@ body.dark footer {
 body.dark .card {
 	background-color: var(--dark-background-card-color);
 	color: var(--dark-couleur-texte);
-    border: white;
+    border: solid 1px white;
 }
 
 body.dark .navbar {

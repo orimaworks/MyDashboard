@@ -79,8 +79,8 @@ body.dark button {
 
 body.dark header, 
 body.dark footer {
+    background-image: none; 
     background-color: black;
-     border: 3px solid red;
 }
 
 body.dark .card {

@@ -51,11 +51,21 @@ if (footer) {
 //----------------------------
 //          DARK THEME
 //----------------------------
-const btn = document.getElementById("themeBtn");
-btn.addEventListener("click", () => {
-	document.body.classList.toggle("dark");
 
-	});
+const btn = document.getElementById("themeBtn");
+
+btn.addEventListener("change", () => {
+
+    // Récupère l'état de la checkbox
+    const darkMode = btn.checked;
+
+    // Applique ou retire la classe dark
+    document.body.classList.toggle("dark", darkMode);
+
+    // Enregistre le thème sélectionné
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
+
+});
 
 
 

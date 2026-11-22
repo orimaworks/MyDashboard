@@ -112,8 +112,8 @@ const cards = [
 	
     {
         title: "Life In Weeks",
-        url: "../life-in-weeks.html",
-        icon: null,
+        url: "life-in-weeks.html",
+        icon: "./assets/img/lifeinweeks.png",
         label:" ",
         category: "Favoris"
     },

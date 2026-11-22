@@ -58,6 +58,8 @@ body {
 	overflow: auto; 
 	overflow-x: hidden;
 	min-width: 250px;
+    cursor: url("assets/img/gtavcurseur.cur"), auto;
+
 }
 
 

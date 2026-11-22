@@ -93,10 +93,8 @@ aside.dark {
     }
 */    
 
-body.dark header {
-    background-color: black; 
-}
 
+body.dark header, 
 body.dark footer {
     background-color: black;
 }

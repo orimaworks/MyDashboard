@@ -52,7 +52,7 @@ body {
     background-size: cover;          /* l'image couvre toute la zone */
     background-position: center;     /* centrée */
     background-repeat: no-repeat;    /* pas de répétition en mosaïque */
-    /* background-attachment: fixed;    optionnel : effet parallaxe au scroll */
+    background-attachment: fixed;    /* optionnel : effet parallaxe au scroll */
 	height: 100vh;
 	overflow: auto; 
 	overflow-x: hidden;
@@ -81,7 +81,7 @@ body.dark footer {
 body.dark .card {
 	background-color: var(--dark-background-card-color);
 	color: var(--dark-couleur-texte);
-    border: solid 1px var(--couleur-secondaire);
+    border: white;
 }
 
 body.dark .navbar {

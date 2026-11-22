@@ -69,6 +69,15 @@ const cards = [
     },
 
     {
+        title: "Google Images",
+        url: "https://images.google.fr/",
+        icon: "./assets/img/googleimage.svg",
+		label:" ",
+		category: "Favoris"
+		
+    },
+
+    {
         title: "GMAIL",
         url: "https://accounts.google.com/v3/signin/accountchooser?continue=https://mail.google.com/mail/u/0/&emr=1&followup=https://mail.google.com/mail/u/0/&osid=1&passive=1209600&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S-400648613:1795354731393665",
         icon: "./assets/img/gmail.svg",

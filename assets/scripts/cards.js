@@ -110,6 +110,14 @@ const cards = [
         category: "Favoris"
     },
 	
+    {
+        title: "Life In Weeks",
+        url: "../life-in-weeks.html",
+        icon: null,
+        label:" ",
+        category: "Favoris"
+    },
+	
 //-----------------------
 //       A.I
 //-----------------------

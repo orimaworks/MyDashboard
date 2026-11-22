@@ -54,15 +54,19 @@ if (footer) {
 
 const btn = document.getElementById("themeBtn");
 
+// Restauration du thème enregistré
+const themeEnregistre = localStorage.getItem("theme");
+
+if (themeEnregistre === "dark") {
+    document.body.classList.add("dark");
+    btn.checked = true;
+}
+
+// Enregistrement du changement de thème
 btn.addEventListener("change", () => {
 
-    // Récupère l'état de la checkbox
     const darkMode = btn.checked;
-
-    // Applique ou retire la classe dark
     document.body.classList.toggle("dark", darkMode);
-
-    // Enregistre le thème sélectionné
     localStorage.setItem("theme", darkMode ? "dark" : "light");
 
 });

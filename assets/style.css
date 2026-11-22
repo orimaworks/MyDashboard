@@ -26,7 +26,7 @@
 
 	--dark-couleur-texte: #dbdbdb;
 	--dark-background-color: #001a33;
-	--dark-background-card-color: linen;
+	--dark-background-card-color: rgb(170, 170, 170);
     --code-bg: #eef1f7;
     --dark-code-bg: #141D38;
 
@@ -85,17 +85,22 @@ body.dark button {
 }
 
 
-body.dark footer {
-    background-color: black;
-}
-/*
 
+/*
 body.dark aside,
 aside.dark {
     background-color: var(--couleur-primaire);
+    }
+*/    
+
+body.dark header {
+    background-color: black; 
 }
 
-*/
+body.dark footer {
+    background-color: black;
+}
+
 body.dark .card {
 	/*border: solid 1px #00CC33;*/
 	background-color: var(--dark-background-card-color);
@@ -157,7 +162,7 @@ button {
 
 button:hover {
 	background-color: var(--couleur-hover);
-	cursor: pointer;
+    cursor: url("./img/gtavcurseur.cur")0 0, auto; /*0 0 indique que le point de clic se situe en haut à gauche de l'image.*/
 	text-decoration: none;
 	color: white;
 	transform: translateY(-2px);

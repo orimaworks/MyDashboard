@@ -17,23 +17,21 @@
 	--couleur-secondaire : #F28CBA;
 	--couleur-accent: #7ab3eb;
 	--couleur-hover: #EC5197;
-	--background-color: snow;
+
+    --background-color: snow;
+    --dark-background-color: #001a33;
 	
 	--header-height : 5vh;
 	--footer-height: 7vh;
     
     --couleur-texte: #000000;
-
 	--dark-couleur-texte: #dbdbdb;
-	--dark-background-color: #001a33;
-	--dark-background-card-color: rgb(122, 122, 122);
-    --dark-background-text-color : white;
+
+	--dark-background-card-color: #001a33;
     --code-bg: #eef1f7;
     --dark-code-bg: #141D38;
 
     --kbd-text: white;
-	/* --kbd-led: rgba(255,255,0,0.8);       Couleur du rétroéclairage  */
-	/* --kbd-led: #7ab3eb;       Couleur du rétroéclairage  */
 	--kbd-led: yellow;       /* Couleur du rétroéclairage  */
   	--kbd-surface: #2a2f36;   /* Couleur de la touche */
 
@@ -54,18 +52,16 @@ body {
     background-size: cover;          /* l'image couvre toute la zone */
     background-position: center;     /* centrée */
     background-repeat: no-repeat;    /* pas de répétition en mosaïque */
-    background-attachment: fixed;    /* optionnel : effet parallaxe au scroll */
+    /* background-attachment: fixed;    optionnel : effet parallaxe au scroll */
 	height: 100vh;
 	overflow: auto; 
 	overflow-x: hidden;
 	min-width: 250px;
-    /* cursor: url("./img/gtavcurseur.png"), 0 0 auto; 0 0 indique que le point de clic se situe en haut à gauche de l'image. */
-
 }
 
 
 body.dark {
-	background-color: var(--dark-background-color);
+	/* background-color: var(--dark-background-color); */
     background-image: url("./img/RPiSystem_dark.png");
 	text-shadow:0 0 2px rgba(0,255,65,.15);
 	color: var(--dark-couleur-texte);
@@ -74,7 +70,7 @@ body.dark {
 
 body.dark button {
 	background-color: var(--dark-background-card-color);
-	color: var(--dark-background-text-color);
+	color: var(--dark-couleur-texte);
 }
 
 body.dark header, 
@@ -84,7 +80,8 @@ body.dark footer {
 
 body.dark .card {
 	background-color: var(--dark-background-card-color);
-	color: var(--dark-background-text-color);
+	color: var(--dark-couleur-texte);
+    border: solid 1px var(--couleur-secondaire);
 }
 
 body.dark .navbar {
@@ -97,7 +94,6 @@ body.dark .card-label {
 }
 
 body.dark section {color: white;}
-	
 
 button {
 	display: flex;

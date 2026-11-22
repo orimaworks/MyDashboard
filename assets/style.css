@@ -59,6 +59,7 @@ body {
 	overflow-x: hidden;
 	min-width: 250px;
     /* cursor: url("./img/gtavcurseur.png"), 0 0 auto; 0 0 indique que le point de clic se situe en haut à gauche de l'image. */
+    cursor: url("./img/gtavcurseur.cur"), 0 0 auto; /*0 0 indique que le point de clic se situe en haut à gauche de l'image.*/
 
 }
 

@@ -58,9 +58,8 @@ const cards = [
 		label:" ",
 		category: "Favoris"
     },
-	
-	
-	    {
+		
+    {
         title: "Google Maps",
         url: "https://www.google.com/maps",
         icon: "./assets/img/maps.svg",
@@ -68,10 +67,19 @@ const cards = [
 		category: "Favoris"
 		
     },
+
+    {
+        title: "GMAIL",
+        url: "https://accounts.google.com/v3/signin/accountchooser?continue=https://mail.google.com/mail/u/0/&emr=1&followup=https://mail.google.com/mail/u/0/&osid=1&passive=1209600&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S-400648613:1795354731393665",
+        icon: "./assets/img/gmail.svg",
+		label:" ",
+		category: "Favoris"
+		
+    },
 	
     {
         title: "Hotmail",
-        url: "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
+        url: "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=9199bf20-a13f-4107-85dc-02114787ef48&scope=https%3A%2F%2Foutlook.office.com%2F.default%20openid%20profile%20offline_access&redirect_uri=https%3A%2F%2Foutlook.live.com%2Fmail%2F&client-request-id=023f274a-8811-7763-1c67-620414440163&response_mode=fragment&client_info=1&clidata=1&prompt=select_account&nonce=01a2037c-bbb4-7056-a946-63fe9f060d26&state=eyJpZCI6IjAxYTIwMzdjLWJiYjQtNzViYS04YjIyLTM3Nzg3NzYzNWUzZSIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoicmVkaXJlY3QifX0%3D%7CaHR0cHM6Ly9vdXRsb29rLmxpdmUuY29tL21haWwvP2N1bHR1cmU9ZnItZnImY291bnRyeT1mcg%7CeyJwcm9tcHQiOiJzZWxlY3RfYWNjb3VudCJ9&claims=%7B%22access_token%22%3A%7B%22xms_cc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&x-client-SKU=msal.js.browser&x-client-VER=5.12.0&response_type=code&code_challenge=HCx3zzTTp76lDPs3EKv1mZhhPJyZeH6PChqcMIh53l4&code_challenge_method=S256&cobrandid=ab0455a0-8d03-46b9-b18b-df2f57b9e44c&fl=dob%2Cflname%2Cwld&sso_reload=true",
         icon: "./assets/img/hotmail.svg",
 		label:"Hotmail",
 		category: "Favoris"
@@ -346,7 +354,7 @@ const cards = [
         url: "https://what3words.com/gardon.hangar.enserrer",
         icon: "./assets/img/what3words.png",
 		label:"What3Words",
-		category: "Administratif"
+		category: "Geek"
     },
 	
     {

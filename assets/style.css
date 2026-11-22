@@ -65,50 +65,30 @@ body {
 
 
 body.dark {
-	/*
-	background-color: var(--couleur-primaire);
-	color: white;
-    */
 	background-color: var(--dark-background-color);
     background-image: url("./img/RPiSystem_dark.png");
 	text-shadow:0 0 2px rgba(0,255,65,.15);
-	/*font-family: "JetBrains Mono", monospace;*/
-	/* cursor: crosshair; */
 	color: var(--dark-couleur-texte);
 }
 
 
 body.dark button {
-	/*border: solid 1px #00CC33;*/
-	/* border-radius: 0px; */
 	background-color: var(--dark-background-card-color);
 	color: var(--dark-background-text-color);
 }
-
-
-
-/*
-body.dark aside,
-aside.dark {
-    background-color: var(--couleur-primaire);
-    }
-*/    
-
 
 body.dark header, 
 body.dark footer {
     background-color: black;
+     border: 3px solid red;
 }
 
 body.dark .card {
-	/*border: solid 1px #00CC33;*/
 	background-color: var(--dark-background-card-color);
-	/*box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); */
 	color: var(--dark-background-text-color);
 }
 
 body.dark .navbar {
-	/* background-color : var(--dark-background-color); */
 	background-color : black;
     border-bottom: var(--dark-background-card-color);
 }
@@ -119,12 +99,6 @@ body.dark .card-label {
 
 body.dark section {color: white;}
 	
-/* .btn_fermeture {
-    position: sticky;
-    top: 10px;
-    margin-left: auto;
-    z-index: 10;
-} */
 
 button {
 	display: flex;
@@ -286,19 +260,6 @@ tbody tr:hover {
     background-color: #e8f0fe;
 }
 
-/* Première colonne : numéros */
-/* tbody td:first-child {
-    text-align: center;
-    font-weight: bold;
-    width: 50px;
-} */
-
-/* Formules */
-/* tbody td:nth-child(3) {
-    font-family: Consolas, monospace;
-    color: #1565c0;
-    white-space: nowrap;
-} */
 
 /* Adaptation aux petits écrans */
 @media (max-width: 700px) {

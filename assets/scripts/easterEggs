@@ -5,15 +5,6 @@ if (preloadSound) {
     preloadSound.load();
 }
 
-function playEasterSound() {
-    const audio = document.getElementById("steam-sound");
-    if (!audio) return;
-    audio.currentTime = 0;
-
-    setTimeout(() => {
-        audio.play().catch(console.warn);
-    }, 800);
-}
 
 
 
@@ -148,6 +139,17 @@ const positionsSims = sims.map(() => 0);
     });
 });
 
+function playEasterSound() {
+    const audio = document.getElementById("steam-sound");
+    if (!audio) return;
+    audio.currentTime = 0;
+
+    setTimeout(() => {
+        audio.play().catch(console.warn);
+    }, 300);
+}
+
+
 function showEasterToast(type, label, title, description) {
     let toast = document.getElementById("easter-toast");
 
@@ -187,7 +189,6 @@ function activateEasterEggKonami() {
     const audio = document.getElementById("steam-sound");
 
     playEasterSound();
-
 
     showEasterToast(
         "konami",

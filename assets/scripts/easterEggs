@@ -9,7 +9,10 @@ function playEasterSound() {
     const audio = document.getElementById("steam-sound");
     if (!audio) return;
     audio.currentTime = 0;
-    audio.play().catch(console.warn);
+
+    setTimeout(() => {
+        audio.play().catch(console.warn);
+    }, 800);
 }
 
 

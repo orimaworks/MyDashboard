@@ -256,6 +256,14 @@ const cards = [
 		label:"Cadastre",
 		category: "Administratif"
     },
+
+    {
+        title: "Mapillary",
+        url: "https://www.mapillary.com/app/?lat=20&lng=0&z=1.6875",
+        icon: "./assets/img/mapillary.png",
+		label:"Mapillary",
+		category: "Administratif"
+    },
     
     
 

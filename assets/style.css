@@ -1341,6 +1341,7 @@ details[open] summary::after {
 	section {
 		padding : 0;
 		gap : 15px;
+        background: radial-gradient(ellipse at 50% 1%,var(--dark-background-color) 0,transparent 60%),black;
 	}
 
 	dialog {

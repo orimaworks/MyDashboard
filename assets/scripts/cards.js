@@ -842,11 +842,11 @@ const cards = [
     },
 
     {
-        title: "Patri-View",
-        url: "file:///C:/Users/JODARM/Documents/PATRI-VIEW/index.html",
-        text: "Patri-View",
-		label:"Patri-View",
-		icon: "./assets/img/patri-view.svg",
+        title: "SuperSet",
+        url: "https://dataviz.valenceromansagglo.fr/superset/welcome/",
+        text: "SuperSet",
+		label:"SuperSet",
+		icon: "./assets/img/superset.png",
 		category: "pro"
     },
 

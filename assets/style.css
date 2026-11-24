@@ -1333,6 +1333,9 @@ details[open] summary::after {
 		Tablette (portrait) – largeur ≤ 1024 px
    ===================================================== */
 @media (max-width: 1024px) {
+    body.dark {
+        background: radial-gradient(ellipse at 50% 1%,var(--dark-background-color) 0,transparent 60%),black;
+    }
     .card {
 		width : 100px ;
 		height : 100px;
@@ -1341,8 +1344,8 @@ details[open] summary::after {
 	section {
 		padding : 0;
 		gap : 10px;
-        background: radial-gradient(ellipse at 50% 1%,#6a7681 0,transparent 60%),black;
 	}
+
 
 	dialog {
 		min-width: 99vw;
@@ -1351,7 +1354,9 @@ details[open] summary::after {
 
 
 @media(max-width:768px) {
-	
+    body.dark {
+        background: radial-gradient(ellipse at 50% 1%,var(--dark-background-color) 0,transparent 60%),black;
+    }
 	.card {
 		width : 100px ;
 		height : 90px;

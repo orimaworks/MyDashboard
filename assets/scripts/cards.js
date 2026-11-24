@@ -45,7 +45,7 @@ const cards = [
 	{
         title: "Proton Apps",
         url: "https://account.proton.me/fr/apps",
-        icon: "./assets/img/Proton.svg",
+        icon: "./assets/img/card_content/Proton.svg",
         color: "#EDE8FF",
 		label:" ",
 		category: "Favoris"

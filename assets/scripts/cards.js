@@ -256,6 +256,14 @@ const cards = [
 		label:"Cadastre",
 		category: "Administratif"
     },
+    
+    {
+        title: "Cartes.gouv",
+        url: "https://cartes.gouv.fr/explorer-les-cartes/",
+        icon: "./assets/img/cartes.svg",
+		label:"Cartes.gouv",
+		category: "Administratif"
+    },
 
     {
         title: "Mapillary",

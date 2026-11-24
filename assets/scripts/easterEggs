@@ -1,6 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const preloadSound = document.getElementById("steam-sound");
+const preloadSound = document.getElementById("steam-sound");
+
+if (preloadSound) {
     preloadSound.load();
+}
+
+function playEasterSound() {
+    const audio = document.getElementById("steam-sound");
+    if (!audio) return;
+    audio.currentTime = 0;
+    audio.play().catch(console.warn);
+}
+
+
 
     const konamiCode = [
         "ArrowUp","ArrowUp",
@@ -171,10 +183,8 @@ function showEasterToast(type, label, title, description) {
 function activateEasterEggKonami() {
     const audio = document.getElementById("steam-sound");
 
-    if (audio) {
-        audio.currentTime = 0;
-        audio.play().catch(console.warn);
-    }
+    playEasterSound();
+
 
     showEasterToast(
         "konami",
@@ -187,10 +197,7 @@ function activateEasterEggKonami() {
 function activateEasterEggSims() {
     const audio = document.getElementById("steam-sound");
 
-    if (audio) {
-        audio.currentTime = 0;
-        audio.play().catch(console.warn);
-    }
+    playEasterSound();
 
     showEasterToast(
         "sims",
@@ -203,10 +210,7 @@ function activateEasterEggSims() {
 function activateEasterEggLinux() {
     const audio = document.getElementById("steam-sound");
 
-    if (audio) {
-        audio.currentTime = 0;
-        audio.play().catch(console.warn);
-    }
+    playEasterSound();
 
     showEasterToast(
         "linux",
@@ -220,10 +224,7 @@ function activateEasterEggLinux() {
 function activateEasterEggError404() {
     const audio = document.getElementById("steam-sound");
 
-    if (audio) {
-        audio.currentTime = 0;
-        audio.play().catch(console.warn);
-    }
+    playEasterSound();
 
     showEasterToast(
         "error404",
@@ -236,10 +237,7 @@ function activateEasterEggError404() {
 function activateEasterEggCoffee() {
     const audio = document.getElementById("steam-sound");
 
-    if (audio) {
-        audio.currentTime = 0;
-        audio.play().catch(console.warn);
-    }
+    playEasterSound();
 
     showEasterToast(
         "coffee",
@@ -252,10 +250,7 @@ function activateEasterEggCoffee() {
 function activateEasterEggGta() {
     const audio = document.getElementById("steam-sound");
 
-    if (audio) {
-        audio.currentTime = 0;
-        audio.play().catch(console.warn);
-    }
+    playEasterSound();
 
     showEasterToast(
         "gta",

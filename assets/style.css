@@ -75,12 +75,8 @@ body.dark button {
 	color: var(--dark-couleur-texte);
 }
 
-body.dark header{
-    background: none;
-}
-body.dark footer {
-    background: black;
-}
+body.dark header{background: none;}
+body.dark footer {background: black;}
 body.dark .card {
 	background-color: var(--dark-background-card-color);
 	color: var(--dark-couleur-texte);
@@ -88,14 +84,11 @@ body.dark .card {
 }
 
 body.dark .navbar {
-	/* background-color : black; */
 	background: none;
-    /* border-bottom: var(--dark-background-card-color); */
+    border-bottom: none;
 }
 
-body.dark .card-label {
-    color: var(--dark-couleur-texte);
-}
+body.dark .card-label {color: var(--dark-couleur-texte);}
 
 body.dark section #title {
     background-color: none;

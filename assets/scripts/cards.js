@@ -339,6 +339,15 @@ const cards = [
     },
     
     {
+        title: "Root-Me.org",
+        url: "https://root-me.org",
+        icon: "./assets/img/rootme.svg",
+        text: "RootMe",
+        label:"RootMe",
+        category: "Geek"
+    },
+    
+    {
         title: "Se connecter avec hotmail perso - pas devmj",
         url: "https://learn.microsoft.com/fr-fr/",
         icon: "./assets/img/microsoft.svg",

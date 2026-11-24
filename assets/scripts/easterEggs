@@ -5,9 +5,6 @@ if (preloadSound) {
     preloadSound.load();
 }
 
-
-
-
     const konamiCode = [
         "ArrowUp","ArrowUp",
         "ArrowDown","ArrowDown",
@@ -133,11 +130,9 @@ const positionsSims = sims.map(() => 0);
         } else {
             positionGta = key === gta[0] ? 1 : 0;
         }
-
-
-
     });
 });
+
 
 function playEasterSound() {
     const audio = document.getElementById("steam-sound");
@@ -146,7 +141,7 @@ function playEasterSound() {
 
     setTimeout(() => {
         audio.play().catch(console.warn);
-    }, 300);
+    }, 400);
 }
 
 

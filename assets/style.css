@@ -923,6 +923,7 @@ section {
     gap: 20px;
     padding: 15px;
     margin-bottom: 4%;
+	margin-left: 10px,
 }
 
 
@@ -1334,7 +1335,9 @@ details[open] summary::after {
    ===================================================== */
 @media (max-width: 1024px) {
     body.dark {
-        background: radial-gradient(ellipse at 50% 1%,var(--dark-background-color) 0,transparent 60%),black;
+        background: radial-gradient(ellipse at 50% 0%,var(--dark-background-color) 0,transparent 50%),black;
+		background-attachment: fixed;
+        background-repeat: no-repeat;
     }
     .card {
 		width : 100px ;
@@ -1355,7 +1358,9 @@ details[open] summary::after {
 
 @media(max-width:768px) {
     body.dark {
-        background: radial-gradient(ellipse at 50% 1%,var(--dark-background-color) 0,transparent 60%),black;
+        background: radial-gradient(ellipse at 50% 0%,var(--dark-background-color) 0,transparent 50%),black;
+		background-attachment: fixed;
+        background-repeat: no-repeat;
     }
 	.card {
 		width : 100px ;

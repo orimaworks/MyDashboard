@@ -86,8 +86,9 @@ body.dark .card {
 }
 
 body.dark .navbar {
-	background-color : black;
-    border-bottom: var(--dark-background-card-color);
+	/* background-color : black; */
+	background-color : none;
+    /* border-bottom: var(--dark-background-card-color); */
 }
 
 body.dark .card-label {
@@ -95,6 +96,10 @@ body.dark .card-label {
 }
 
 body.dark section {color: white;}
+body.dark #title {
+    background-color: none;
+    border-bottom: 2px solid white; 
+}
 
 button {
 	display: flex;

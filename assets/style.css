@@ -62,7 +62,8 @@ body {
 
 body.dark {
 	/* background-color: var(--dark-background-color); */
-    background-image: url("./img/RPiSystem_dark.png");
+    /* background-image: url("./img/RPiSystem_dark.png"); */
+    background: radial-gradient(ellipse at 12% 0%,#1b2a45 0,transparent 36%),var(--bg);
 	text-shadow:0 0 2px rgba(0,255,65,.15);
 	color: var(--dark-couleur-texte);
 }
@@ -75,13 +76,13 @@ body.dark button {
 
 body.dark header, 
 body.dark footer {
-    background: black;
+    background: none;
 }
 
 body.dark .card {
 	background-color: var(--dark-background-card-color);
 	color: var(--dark-couleur-texte);
-    border: solid 1px white;
+    border: solid 2px lightgray;
 }
 
 body.dark .navbar {

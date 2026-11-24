@@ -1334,14 +1334,14 @@ details[open] summary::after {
    ===================================================== */
 @media (max-width: 1024px) {
     .card {
-		width : 120px ;
+		width : 100px ;
 		height : 100px;
     }
 
 	section {
 		padding : 0;
-		gap : 15px;
-        background: radial-gradient(ellipse at 50% 1%,var(--dark-background-color) 0,transparent 60%),black;
+		gap : 10px;
+        background: radial-gradient(ellipse at 50% 1%,#6a7681 0,transparent 60%),black;
 	}
 
 	dialog {
@@ -1353,7 +1353,7 @@ details[open] summary::after {
 @media(max-width:768px) {
 	
 	.card {
-		width : 120px ;
+		width : 100px ;
 		height : 90px;
 		font-size : 0.8em;
 		border-radius: 10px;
@@ -1361,7 +1361,7 @@ details[open] summary::after {
 	
 	section {
 		padding : 3;
-		gap: 15px;
+		gap: 10px;
 	}
 	
 	.navbar{

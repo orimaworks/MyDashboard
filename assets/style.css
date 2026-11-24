@@ -92,11 +92,10 @@ body.dark .navbar {
 }
 
 body.dark .card-label {
-		color: var(--dark-couleur-texte);
+    color: var(--dark-couleur-texte);
 }
 
-body.dark section {color: white;}
-body.dark #title {
+body.dark section #title {
     background-color: none;
     border-bottom: 2px solid white; 
 }
@@ -931,7 +930,6 @@ section #title{
     width: 100%;
     font-size: 1.4em;
     font-weight: 800;
-    background-color: rgba(255, 255, 255, 0.5);
     font-family: 'Comfortaa';
     border-bottom: 3px solid var(--couleur-primaire);
     margin: 0;

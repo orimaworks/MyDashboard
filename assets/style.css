@@ -63,7 +63,7 @@ body {
 body.dark {
 	/* background-color: var(--dark-background-color); */
     /* background-image: url("./img/RPiSystem_dark.png"); */
-    background: radial-gradient(ellipse at 50% 0%,var(--dark-background-color) 0,transparent 80%),black;
+    background: radial-gradient(ellipse at 50% 10%, #0d3052 0,transparent 80%),black;
     background-attachment: fixed;
     background-repeat: no-repeat;
 	text-shadow:0 0 2px rgba(234, 235, 234, 0.267);

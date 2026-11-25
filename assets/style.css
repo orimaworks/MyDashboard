@@ -70,11 +70,12 @@ body.dark {
 	color: var(--dark-couleur-texte);
 }
 
-
+/*
 body.dark button {
 	background-color: darkgray;
 	color: var(--dark-couleur-texte);
 }
+*/
 
 body.dark header{background: none;}
 body.dark footer {background: black;}

@@ -83,7 +83,6 @@ const cards = [
         icon: "./assets/img/card_content/gmail.svg",
 		label:" ",
 		category: "Favoris"
-		
     },
 	
     {
@@ -245,7 +244,7 @@ const cards = [
         title: "EPSENS",
         url: "https://www.epsens.com/",
         icon: null,
-        text: "EPSENS"
+        text: "EPSENS",
 		label:"EPSENS",
 		category: "Administratif"
     },

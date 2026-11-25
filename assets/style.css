@@ -140,7 +140,7 @@ button:hover {
 
 .card {
     display: flex;
-    flex: 1 1 170px;
+    flex: 1 1 160px;
 
     min-width: 150px;
     max-width: 200px;
@@ -163,7 +163,7 @@ button:hover {
 }
 
 .card img {
-    max-width: 170px;
+    max-width: 150px;
     height: auto;
 }
 .card:hover {

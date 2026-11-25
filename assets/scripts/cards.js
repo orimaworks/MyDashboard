@@ -373,6 +373,7 @@ const cards = [
         url: "https://openclassrooms.com/fr/",
         icon: "./assets/img/card_content/openclassroom.png",
         text: "OpenClassRoom",
+        color: "#853ee3",
         label:"OpenClassRoom",
         category: "Geek"
     },

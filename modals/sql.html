@@ -42,6 +42,204 @@
         AND actif = 1;
     </pre>
 
+        <h3>🧠 CASE / WHEN / THEN / ELSE / END</h3>
+        <p>Permet de créer une colonne calculée temporaire en fonction de conditions. La colonne d'origine n'est pas obligatoirement affichée.</p>
+
+        <ul>
+            <li><code>CASE WHEN condition THEN résultat END</code></li>
+            <li><code>WHEN</code> : définit une condition.</li>
+            <li><code>THEN</code> : définit le résultat si la condition est vraie.</li>
+            <li><code>ELSE</code> : définit le résultat par défaut (facultatif).</li>
+            <li><code>END</code> : termine la structure conditionnelle.</li>
+            <li><code>AS</code> : attribue un nom à la colonne calculée.</li>
+        </ul>
+
+        <pre>
+```sql 
+    SELECT colonne_code
+        CASE colonne_code
+            WHEN colonne_code = 'ENT' THEN 'Entretien'
+            WHEN colonne_code = 'CT' THEN 'Contrôle technique'
+            WHEN colonne_code = 'EMADM' THEN 'Administratif'
+            WHEN colonne_code = 'EMERP' THEN 'ERP'
+            ELSE 'Autre'
+        END AS "EXPLICATION"
+    FROM controle;
+</pre>
+<p>Si on ne veut pas afficher la "colonne_code" initiale (puisqu'une colonne "explication" est plus claire), il suffit de la retirer du SELECT</p>
+
+
+<h3>🧩 DECODE()</h3>
+        <p>Fonction Oracle permettant d'effectuer des comparaisons successives. Alternative à CASE.</p>
+
+        <pre>
+
+    SELECT
+        DECODE(
+        colonne_code,
+        'ENT', 'Entretien',
+        'CT', 'Contrôle technique',
+        'Autre'
+        ) AS "EXPLICATION"
+    FROM controle;
+</pre>
+
+<h3>📅 FORMATAGE DES DATES : TO_CHAR()</h3>
+        <p>Convertit une valeur DATE ou TIMESTAMP en texte pour améliorer la lisibilité du résultat.</p>
+
+        <ul>
+            <li><code>DD/MM/YYYY</code> → 01/01/2026</li>
+            <li><code>DD/MM/YYYY HH24:MI</code> → 01/01/2026 00:00</li>
+            <li><code>DD/MM/YYYY HH24:MI:SS</code> → 01/01/2026 00:00:00</li>
+            <li><code>YYYY-MM-DD</code> → 2026-01-01</li>
+            <li><code>DD MONTH YYYY</code> → 01 JANVIER 2026</li>
+            <li><code>HH24:MI:SS</code> → 14:35:20</li>
+        </ul>
+
+        <p><strong>Principaux symboles :</strong></p>
+        <ul>
+            <li><code>DD</code> : jour</li>
+            <li><code>MM</code> : mois</li>
+            <li><code>YYYY</code> : année sur 4 chiffres</li>
+            <li><code>HH24</code> : heure sur 24 heures</li>
+            <li><code>HH12</code> : heure sur 12 heures</li>
+            <li><code>MI</code> : minutes</li>
+            <li><code>SS</code> : secondes</li>
+            <li><code>MONTH</code> : nom du mois</li>
+            <li><code>DY</code> : jour de la semaine abrégé</li>
+        </ul>
+
+        <p>⚠️ Attention : <code>MM</code> correspond aux mois, tandis que <code>MI</code> correspond aux minutes.</p>
+
+        <pre>
+
+SELECT
+TO_CHAR(SCONT_DAT, 'DD/MM/YYYY') AS "DATE",
+TO_CHAR(SCONT_DAT, 'DD/MM/YYYY HH24:MI') AS "DATE ET HEURE"
+FROM controle;
+</pre>
+
+        <h3>🔄 TO_DATE()</h3>
+        <p>Convertit une chaîne de caractères en valeur DATE Oracle.</p>
+
+        <pre>
+
+SELECT *
+FROM controle
+WHERE SCONT_DAT >= TO_DATE('01/01/2026', 'DD/MM/YYYY');
+</pre>
+
+        <p>Alternative : utiliser un littéral DATE Oracle.</p>
+
+        <pre>
+
+WHERE SCONT_DAT >= DATE '2026-01-01';
+</pre>
+
+        <h3>⏱️ TO_TIMESTAMP()</h3>
+        <p>Convertit une chaîne de caractères en valeur TIMESTAMP. Les caractères littéraux, comme le T séparant la date et l'heure, doivent être encadrés par des guillemets doubles dans le masque de format.</p>
+
+        <pre>
+
+TO_TIMESTAMP(
+'2026-01-01T00:00:00',
+'YYYY-MM-DD"T"HH24:MI:SS'
+)
+</pre>
+
+        <h3>🚫 GESTION DES VALEURS NULL</h3>
+
+        <h3>IS NULL / IS NOT NULL</h3>
+        <p>Permet de filtrer les lignes selon la présence ou l'absence d'une valeur.</p>
+
+        <pre>
+
+-- Valeurs nulles
+WHERE colonne IS NULL;
+
+-- Valeurs non nulles
+WHERE colonne IS NOT NULL;
+</pre>
+
+        <p>⚠️ Ne jamais utiliser <code>= NULL</code> ou <code>&lt;&gt; NULL</code>.</p>
+
+        <h3>NVL()</h3>
+        <p>Remplace une valeur NULL par une valeur définie.</p>
+
+        <pre>
+
+SELECT
+NVL(SCONT_LIB, 'Non renseigné') AS "LIBELLÉ"
+FROM controle;
+</pre>
+
+        <h3>COALESCE()</h3>
+        <p>Retourne la première valeur non NULL parmi plusieurs possibilités.</p>
+
+        <pre>
+
+SELECT
+COALESCE(
+colonne1,
+colonne2,
+colonne3,
+'Inconnu'
+) AS "VALEUR"
+FROM controle;
+</pre>
+
+        <h3>🔎 FILTRAGE MULTIPLE</h3>
+
+        <h3>IN()</h3>
+        <p>Permet de rechercher plusieurs valeurs possibles dans une même colonne.</p>
+
+        <pre>
+
+SELECT *
+FROM controle
+WHERE SCONT_COD IN ('EMADM', 'EMERP', 'EMPE');
+</pre>
+
+        <p>Équivalent avec OR :</p>
+
+        <pre>
+
+WHERE SCONT_COD = 'EMADM'
+OR SCONT_COD = 'EMERP'
+OR SCONT_COD = 'EMPE';
+</pre>
+
+        <h3>BETWEEN</h3>
+        <p>Recherche une valeur comprise dans un intervalle (bornes incluses).</p>
+
+        <pre>
+
+SELECT *
+FROM controle
+WHERE SCONT_DAT BETWEEN
+DATE '2026-01-01'
+AND DATE '2026-12-31';
+</pre>
+
+        <p>⚠️ Pour une colonne contenant une heure, cette requête exclut les enregistrements du 31/12 après minuit. Pour couvrir toute l'année :</p>
+
+        <pre>
+
+WHERE SCONT_DAT >= DATE '2026-01-01'
+AND SCONT_DAT < DATE '2027-01-01';
+</pre>
+
+  <h3>💡 BONNES PRATIQUES</h3>
+        <ul>
+            <li>Privilégier <code>CASE WHEN</code> pour les conditions multiples.</li>
+            <li>Utiliser <code>AS</code> pour rendre les noms de colonnes plus explicites.</li>
+            <li>Les colonnes calculées ne modifient pas les données de la table.</li>
+            <li>Utiliser <code>TO_CHAR()</code> uniquement pour la présentation des dates.</li>
+            <li>Conserver les types DATE et TIMESTAMP pour les comparaisons et les tris.</li>
+            <li>Préférer <code>DATE 'YYYY-MM-DD'</code> pour déclarer une date fixe.</li>
+            <li>Privilégier <code>CASE</code> à <code>DECODE()</code> pour sa lisibilité et sa portabilité SQL.</li>
+        </ul>
+
 
             <h3>📊 TRI & LIMITES</h3>
             <ul>

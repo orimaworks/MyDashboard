@@ -308,7 +308,7 @@ const cards = [
     {
         title: "Raspberry",
         url: "https://id.raspberrypi.com/sign-in",
-        icon: "./assets/img/raspberry.png",
+        icon: "./assets/img/card_content/raspberry.png",
 		label:"Raspberry Pi",
 		category: "Geek"
     },

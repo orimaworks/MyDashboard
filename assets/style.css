@@ -79,7 +79,8 @@ body.dark button {
 body.dark header{background: none;}
 body.dark footer {background: black;}
 body.dark .card {
-	background-color: #28293b;
+	/* background-color: #28293b; */
+	background: radial-gradient(circle at 50% 50%, #405a74 0,transparent 70%),#001a33;
 	color: var(--dark-couleur-texte);
     border: solid 2px lightgray;
 }

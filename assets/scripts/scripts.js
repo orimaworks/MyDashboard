@@ -154,6 +154,9 @@ cards.forEach(card => {
         ? `<img src="${card.icon}" alt="${card.title}">`
         : `<span>${card.text ?? ""}</span>`;
 
+    if (card.color) {
+    element.style.setProperty("--card-background", card.color);
+}
     const color = card.color
         ? `background-color:${card.color};`
         : "";

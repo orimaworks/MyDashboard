@@ -1,8 +1,5 @@
  <dialog id="sql">
-
             <h2>🗄️ SQL / Oracle Cheat Sheet</h2>
-
-
             <h3>🔍 SELECT</h3>
             <ul>
                 <li><code>SELECT * FROM table;</code></li>
@@ -13,14 +10,13 @@
                 <li><code>SELECT colonne AS alias</code></li>
             </ul>
 
-            <pre>
-        SELECT
-        nom,
-        prenom,
-        email AS adresse_email
-        FROM users;
+    <pre>
+SELECT
+    nom,
+    prenom,
+    email AS adresse_email
+FROM users;
     </pre>
-
 
             <h3>🎯 WHERE</h3>
             <ul>
@@ -35,16 +31,15 @@
                 <li><code>IS NULL / IS NOT NULL</code></li>
             </ul>
 
-            <pre>
-        SELECT *
-        FROM users
-        WHERE nom LIKE '%DUPONT%'
-        AND actif = 1;
+    <pre>
+SELECT *
+FROM users
+WHERE nom LIKE '%DUPONT%'
+AND actif = 1;
     </pre>
 
         <h3>🧠 CASE / WHEN / THEN / ELSE / END</h3>
         <p>Permet de créer une colonne calculée temporaire en fonction de conditions. La colonne d'origine n'est pas obligatoirement affichée.</p>
-
         <ul>
             <li><code>CASE WHEN condition THEN résultat END</code></li>
             <li><code>WHEN</code> : définit une condition.</li>
@@ -53,40 +48,35 @@
             <li><code>END</code> : termine la structure conditionnelle.</li>
             <li><code>AS</code> : attribue un nom à la colonne calculée.</li>
         </ul>
-
-        <pre>
-```sql 
-    SELECT colonne_code
-        CASE colonne_code
-            WHEN colonne_code = 'ENT' THEN 'Entretien'
-            WHEN colonne_code = 'CT' THEN 'Contrôle technique'
-            WHEN colonne_code = 'EMADM' THEN 'Administratif'
-            WHEN colonne_code = 'EMERP' THEN 'ERP'
-            ELSE 'Autre'
-        END AS "EXPLICATION"
-    FROM controle;
+    <pre>
+SELECT colonne
+    CASE colonne
+        WHEN colonne = 'ENT' THEN 'Entretien'
+        WHEN colonne = 'CT' THEN 'Contrôle technique'
+        WHEN colonne = 'EMADM' THEN 'Administratif'
+        WHEN colonne = 'EMERP' THEN 'ERP'
+        ELSE 'Autre'
+    END AS "EXPLICATION"
+FROM table;
 </pre>
-<p>Si on ne veut pas afficher la "colonne_code" initiale (puisqu'une colonne "explication" est plus claire), il suffit de la retirer du SELECT</p>
+<p>Si on ne veut pas afficher la "colonne" initiale (puisqu'une colonne "explication" est plus claire), il suffit de la retirer du SELECT</p>
 
 
-<h3>🧩 DECODE()</h3>
+    <h3>🧩 DECODE()</h3>
         <p>Fonction Oracle permettant d'effectuer des comparaisons successives. Alternative à CASE.</p>
+    <pre>
+SELECT
+    DECODE(
+    colonne,
+    'ENT', 'Entretien',
+    'CT', 'Contrôle technique',
+    'Autre'
+    ) AS "EXPLICATION"
+FROM table;
+    </pre>
 
-        <pre>
-
-    SELECT
-        DECODE(
-        colonne_code,
-        'ENT', 'Entretien',
-        'CT', 'Contrôle technique',
-        'Autre'
-        ) AS "EXPLICATION"
-    FROM controle;
-</pre>
-
-<h3>📅 FORMATAGE DES DATES : TO_CHAR()</h3>
+    <h3>📅 FORMATAGE DES DATES : TO_CHAR()</h3>
         <p>Convertit une valeur DATE ou TIMESTAMP en texte pour améliorer la lisibilité du résultat.</p>
-
         <ul>
             <li><code>DD/MM/YYYY</code> → 01/01/2026</li>
             <li><code>DD/MM/YYYY HH24:MI</code> → 01/01/2026 00:00</li>
@@ -111,122 +101,96 @@
 
         <p>⚠️ Attention : <code>MM</code> correspond aux mois, tandis que <code>MI</code> correspond aux minutes.</p>
 
-        <pre>
-
+    <pre>
 SELECT
-TO_CHAR(SCONT_DAT, 'DD/MM/YYYY') AS "DATE",
-TO_CHAR(SCONT_DAT, 'DD/MM/YYYY HH24:MI') AS "DATE ET HEURE"
-FROM controle;
-</pre>
+    TO_CHAR(SCONT_DAT, 'DD/MM/YYYY') AS "DATE",
+    TO_CHAR(SCONT_DAT, 'DD/MM/YYYY HH24:MI') AS "DATE ET HEURE"
+FROM table;
+    </pre>
 
         <h3>🔄 TO_DATE()</h3>
         <p>Convertit une chaîne de caractères en valeur DATE Oracle.</p>
 
-        <pre>
-
+<pre>
 SELECT *
-FROM controle
-WHERE SCONT_DAT >= TO_DATE('01/01/2026', 'DD/MM/YYYY');
+FROM table
+WHERE date >= TO_DATE('01/01/2026', 'DD/MM/YYYY');
 </pre>
-
         <p>Alternative : utiliser un littéral DATE Oracle.</p>
-
-        <pre>
-
+<pre>
 WHERE SCONT_DAT >= DATE '2026-01-01';
 </pre>
 
         <h3>⏱️ TO_TIMESTAMP()</h3>
         <p>Convertit une chaîne de caractères en valeur TIMESTAMP. Les caractères littéraux, comme le T séparant la date et l'heure, doivent être encadrés par des guillemets doubles dans le masque de format.</p>
-
-        <pre>
-
+<pre>
 TO_TIMESTAMP(
-'2026-01-01T00:00:00',
-'YYYY-MM-DD"T"HH24:MI:SS'
+    '2026-01-01T00:00:00',
+    'YYYY-MM-DD"T"HH24:MI:SS'
 )
 </pre>
 
         <h3>🚫 GESTION DES VALEURS NULL</h3>
-
-        <h3>IS NULL / IS NOT NULL</h3>
         <p>Permet de filtrer les lignes selon la présence ou l'absence d'une valeur.</p>
-
-        <pre>
-
+<pre>
 -- Valeurs nulles
 WHERE colonne IS NULL;
 
 -- Valeurs non nulles
 WHERE colonne IS NOT NULL;
 </pre>
-
         <p>⚠️ Ne jamais utiliser <code>= NULL</code> ou <code>&lt;&gt; NULL</code>.</p>
 
         <h3>NVL()</h3>
         <p>Remplace une valeur NULL par une valeur définie.</p>
-
-        <pre>
-
+<pre>
 SELECT
-NVL(SCONT_LIB, 'Non renseigné') AS "LIBELLÉ"
-FROM controle;
+    NVL(colonne, 'Non renseigné') AS "LIBELLÉ"
+FROM table;
 </pre>
 
         <h3>COALESCE()</h3>
         <p>Retourne la première valeur non NULL parmi plusieurs possibilités.</p>
-
-        <pre>
-
+<pre>
 SELECT
-COALESCE(
-colonne1,
-colonne2,
-colonne3,
-'Inconnu'
-) AS "VALEUR"
-FROM controle;
+    COALESCE(
+        colonne1,
+        colonne2,
+        colonne3,
+        'Inconnu'
+    ) AS "VALEUR"
+FROM table;
 </pre>
 
         <h3>🔎 FILTRAGE MULTIPLE</h3>
-
-        <h3>IN()</h3>
+        <h4>IN()</h4>
         <p>Permet de rechercher plusieurs valeurs possibles dans une même colonne.</p>
-
-        <pre>
-
+<pre>
 SELECT *
-FROM controle
-WHERE SCONT_COD IN ('EMADM', 'EMERP', 'EMPE');
+FROM table
+WHERE colonne IN ('valeur1', 'valeur2', 'valeur3');
 </pre>
 
         <p>Équivalent avec OR :</p>
-
-        <pre>
-
-WHERE SCONT_COD = 'EMADM'
-OR SCONT_COD = 'EMERP'
-OR SCONT_COD = 'EMPE';
+<pre>
+WHERE colonne = 'valeur1'
+OR colonne = 'valeur2'
+OR colonne = 'valeur3';
 </pre>
 
         <h3>BETWEEN</h3>
         <p>Recherche une valeur comprise dans un intervalle (bornes incluses).</p>
-
-        <pre>
-
+<pre>
 SELECT *
-FROM controle
-WHERE SCONT_DAT BETWEEN
+FROM table
+WHERE colonne_date BETWEEN
 DATE '2026-01-01'
 AND DATE '2026-12-31';
 </pre>
-
         <p>⚠️ Pour une colonne contenant une heure, cette requête exclut les enregistrements du 31/12 après minuit. Pour couvrir toute l'année :</p>
-
-        <pre>
-
-WHERE SCONT_DAT >= DATE '2026-01-01'
-AND SCONT_DAT < DATE '2027-01-01';
+<pre>
+WHERE colonne_date >= DATE '2026-01-01'
+AND colonne_date < DATE '2027-01-01';
 </pre>
 
   <h3>💡 BONNES PRATIQUES</h3>
@@ -240,7 +204,6 @@ AND SCONT_DAT < DATE '2027-01-01';
             <li>Privilégier <code>CASE</code> à <code>DECODE()</code> pour sa lisibilité et sa portabilité SQL.</li>
         </ul>
 
-
             <h3>📊 TRI & LIMITES</h3>
             <ul>
                 <li><code>ORDER BY colonne ASC</code> → tri croissant</li>
@@ -248,14 +211,12 @@ AND SCONT_DAT < DATE '2027-01-01';
                 <li><code>FETCH FIRST n ROWS ONLY</code> → limite le nombre de lignes retournées</li>
                 <li><code>OFFSET n ROWS FETCH NEXT n ROWS ONLY</code> → ignore n lignes puis récupère les suivantes</li>
             </ul>
-
-            <pre>
-        SELECT *
-        FROM users
-        ORDER BY nom ASC
-        FETCH FIRST 10 ROWS ONLY;
-    </pre>
-
+<pre>
+SELECT *
+FROM users
+ORDER BY nom ASC
+FETCH FIRST 10 ROWS ONLY;
+</pre>
 
             <h3>📦 GROUP BY</h3>
             <ul>
@@ -266,16 +227,15 @@ AND SCONT_DAT < DATE '2027-01-01';
                 <li><code>AVG()</code> → calcule la moyenne des valeurs</li>
                 <li><code>MIN()</code> / <code>MAX()</code> → retourne la valeur minimale / maximale</li>
             </ul>
-
-            <pre>
-        SELECT
-        ville,
-        COUNT(*) AS nombre_users
-        FROM users
-        GROUP BY ville
-        HAVING COUNT(*) > 1
-        ORDER BY nombre_users DESC;
-    </pre>
+<pre>
+SELECT
+    ville,
+COUNT(*) AS nombre_users
+FROM users
+GROUP BY ville
+HAVING COUNT(*) > 1
+ORDER BY nombre_users DESC;
+</pre>
 
 
             <h3>🔗 JOINTURES</h3>
@@ -291,17 +251,15 @@ AND SCONT_DAT < DATE '2027-01-01';
                 <li><code>LEFT JOIN ... IS NULL</code> → recherche les lignes de gauche qui n'ont aucune correspondance
                     à droite</li>
             </ul>
-
-            <pre>
-        SELECT
-        d.id,
-        d.nom
-        FROM demandeurs d
-        LEFT JOIN users u
-        ON u.nom = d.nom
-        WHERE u.id IS NULL;
-    </pre>
-
+<pre>
+SELECT
+d.id,
+d.nom
+FROM demandeurs d
+LEFT JOIN users u
+ON u.nom = d.nom
+WHERE u.id IS NULL;
+</pre>
 
             <h3>🧠 SOUS-REQUÊTES</h3>
             <ul>
@@ -310,15 +268,14 @@ AND SCONT_DAT < DATE '2027-01-01';
                 <li><code>NOT EXISTS</code></li>
                 <li><code>WITH nom AS (...)</code> → CTE</li>
             </ul>
-
-            <pre>
-        SELECT *
-        FROM users u
-        WHERE u.id IN (
-        SELECT demandeur_id
-        FROM demandes
-        );
-    </pre>
+<pre>
+SELECT *
+FROM users u
+WHERE u.id IN (
+SELECT demandeur_id
+FROM demandes
+);
+</pre>
 
 
             <h3>🔎 EXISTS / NOT EXISTS</h3>
@@ -326,17 +283,15 @@ AND SCONT_DAT < DATE '2027-01-01';
                 <li><code>EXISTS</code> → vérifier qu'une correspondance existe</li>
                 <li><code>NOT EXISTS</code> → vérifier qu'aucune correspondance n'existe</li>
             </ul>
-
-            <pre>
-        SELECT *
-        FROM users u
-        WHERE NOT EXISTS (
-        SELECT 1
-        FROM demandes d
-        WHERE d.user_id = u.id
-        );
-    </pre>
-
+<pre>
+SELECT *
+FROM users u
+WHERE NOT EXISTS (
+SELECT 1
+FROM demandes d
+WHERE d.user_id = u.id
+);
+</pre>
 
             <h3>📝 INSERT / UPDATE / DELETE</h3>
             <ul>
@@ -345,19 +300,17 @@ AND SCONT_DAT < DATE '2027-01-01';
                 <li><code>DELETE FROM ... WHERE ...</code></li>
                 <li> ⚠️ Toujours tester le <code>WHERE</code> avec un <code>SELECT</code></li>
             </ul>
+    <pre>
+-- Tester avant modification
+SELECT *
+FROM users
+WHERE id = 42;
 
-            <pre>
-        -- Tester avant modification
-        SELECT *
-        FROM users
-        WHERE id = 42;
-
-        -- Modifier
-        UPDATE users
-        SET actif = 0
-        WHERE id = 42;
-    </pre>
-
+-- Modifier
+UPDATE users
+SET actif = 0
+WHERE id = 42;
+</pre>
 
             <h3>💾 TRANSACTIONS</h3>
             <ul>
@@ -366,20 +319,19 @@ AND SCONT_DAT < DATE '2027-01-01';
                 <li><code>SAVEPOINT nom;</code></li>
                 <li><code>ROLLBACK TO nom;</code></li>
             </ul>
+<pre>
+UPDATE users
+SET actif = 0
+WHERE id = 42;
 
-            <pre>
-        UPDATE users
-        SET actif = 0
-        WHERE id = 42;
+SAVEPOINT modification;
 
-        SAVEPOINT modification;
+-- Annuler la modification
+ROLLBACK TO modification;
 
-        -- Annuler la modification
-        ROLLBACK TO modification;
-
-        -- Valider définitivement
-        COMMIT;
-    </pre>
+-- Valider définitivement
+COMMIT;
+</pre>
 
 
             <h3>⚡ SPÉCIFIQUE ORACLE</h3>
@@ -394,13 +346,13 @@ AND SCONT_DAT < DATE '2027-01-01';
                 <li><code>FETCH FIRST n ROWS ONLY</code> → limite le nombre de lignes retournées par la requête</li>
             </ul>
 
-            <pre>
-        SELECT
-        USER AS schema_connecte,
-        SYSDATE AS date_actuelle,
-        SYSTIMESTAMP AS timestamp_actuel
-        FROM DUAL;
-    </pre>
+<pre>
+SELECT
+USER AS schema_connecte,
+SYSDATE AS date_actuelle,
+SYSTIMESTAMP AS timestamp_actuel
+FROM DUAL;
+</pre>
 
 
             <h3>📅 DATES</h3>
@@ -412,23 +364,23 @@ AND SCONT_DAT < DATE '2027-01-01';
                 <li><code>MONTHS_BETWEEN()</code> → calcule le nombre de mois entre deux dates</li>
             </ul>
 
-            <pre>
-        SELECT
-        date_creation,
-        TO_CHAR(date_creation, 'DD/MM/YYYY') AS date_formatee,
-        ADD_MONTHS(date_creation, 1) AS mois_suivant
-        FROM demandes;
+    <pre>
+SELECT
+    date_creation,
+    TO_CHAR(date_creation, 'DD/MM/YYYY') AS date_formatee,
+    ADD_MONTHS(date_creation, 1) AS mois_suivant
+FROM demandes;
 
-        /*
-        YYYY → année
-        MM → mois
-        DD → jour
-        HH24 → heure sur 24 h
-        MI → minutes
-        SS → secondes
-        (Pour remplacer ":" par "h" par exemple, concaténer avec des guillemets doubles : 'HH24"h"MI "et" SS"s"')
-        */
-    </pre>
+/*
+YYYY → année
+MM → mois
+DD → jour
+HH24 → heure sur 24 h
+MI → minutes
+SS → secondes
+(Pour remplacer ":" par "h" par exemple, concaténer avec des guillemets doubles : 'HH24"h"MI "et" SS"s"')
+*/
+</pre>
 
 
             <h3>🔤 FONCTIONS TEXTE</h3>
@@ -443,13 +395,13 @@ AND SCONT_DAT < DATE '2027-01-01';
                 <li><code>LENGTH()</code> → retourne le nombre de caractères d'une chaîne</li>
             </ul>
 
-            <pre>
-        SELECT
-        UPPER(nom) AS nom_majuscule,
-        LOWER(email) AS email_minuscule,
-        LENGTH(nom) AS longueur_nom
-        FROM users;
-    </pre>
+<pre>
+SELECT
+    UPPER(nom) AS nom_majuscule,
+    LOWER(email) AS email_minuscule,
+LENGTH(nom) AS longueur_nom
+FROM users;
+</pre>
 
 
             <h3>🧮 CONVERSIONS</h3>
@@ -461,12 +413,12 @@ AND SCONT_DAT < DATE '2027-01-01';
                 <li><code>CAST()</code> → convertit une valeur d'un type de données vers un autre type</li>
             </ul>
 
-            <pre>
-        SELECT
-        TO_CHAR(id) AS id_texte,
-        CAST(id AS VARCHAR2(20)) AS id_converti
-        FROM users;
-    </pre>
+<pre>
+SELECT
+    TO_CHAR(id) AS id_texte,
+    CAST(id AS VARCHAR2(20)) AS id_converti
+FROM users;
+</pre>
 
 
             <h3>🧩 VALEURS NULL</h3>
@@ -480,12 +432,12 @@ AND SCONT_DAT < DATE '2027-01-01';
                     la première</li>
             </ul>
 
-            <pre>
-        SELECT
-        nom,
-        NVL(email, 'Non renseigné') AS email
-        FROM users;
-    </pre>
+<pre>
+SELECT
+    nom,
+    NVL(email, 'Non renseigné') AS email
+FROM users;
+</pre>
 
 
             <h3>🎨 CONDITIONS</h3>
@@ -494,40 +446,35 @@ AND SCONT_DAT < DATE '2027-01-01';
                 <li><code>DECODE()</code> → spécifique Oracle</li>
             </ul>
 
-            <pre>
-        SELECT
-        nom,
-        CASE
+<pre>
+SELECT nom,
+    CASE
         WHEN actif = 1 THEN 'Actif'
         WHEN actif = 0 THEN 'Inactif'
         ELSE 'Inconnu'
-        END AS statut
-        FROM users;
-    </pre>
+    END AS statut
+FROM users;
+</pre>
 
 
             <h3>📈 FONCTIONS ANALYTIQUES</h3>
             <ul>
                 <li><code>ROW_NUMBER()</code> → attribue un numéro unique à chaque ligne selon un ordre défini</li>
                 <li><code>RANK()</code> → attribue un rang aux lignes, en laissant des rangs vides en cas d'égalité</li>
-                <li><code>DENSE_RANK()</code> → attribue un rang aux lignes, sans laisser de rang vide en cas d'égalité
-                </li>
-                <li><code>OVER()</code> → définit la fenêtre de lignes sur laquelle s'applique la fonction analytique
-                </li>
-                <li><code>PARTITION BY</code> → divise les lignes en groupes indépendants pour appliquer la fonction
-                    analytique à chacun</li>
+                <li><code>DENSE_RANK()</code> → attribue un rang aux lignes, sans laisser de rang vide en cas d'égalité</li>
+                <li><code>OVER()</code> → définit la fenêtre de lignes sur laquelle s'applique la fonction analytique</li>
+                <li><code>PARTITION BY</code> → divise les lignes en groupes indépendants pour appliquer la fonction analytique à chacun</li>
             </ul>
-
-            <pre>
-        SELECT
-        nom,
-        ville,
-        ROW_NUMBER() OVER (
+<pre>
+SELECT
+    nom,
+    ville,
+ROW_NUMBER() OVER (
         PARTITION BY ville
         ORDER BY nom
         ) AS numero
-        FROM users;
-    </pre>
+FROM users;
+</pre>
 
 
             <h3>📑 CTE — WITH</h3>
@@ -537,16 +484,16 @@ AND SCONT_DAT < DATE '2027-01-01';
                 <li>Peut remplacer certaines sous-requêtes imbriquées</li>
             </ul>
 
-            <pre>
-        WITH users_actifs AS (
-        SELECT *
-        FROM users
-        WHERE actif = 1
-        )
-        SELECT *
-        FROM users_actifs
-        ORDER BY nom;
-    </pre>
+<pre>
+WITH users_actifs AS (
+    SELECT *
+    FROM users
+    WHERE actif = 1
+    )
+SELECT *
+FROM users_actifs
+ORDER BY nom;
+</pre>
 
 
             <h3>🔢 DOUBLONS</h3>
@@ -556,14 +503,14 @@ AND SCONT_DAT < DATE '2027-01-01';
                 <li><code>GROUP BY ... HAVING COUNT(*) > 1</code> → rechercher les doublons</li>
             </ul>
 
-            <pre>
-        SELECT
-        nom,
-        COUNT(*) AS nombre
-        FROM users
-        GROUP BY nom
-        HAVING COUNT(*) > 1;
-    </pre>
+    <pre>
+SELECT
+    nom,
+COUNT(*) AS nombre
+FROM users
+GROUP BY nom
+HAVING COUNT(*) > 1;
+</pre>
 
 
             <h3>🔍 DÉCOUVRIR LA BASE</h3>
@@ -579,15 +526,15 @@ AND SCONT_DAT < DATE '2027-01-01';
                 <li><code>ALL_TAB_COLUMNS</code> → colonnes accessibles</li>
             </ul>
 
-            <pre>
-        SELECT
-        table_name,
-        column_id,
-        column_name,
-        data_type
-        FROM USER_TAB_COLUMNS
-        ORDER BY table_name, column_id;
-    </pre>
+<pre>
+SELECT
+    table_name,
+    column_id,
+    column_name,
+    data_type
+FROM USER_TAB_COLUMNS
+ORDER BY table_name, column_id;
+</pre>
 
 
             <h3>🔢 COMPTER LES TABLES</h3>
@@ -595,10 +542,10 @@ AND SCONT_DAT < DATE '2027-01-01';
                 <li>Nombre de tables dans le schéma courant</li>
             </ul>
 
-            <pre>
-        SELECT COUNT(*) AS nombre_tables
-        FROM USER_TABLES;
-    </pre>
+<pre>
+SELECT COUNT(*) AS nombre_tables
+FROM USER_TABLES;
+</pre>
 
 
             <h3>📐 TROUVER LES TABLES LES PLUS LARGES</h3>
@@ -607,14 +554,14 @@ AND SCONT_DAT < DATE '2027-01-01';
                 <li>Utile pour explorer rapidement une base inconnue</li>
             </ul>
 
-            <pre>
-        SELECT
-        table_name,
-        COUNT(*) AS nombre_colonnes
-        FROM USER_TAB_COLUMNS
-        GROUP BY table_name
-        ORDER BY nombre_colonnes DESC;
-    </pre>
+<pre>
+SELECT
+    table_name,
+COUNT(*) AS nombre_colonnes
+FROM USER_TAB_COLUMNS
+GROUP BY table_name
+ORDER BY nombre_colonnes DESC;
+</pre>
 
 
             <h3>🔑 CLÉS & CONTRAINTES</h3>
@@ -626,14 +573,14 @@ AND SCONT_DAT < DATE '2027-01-01';
                 <li><code>NOT NULL</code></li>
             </ul>
 
-            <pre>
-        SELECT
-        constraint_name,
-        constraint_type,
-        table_name
-        FROM USER_CONSTRAINTS
-        ORDER BY table_name;
-    </pre>
+<pre>
+SELECT
+    constraint_name,
+    constraint_type,
+    table_name
+FROM USER_CONSTRAINTS
+ORDER BY table_name;
+</pre>
 
 
             <h3>📌 COLONNES DES INDEX</h3>
@@ -641,16 +588,15 @@ AND SCONT_DAT < DATE '2027-01-01';
                 <li><code>USER_INDEXES</code> → informations sur les index</li>
                 <li><code>USER_IND_COLUMNS</code> → colonnes concernées</li>
             </ul>
-
-            <pre>
-        SELECT
-        index_name,
-        table_name,
-        column_name,
-        column_position
-        FROM USER_IND_COLUMNS
-        ORDER BY table_name, index_name, column_position;
-    </pre>
+<pre>
+SELECT
+    index_name,
+    table_name,
+    column_name,
+    column_position
+FROM USER_IND_COLUMNS
+ORDER BY table_name, index_name, column_position;
+</pre>
 
 
             <h3>🔗 RELATIONS ENTRE TABLES</h3>
@@ -659,15 +605,15 @@ AND SCONT_DAT < DATE '2027-01-01';
                 <li>Identifier la table et la colonne référencées</li>
             </ul>
 
-            <pre>
-        SELECT
-        constraint_name,
-        table_name,
-        r_constraint_name
-        FROM USER_CONSTRAINTS
-        WHERE constraint_type = 'R'
-        ORDER BY table_name;
-    </pre>
+<pre>
+SELECT
+    constraint_name,
+    table_name,
+    r_constraint_name
+FROM USER_CONSTRAINTS
+WHERE constraint_type = 'R'
+ORDER BY table_name;
+</pre>
 
 
             <h3>🚀 PERFORMANCE</h3>
@@ -677,17 +623,15 @@ AND SCONT_DAT < DATE '2027-01-01';
                 <li>Éviter les fonctions inutiles sur les colonnes filtrées</li>
                 <li>Analyser le plan d'exécution</li>
             </ul>
+<pre>
+EXPLAIN PLAN FOR
+SELECT *
+FROM users
+WHERE nom = 'DUPONT';
 
-            <pre>
-        EXPLAIN PLAN FOR
-        SELECT *
-        FROM users
-        WHERE nom = 'DUPONT';
-
-        SELECT *
-        FROM TABLE(DBMS_XPLAN.DISPLAY);
-    </pre>
-
+SELECT *
+FROM TABLE(DBMS_XPLAN.DISPLAY);
+</pre>
 
             <h3>🧪 TESTER UNE MODIFICATION</h3>
             <ul>
@@ -695,21 +639,20 @@ AND SCONT_DAT < DATE '2027-01-01';
                 <li>Vérifier le nombre de lignes concernées</li>
                 <li>Passer ensuite au <code>UPDATE</code> ou <code>DELETE</code></li>
             </ul>
+<pre>
+-- Étape 1
+SELECT *
+FROM users
+WHERE ville = 'GRENOBLE';
 
-            <pre>
-        -- Étape 1
-        SELECT *
-        FROM users
-        WHERE ville = 'GRENOBLE';
+-- Étape 2
+UPDATE users
+SET actif = 0
+WHERE ville = 'GRENOBLE';
 
-        -- Étape 2
-        UPDATE users
-        SET actif = 0
-        WHERE ville = 'GRENOBLE';
-
-        -- Étape 3
-        ROLLBACK;
-    </pre>
+-- Étape 3
+ROLLBACK;
+</pre>
 
 
             <h3>⚠️ BONNES PRATIQUES</h3>
@@ -722,17 +665,17 @@ AND SCONT_DAT < DATE '2027-01-01';
                 <li>Tester une requête complexe progressivement</li>
             </ul>
 
-            <pre>
-        SELECT
-        d.id,
-        d.nom,
-        u.email
-        FROM demandes d
-        LEFT JOIN users u
-        ON u.id = d.user_id
-        WHERE d.statut = 'OUVERTE'
-        ORDER BY d.id;
-    </pre>
+<pre>
+SELECT
+    d.id,
+    d.nom,
+    u.email
+FROM demandes d
+LEFT JOIN users u
+ON u.id = d.user_id
+WHERE d.statut = 'OUVERTE'
+ORDER BY d.id;
+</pre>
 
 
             <h3>📚 VOCABULAIRE SQL</h3>
@@ -760,134 +703,141 @@ AND SCONT_DAT < DATE '2027-01-01';
                 </li>
             </ul>
 
-            <pre>
-        CREATE TABLE users (
-        id NUMBER PRIMARY KEY,
-        nom VARCHAR2(100)
-        );
-    </pre>
+<pre>
+CREATE TABLE users (
+    id NUMBER PRIMARY KEY,
+    nom VARCHAR2(100)
+    );
+</pre>
 
             <h3>🧩 RECETTES SQL</h3>
             <h4>🔎 Rechercher les doublons</h4>
-            <pre>
-      SELECT nom, 
-      COUNT(*) AS nombre 
-      FROM users 
-      GROUP BY nom 
-      HAVING COUNT(*) > 1; 
-  </pre>
+<pre>
+SELECT nom, 
+COUNT(*) AS nombre 
+FROM users 
+GROUP BY nom 
+HAVING COUNT(*) > 1; 
+</pre>
 
             <h4>🔗 Trouver les lignes non liées</h4>
-            <pre>
-      SELECT d.* 
-      FROM demandes d 
-      LEFT JOIN users u ON u.id = d.user_id 
-      WHERE u.id IS NULL; 
-  </pre>
+<pre>
+SELECT d.* 
+FROM demandes d 
+LEFT JOIN users u ON u.id = d.user_id 
+WHERE u.id IS NULL; 
+</pre>
 
             <h4>👤 Utilisateurs sans demande</h4>
-            <pre>
-      SELECT u.* 
-      FROM users u 
-      LEFT JOIN demandes d ON d.user_id = u.id 
-      WHERE d.id IS NULL;
-  </pre>
+<pre>
+SELECT u.* 
+FROM users u 
+LEFT JOIN demandes d ON d.user_id = u.id 
+WHERE d.id IS NULL;
+</pre>
 
             <h4>📋 Demandes sans utilisateur</h4>
-            <pre>
-      SELECT d.* 
-      FROM demandes d 
-      LEFT JOIN users u ON u.id = d.user_id 
-  WHERE u.id IS NULL; </pre>
+    <pre>
+SELECT d.* 
+FROM demandes d 
+LEFT JOIN users u ON u.id = d.user_id 
+WHERE u.id IS NULL; 
+</pre>
 
             <h4>🔍 Rechercher une colonne dans le schéma</h4>
-            <pre>
-      SELECT 
-      table_name, 
-      column_name, 
-      data_type 
-      FROM USER_TAB_COLUMNS 
-      WHERE UPPER(column_name) LIKE '%NOM%' 
-      ORDER BY table_name, column_id; 
+<pre>
+SELECT 
+    table_name, 
+    column_name, 
+    data_type 
+FROM USER_TAB_COLUMNS 
+WHERE UPPER(column_name) LIKE '%NOM%' 
+ORDER BY table_name, column_id; 
   </pre>
 
             <h4>🗂️ Trouver les tables contenant une colonne</h4>
-            <pre>
-      SELECT 
-      table_name, 
-      column_name 
-      FROM USER_TAB_COLUMNS 
-      WHERE UPPER(column_name) = 'ID' 
-      ORDER BY table_name; 
-  </pre>
+<pre>
+SELECT 
+    table_name, 
+    column_name 
+FROM USER_TAB_COLUMNS 
+WHERE UPPER(column_name) = 'ID' 
+ORDER BY table_name; 
+</pre>
 
             <h4>🔑 Identifier les clés étrangères</h4>
-            <pre>
-      SELECT 
-      constraint_name, 
-      table_name, 
-      r_constraint_name 
-      FROM USER_CONSTRAINTS 
-      WHERE constraint_type = 'R' 
-      ORDER BY table_name; 
-  </pre>
+<pre>
+SELECT 
+    constraint_name, 
+    table_name, 
+    r_constraint_name 
+FROM USER_CONSTRAINTS 
+WHERE constraint_type = 'R' 
+ORDER BY table_name; 
+</pre>
 
             <h4>🔎 Rechercher une valeur dans une table</h4>
-            <pre>
-      SELECT * 
-      FROM users 
-  WHERE UPPER(nom) LIKE '%DUPONT%'; </pre>
+<pre>
+SELECT * 
+FROM users 
+WHERE UPPER(nom) LIKE '%DUPONT%'; 
+</pre>
 
             <h4>📊 Compter les lignes de plusieurs groupes</h4>
-            <pre>
-      SELECT 
-      statut, 
-      COUNT(*) AS nombre 
-      FROM demandes 
-      GROUP BY statut 
-  ORDER BY nombre DESC; </pre>
+    <pre>
+SELECT 
+    statut, 
+COUNT(*) AS nombre 
+FROM demandes 
+GROUP BY statut 
+ORDER BY nombre DESC; 
+</pre>
 
             <h4>🏆 Trouver la valeur la plus fréquente</h4>
-            <pre>
-      SELECT nom, 
-      COUNT(*) AS nombre 
-      FROM users 
-      GROUP BY nom 
-  ORDER BY nombre DESC FETCH FIRST 1 ROW ONLY; </pre>
+<pre>
+SELECT nom, 
+COUNT(*) AS nombre 
+FROM users 
+GROUP BY nom 
+ORDER BY nombre DESC FETCH FIRST 1 ROW ONLY; 
+</pre>
 
             <h4>📅 Rechercher les données du jour</h4>
-            <pre>
-      SELECT * 
-      FROM demandes 
-  WHERE date_creation &gt;= TRUNC(SYSDATE) AND date_creation &lt; TRUNC(SYSDATE) + 1; </pre>
+<pre>
+SELECT * 
+FROM demandes 
+WHERE date_creation &gt;= TRUNC(SYSDATE) AND date_creation &lt; TRUNC(SYSDATE) + 1;
+</pre>
 
             <h4>🧮 Comparer deux ensembles</h4>
-            <pre> 	SELECT id 
-     FROM table_a
-     MINUS
-     SELECT id
-     FROM table_b;
- </pre>
+<pre> 	
+SELECT id 
+FROM table_a
+MINUS
+SELECT id
+FROM table_b;
+</pre>
 
             <h4>🔄 Trouver les valeurs communes</h4>
-            <pre>
-  SELECT id FROM table_a
-  INTERSECT
-  SELECT id
-  FROM table_b;
+<pre>
+SELECT id FROM table_a
+INTERSECT
+SELECT id
+FROM table_b;
 </pre>
 
             <h4>📈 Compter les lignes d'une table</h4>
-            <pre>
-  SELECT COUNT(*) AS nombre_lignes 
-  FROM demandes; 
+<pre>
+SELECT COUNT(*) AS nombre_lignes 
+FROM demandes; 
 </pre>
 
             <h4>🧱 Identifier les colonnes NULL</h4>
-            <pre>
-  SELECT * 
-  FROM users
-WHERE email IS NULL; </pre>
+<pre>
+SELECT * 
+FROM users
+WHERE email IS NULL; 
+</pre>
 
             <div>
                 <button id="btn_fermeture" data-close>Fermer</button>

@@ -79,7 +79,7 @@ body.dark button {
 body.dark header{background: none;}
 body.dark footer {background: black;}
 body.dark .card {
-	background-color: var(--dark-background-card-color);
+	background-color: #28293b;
 	color: var(--dark-couleur-texte);
     border: solid 2px lightgray;
 }

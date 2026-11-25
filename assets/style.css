@@ -147,7 +147,7 @@ button:hover {
     max-width: 200px;
     height: 110px;
 
-    background-color: white;
+    background:  var(--card-background, white);
     color: black;
     padding: 5px;
     border-radius: 15px;

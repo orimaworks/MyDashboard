@@ -101,7 +101,7 @@ cards.forEach(card => {
 
     const color = card.color
         ? `--card-background:${card.color};`
-        : ${card.color};
+        : "";
 
     container.insertAdjacentHTML("beforeend", `
         <div class="card-container">

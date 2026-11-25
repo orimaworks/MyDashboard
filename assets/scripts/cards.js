@@ -245,6 +245,7 @@ const cards = [
         title: "EPSENS",
         url: "https://www.epsens.com/",
         icon: null,
+        text: "EPSENS"
 		label:"EPSENS",
 		category: "Administratif"
     },

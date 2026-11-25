@@ -277,6 +277,7 @@ const cards = [
         url: "https://github.com/login",
         icon: "./assets/img/card_content/github.svg",
         label:"GitHub",
+        color: "#ffffff",
         category: "Geek"
     },
 
@@ -589,6 +590,7 @@ const cards = [
         icon: "./assets/img/card_content/dino.png",
 		text: "Dino",
 		label: "Dino",
+        color: "#ffffff",
 		category: "Gaming"
     },
 
@@ -812,6 +814,7 @@ const cards = [
         url: "https://astech.valenceromansagglo.fr/#/",
         text: "ASTech",
 		label:"ASTech",
+        color: "#ffffff",
 		icon: "./assets/img/card_content/logo-astech.svg",
 		category: "pro"
     },
@@ -883,6 +886,7 @@ const cards = [
         url: "https://ids.craig.fr/home/",
         icon: "./assets/img/card_content/craig.svg",
 		label:"C.R.A.I.G",
+        color: "#ffffff",
 		category: "pro"
     },
 

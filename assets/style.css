@@ -72,7 +72,7 @@ body.dark {
 
 
 body.dark button {
-	background-color: var(--dark-background-card-color);
+	background-color: darkgray;
 	color: var(--dark-couleur-texte);
 }
 
@@ -141,7 +141,7 @@ button:hover {
 
 .card {
     display: flex;
-    flex: 1 1 160px;
+    flex: 1 1 170px;
 
     min-width: 150px;
     max-width: 200px;

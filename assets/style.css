@@ -297,7 +297,7 @@ code {
   font-size: .9rem;
   border-left: 3px solid var(--couleur-secondaire);
 }
-
+.named-colors,
 .colors {
 	display : flex;
 	flex-direction : row ;	

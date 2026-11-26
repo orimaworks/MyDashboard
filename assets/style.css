@@ -297,7 +297,7 @@ code {
   font-size: .9rem;
   border-left: 3px solid var(--couleur-secondaire);
 }
-.named-colors,
+
 .colors {
 	display : flex;
 	flex-direction : row ;	
@@ -312,7 +312,8 @@ code {
 	/* margin: 3px; */
 	color: white; 
 	border-radius: 8px ;
-	min-width : 80px; 	
+	width: 30%;
+	min-width: 80px; 	
 	/* width: auto; */
 	/* max-width: 90%;  */
 	min-height: 30px;
